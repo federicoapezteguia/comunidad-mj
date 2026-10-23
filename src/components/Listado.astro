@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import TarjetaNota from './TarjetaNota.astro';
+import Publicidad from './Publicidad.astro';
+import type { Nota } from '../lib/notas';
+import { urlNota } from '../lib/notas';
+
+interface Props {
+  h1: string;
+  tituloSeo: string;
+  descripcion: string;
+  intro?: string;
+  base: string; // ej. '/marcos-juarez/'
+  notas: Nota[];
+  pagina: number;
+  total: number;
+  noindex?: boolean;
+  video?: boolean;
+}
+const { h1, tituloSeo, descripcion, intro, base, notas, pagina, total, noindex = false, video = false } = Astro.props;
+const urlPagina = (p: number) => (p === 1 ? base : `${base}pagina/${p}/`);
+const anterior = pagina > 1 ? urlPagina(pagina - 1) : undefined;
+const siguiente = pagina < total ? urlPagina(pagina + 1) : undefined;
+const sufijo = pagina > 1 ? ` (página ${pagina})` : '';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: h1,
+    description: descripcion,
+    url: new URL(urlPagina(pagina), Astro.site).href,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: notas.map((n, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(urlNota(n), Astro.site).href })),
+    },
+  },
+];
+const primeras = notas.slice(0, 6);
+const resto = notas.slice(6);
+---
+<Base titulo={tituloSeo + sufijo} descripcion={descripcion} anterior={anterior} siguiente={siguiente} noindex={noindex} jsonLd={jsonLd}>
+  <div class="wrap pub-sup"><Publicidad espacio="superior" /></div>
+  <div class="wrap">
+    <h1 class="sec-h h1">{h1}{sufijo}</h1>
+    {intro && pagina === 1 && <p class="intro-seccion">{intro}</p>}
+    <div class="con-lateral">
+      <div class="principal">
+        {notas.length === 0 ? (
+          <p>Todavía no hay notas en esta sección.</p>
+        ) : (
+          <>
+            <div class="grid-notas">{primeras.map((n, i) => <TarjetaNota nota={n} prioridad={i < 2} variante={video ? 'grilla' : 'grilla'} />)}</div>
+            {resto.length > 0 && (
+              <>
+                <div class="pub-medio"><Publicidad espacio="campanas" /></div>
+                <div class="grid-notas">{resto.map((n) => <TarjetaNota nota={n} />)}</div>
+              </>
+            )}
+          </>
+        )}
+        {total > 1 && (
+          <nav aria-label="Páginas">
+            <ul class="paginacion">
+              {anterior && <li><a href={anterior} rel="prev">‹ Anterior</a></li>}
+              {Array.from({ length: total }, (_, i) => i + 1).map((p) => (
+                <li>{p === pagina ? <span aria-current="page">{p}</span> : <a href={urlPagina(p)}>{p}</a>}</li>
+              ))}
+              {siguiente && <li><a href={siguiente} rel="next">Siguiente ›</a></li>}
+            </ul>
+          </nav>
+        )}
+      </div>
+      <div class="lateral"><Publicidad espacio="lateral" /></div>
+    </div>
+  </div>
+</Base>
+<style>
+  .pub-sup { padding-block: 20px; }
+  .h1 { font-size: clamp(24px, 3.4vw, 32px); margin-top: 12px; }
+  .pub-medio { margin: 36px 0; }
+</style>

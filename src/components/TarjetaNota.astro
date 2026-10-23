@@ -1,0 +1,107 @@
+---
+import { Image } from 'astro:assets';
+import { urlNota, volanta, fechaCorta, type Nota } from '../lib/notas';
+
+interface Props {
+  nota: Nota;
+  variante?: 'grilla' | 'superpuesta' | 'compacta' | 'video';
+  titular?: 'h2' | 'h3';
+  prioridad?: boolean;
+  tamanio?: 'grande' | 'mediana';
+}
+const { nota, variante = 'grilla', titular = 'h3', prioridad = false, tamanio = 'mediana' } = Astro.props;
+const d = nota.data;
+const url = urlNota(nota);
+const Tit = titular;
+const anchos = variante === 'superpuesta' && tamanio === 'grande' ? [480, 800, 1100, 1400] : variante === 'compacta' ? [160, 320] : [320, 480, 640, 800];
+const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 1000px) 780px, 100vw' : variante === 'compacta' ? '140px' : '(min-width: 1000px) 380px, (min-width: 600px) 50vw, 100vw';
+---
+{variante === 'superpuesta' ? (
+  <article class:list={['sup', tamanio]}>
+    <a href={url} class="link">
+      <Image src={d.foto} alt={d.fotoAlt} widths={anchos} sizes={sizes} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : 'auto'} class="foto" />
+      <span class="tag">{volanta(nota)}</span>
+      <div class="capa">
+        <Tit class="titulo">{d.titulo}</Tit>
+        {tamanio === 'grande' && <p class="bajada">{d.bajada}</p>}
+      </div>
+    </a>
+  </article>
+) : variante === 'compacta' ? (
+  <article class="comp">
+    <a href={url} class="link">
+      <Image src={d.foto} alt={d.fotoAlt} widths={anchos} sizes={sizes} class="foto" />
+      <div>
+        <span class="vol">{volanta(nota)}</span>
+        <Tit class="titulo">{d.titulo}</Tit>
+        <time datetime={d.fecha.toISOString()} class="cuando">{fechaCorta(d.fecha)}</time>
+      </div>
+    </a>
+  </article>
+) : (
+  <article class:list={['grilla', { video: variante === 'video' }]}>
+    <a href={url} class="link">
+      <div class="marco">
+        <Image src={d.foto} alt={d.fotoAlt} widths={anchos} sizes={sizes} loading={prioridad ? 'eager' : 'lazy'} class="foto" />
+        <span class="tag">{volanta(nota)}</span>
+        {(variante === 'video' || d.youtube) && (
+          <span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 12 12"><path d="M3 1l8 5-8 5z" fill="currentColor"></path></svg></span>
+        )}
+      </div>
+      <Tit class="titulo">{d.titulo}</Tit>
+      <p class="bajada">{d.bajada}</p>
+    </a>
+  </article>
+)}
+
+<style>
+  .link { display: block; color: inherit; }
+  .foto { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Grilla */
+  .marco { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--lila); }
+  .marco .tag { position: absolute; left: 0; top: 0; }
+  .grilla .foto { transition: transform 0.35s ease; }
+  .grilla .link:hover .foto { transform: scale(1.04); }
+  .grilla .titulo { margin: 12px 0 6px; font-size: 18px; font-weight: 700; color: var(--violeta); }
+  .grilla .link:hover .titulo { color: var(--fucsia-oscuro); }
+  .grilla .bajada {
+    margin: 0; font-size: 14px; color: var(--gris);
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .play {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 58px; height: 58px; border-radius: 50%; background: var(--fucsia); color: var(--violeta-noche);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video .titulo { color: #fff; }
+  .video .link:hover .titulo { color: var(--amarillo); }
+  .video .bajada { color: #d8c8ee; }
+
+  /* Superpuesta (destacadas) */
+  .sup { position: relative; height: 100%; }
+  .sup .link { position: relative; height: 100%; min-height: 220px; overflow: hidden; background: var(--violeta); }
+  .sup.grande .link { min-height: 340px; }
+  .sup .foto { position: absolute; inset: 0; transition: transform 0.4s ease; }
+  .sup .link:hover .foto { transform: scale(1.03); }
+  .sup .tag { position: absolute; left: 0; top: 0; z-index: 2; }
+  .capa {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+    padding: 56px 20px 20px;
+    background: linear-gradient(to top, rgba(20, 0, 40, 0.92) 0%, rgba(20, 0, 40, 0.6) 55%, rgba(20, 0, 40, 0) 100%);
+  }
+  .sup .titulo { margin: 0; color: #fff; font-size: 19px; font-weight: 700; }
+  .sup.grande .titulo { font-size: clamp(22px, 3vw, 34px); }
+  .sup.grande .capa { padding: 80px 28px 26px; }
+  .sup .bajada { margin: 10px 0 0; color: #f1e8fb; font-size: 16px; max-width: 640px; }
+  .sup .link:hover .titulo { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+  /* Compacta */
+  .comp .link { display: flex; gap: 14px; align-items: flex-start; }
+  .comp .foto { width: 128px; height: 72px; flex: none; }
+  .comp :global(img) { width: 128px; height: 72px; flex: none; object-fit: cover; }
+  .vol { font-size: 11.5px; font-weight: 800; color: var(--fucsia-oscuro); text-transform: uppercase; letter-spacing: 0.04em; }
+  .comp .titulo { margin: 3px 0 4px; font-size: 16px; font-weight: 700; color: var(--violeta); }
+  .comp .link:hover .titulo { color: var(--fucsia-oscuro); }
+  .cuando { font-size: 12px; color: var(--gris); }
+</style>

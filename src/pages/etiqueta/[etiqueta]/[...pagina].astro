@@ -1,0 +1,29 @@
+---
+import Listado from '../../../components/Listado.astro';
+import { getNoticias, type Nota } from '../../../lib/notas';
+import { rutasPaginadas } from '../../../lib/paginar';
+import { ETIQUETAS, ETIQUETA_IDS, type EtiquetaId } from '../../../data/etiquetas';
+import { MIN_NOTAS_INDEXAR } from '../../../config';
+
+export async function getStaticPaths() {
+  const notas = await getNoticias();
+  return ETIQUETA_IDS.flatMap((e) => {
+    const lista = notas.filter((n) => n.data.etiquetas.includes(e));
+    return lista.length ? rutasPaginadas({ etiqueta: e }, lista) : [];
+  });
+}
+
+interface Props { notas: Nota[]; pagina: number; total: number; cantidad: number }
+const { etiqueta } = Astro.params as { etiqueta: EtiquetaId };
+const nombre = ETIQUETAS[etiqueta];
+const desc = `Todas las noticias sobre ${nombre.toLowerCase()} en Marcos Juárez, la región y Córdoba.`;
+---
+<Listado
+  h1={nombre}
+  tituloSeo={`${nombre}: últimas noticias`}
+  descripcion={desc}
+  intro={desc}
+  base={`/etiqueta/${etiqueta}/`}
+  noindex={Astro.props.cantidad < MIN_NOTAS_INDEXAR}
+  {...Astro.props}
+/>

@@ -1,0 +1,29 @@
+---
+import Listado from '../../../components/Listado.astro';
+import { getNoticias, type Nota } from '../../../lib/notas';
+import { rutasPaginadas } from '../../../lib/paginar';
+import { LOCALIDADES, LOCALIDAD_IDS, type LocalidadId } from '../../../data/etiquetas';
+import { MIN_NOTAS_INDEXAR } from '../../../config';
+
+export async function getStaticPaths() {
+  const notas = await getNoticias();
+  return LOCALIDAD_IDS.flatMap((l) => {
+    const lista = notas.filter((n) => n.data.localidad === l);
+    return lista.length ? rutasPaginadas({ localidad: l }, lista) : [];
+  });
+}
+
+interface Props { notas: Nota[]; pagina: number; total: number; cantidad: number }
+const { localidad } = Astro.params as { localidad: LocalidadId };
+const nombre = LOCALIDADES[localidad];
+const desc = `Noticias de ${nombre} hoy: lo que pasa en la ciudad, contado por Comunidad FAN Marcos Juárez.`;
+---
+<Listado
+  h1={`Noticias de ${nombre}`}
+  tituloSeo={`Noticias de ${nombre} hoy`}
+  descripcion={desc}
+  intro={desc}
+  base={`/localidad/${localidad}/`}
+  noindex={Astro.props.cantidad < MIN_NOTAS_INDEXAR}
+  {...Astro.props}
+/>

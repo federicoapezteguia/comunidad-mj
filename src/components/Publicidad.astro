@@ -1,0 +1,43 @@
+---
+import { BANNERS, MEDIDAS, type EspacioId } from '../data/publicidad';
+interface Props { espacio: EspacioId; class?: string }
+const { espacio, class: clase } = Astro.props;
+const hoy = new Date().toISOString().slice(0, 10);
+const vigentes = BANNERS[espacio].filter((b) => (!b.desde || b.desde <= hoy) && (!b.hasta || b.hasta >= hoy));
+const b = vigentes[0];
+const m = MEDIDAS[espacio];
+const ratio = `${m.w} / ${m.h}`;
+const ratioMovil = m.wMovil ? `${m.wMovil} / ${m.hMovil}` : ratio;
+---
+<aside class:list={['pub', espacio, clase]} aria-label="Publicidad" style={`--w:${m.w}px; --ratio:${ratio}; --ratio-movil:${ratioMovil}`}>
+  {b ? (
+    <a href={b.enlace} target="_blank" rel="sponsored noopener">
+      <picture>
+        {b.imagenMovil && <source media="(max-width: 720px)" srcset={b.imagenMovil} />}
+        <img src={b.imagen} alt={`Publicidad: ${b.anunciante}`} width={m.w} height={m.h} loading="lazy" />
+      </picture>
+    </a>
+  ) : (
+    <a href="/publicidad/" class="propia">
+      <span class="t1">Tu marca acá</span>
+      <span class="t2">Publicitá en Comunidad FAN Marcos Juárez</span>
+    </a>
+  )}
+</aside>
+
+<style>
+  .pub { width: 100%; max-width: var(--w); margin-inline: auto; aspect-ratio: var(--ratio); }
+  @media (max-width: 720px) { .pub { aspect-ratio: var(--ratio-movil); } }
+  .pub a, .pub picture, .pub img { display: block; width: 100%; height: 100%; }
+  .pub img { object-fit: cover; }
+  .propia {
+    display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    background: var(--lila-claro); border: 2px dashed #b9a3d6; border-radius: var(--radio);
+    text-align: center; padding: 12px;
+  }
+  .t1 { font-size: 15px; font-weight: 800; color: var(--violeta); text-transform: uppercase; letter-spacing: 0.04em; }
+  .t2 { font-size: 12px; font-weight: 600; color: var(--gris); }
+  .campanas .propia { background: var(--violeta); border: 0; border-radius: 0; }
+  .campanas .t1 { color: var(--amarillo); font-size: clamp(18px, 3vw, 34px); }
+  .campanas .t2 { color: #fff; font-size: clamp(12px, 1.4vw, 16px); }
+</style>

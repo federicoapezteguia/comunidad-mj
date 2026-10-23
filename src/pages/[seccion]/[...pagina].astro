@@ -1,0 +1,23 @@
+---
+import Listado from '../../components/Listado.astro';
+import { getNotas, type Nota } from '../../lib/notas';
+import { rutasPaginadas } from '../../lib/paginar';
+import { SECCIONES, SECCION_IDS, SITE, type SeccionId } from '../../config';
+
+export async function getStaticPaths() {
+  const notas = await getNotas();
+  return SECCION_IDS.flatMap((s) => rutasPaginadas({ seccion: s }, notas.filter((n) => n.data.seccion === s)));
+}
+
+interface Props { notas: Nota[]; pagina: number; total: number }
+const { seccion } = Astro.params as { seccion: SeccionId };
+const s = SECCIONES[seccion];
+---
+<Listado
+  h1={s.nombre}
+  tituloSeo={s.titulo}
+  descripcion={s.descripcion}
+  intro={s.descripcion}
+  base={`/${seccion}/`}
+  {...Astro.props}
+/>

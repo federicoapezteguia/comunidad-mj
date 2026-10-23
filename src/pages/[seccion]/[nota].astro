@@ -1,0 +1,200 @@
+---
+import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
+import { render, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import TarjetaNota from '../../components/TarjetaNota.astro';
+import Publicidad from '../../components/Publicidad.astro';
+import Compartir from '../../components/Compartir.astro';
+import { getNotas, relacionadas, volanta, fecha, hora, nombreEtiqueta, nombreLocalidad, minutosLectura, urlNota, type Nota } from '../../lib/notas';
+import { SECCIONES, SITE, type SeccionId } from '../../config';
+
+export async function getStaticPaths() {
+  const notas = await getNotas();
+  return notas.map((nota) => ({ params: { seccion: nota.data.seccion, nota: nota.id }, props: { nota, todas: notas } }));
+}
+
+interface Props { nota: Nota; todas: Nota[] }
+const { nota, todas } = Astro.props;
+const d = nota.data;
+const { Content } = await render(nota);
+const autor = await getEntry('autores', d.autor);
+const seccion = SECCIONES[d.seccion as SeccionId];
+const rel = relacionadas(nota, todas);
+const url = new URL(urlNota(nota), Astro.site).href;
+const lectura = minutosLectura(nota.body);
+
+const img = await getImage({ src: d.foto, width: 1200, height: 675, format: 'jpg', fit: 'cover' });
+const imgUrl = new URL(img.src, Astro.site).href;
+const autorUrl = new URL(`/autor/${d.autor}/`, Astro.site).href;
+
+const jsonLd: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': d.patrocinado ? 'Article' : 'NewsArticle',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    headline: d.titulo,
+    description: d.seoDescripcion ?? d.bajada,
+    image: [imgUrl],
+    datePublished: d.fecha.toISOString(),
+    dateModified: (d.actualizado ?? d.fecha).toISOString(),
+    articleSection: seccion.nombre,
+    keywords: d.etiquetas.map(nombreEtiqueta).join(', '),
+    inLanguage: 'es-AR',
+    author: [{ '@type': d.autor === 'redaccion' ? 'Organization' : 'Person', name: autor?.data.nombre, url: autorUrl }],
+    publisher: { '@id': new URL('/#organizacion', Astro.site).href },
+    ...(d.localidad ? { contentLocation: { '@type': 'Place', name: `${nombreLocalidad(d.localidad)}, Córdoba, Argentina` } } : {}),
+    ...(d.patrocinado && d.anunciante ? { sponsor: { '@type': 'Organization', name: d.anunciante } } : {}),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: new URL('/', Astro.site).href },
+      { '@type': 'ListItem', position: 2, name: seccion.nombre, item: new URL(`/${d.seccion}/`, Astro.site).href },
+      { '@type': 'ListItem', position: 3, name: d.titulo, item: url },
+    ],
+  },
+];
+if (d.youtube) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: d.titulo,
+    description: d.bajada,
+    thumbnailUrl: [imgUrl],
+    uploadDate: d.fecha.toISOString(),
+    embedUrl: `https://www.youtube-nocookie.com/embed/${d.youtube}`,
+  });
+}
+---
+<Base
+  titulo={d.seoTitulo ?? d.titulo}
+  descripcion={d.seoDescripcion ?? d.bajada}
+  imagen={d.foto}
+  imagenAlt={d.fotoAlt}
+  tipo="article"
+  articulo={{ publicado: d.fecha, modificado: d.actualizado, seccion: seccion.nombre, etiquetas: d.etiquetas.map(nombreEtiqueta), autor: autor?.data.nombre ?? SITE.nombre }}
+  jsonLd={jsonLd}
+>
+  <div class="wrap pub-sup"><Publicidad espacio="superior" /></div>
+
+  <div class="wrap con-lateral cuerpo-pagina">
+    <article class="principal nota" data-pagefind-body>
+      <nav aria-label="Ruta" class="ruta">
+        <a href="/">Inicio</a><span aria-hidden="true">›</span>
+        <a href={`/${d.seccion}/`} data-pagefind-filter="seccion">{seccion.nombre}</a>
+      </nav>
+
+      <span class="tag vol">{volanta(nota)}</span>
+      {d.patrocinado && (
+        <p class="aviso-marca">Contenido de marca{d.anunciante && <> · Presentado por <strong>{d.anuncianteUrl ? <a href={d.anuncianteUrl} rel="sponsored noopener" target="_blank">{d.anunciante}</a> : d.anunciante}</strong></>}</p>
+      )}
+      <h1>{d.titulo}</h1>
+      <p class="bajada">{d.bajada}</p>
+
+      <div class="meta">
+        <div class="autor">
+          <a href={`/autor/${d.autor}/`} class="autor-nombre" rel="author">Por {autor?.data.nombre}</a>
+          <span class="cuando">
+            <time datetime={d.fecha.toISOString()}>{fecha(d.fecha)} · {hora(d.fecha)} h</time>
+            {d.actualizado && <> · Actualizado <time datetime={d.actualizado.toISOString()}>{hora(d.actualizado)} h</time></>}
+            · {lectura} min de lectura
+          </span>
+        </div>
+        <Compartir url={url} titulo={d.titulo} />
+      </div>
+
+      <figure class="foto-principal">
+        <Image src={d.foto} alt={d.fotoAlt} widths={[480, 800, 1100, 1500]} sizes="(min-width: 1000px) 780px, 100vw" loading="eager" fetchpriority="high" data-pagefind-meta="image[src], image_alt[alt]" />
+        {(d.fotoCredito || d.fotoAlt) && <figcaption>{d.fotoAlt}{d.fotoCredito && <> · {d.fotoCredito}</>}</figcaption>}
+      </figure>
+
+      {d.youtube && (
+        <div class="video">
+          <iframe src={`https://www.youtube-nocookie.com/embed/${d.youtube}`} title={`Video: ${d.titulo}`} loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      )}
+      {d.audio && (
+        <div class="audio"><span>Escuchá la entrevista</span><audio controls preload="none" src={d.audio}></audio></div>
+      )}
+
+      <div class="texto" id="texto-nota">
+        <Content />
+      </div>
+      <div id="pub-en-nota" class="pub-en-nota" data-pagefind-ignore><Publicidad espacio="en-nota" /></div>
+      <script is:inline>
+        // Ubica el banner después del 3.er párrafo (antes de que se pinte la página).
+        (function () {
+          var t = document.getElementById('texto-nota');
+          var p = document.getElementById('pub-en-nota');
+          var ps = t ? t.querySelectorAll(':scope > p') : [];
+          if (p && ps.length >= 4) ps[2].after(p);
+        })();
+      </script>
+
+      {d.etiquetas.length > 0 && (
+        <ul class="etiquetas" aria-label="Etiquetas">
+          {d.localidad && <li><a href={`/localidad/${d.localidad}/`}>{nombreLocalidad(d.localidad)}</a></li>}
+          {d.etiquetas.map((e) => <li><a href={`/etiqueta/${e}/`} data-pagefind-filter="etiqueta">{nombreEtiqueta(e)}</a></li>)}
+        </ul>
+      )}
+      <Compartir url={url} titulo={d.titulo} />
+    </article>
+
+    <aside class="lateral">
+      <div class="pegajoso"><Publicidad espacio="lateral-largo" /></div>
+    </aside>
+  </div>
+
+  {rel.length > 0 && (
+    <section class="wrap bloque" aria-labelledby="h-rel">
+      <h2 id="h-rel" class="sec-h">Más de {seccion.nombre}</h2>
+      <div class="grid-notas">{rel.map((n) => <TarjetaNota nota={n} />)}</div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .pub-sup { padding-block: 20px; }
+  .cuerpo-pagina { padding-top: 16px; }
+  .nota { max-width: 780px; }
+  .ruta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 13px; font-weight: 600; color: var(--gris); }
+  .ruta a { color: var(--gris); }
+  .vol { margin-top: 18px; border-radius: 0 var(--radio) var(--radio) 0; }
+  .aviso-marca { margin: 12px 0 0; font-size: 13px; font-weight: 600; color: #6b5300; background: #fff8e0; padding: 8px 12px; border-radius: var(--radio); }
+  h1 { margin: 14px 0; font-size: clamp(28px, 4.2vw, 42px); font-weight: 800; color: var(--violeta); line-height: 1.15; }
+  .bajada { margin: 0 0 22px; font-size: clamp(18px, 2.2vw, 21px); line-height: 1.45; color: #3d4450; }
+  .meta {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px;
+    padding: 14px 0; border-block: 1px solid var(--borde);
+  }
+  .autor { display: flex; flex-direction: column; }
+  .autor-nombre { font-weight: 800; font-size: 15px; }
+  .cuando { font-size: 13px; color: var(--gris); }
+  .foto-principal { margin: 24px 0 28px; }
+  .foto-principal :global(img) { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--lila); }
+  figcaption { margin-top: 8px; font-size: 13px; color: var(--gris); }
+  .video { position: relative; aspect-ratio: 16 / 9; margin: 0 0 28px; background: #000; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .audio { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; margin: 0 0 28px; background: var(--lila-claro); border-radius: var(--radio); }
+  .audio span { font-size: 12px; font-weight: 800; color: var(--fucsia-oscuro); text-transform: uppercase; letter-spacing: 0.08em; }
+  .audio audio { width: 100%; }
+
+  .texto :global(p), .texto :global(li) { font-size: 18px; line-height: 1.7; }
+  .texto :global(p) { margin: 0 0 22px; }
+  .texto :global(h2) { margin: 36px 0 14px; font-size: 25px; font-weight: 800; color: var(--violeta); }
+  .texto :global(h3) { margin: 28px 0 12px; font-size: 20px; font-weight: 800; color: var(--violeta); }
+  .texto :global(a) { color: var(--fucsia-oscuro); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+  .texto :global(ul), .texto :global(ol) { margin: 0 0 22px; padding-left: 22px; }
+  .texto :global(blockquote) { margin: 28px 0; padding: 4px 0 4px 20px; border-left: 4px solid var(--fucsia); font-size: 21px; font-weight: 600; color: var(--violeta); }
+  .texto :global(img) { margin: 8px 0 24px; }
+  .texto :global(strong) { font-weight: 700; }
+
+  .etiquetas { list-style: none; padding: 0; margin: 28px 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .etiquetas a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid #cdbde2; border-radius: 500px; font-size: 13px; font-weight: 700; }
+  .etiquetas a:hover { background: var(--violeta); color: #fff; border-color: var(--violeta); }
+  .pegajoso { position: sticky; top: 24px; width: 100%; }
+  .pub-en-nota { margin: 8px 0 30px; }
+  .texto :global(.pub a) { text-decoration: none; font-weight: inherit; color: inherit; }
+</style>

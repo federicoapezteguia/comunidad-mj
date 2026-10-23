@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+interface Props { titulo: string; descripcion: string }
+const { titulo, descripcion } = Astro.props;
+---
+<Base titulo={titulo} descripcion={descripcion}>
+  <div class="wrap simple">
+    <h1 class="sec-h">{titulo}</h1>
+    <div class="texto"><slot /></div>
+  </div>
+</Base>
+<style>
+  .simple { padding-top: 32px; max-width: 860px; }
+  .texto :global(p), .texto :global(li) { font-size: 17px; line-height: 1.7; }
+  .texto :global(h2) { font-size: 22px; color: var(--violeta); margin: 32px 0 12px; }
+  .texto :global(a) { color: var(--fucsia-oscuro); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .texto :global(table) { border-collapse: collapse; width: 100%; margin: 12px 0 24px; font-size: 15px; }
+  .texto :global(th), .texto :global(td) { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--borde); }
+  .texto :global(th) { color: var(--violeta); }
+</style>

@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base titulo="Buscar noticias" descripcion="Buscá noticias de Marcos Juárez, Córdoba y el país en Comunidad FAN Marcos Juárez." noindex>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <div class="wrap buscar">
+    <h1 class="sec-h">Buscar noticias</h1>
+    <div id="buscador"></div>
+    <noscript>El buscador necesita JavaScript activado.</noscript>
+  </div>
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!window.PagefindUI) {
+        document.getElementById('buscador').textContent = 'El buscador se activa cuando el sitio está publicado.';
+        return;
+      }
+      var ui = new PagefindUI({
+        element: '#buscador',
+        showSubResults: false,
+        showImages: true,
+        resetStyles: false,
+        translations: { placeholder: 'Escribí lo que buscás: concejo, agro, cuarteto…', zero_results: 'No encontramos notas para [SEARCH_TERM]', filters_label: 'Filtros', load_more: 'Ver más resultados' },
+      });
+      var q = new URLSearchParams(location.search).get('q');
+      if (q) ui.triggerSearch(q);
+    });
+  </script>
+</Base>
+<style>
+  .buscar { padding-top: 32px; min-height: 60vh; }
+  .buscar :global(.pagefind-ui) {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--violeta);
+    --pagefind-ui-text: var(--texto);
+    --pagefind-ui-background: #fff;
+    --pagefind-ui-border: var(--borde);
+    --pagefind-ui-tag: var(--lila-claro);
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-font: var(--fuente);
+  }
+  .buscar :global(.pagefind-ui__result-link) { color: var(--violeta); font-weight: 700; }
+  .buscar :global(mark) { background: #ffe680; }
+</style>

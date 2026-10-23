@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import Listado from '../../../components/Listado.astro';
+import { getNotas, type Nota } from '../../../lib/notas';
+import { rutasPaginadas } from '../../../lib/paginar';
+
+export async function getStaticPaths() {
+  const notas = await getNotas();
+  const autores = await getCollection('autores');
+  return autores.flatMap((a) =>
+    rutasPaginadas({ autor: a.id }, notas.filter((n) => n.data.autor === a.id), { autorData: a.data }),
+  );
+}
+
+interface Props { notas: Nota[]; pagina: number; total: number; autorData: { nombre: string; rol: string; bio: string } }
+const { autor } = Astro.params;
+const a = Astro.props.autorData;
+---
+<Listado
+  h1={a.nombre}
+  tituloSeo={`${a.nombre}: notas`}
+  descripcion={a.bio}
+  intro={`${a.rol}. ${a.bio}`}
+  base={`/autor/${autor}/`}
+  {...Astro.props}
+/>

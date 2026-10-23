@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+---
+<Base titulo={`Escuchá ${SITE.nombre} en vivo`} descripcion={`Radio en vivo: escuchá Comunidad FAN Marcos Juárez, FM ${SITE.frecuencia}, desde el celular o la computadora.`}>
+  <div class="vivo-pagina">
+    <div class="wrap contenido">
+      <a href="/" class="boton boton-amarillo volver" data-volver>Volver al sitio</a>
+      <h1>Comunidad FAN Marcos Juárez <span>en vivo</span></h1>
+      <p class="frec">FM {SITE.frecuencia} · {SITE.ciudad}, {SITE.provincia}</p>
+      <div class="reproductor">
+        <iframe src={SITE.reproductor} title="Reproductor de Comunidad FAN en vivo" allow="autoplay; encrypted-media" loading="eager"></iframe>
+      </div>
+      <p class="ayuda">Tocá ▶ en el reproductor para escuchar. Podés seguir navegando el sitio en otra pestaña.</p>
+    </div>
+  </div>
+</Base>
+
+<script is:inline>
+  // Si se abrió como ventana emergente, "Volver" cierra la ventana.
+  if (new URLSearchParams(location.search).get('ventana')) {
+    document.documentElement.classList.add('modo-ventana');
+    var v = document.querySelector('[data-volver]');
+    if (v) { v.textContent = 'Cerrar'; v.addEventListener('click', function (e) { e.preventDefault(); window.close(); }); }
+  }
+</script>
+
+<style>
+  .vivo-pagina { background: var(--fucsia); padding: 32px 0 48px; margin-bottom: -64px; }
+  .contenido { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+  .volver { align-self: flex-start; }
+  h1 { margin: 12px 0 0; font-size: clamp(24px, 4vw, 36px); font-weight: 900; color: var(--violeta); }
+  h1 span { display: block; color: var(--blanco); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.6em; }
+  .frec { margin: 0; font-weight: 700; color: var(--violeta); }
+  .reproductor { width: 100%; max-width: 380px; aspect-ratio: 380 / 560; border-radius: 16px; overflow: hidden; background: #1a1a1a; box-shadow: 0 16px 40px rgba(45, 0, 93, 0.35); margin-top: 12px; }
+  .reproductor iframe { width: 100%; height: 100%; border: 0; }
+  .ayuda { margin: 8px 0 0; max-width: 420px; font-size: 14px; font-weight: 600; color: var(--violeta); }
+  :global(.modo-ventana header), :global(.modo-ventana footer), :global(.modo-ventana .barra) { display: none; }
+  :global(.modo-ventana) .vivo-pagina { min-height: 100vh; margin: 0; padding-top: 16px; }
+</style>

@@ -1,0 +1,15 @@
+---
+import PaginaSimple from '../components/PaginaSimple.astro';
+import { SITE } from '../config';
+const wa = SITE.whatsapp ? `https://wa.me/${SITE.whatsapp}` : '';
+---
+<PaginaSimple titulo="Contacto" descripcion={`Contactate con ${SITE.nombre}: WhatsApp, teléfono y email de la redacción.`}>
+  <p>¿Tenés una noticia, una foto o un dato de lo que pasa en tu barrio? Escribinos.</p>
+  {wa && <p><a href={wa} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">Escribinos por WhatsApp</a></p>}
+  <ul>
+    <li><strong>Teléfono:</strong> {SITE.telefono}</li>
+    <li><strong>Email:</strong> {SITE.email}</li>
+    <li><strong>Dirección:</strong> {SITE.direccion}, {SITE.ciudad}, {SITE.provincia}</li>
+  </ul>
+  <p>Para publicidad, mirá la página de <a href="/publicidad/">Publicidad</a>.</p>
+</PaginaSimple>

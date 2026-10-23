@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import TarjetaNota from '../components/TarjetaNota.astro';
+import { getNoticias } from '../lib/notas';
+const ultimas = (await getNoticias()).slice(0, 4);
+---
+<Base titulo="Página no encontrada" noindex>
+  <div class="wrap no">
+    <h1>No encontramos esta página</h1>
+    <p>Puede que la nota haya cambiado de dirección. Probá con el <a href="/buscar/">buscador</a> o mirá las últimas noticias.</p>
+    <div class="grid-notas">{ultimas.map((n) => <TarjetaNota nota={n} />)}</div>
+  </div>
+</Base>
+<style>
+  .no { padding-top: 40px; }
+  h1 { color: var(--violeta); font-size: 32px; margin: 0 0 8px; }
+  p { margin: 0 0 32px; font-size: 17px; }
+  p a { color: var(--fucsia-oscuro); font-weight: 700; text-decoration: underline; }
+</style>

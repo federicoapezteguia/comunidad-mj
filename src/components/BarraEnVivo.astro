@@ -1,0 +1,60 @@
+---
+import { SITE } from '../config';
+---
+<div class="barra" role="region" aria-label="Radio en vivo">
+  <div class="wrap fila">
+    <a href="/en-vivo/" class="play" data-abrir-radio aria-label="Escuchar Comunidad FAN Marcos Juárez en vivo">
+      <svg width="18" height="18" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1l8 5-8 5z" fill="currentColor"></path></svg>
+    </a>
+    <div class="texto">
+      <span class="vivo"><span class="punto" aria-hidden="true"></span>En vivo · FM {SITE.frecuencia}</span>
+      <span class="nombre">Escuchá Comunidad FAN Marcos Juárez</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Abre el reproductor en una ventana chica para que la radio siga
+  // sonando mientras se navega el sitio. Si el navegador bloquea la
+  // ventana, el enlace abre la página /en-vivo/ normalmente.
+  document.querySelectorAll<HTMLAnchorElement>('[data-abrir-radio]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      if (window.matchMedia('(max-width: 720px)').matches) return;
+      const w = window.open('/en-vivo/?ventana=1', 'radio-fan', 'width=420,height=720');
+      if (w) {
+        e.preventDefault();
+        w.focus();
+      }
+    });
+  });
+</script>
+
+<style>
+  .barra {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background: var(--violeta-noche);
+    padding: 8px 0;
+    box-shadow: 0 -4px 16px rgba(30, 0, 64, 0.25);
+  }
+  .fila { display: flex; align-items: center; gap: 14px; }
+  .play {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; flex: none; border-radius: 50%;
+    background: var(--fucsia); color: var(--violeta-noche);
+  }
+  .play:hover { color: var(--violeta-noche); transform: scale(1.05); }
+  .texto { display: flex; flex-direction: column; min-width: 0; }
+  .vivo {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 800; color: var(--amarillo);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .punto { width: 8px; height: 8px; border-radius: 50%; background: var(--amarillo); animation: latido 1.6s infinite; }
+  .nombre { font-size: 15px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @keyframes latido { 50% { opacity: 0.3; } }
+  @media (prefers-reduced-motion: reduce) { .punto { animation: none; } }
+</style>

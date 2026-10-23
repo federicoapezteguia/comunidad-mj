@@ -1,0 +1,164 @@
+---
+import Base from '../layouts/Base.astro';
+import TarjetaNota from '../components/TarjetaNota.astro';
+import Publicidad from '../components/Publicidad.astro';
+import Ranking from '../components/Ranking.astro';
+import { getNotas, type Nota } from '../lib/notas';
+import { SITE, SECCIONES, type SeccionId } from '../config';
+
+const todas = await getNotas();
+const noticias = todas.filter((n) => !n.data.patrocinado);
+const usadas = new Set<string>();
+const tomar = (lista: Nota[], cant: number) => {
+  const r = lista.filter((n) => !usadas.has(n.id)).slice(0, cant);
+  r.forEach((n) => usadas.add(n.id));
+  return r;
+};
+
+// Destacadas: las marcadas como destacadas; si faltan, las últimas.
+const destacadas = tomar([...noticias.filter((n) => n.data.destacada), ...noticias], 3);
+const deSeccion = (s: SeccionId) => noticias.filter((n) => n.data.seccion === s);
+const mj = tomar(deSeccion('marcos-juarez'), 6);
+const cba = tomar(deSeccion('cordoba'), 4);
+const nac = tomar(deSeccion('nacionales'), 6);
+const mus = tomar(deSeccion('musica'), 3);
+const od = tomar(deSeccion('on-demand'), 3);
+const marca = todas.filter((n) => n.data.patrocinado).slice(0, 2);
+const ultimas = noticias.slice(0, 5);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.nombre,
+    url: new URL('/', Astro.site).href,
+    inLanguage: 'es-AR',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: new URL('/buscar/?q={search_term_string}', Astro.site).href,
+      'query-input': 'required name=search_term_string',
+    },
+  },
+];
+---
+<Base titulo={`${SITE.nombre} | Noticias de Marcos Juárez y Córdoba hoy`} jsonLd={jsonLd}>
+  <h1 class="sr-only">{SITE.nombre}: noticias de Marcos Juárez, Córdoba y el país</h1>
+
+  <div class="wrap pub-sup"><Publicidad espacio="superior" /></div>
+
+  {destacadas.length > 0 && (
+    <section class="wrap destacadas" aria-label="Noticias destacadas">
+      <div class="d-principal">
+        <TarjetaNota nota={destacadas[0]} variante="superpuesta" tamanio="grande" titular="h2" prioridad />
+      </div>
+      <div class="d-lado">
+        {destacadas.slice(1).map((n) => <TarjetaNota nota={n} variante="superpuesta" titular="h2" />)}
+      </div>
+    </section>
+  )}
+
+  <section class="wrap bloque" aria-labelledby="h-mj">
+    <div class="con-lateral">
+      <div class="principal">
+        <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
+        <div class="grid-notas">{mj.map((n) => <TarjetaNota nota={n} />)}</div>
+      </div>
+      <div class="lateral">
+        <Publicidad espacio="lateral" />
+        <div class="ultimas">
+          <h2 class="sec-h chico">Lo último</h2>
+          <ol>
+            {ultimas.map((n, i) => (
+              <li><span class="num" aria-hidden="true">{i + 1}</span><a href={`/${n.data.seccion}/${n.id}/`}>{n.data.titulo}</a></li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap bloque" aria-label="Campañas"><Publicidad espacio="campanas" /></section>
+
+  {cba.length > 0 && (
+    <section class="wrap bloque" aria-labelledby="h-cba">
+      <h2 id="h-cba" class="sec-h"><a href="/cordoba/">{SECCIONES.cordoba.nombre}</a><a href="/cordoba/" class="mas">Ver todas</a></h2>
+      <div class="grid-notas">{cba.map((n) => <TarjetaNota nota={n} />)}</div>
+    </section>
+  )}
+
+  {nac.length > 0 && (
+    <section class="wrap bloque" aria-labelledby="h-nac">
+      <div class="con-lateral">
+        <div class="principal">
+          <h2 id="h-nac" class="sec-h"><a href="/nacionales/">{SECCIONES.nacionales.nombre}</a><a href="/nacionales/" class="mas">Ver todas</a></h2>
+          <div class="lista-comp">{nac.map((n) => <TarjetaNota nota={n} variante="compacta" />)}</div>
+        </div>
+        <div class="lateral"><Publicidad espacio="lateral" /></div>
+      </div>
+    </section>
+  )}
+
+  <section class="wrap bloque" aria-labelledby="h-mus">
+    <div class="con-lateral">
+      <div class="principal">
+        <h2 id="h-mus" class="sec-h"><a href="/musica/">{SECCIONES.musica.nombre}</a><a href="/musica/" class="mas">Ver todas</a></h2>
+        <div class="grid-notas">{mus.map((n) => <TarjetaNota nota={n} />)}</div>
+      </div>
+      <div class="lateral"><Ranking /></div>
+    </div>
+  </section>
+
+  {od.length > 0 && (
+    <section class="franja-od" aria-labelledby="h-od">
+      <div class="wrap">
+        <h2 id="h-od" class="sec-h claro"><a href="/on-demand/">On Demand</a><a href="/on-demand/" class="mas">Ver todo</a></h2>
+        <div class="grid-notas">{od.map((n) => <TarjetaNota nota={n} variante="video" />)}</div>
+      </div>
+    </section>
+  )}
+
+  {marca.length > 0 && (
+    <section class="wrap bloque" aria-labelledby="h-marca">
+      <h2 id="h-marca" class="sec-h">Contenido de marca</h2>
+      <div class="grid-marca">
+        {marca.map((n) => (
+          <a href={`/${n.data.seccion}/${n.id}/`} class="marca">
+            <span class="m-vol">Tomá nota · Contenido de marca</span>
+            <span class="m-tit">{n.data.titulo}</span>
+            {n.data.anunciante && <span class="m-anun">Presentado por {n.data.anunciante}</span>}
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .pub-sup { padding-block: 20px; }
+  .destacadas { display: grid; gap: 4px; grid-template-columns: 1fr; }
+  .d-lado { display: grid; gap: 4px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+  @media (min-width: 900px) {
+    .destacadas { grid-template-columns: 2fr 1fr; min-height: 480px; }
+    .d-lado { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  }
+  .d-principal { display: grid; }
+
+  .sec-h.chico { font-size: 18px; }
+  .ultimas { width: 100%; }
+  .ultimas ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+  .ultimas li { display: flex; gap: 12px; align-items: flex-start; }
+  .num { font-size: 28px; font-weight: 900; color: var(--fucsia); line-height: 1; min-width: 20px; }
+  .ultimas a { font-size: 15px; font-weight: 700; line-height: 1.35; }
+
+  .lista-comp { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 22px 28px; }
+
+  .franja-od { margin-top: 56px; background: var(--violeta); padding: 48px 0 56px; }
+  .sec-h.claro { color: #fff; border-bottom-color: var(--fucsia); }
+  .sec-h.claro .mas { color: var(--amarillo); }
+
+  .grid-marca { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 20px; }
+  .marca { display: flex; flex-direction: column; gap: 6px; padding: 20px 22px; background: #fff8e0; border-radius: var(--radio); }
+  .m-vol { font-size: 11px; font-weight: 800; color: #6b5300; letter-spacing: 0.08em; text-transform: uppercase; }
+  .m-tit { font-size: 18px; font-weight: 700; color: var(--violeta); line-height: 1.3; }
+  .m-anun { font-size: 13px; color: var(--gris); }
+</style>
