@@ -48,9 +48,10 @@ import { SITE } from '../config';
     audio.src = stream; // siempre la señal en vivo, sin demora acumulada
     try {
       await audio.play();
-    } catch {
+    } catch (err) {
       marcar('parado');
-      window.open(externo, '_blank', 'noopener');
+      // Si el navegador bloqueó la reproducción, no abrimos nada: alcanza con volver a tocar play.
+      if ((err as DOMException)?.name !== 'NotAllowedError') window.open(externo, '_blank', 'noopener');
     }
   }
   function pausar() {
