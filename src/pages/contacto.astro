@@ -1,15 +1,16 @@
 ---
 import PaginaSimple from '../components/PaginaSimple.astro';
 import { SITE } from '../config';
-const wa = SITE.whatsapp ? `https://wa.me/${SITE.whatsapp}` : '';
+const waRadio = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola Comunidad FAN Marcos Juárez! ')}`;
+const waComercial = `https://wa.me/${SITE.whatsappComercial}?text=${encodeURIComponent('Hola, quiero información para publicitar en Comunidad FAN Marcos Juárez')}`;
 ---
-<PaginaSimple titulo="Contacto" descripcion={`Contactate con ${SITE.nombre}: WhatsApp, teléfono y email de la redacción.`}>
-  <p>¿Tenés una noticia, una foto o un dato de lo que pasa en tu barrio? Escribinos.</p>
-  {wa && <p><a href={wa} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">Escribinos por WhatsApp</a></p>}
-  <ul>
-    <li><strong>Teléfono:</strong> {SITE.telefono}</li>
-    <li><strong>Email:</strong> {SITE.email}</li>
-    <li><strong>Dirección:</strong> {SITE.direccion}, {SITE.ciudad}, {SITE.provincia}</li>
-  </ul>
-  <p>Para publicidad, mirá la página de <a href="/publicidad/">Publicidad</a>.</p>
+<PaginaSimple titulo="Contacto" descripcion={`Contactate con ${SITE.nombre}: WhatsApp para saludos y mensajes a la radio, y contacto comercial.`}>
+  <h2>Mensajes y saludos para la radio</h2>
+  <p>¿Querés mandar un saludo, pedir un tema o contarnos algo que pasa en tu barrio? Escribinos al aire por WhatsApp.</p>
+  <p><a href={waRadio} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">WhatsApp de la radio · {SITE.whatsappVisible}</a></p>
+
+  <h2>Contacto comercial</h2>
+  <p>Para publicidad, banners, publinotas y menciones al aire.</p>
+  <p><a href={waComercial} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">WhatsApp comercial · {SITE.whatsappComercialVisible}</a></p>
+  <p>Más información en la página de <a href="/publicidad/">Publicidad</a>.</p>
 </PaginaSimple>

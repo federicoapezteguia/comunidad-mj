@@ -1,7 +1,7 @@
 ---
 import PaginaSimple from '../components/PaginaSimple.astro';
 import { SITE } from '../config';
-const wa = SITE.whatsapp ? `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola, quiero información para publicitar en Comunidad FAN Marcos Juárez')}` : '';
+const wa = SITE.whatsappComercial ? `https://wa.me/${SITE.whatsappComercial}?text=${encodeURIComponent('Hola, quiero información para publicitar en Comunidad FAN Marcos Juárez')}` : '';
 ---
 <PaginaSimple titulo="Publicitá en Comunidad FAN Marcos Juárez" descripcion="Banners, publinotas y menciones al aire para comercios y empresas de Marcos Juárez y el sudeste cordobés.">
   <p>Llegá a los vecinos de {SITE.ciudad} y la región en la web, en el aire y en redes.</p>
@@ -18,5 +18,5 @@ const wa = SITE.whatsapp ? `https://wa.me/${SITE.whatsapp}?text=${encodeURICompo
   </table>
   <h2>Contenido de marca</h2>
   <p>Publinotas sobre tu negocio, siempre identificadas como contenido de marca, que se pueden combinar con menciones al aire y publicaciones en redes.</p>
-  {wa ? <p><a href={wa} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">Pedí tarifas por WhatsApp</a></p> : <p>Pedí tarifas a {SITE.email} o al {SITE.telefono}.</p>}
+  {wa ? <p><a href={wa} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">Pedí tarifas por WhatsApp · {SITE.whatsappComercialVisible}</a></p> : <p>Pedí tarifas a {SITE.email} o al {SITE.telefono}.</p>}
 </PaginaSimple>

@@ -10,6 +10,10 @@ import { SITE } from '../config';
       <span class="vivo"><span class="punto" aria-hidden="true"></span>En vivo · FM {SITE.frecuencia}</span>
       <span class="nombre">Escuchá Comunidad FAN Marcos Juárez</span>
     </div>
+    <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola Comunidad FAN Marcos Juárez! ')}`} target="_blank" rel="noopener" class="saludo" aria-label="Mandá tu saludo a la radio por WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.5-4A8 8 0 1 1 8 18.5z"></path></svg>
+      <span class="saludo-txt">Mandá tu saludo</span>
+    </a>
   </div>
 </div>
 
@@ -41,6 +45,13 @@ import { SITE } from '../config';
     box-shadow: 0 -4px 16px rgba(30, 0, 64, 0.25);
   }
   .fila { display: flex; align-items: center; gap: 14px; }
+  .saludo {
+    margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 8px;
+    min-height: 44px; min-width: 44px; justify-content: center; padding: 0 16px; border-radius: 500px;
+    background: #1f7a3a; color: #fff; font-weight: 800; font-size: 14px;
+  }
+  .saludo:hover { background: #18652f; color: #fff; }
+  @media (max-width: 560px) { .saludo { padding: 0; width: 44px; } .saludo-txt { display: none; } }
   .play {
     display: inline-flex; align-items: center; justify-content: center;
     width: 48px; height: 48px; flex: none; border-radius: 50%;
