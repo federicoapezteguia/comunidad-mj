@@ -1,5 +1,4 @@
 ---
-import Logo from './Logo.astro';
 import Redes from './Redes.astro';
 import { SITE, SECCIONES } from '../config';
 const anio = new Date().getFullYear();
@@ -7,7 +6,7 @@ const anio = new Date().getFullYear();
 <footer class="footer">
   <div class="wrap fila">
     <div class="datos">
-      <Logo tam="chico" />
+      <img src={SITE.logoSenal.src} alt={SITE.logoSenal.alt} title={SITE.logoSenal.titulo} width={SITE.logoSenal.w} height={SITE.logoSenal.h} loading="lazy" class="logo-senal" />
       <p>
         FM {SITE.frecuencia} · {SITE.ciudad}, {SITE.provincia}<br />
         Saludos al aire: {SITE.whatsappVisible}<br />
@@ -40,6 +39,7 @@ const anio = new Date().getFullYear();
   .footer { background: var(--fucsia); color: var(--violeta); padding: 40px 0 96px; margin-top: 64px; }
   .fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
   .datos { max-width: 340px; display: flex; flex-direction: column; gap: 12px; }
+  .logo-senal { width: 130px; height: auto; }
   .datos p { margin: 0; font-size: 14px; font-weight: 600; }
   h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }

@@ -3,6 +3,9 @@ import PaginaSimple from '../components/PaginaSimple.astro';
 import { SITE } from '../config';
 ---
 <PaginaSimple titulo="Quiénes somos" descripcion={`${SITE.nombre}: la señal de la red Comunidad FAN en Marcos Juárez, Córdoba. Noticias, música y radio en vivo.`}>
+  <figure class="logo-qs">
+    <img src={SITE.logoSenal.src} alt={SITE.logoSenal.alt} title={SITE.logoSenal.titulo} width={SITE.logoSenal.w} height={SITE.logoSenal.h} loading="lazy" />
+  </figure>
   <p><strong>{SITE.nombre}</strong> es la señal de la red Comunidad FAN en {SITE.ciudad}, provincia de {SITE.provincia}. Salimos al aire por FM {SITE.frecuencia} y en este sitio contamos lo que pasa en la ciudad, la región, la provincia y el país.</p>
   <p>Comunidad FAN es un medio multiplataforma nacido en Rosario que hoy llega a decenas de ciudades del país con radio, streaming y contenidos digitales. <a href={SITE.red} target="_blank" rel="noopener">Conocé la red</a>.</p>
   <h2>Contacto de la redacción</h2>
@@ -13,3 +16,7 @@ import { SITE } from '../config';
   <h2>Nuestro equipo</h2>
   <p>[Completar con el equipo de la señal: nombre, rol y una línea de cada persona.]</p>
 </PaginaSimple>
+<style>
+  .logo-qs { margin: 0 0 20px; }
+  .logo-qs img { width: 200px; height: auto; }
+</style>

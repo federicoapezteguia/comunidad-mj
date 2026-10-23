@@ -40,6 +40,15 @@ export const SITE = {
     x: '',
   },
 
+  // Logo de la señal (PNG transparente)
+  logoSenal: {
+    src: '/img/fm-99-9-marcos-juarez-comunidad-fan.png',
+    alt: 'Logo FM 99.9 Marcos Juárez, Comunidad FAN',
+    titulo: 'FM 99.9 Marcos Juárez – Comunidad FAN, radio en vivo',
+    w: 498,
+    h: 555,
+  },
+
   // Sitio madre
   red: 'https://comunidad.fan/',
 };

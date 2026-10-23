@@ -52,7 +52,9 @@ const organizacion = {
   '@id': new URL('/#organizacion', Astro.site).href,
   name: SITE.nombre,
   url: new URL('/', Astro.site).href,
-  logo: { '@type': 'ImageObject', url: new URL('/logo-cuadrado.png', Astro.site).href, width: 512, height: 512 },
+  logo: { '@type': 'ImageObject', url: new URL(SITE.logoSenal.src, Astro.site).href, width: SITE.logoSenal.w, height: SITE.logoSenal.h, caption: SITE.logoSenal.titulo },
+  image: new URL(SITE.logoSenal.src, Astro.site).href,
+  broadcastFrequency: `FM ${SITE.frecuencia}`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: SITE.direccion,

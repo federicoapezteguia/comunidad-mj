@@ -5,6 +5,7 @@ import { SITE } from '../config';
 <Base titulo={`Escuchá ${SITE.nombre} en vivo · FM ${SITE.frecuencia}`} descripcion={`Radio en vivo: escuchá Comunidad FAN Marcos Juárez, FM ${SITE.frecuencia}, desde el celular o la computadora.`}>
   <div class="vivo-pagina">
     <div class="wrap contenido">
+      <img src={SITE.logoSenal.src} alt={SITE.logoSenal.alt} title={SITE.logoSenal.titulo} width={SITE.logoSenal.w} height={SITE.logoSenal.h} class="logo-senal" fetchpriority="high" />
       <span class="estado"><span class="punto" aria-hidden="true"></span>Al aire ahora</span>
       <h1>Comunidad FAN Marcos Juárez <span>FM {SITE.frecuencia}</span></h1>
       <p class="frec">Escuchanos en vivo desde {SITE.ciudad} y desde cualquier lugar.</p>
@@ -24,6 +25,7 @@ import { SITE } from '../config';
 <style>
   .vivo-pagina { background: var(--fucsia); padding: 56px 0 72px; margin-bottom: -64px; }
   .contenido { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+  .logo-senal { width: min(240px, 60vw); height: auto; filter: drop-shadow(0 10px 24px rgba(45, 0, 93, 0.35)); }
   .estado {
     display: inline-flex; align-items: center; gap: 8px; background: var(--violeta); color: var(--amarillo);
     font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 500px;
