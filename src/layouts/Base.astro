@@ -5,6 +5,7 @@ import type { ImageMetadata } from 'astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BarraEnVivo from '../components/BarraEnVivo.astro';
+import WhatsAppFlotante from '../components/WhatsAppFlotante.astro';
 import { SITE } from '../config';
 import fallbackOg from '../assets/og-default.png';
 
@@ -117,5 +118,6 @@ const organizacion = {
     </main>
     {!sinMarco && <Footer />}
     {!sinMarco && <BarraEnVivo />}
+    {!sinMarco && <WhatsAppFlotante />}
   </body>
 </html>
