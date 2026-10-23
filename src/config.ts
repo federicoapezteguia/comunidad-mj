@@ -14,7 +14,7 @@ export const SITE = {
   zonaHoraria: 'America/Argentina/Cordoba',
 
   // --- Señal de radio ---
-  frecuencia: '[FRECUENCIA]', // ej. '99.5'
+  frecuencia: '99.9',
   direccion: '[DIRECCIÓN]', // ej. 'San Martín 123'
   codigoPostal: '2580',
   telefono: '[TELÉFONO]',
@@ -26,7 +26,7 @@ export const SITE = {
 
   // Redes de la señal local (dejar vacío lo que no exista)
   redes: {
-    instagram: '',
+    instagram: 'https://www.instagram.com/comunidadfan.mj/',
     facebook: '',
     youtube: 'https://www.youtube.com/@ComunidadFAN',
     tiktok: '',

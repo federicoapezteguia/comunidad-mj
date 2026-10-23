@@ -1,42 +1,29 @@
 ---
-// Logo provisorio en texto. Cuando esté el archivo oficial,
-// subirlo a /public/logo.svg y cambiar USAR_ARCHIVO a true.
-const USAR_ARCHIVO = false;
+// Logo oficial de Comunidad FAN (public/logo.svg) + rótulo de la señal.
 interface Props { tam?: 'normal' | 'chico' }
 const { tam = 'normal' } = Astro.props;
 ---
-{USAR_ARCHIVO ? (
-  <img src="/logo.svg" alt="Comunidad FAN Marcos Juárez" width="180" height="64" class:list={['logo-img', tam]} />
-) : (
-  <span class:list={['logo', tam]}>
-    <span class="l1">comunidad</span>
-    <span class="l2">fan</span>
-    <span class="l3">Marcos Juárez</span>
-  </span>
-)}
+<span class:list={['logo', tam]}>
+  <img src="/logo.svg" alt="Comunidad FAN" width="1346" height="568" />
+  <span class="senal">Marcos Juárez</span>
+</span>
 
 <style>
-  .logo {
-    display: inline-flex;
-    flex-direction: column;
-    line-height: 0.95;
-    color: var(--violeta);
-  }
-  .l1 { font-size: 13px; font-weight: 700; letter-spacing: 0.01em; }
-  .l2 { font-size: 38px; font-weight: 900; letter-spacing: -0.03em; }
-  .l3 {
+  .logo { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  img { height: 58px; width: auto; display: block; }
+  .chico img { height: 46px; }
+  .senal {
     font-size: 10.5px;
     font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--blanco);
     background: var(--violeta);
-    padding: 3px 6px 2px;
-    margin-top: 3px;
+    padding: 3px 7px 2px;
     border-radius: 3px;
-    align-self: flex-start;
+    line-height: 1.2;
   }
-  .chico .l2 { font-size: 28px; }
-  .logo-img { height: 64px; width: auto; }
-  .logo-img.chico { height: 48px; }
+  @media (max-width: 480px) {
+    img { height: 48px; }
+  }
 </style>
