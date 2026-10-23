@@ -27,6 +27,8 @@ export const SITE = {
 
   // Reproductor en vivo de la señal
   reproductor: 'https://comunidadmj.miradio.ar/',
+  // Stream en video (YouTube)
+  youtubeVivo: 'https://www.youtube.com/@ComunidadFAN',
 
   // Redes de la señal local (dejar vacío lo que no exista)
   redes: {

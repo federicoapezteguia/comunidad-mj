@@ -12,6 +12,10 @@ import { SITE } from '../config';
         <span class="circulo" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 12 12"><path d="M3 1l8 5-8 5z" fill="currentColor"></path></svg></span>
         Escuchar ahora
       </a>
+      <a href={SITE.youtubeVivo} target="_blank" rel="noopener" class="mirar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="M10 9l5 3-5 3z" fill="currentColor"></path></svg>
+        Mirá el stream en YouTube
+      </a>
       <p class="ayuda">Se abre el reproductor en una ventana aparte, así podés seguir leyendo las noticias mientras escuchás.</p>
     </div>
   </div>
@@ -37,5 +41,10 @@ import { SITE } from '../config';
   }
   .escuchar:hover { color: #fff; background: var(--violeta-medio); }
   .circulo { width: 64px; height: 64px; border-radius: 50%; background: var(--amarillo); color: var(--violeta); display: flex; align-items: center; justify-content: center; }
+  .mirar {
+    display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 500px;
+    background: #fff; color: var(--violeta); font-weight: 800; font-size: 15px; text-transform: uppercase;
+  }
+  .mirar:hover { color: var(--violeta); background: var(--lila-claro); }
   .ayuda { margin: 10px 0 0; max-width: 420px; font-size: 14px; font-weight: 600; color: var(--violeta); }
 </style>
