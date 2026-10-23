@@ -28,6 +28,8 @@ export const SITE = {
 
   // Reproductor en vivo de la señal
   reproductor: 'https://comunidadmj.miradio.ar/',
+  // Señal de audio directa (suena dentro del sitio)
+  stream: 'https://server.streamcasthd.com:8504/stream',
   // Stream en video (YouTube)
   youtubeVivo: 'https://www.youtube.com/@ComunidadFAN',
 

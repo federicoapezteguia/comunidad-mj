@@ -25,10 +25,12 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
       <a href="/buscar/" class="icono-btn" aria-label="Buscar noticias">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
       </a>
-      <a href={SITE.reproductor} target="_blank" rel="noopener" class="boton boton-amarillo en-vivo" data-abrir-radio>
-        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"></path></svg>
-        En vivo
-      </a>
+      <button type="button" class="boton boton-amarillo en-vivo" data-radio-toggle aria-label="Escuchar o pausar la radio en vivo">
+        <svg class="ic-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"></path></svg>
+        <svg class="ic-pausa" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1h2.5v10H2.5zM7 1h2.5v10H7z" fill="currentColor"></path></svg>
+        <span class="ic-carga" aria-hidden="true"></span>
+        <span class="txt-play">En vivo</span><span class="txt-carga">Conectando</span><span class="txt-pausa">Pausar</span>
+      </button>
       <div class="redes-header"><Redes /></div>
     </div>
   </div>

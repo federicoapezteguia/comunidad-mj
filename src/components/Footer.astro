@@ -32,13 +32,19 @@ const anio = new Date().getFullYear();
         <li><a href="/quienes-somos/">Quiénes somos</a></li>
         <li><a href="/publicidad/">Publicidad</a></li>
         <li><a href="/contacto/">Contacto</a></li>
-        <li><a href={SITE.reproductor} target="_blank" rel="noopener">Escuchar en vivo</a></li>
+        <li><a href="/en-vivo/">Escuchar en vivo</a></li>
         <li><a href={SITE.youtubeVivo} target="_blank" rel="noopener">Mirar en YouTube</a></li>
         <li><a href={SITE.red} target="_blank" rel="noopener">Red Comunidad FAN</a></li>
       </ul>
     </nav>
   </div>
-  <div class="wrap legal">© {anio} {SITE.nombre} · La repetidora oficial de Comunidad FAN en Marcos Juárez</div>
+  <div class="wrap pie">
+    <div class="legal">© {anio} {SITE.nombre} · La repetidora oficial de Comunidad FAN en Marcos Juárez</div>
+    <a href="https://agenciarok.com.ar/" target="_blank" rel="noopener" class="rok">
+      <span>Desarrollado por</span>
+      <img src="https://agenciarok.com.ar/assets/img/logo-rok-agencia-diseno-web.png" alt="ROK Agencia de diseño web" title="ROK Agencia – Diseño web" height="28" loading="lazy" />
+    </a>
+  </div>
 </footer>
 
 <style>
@@ -61,5 +67,9 @@ const anio = new Date().getFullYear();
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
   ul a { font-size: 14px; font-weight: 700; display: inline-block; padding: 6px 0; }
   ul a:hover { color: var(--blanco); }
-  .legal { margin-top: 28px; font-size: 12px; font-weight: 600; }
+  .pie { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+  .legal { font-size: 12px; font-weight: 600; }
+  .rok { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; color: var(--violeta); }
+  .rok img { height: 28px; width: auto; }
+  .rok:hover { color: var(--blanco); }
 </style>

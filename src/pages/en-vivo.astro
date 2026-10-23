@@ -9,15 +9,20 @@ import { SITE } from '../config';
       <span class="estado"><span class="punto" aria-hidden="true"></span>Al aire ahora</span>
       <h1>Comunidad FAN Marcos Juárez <span>FM {SITE.frecuencia}</span></h1>
       <p class="frec">Escuchanos en vivo desde {SITE.ciudad} y desde cualquier lugar.</p>
-      <a href={SITE.reproductor} target="_blank" rel="noopener" class="escuchar" data-abrir-radio>
-        <span class="circulo" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 12 12"><path d="M3 1l8 5-8 5z" fill="currentColor"></path></svg></span>
-        Escuchar ahora
-      </a>
+      <button type="button" class="escuchar" data-radio-toggle>
+        <span class="circulo" aria-hidden="true">
+          <svg class="ic-play" width="30" height="30" viewBox="0 0 12 12"><path d="M3 1l8 5-8 5z" fill="currentColor"></path></svg>
+          <svg class="ic-pausa" width="30" height="30" viewBox="0 0 12 12"><path d="M2.5 1h2.5v10H2.5zM7 1h2.5v10H7z" fill="currentColor"></path></svg>
+          <span class="ic-carga"></span>
+        </span>
+        <span class="txt-play">Escuchar ahora</span><span class="txt-carga">Conectando…</span><span class="txt-pausa">Pausar</span>
+      </button>
       <a href={SITE.youtubeVivo} target="_blank" rel="noopener" class="mirar">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="M10 9l5 3-5 3z" fill="currentColor"></path></svg>
         Mirá el stream en YouTube
       </a>
-      <p class="ayuda">Se abre el reproductor en una ventana aparte, así podés seguir leyendo las noticias mientras escuchás.</p>
+      <p class="ayuda">La radio sigue sonando mientras navegás por el sitio y leés las noticias.</p>
+      <a href={SITE.reproductor} target="_blank" rel="noopener" class="externo">¿No se escucha? Abrí el reproductor externo</a>
     </div>
   </div>
 </Base>
@@ -39,7 +44,7 @@ import { SITE } from '../config';
   .escuchar {
     display: inline-flex; align-items: center; gap: 16px; margin-top: 18px;
     background: var(--violeta); color: #fff; font-weight: 800; font-size: 20px; text-transform: uppercase; letter-spacing: 0.03em;
-    padding: 12px 32px 12px 12px; border-radius: 500px; box-shadow: 0 12px 30px rgba(45, 0, 93, 0.35);
+    padding: 12px 32px 12px 12px; border-radius: 500px; box-shadow: 0 12px 30px rgba(45, 0, 93, 0.35); border: 0; cursor: pointer; font-family: inherit;
   }
   .escuchar:hover { color: #fff; background: var(--violeta-medio); }
   .circulo { width: 64px; height: 64px; border-radius: 50%; background: var(--amarillo); color: var(--violeta); display: flex; align-items: center; justify-content: center; }
@@ -48,5 +53,6 @@ import { SITE } from '../config';
     background: #fff; color: var(--violeta); font-weight: 800; font-size: 15px; text-transform: uppercase;
   }
   .mirar:hover { color: var(--violeta); background: var(--lila-claro); }
+  .externo { font-size: 13px; font-weight: 700; color: var(--violeta); text-decoration: underline; text-underline-offset: 3px; }
   .ayuda { margin: 10px 0 0; max-width: 420px; font-size: 14px; font-weight: 600; color: var(--violeta); }
 </style>

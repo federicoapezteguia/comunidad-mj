@@ -10,11 +10,9 @@ import Base from '../layouts/Base.astro';
   </div>
   <script is:inline src="/pagefind/pagefind-ui.js"></script>
   <script is:inline>
-    window.addEventListener('DOMContentLoaded', function () {
-      if (!window.PagefindUI) {
-        document.getElementById('buscador').textContent = 'El buscador se activa cuando el sitio está publicado.';
-        return;
-      }
+    (function iniciarBuscador(n) {
+      n = n || 0;
+      if (!window.PagefindUI) { if (n < 50) setTimeout(function () { iniciarBuscador(n + 1); }, 100); return; }
       var ui = new PagefindUI({
         element: '#buscador',
         showSubResults: false,
@@ -24,7 +22,7 @@ import Base from '../layouts/Base.astro';
       });
       var q = new URLSearchParams(location.search).get('q');
       if (q) ui.triggerSearch(q);
-    });
+    })();
   </script>
 </Base>
 <style>

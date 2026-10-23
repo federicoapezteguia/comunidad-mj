@@ -48,7 +48,9 @@ const LON = -62.1067;
   }
   const DIAS = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 
-  document.querySelectorAll<HTMLElement>('[data-clima]').forEach(async (el) => {
+  function iniciarClima() {
+  document.querySelectorAll<HTMLElement>('[data-clima]:not([data-listo])').forEach(async (el) => {
+    el.dataset.listo = '1';
     const q = (s: string) => el.querySelector<HTMLElement>(s)!;
     try {
       const url = `https://api.open-meteo.com/v1/forecast?latitude=${el.dataset.lat}&longitude=${el.dataset.lon}&current=temperature_2m,weather_code,is_day,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America%2FArgentina%2FCordoba&forecast_days=4`;
@@ -73,6 +75,8 @@ const LON = -62.1067;
       q('[data-temp]').textContent = '';
     }
   });
+  }
+  document.addEventListener('astro:page-load', iniciarClima);
 </script>
 
 <style>

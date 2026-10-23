@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getImage } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
 import type { ImageMetadata } from 'astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -80,6 +81,7 @@ const organizacion = {
     {anterior && <link rel="prev" href={new URL(anterior, Astro.site).href} />}
     {siguiente && <link rel="next" href={new URL(siguiente, Astro.site).href} />}
     <meta name="theme-color" content="#ff00ff" />
+    <ClientRouter fallback="swap" />
     <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
     <link rel="icon" href="/favicon-32.png?v=3" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
