@@ -4,6 +4,12 @@ import { SITE, SECCIONES } from '../config';
 const anio = new Date().getFullYear();
 ---
 <footer class="footer">
+  <div class="wrap">
+    <div class="sello">
+      <img src="/favicon.svg" alt="" width="56" height="56" class="mano" aria-hidden="true" />
+      <p><span class="s1">La repetidora oficial de</span><span class="s2">Comunidad FAN <em>en Marcos Juárez</em></span></p>
+    </div>
+  </div>
   <div class="wrap fila">
     <div class="datos">
       <img src={SITE.logoSenal.src} alt={SITE.logoSenal.alt} title={SITE.logoSenal.titulo} width={SITE.logoSenal.w} height={SITE.logoSenal.h} loading="lazy" class="logo-senal" />
@@ -32,11 +38,21 @@ const anio = new Date().getFullYear();
       </ul>
     </nav>
   </div>
-  <div class="wrap legal">© {anio} {SITE.nombre} · Parte de la red Comunidad FAN</div>
+  <div class="wrap legal">© {anio} {SITE.nombre} · La repetidora oficial de Comunidad FAN en Marcos Juárez</div>
 </footer>
 
 <style>
   .footer { background: var(--fucsia); color: var(--violeta); padding: 40px 0 96px; margin-top: 64px; }
+  .sello {
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    background: var(--violeta); border-radius: 16px; padding: 18px 24px; margin-bottom: 36px; text-align: left;
+  }
+  .mano { width: 56px; height: 56px; flex: none; }
+  .sello p { margin: 0; display: flex; flex-direction: column; line-height: 1.15; }
+  .s1 { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+  .s2 { font-size: clamp(20px, 3.2vw, 30px); font-weight: 900; color: var(--fucsia); }
+  .s2 em { font-style: normal; color: #fff; }
+  @media (max-width: 480px) { .sello { padding: 16px; gap: 12px; } .mano { width: 44px; height: 44px; } }
   .fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
   .datos { max-width: 340px; display: flex; flex-direction: column; gap: 12px; }
   .logo-senal { width: 130px; height: auto; }
