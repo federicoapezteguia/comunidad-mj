@@ -21,6 +21,7 @@ export const SITE = {
   // WhatsApp: solo números con 549 + código de área sin 0 + número sin 15
   whatsapp: '5493416660326', // saludos y mensajes para la radio
   whatsappVisible: '341 666-0326',
+  whatsappMensaje: '¡Hola Comunidad FAN! ', // va al estudio central de Rosario
   whatsappComercial: '5493517604328', // contacto comercial / publicidad
   whatsappComercialVisible: '351 760-4328',
   email: '[EMAIL]',

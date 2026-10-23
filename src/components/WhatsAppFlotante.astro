@@ -1,15 +1,11 @@
 ---
 import { SITE } from '../config';
-const url = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('¡Hola Comunidad FAN Marcos Juárez! Les mando un saludo para ')}`;
+import IconoWhatsApp from './IconoWhatsApp.astro';
+const url = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMensaje)}`;
 ---
 {SITE.whatsapp && (
   <a href={url} target="_blank" rel="noopener" class="wa-flotante" aria-label="Mandá tu saludo al aire por WhatsApp">
-    <span class="icono" aria-hidden="true">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3.5 20.5l1.4-4.1A8.5 8.5 0 1 1 8 19.3z"></path>
-        <path d="M9.2 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.6 1.5c.1.3 0 .5-.1.7l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.5-.2.7-.1l1.5.6c.3.1.4.3.4.6v.5c0 .3-.2.6-.6.8-.6.3-1.4.4-2.3 0a8 8 0 0 1-4.5-4.5c-.4-.9-.3-1.8 0-2.5z" fill="currentColor" stroke="none"></path>
-      </svg>
-    </span>
+    <span class="icono" aria-hidden="true"><IconoWhatsApp tam={28} /></span>
     <span class="txt">
       <span class="t1">¡Mandá tu saludo al aire!</span>
       <span class="t2">Escribinos por WhatsApp</span>

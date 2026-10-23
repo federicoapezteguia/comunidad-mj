@@ -1,4 +1,5 @@
 ---
+import IconoWhatsApp from './IconoWhatsApp.astro';
 interface Props { url: string; titulo: string }
 const { url, titulo } = Astro.props;
 const t = encodeURIComponent(titulo);
@@ -6,7 +7,7 @@ const u = encodeURIComponent(url);
 ---
 <div class="compartir" aria-label="Compartir esta nota">
   <a class="c wa" href={`https://wa.me/?text=${t}%20${u}`} target="_blank" rel="noopener">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 20l1.5-4A8 8 0 1 1 8 18.5z"></path></svg>
+    <IconoWhatsApp tam={18} />
     WhatsApp
   </a>
   <a class="c" href={`https://www.facebook.com/sharer/sharer.php?u=${u}`} target="_blank" rel="noopener">Facebook</a>

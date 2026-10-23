@@ -1,7 +1,7 @@
 ---
 import PaginaSimple from '../components/PaginaSimple.astro';
 import { SITE } from '../config';
-const waRadio = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola Comunidad FAN Marcos Juárez! ')}`;
+const waRadio = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMensaje)}`;
 const waComercial = `https://wa.me/${SITE.whatsappComercial}?text=${encodeURIComponent('Hola, quiero información para publicitar en Comunidad FAN Marcos Juárez')}`;
 ---
 <PaginaSimple titulo="Contacto" descripcion={`Contactate con ${SITE.nombre}: WhatsApp para saludos y mensajes a la radio, y contacto comercial.`}>
