@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import TarjetaNota from './TarjetaNota.astro';
 import Publicidad from './Publicidad.astro';
+import Clima from './Clima.astro';
 import type { Nota } from '../lib/notas';
 import { urlNota } from '../lib/notas';
 
@@ -71,7 +72,10 @@ const resto = notas.slice(6);
           </nav>
         )}
       </div>
-      <div class="lateral"><Publicidad espacio="lateral" /></div>
+      <div class="lateral">
+        {base === '/marcos-juarez/' && <Clima />}
+        <Publicidad espacio="lateral" />
+      </div>
     </div>
   </div>
 </Base>
