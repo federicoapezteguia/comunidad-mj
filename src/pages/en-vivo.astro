@@ -2,39 +2,40 @@
 import Base from '../layouts/Base.astro';
 import { SITE } from '../config';
 ---
-<Base titulo={`Escuchá ${SITE.nombre} en vivo`} descripcion={`Radio en vivo: escuchá Comunidad FAN Marcos Juárez, FM ${SITE.frecuencia}, desde el celular o la computadora.`}>
+<Base titulo={`Escuchá ${SITE.nombre} en vivo · FM ${SITE.frecuencia}`} descripcion={`Radio en vivo: escuchá Comunidad FAN Marcos Juárez, FM ${SITE.frecuencia}, desde el celular o la computadora.`}>
   <div class="vivo-pagina">
     <div class="wrap contenido">
-      <a href="/" class="boton boton-amarillo volver" data-volver>Volver al sitio</a>
-      <h1>Comunidad FAN Marcos Juárez <span>en vivo</span></h1>
-      <p class="frec">FM {SITE.frecuencia} · {SITE.ciudad}, {SITE.provincia}</p>
-      <div class="reproductor">
-        <iframe src={SITE.reproductor} title="Reproductor de Comunidad FAN en vivo" allow="autoplay; encrypted-media" loading="eager"></iframe>
-      </div>
-      <p class="ayuda">Tocá ▶ en el reproductor para escuchar. Podés seguir navegando el sitio en otra pestaña.</p>
+      <span class="estado"><span class="punto" aria-hidden="true"></span>Al aire ahora</span>
+      <h1>Comunidad FAN Marcos Juárez <span>FM {SITE.frecuencia}</span></h1>
+      <p class="frec">Escuchanos en vivo desde {SITE.ciudad} y desde cualquier lugar.</p>
+      <a href={SITE.reproductor} target="_blank" rel="noopener" class="escuchar" data-abrir-radio>
+        <span class="circulo" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 12 12"><path d="M3 1l8 5-8 5z" fill="currentColor"></path></svg></span>
+        Escuchar ahora
+      </a>
+      <p class="ayuda">Se abre el reproductor en una ventana aparte, así podés seguir leyendo las noticias mientras escuchás.</p>
     </div>
   </div>
 </Base>
 
-<script is:inline>
-  // Si se abrió como ventana emergente, "Volver" cierra la ventana.
-  if (new URLSearchParams(location.search).get('ventana')) {
-    document.documentElement.classList.add('modo-ventana');
-    var v = document.querySelector('[data-volver]');
-    if (v) { v.textContent = 'Cerrar'; v.addEventListener('click', function (e) { e.preventDefault(); window.close(); }); }
-  }
-</script>
-
 <style>
-  .vivo-pagina { background: var(--fucsia); padding: 32px 0 48px; margin-bottom: -64px; }
-  .contenido { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
-  .volver { align-self: flex-start; }
-  h1 { margin: 12px 0 0; font-size: clamp(24px, 4vw, 36px); font-weight: 900; color: var(--violeta); }
-  h1 span { display: block; color: var(--blanco); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.6em; }
-  .frec { margin: 0; font-weight: 700; color: var(--violeta); }
-  .reproductor { width: 100%; max-width: 380px; aspect-ratio: 380 / 560; border-radius: 16px; overflow: hidden; background: #1a1a1a; box-shadow: 0 16px 40px rgba(45, 0, 93, 0.35); margin-top: 12px; }
-  .reproductor iframe { width: 100%; height: 100%; border: 0; }
-  .ayuda { margin: 8px 0 0; max-width: 420px; font-size: 14px; font-weight: 600; color: var(--violeta); }
-  :global(.modo-ventana header), :global(.modo-ventana footer), :global(.modo-ventana .barra) { display: none; }
-  :global(.modo-ventana) .vivo-pagina { min-height: 100vh; margin: 0; padding-top: 16px; }
+  .vivo-pagina { background: var(--fucsia); padding: 56px 0 72px; margin-bottom: -64px; }
+  .contenido { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+  .estado {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--violeta); color: var(--amarillo);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 500px;
+  }
+  .punto { width: 8px; height: 8px; border-radius: 50%; background: var(--amarillo); animation: latido 1.6s infinite; }
+  @keyframes latido { 50% { opacity: 0.3; } }
+  @media (prefers-reduced-motion: reduce) { .punto { animation: none; } }
+  h1 { margin: 6px 0 0; font-size: clamp(26px, 4.4vw, 42px); font-weight: 900; color: var(--violeta); }
+  h1 span { display: block; color: var(--blanco); font-size: 0.75em; letter-spacing: 0.04em; }
+  .frec { margin: 0; font-weight: 600; color: var(--violeta); font-size: 17px; }
+  .escuchar {
+    display: inline-flex; align-items: center; gap: 16px; margin-top: 18px;
+    background: var(--violeta); color: #fff; font-weight: 800; font-size: 20px; text-transform: uppercase; letter-spacing: 0.03em;
+    padding: 12px 32px 12px 12px; border-radius: 500px; box-shadow: 0 12px 30px rgba(45, 0, 93, 0.35);
+  }
+  .escuchar:hover { color: #fff; background: var(--violeta-medio); }
+  .circulo { width: 64px; height: 64px; border-radius: 50%; background: var(--amarillo); color: var(--violeta); display: flex; align-items: center; justify-content: center; }
+  .ayuda { margin: 10px 0 0; max-width: 420px; font-size: 14px; font-weight: 600; color: var(--violeta); }
 </style>

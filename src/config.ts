@@ -21,8 +21,8 @@ export const SITE = {
   whatsapp: '', // solo números, ej. '5493472000000'
   email: '[EMAIL]',
 
-  // Reproductor en vivo (el de la red Comunidad FAN)
-  reproductor: 'https://player.cdnrad.com/comunidadfan',
+  // Reproductor en vivo de la señal
+  reproductor: 'https://comunidadmj.miradio.ar/',
 
   // Redes de la señal local (dejar vacío lo que no exista)
   redes: {
