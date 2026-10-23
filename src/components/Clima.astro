@@ -6,9 +6,10 @@ const SMN = 'https://www.smn.gob.ar/pronostico/?loc=4478';
 const LAT = -32.6978;
 const LON = -62.1067;
 ---
-<section class="clima" aria-labelledby="clima-h" data-clima data-lat={LAT} data-lon={LON}>
+<a href={SMN} target="_blank" rel="noopener" class="clima" aria-labelledby="clima-h" data-clima data-lat={LAT} data-lon={LON} title="Ver el pronóstico del Servicio Meteorológico Nacional">
   <div class="cab">
     <h2 id="clima-h">El tiempo en Marcos Juárez</h2>
+    <span class="ver" aria-hidden="true">›</span>
   </div>
   <div class="ahora">
     <span class="icono" data-icono aria-hidden="true"></span>
@@ -19,9 +20,8 @@ const LON = -62.1067;
     <div class="extremos" data-extremos></div>
   </div>
   <ul class="dias" data-dias></ul>
-  <a href={SMN} target="_blank" rel="noopener" class="smn">Pronóstico extendido en el SMN ›</a>
-  <p class="fuente">Datos: Open-Meteo · Pronóstico oficial: Servicio Meteorológico Nacional</p>
-</section>
+  <p class="fuente">Datos: Open-Meteo · Pronóstico oficial: SMN</p>
+</a>
 
 <script>
   const ICONOS: Record<string, string> = {
@@ -76,10 +76,13 @@ const LON = -62.1067;
 </script>
 
 <style>
-  .clima { width: 100%; background: var(--violeta); color: #fff; border-radius: var(--radio); padding: 18px 18px 14px; }
-  h2 { margin: 0; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--amarillo); }
+  .clima { display: block; width: 100%; background: var(--violeta); color: #fff; border-radius: var(--radio); padding: 18px 18px 14px; transition: background 0.2s ease; }
+  .clima:hover { background: var(--violeta-medio); color: #fff; }
+  .cab { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .ver { font-size: 22px; font-weight: 800; color: var(--fucsia); line-height: 1; }
+  h2 { margin: 0; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fucsia); }
   .ahora { display: flex; align-items: center; gap: 12px; margin: 14px 0 12px; }
-  .icono { width: 52px; height: 52px; flex: none; color: var(--amarillo); }
+  .icono { width: 52px; height: 52px; flex: none; color: var(--fucsia); }
   .icono :global(svg) { width: 100%; height: 100%; }
   .temp { font-size: 40px; font-weight: 900; line-height: 1; }
   .estado { font-size: 13px; font-weight: 600; color: #e6d9f5; margin-top: 4px; }
@@ -88,14 +91,9 @@ const LON = -62.1067;
   .dias { list-style: none; margin: 0; padding: 12px 0 0; border-top: 1px solid rgba(255, 255, 255, 0.18); display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .dias :global(li) { display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; }
   .dias :global(.dn) { font-size: 12px; font-weight: 800; text-transform: uppercase; }
-  .dias :global(.di) { width: 26px; height: 26px; color: var(--amarillo); }
+  .dias :global(.di) { width: 26px; height: 26px; color: var(--fucsia); }
   .dias :global(.di svg) { width: 100%; height: 100%; }
   .dias :global(.dt) { font-size: 13px; font-weight: 700; }
   .dias :global(.dl) { font-size: 11px; color: #d2c1ea; }
-  .smn {
-    display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 14px;
-    background: var(--amarillo); color: #000; border-radius: 500px; font-weight: 800; font-size: 13px; text-transform: uppercase;
-  }
-  .smn:hover { color: #000; filter: brightness(1.05); }
   .fuente { margin: 8px 0 0; font-size: 10.5px; color: #c9b6e3; text-align: center; }
 </style>
