@@ -82,8 +82,8 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
   .sup { position: relative; height: 100%; }
   .sup .link { position: relative; height: 100%; min-height: 220px; overflow: hidden; background: var(--violeta); }
   .sup.grande .link { min-height: 340px; }
-  .sup .foto { position: absolute; inset: 0; transition: transform 0.4s ease; }
-  .sup .link:hover .foto { transform: scale(1.03); }
+  .sup .foto { position: absolute; inset: 0; opacity: 0.82; transition: transform 0.4s ease, opacity 0.3s ease; }
+  .sup .link:hover .foto { transform: scale(1.03); opacity: 0.92; }
   .sup .tag { position: absolute; left: 0; top: 0; z-index: 2; }
   .capa {
     position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
