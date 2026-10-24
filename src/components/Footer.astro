@@ -15,8 +15,8 @@ const anio = new Date().getFullYear();
       <img src={SITE.logoSenal.src} alt={SITE.logoSenal.alt} title={SITE.logoSenal.titulo} width={SITE.logoSenal.w} height={SITE.logoSenal.h} loading="lazy" class="logo-senal" />
       <p>
         FM {SITE.frecuencia} · {SITE.ciudad}, {SITE.provincia}<br />
-        Saludos al aire: {SITE.whatsappVisible}<br />
-        Comercial: {SITE.whatsappComercialVisible}
+        <strong class="contacto-com">Contacto comercial en Marcos Juárez:</strong><br />
+        {SITE.whatsappComercialVisible} · <a href="mailto:fede@comunidad.fan">fede@comunidad.fan</a>
       </p>
       <Redes />
     </div>
