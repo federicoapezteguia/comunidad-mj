@@ -6,7 +6,7 @@ import Base from '../../layouts/Base.astro';
 import TarjetaNota from '../../components/TarjetaNota.astro';
 import Publicidad from '../../components/Publicidad.astro';
 import Compartir from '../../components/Compartir.astro';
-import { getNotas, relacionadas, volanta, fecha, hora, nombreEtiqueta, nombreLocalidad, minutosLectura, urlNota, type Nota } from '../../lib/notas';
+import { getNotas, relacionadas, volanta, fecha, nombreEtiqueta, nombreLocalidad, urlNota, type Nota } from '../../lib/notas';
 import { SECCIONES, SITE, type SeccionId } from '../../config';
 
 export async function getStaticPaths() {
@@ -22,7 +22,6 @@ const autor = await getEntry('autores', d.autor);
 const seccion = SECCIONES[d.seccion as SeccionId];
 const rel = relacionadas(nota, todas);
 const url = new URL(urlNota(nota), Astro.site).href;
-const lectura = minutosLectura(nota.body);
 
 const img = await getImage({ src: d.foto, width: 1200, height: 675, format: 'jpg', fit: 'cover' });
 const imgUrl = new URL(img.src, Astro.site).href;
@@ -95,11 +94,9 @@ if (d.youtube) {
 
       <div class="meta">
         <div class="autor">
-          <a href={`/autor/${d.autor}/`} class="autor-nombre" rel="author">Por {autor?.data.nombre}</a>
+          <span class="autor-nombre">Por {autor?.data.nombre}</span>
           <span class="cuando">
-            <time datetime={d.fecha.toISOString()}>{fecha(d.fecha)} · {hora(d.fecha)} h</time>
-            {d.actualizado && <> · Actualizado <time datetime={d.actualizado.toISOString()}>{hora(d.actualizado)} h</time></>}
-            · {lectura} min de lectura
+            <time datetime={d.fecha.toISOString()}>{fecha(d.fecha)}</time>
           </span>
         </div>
         <Compartir url={url} titulo={d.titulo} />
@@ -170,8 +167,8 @@ if (d.youtube) {
     padding: 14px 0; border-block: 1px solid var(--borde);
   }
   .autor { display: flex; flex-direction: column; }
-  .autor-nombre { font-weight: 800; font-size: 15px; }
-  .cuando { font-size: 13px; color: var(--gris); }
+  .autor-nombre { font-weight: 700; font-size: 13px; color: var(--violeta); }
+  .cuando { font-size: 12px; color: var(--gris); }
   .foto-principal { margin: 24px 0 28px; }
   .foto-principal :global(img) { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--lila); }
   figcaption { margin-top: 8px; font-size: 13px; color: var(--gris); }
