@@ -5,9 +5,9 @@ seccion: cordoba
 etiquetas: [religion, gobierno, eventos]
 localidad: cordoba-capital
 fecha: 2026-10-23T08:15:00-03:00
-foto: ./img/papa-leon-xiv-visita-cordoba.jpg
-fotoAlt: "El Papa León XIV saluda desde el balcón de la basílica de San Pedro"
-fotoCredito: "Foto: Edgar Beltrán / The Pillar, vía Wikimedia Commons (CC BY-SA 4.0)"
+foto: ./img/papa-leon-xiv-predio-fadea-cordoba.jpg
+fotoAlt: "Recorrida de autoridades por el predio de FADEA, en Córdoba, donde el Papa León XIV celebrará la misa"
+fotoCredito: "Foto: Gobierno de Córdoba"
 destacada: true
 seoTitulo: "Misa del Papa León XIV en Córdoba: cómo avanza el predio de FADEA"
 seoDescripcion: "El Papa León XIV dará misa en Córdoba el martes 10 de noviembre en el predio de FADEA. Preparativos, feriado provincial y lo que hay que saber."

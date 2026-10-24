@@ -1,44 +1,42 @@
 ---
-titulo: "La Maratón de Marcos Juárez cumple 30 años y espera a unos 700 corredores este domingo"
-bajada: "La edición aniversario tendrá pruebas de 5, 10 y 21 kilómetros con largada en el Lago Dellarossa, sorteo de bicicletas y viajes, y un fuerte componente escolar."
+titulo: "Maratón Marcos Juárez 2026: tres décadas de una carrera que ya es parte de la ciudad"
+bajada: "Este domingo, desde las 8:30, se corren 5, 10 y 21 kilómetros con largada en el lago Dellarossa. Hay unos 500 maratonistas anotados y cerca de 160 chicos de las escuelas."
 seccion: deportes
 etiquetas: [atletismo, deportes, eventos]
 localidad: marcos-juarez
 fecha: 2026-10-23T17:20:00-03:00
-foto: ./img/maraton-marcos-juarez-30-anos.jpg
-fotoAlt: "Corredores en una maratón de calle en la provincia de Córdoba"
-fotoCredito: "Imagen ilustrativa. Foto: Alakasam / Wikimedia Commons (CC BY-SA 3.0)"
-seoTitulo: "Maratón de Marcos Juárez 2026: horarios, distancias y kits"
-seoDescripcion: "La 30ª Maratón de Marcos Juárez se corre el domingo 25 de octubre: 5, 10 y 21 km desde el Lago Dellarossa. Horarios, entrega de kits y premios."
+foto: ./img/maraton-marcos-juarez-2026-30-anos.jpg
+fotoAlt: "Maratón Marcos Juárez 2026, edición 30 años, domingo 25 de octubre"
+fotoCredito: "Imagen: Municipalidad de Marcos Juárez"
+seoTitulo: "Maratón Marcos Juárez 2026: horarios, distancias e inscripción"
+seoDescripcion: "La Maratón Marcos Juárez cumple 30 años este domingo 25 de octubre: 5, 10 y 21 km desde el lago Dellarossa. Horarios, kits, costos y premios."
 ---
 
-Treinta años no se cumplen todos los días, y la **Maratón de Marcos Juárez** se prepara para festejarlo a lo grande. Este **domingo 25 de octubre** se corre la edición número 30 de la tradicional prueba, que espera reunir a **unas 700 personas** entre maratonistas y corredores escolares.
+Hay eventos que marcan el calendario de un pueblo, y la **Maratón Marcos Juárez** es uno de ellos. Este **domingo 25 de octubre** se corre la edición número **30**, y la Comisión Municipal de Deportes viene trabajando desde hace cuatro meses para que el aniversario esté a la altura.
 
-La organización está a cargo de la **Municipalidad de Marcos Juárez**, a través de la Comisión Municipal de Deportes, que viene trabajando desde hace unos cuatro meses con reuniones semanales para que todo salga bien.
+"Año tras año este evento crece en cuanto al número de deportistas que participan", resumió **Horacio Pochettino**, director de Deportes de la Municipalidad. Los números le dan la razón: ya hay unos **500 maratonistas** anotados, a los que se suman alrededor de **160 corredores de las escuelas**. En total, se esperan cerca de **700 personas** en la largada.
 
-## Distancias y horarios
+## Cuándo y dónde
 
-La largada será en el sector del **Lago Henry Bautista Dellarossa** y habrá tres pruebas:
+La largada y llegada están en el sector del **lago Henry Bautista Dellarossa**.
 
-- **21 kilómetros** (competitiva): largada a las **8:30**.
-- **10 kilómetros** (competitiva): largada a las **8:30**.
-- **5 kilómetros** (participativa): largada a las **8:35**.
+- **21 km y 10 km** (competitivas): **8:30**.
+- **5 km** (participativa): **8:35**.
 
-## Entrega de kits
+## Kits e inscripción
 
-- **Sábado 24, de 17 a 20**, en la Escuela del Trabajo, para corredores de Marcos Juárez y la zona.
-- **Domingo 25, de 6 a 7:30**, en el predio de largada, para quienes llegan desde otras localidades.
+Los kits se retiran el **sábado de 17 a 20** en la **Escuela del Trabajo**, para quienes son de la ciudad y la zona, y el **domingo de 6 a 7:30** en el predio, para los que vienen de más lejos.
 
-## Premios, sorteos y tercer tiempo
+La inscripción se hace por internet. Los valores informados por la organización fueron de **$40.000 para 5K**, **$45.000 para 10K** y **$50.000 para 21K**, con una actualización prevista a partir del 21 de octubre.
 
-Además de la clasificación general, se premiará al **mejor atleta local** en 10 y 21 kilómetros. Entre todos los participantes se sortearán **seis bicicletas** y **tres viajes**: a Talampaya, a Termas de Río Hondo y a Villa Carlos Paz. Cada corredor recibirá remera, seguro, mesa de frutas y el clásico **tercer tiempo** al final de la jornada.
+## Premios y sorteos
 
-Las escuelas también tienen su lugar: habrá sorteo de una bicicleta en la categoría escolar y un bolsón de premios para la institución que aporte más corredores.
+Habrá premio para el **mejor atleta local** en 10 y 21 km, y entre todos los participantes se sortean **seis bicicletas** y **tres viajes**: Talampaya, Termas de Río Hondo y Villa Carlos Paz. Cada corredor se lleva remera, seguro, fruta en la llegada y el infaltable **tercer tiempo**.
 
-## Una fiesta del deporte local
+Las escuelas tienen su propio incentivo: una bicicleta para la categoría escolar y un bolsón de premios para la institución que lleve más chicos.
 
-"Va a ser una carrera excelente y 30 años no se cumplen todos los días", destacó **Horacio Pochettino**, director de Deportes de la Municipalidad. Según contó, ya hay alrededor de **500 maratonistas** anotados, a los que se suman cerca de **160 corredores de las escuelas**.
+## Se buscan manos
 
-Pochettino también repasó el trabajo cotidiano del área con clubes e instituciones educativas, y destacó la **Escuela de Deporte Adaptado**, que en temporada de verano recibe a entre 30 y 35 chicos.
+La organización todavía suma **voluntarios** para banderilleros, puestos de hidratación, entrega de frutas y medallas. Quienes colaboren reciben remera, agua, participan del encuentro posterior y entran en el sorteo de una estadía en Carlos Paz. Los interesados pueden comunicarse al **3472 532848**.
 
-Si vas a correr, la recomendación es llegar con tiempo, hidratarte bien y respetar las indicaciones de la organización durante el recorrido. Y si no corrés, el domingo es una buena oportunidad para acercarte al lago y alentar.
+Si vas a correr, llegá con tiempo y bien hidratado. Y si no, el domingo a la mañana es una linda excusa para acercarse al lago y alentar a los que se animan.

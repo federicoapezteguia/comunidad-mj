@@ -1,35 +1,41 @@
 ---
-titulo: "Coloquio Industrial 2026: la industria cordobesa debatió sobre economía, elecciones e inteligencia artificial"
-bajada: "La Unión Industrial de Córdoba, presidida por el bellvillense José María Manuali, reunió a empresarios, economistas y dirigentes en su 18° edición. Hubo presencia de intendentes del sudeste."
+titulo: "Llaryora, ante los industriales: \"Necesitamos un RIGI para la pyme argentina\""
+bajada: "En la apertura del Coloquio de la Unión Industrial de Córdoba, que preside el bellvillense José Manuali, el gobernador pidió incentivos para las pymes, la prórroga de la Ley de Autopartes y una ley de biocombustibles."
 seccion: cordoba
-etiquetas: [industria, economia, empresas]
+etiquetas: [industria, economia, gobierno]
 localidad: cordoba-capital
 fecha: 2026-10-23T12:40:00-03:00
-foto: ./img/coloquio-industrial-uic-centro-convenciones-cordoba.jpg
-fotoAlt: "Centro de Convenciones Juan Bautista Bustos, en la ciudad de Córdoba"
-fotoCredito: "Foto: Joranecme / Wikimedia Commons (CC BY-SA 4.0)"
-seoTitulo: "Coloquio Industrial UIC 2026 en Córdoba: temas y oradores"
-seoDescripcion: "El 18° Coloquio Industrial de la UIC reunió a la industria de Córdoba. Economía, elecciones 2027 e inteligencia artificial, con un bellvillense al frente."
+foto: ./img/coloquio-industrial-uic-2026-llaryora.jpg
+fotoAlt: "El gobernador Martín Llaryora en la apertura del 18° Coloquio Industrial de la UIC en Córdoba"
+fotoCredito: "Foto: Gobierno de Córdoba"
+seoTitulo: "Coloquio UIC 2026: Llaryora pidió un RIGI para las pymes"
+seoDescripcion: "En el 18° Coloquio Industrial de Córdoba, Llaryora reclamó un régimen de incentivos para pymes, la prórroga de la Ley de Autopartes y una ley de biocombustibles."
 ---
 
-La industria cordobesa tuvo su cita anual. El jueves 22 de octubre se realizó en el **Centro de Convenciones Córdoba** el **18° Coloquio Industrial** de la **Unión Industrial de Córdoba (UIC)**, bajo el lema "Hacer futuro. En un mundo que cambia, la industria transforma".
+La industria cordobesa se juntó el jueves en el **Centro de Convenciones Córdoba** para su cita más importante del año, el **18° Coloquio Industrial** de la **Unión Industrial de Córdoba (UIC)**. Y el gobernador **Martín Llaryora** usó la apertura para dejar un mensaje directo a la Nación: las pymes necesitan una ayuda concreta para sostenerse.
 
-El encuentro tuvo un sello regional: la UIC está presidida por **José María Manuali**, empresario de **Bell Ville**, y entre los asistentes hubo intendentes del sudeste provincial, como el de esa ciudad, que participó en representación de su comunidad.
+"Necesitamos rápidamente un RIGI, pero ya no el RIGI para las grandes empresas, sino para la pyme argentina", planteó, en referencia al régimen de incentivos que hoy beneficia a las inversiones de gran escala.
 
-## Una agenda con economía, política y tecnología
+## Los pedidos del gobernador
 
-De acuerdo con el programa oficial del encuentro, la jornada se abrió con las palabras de Manuali y del gobernador **Martín Llaryora**, y siguió con un recorrido por los grandes temas que preocupan al sector:
+Llaryora enumeró una serie de reclamos que impactan de lleno en el entramado productivo del interior:
 
-- **Coyuntura económica y financiera**, con la exposición del economista **Miguel Kiguel**.
-- **Inteligencia artificial y analítica avanzada** aplicadas a la producción, a cargo de especialistas de McKinsey.
-- **Casos empresarios** de firmas como Arcor y la planta Santa Isabel de Renault.
-- La **visión de la Unión Industrial Argentina**, con su presidente, **Martín Rappallini**.
-- El **escenario político** rumbo a las elecciones y el **contexto internacional**.
+- Un **régimen de incentivos para pymes**, al estilo del RIGI.
+- La **prórroga de la Ley de Autopartes** antes de fin de año: "No podemos permitir que la Ley de Autopartes se caiga en la Argentina", advirtió.
+- Una **ley de biocombustibles**, clave para una provincia agroindustrial.
+- Una **agenda de desarrollo federal** que aproveche el potencial del interior.
+- Que el beneficio cordobés de **cero Ingresos Brutos para la industria** se extienda a las pymes de todo el país.
 
-## Por qué le importa al sudeste
+También tuvo palabras para los empresarios que atraviesan meses difíciles: "Sé que hacen lo posible y lo imposible para no despedir a nadie".
 
-El sudeste cordobés es una de las zonas industriales más dinámicas del interior. Alrededor de **Marcos Juárez** se concentra buena parte de la producción nacional de **maquinaria agrícola**, como se vio hace pocos días en la muestra **EXPIMA 2026**, que reunió en el predio La Cantera a proveedores de la industria metalmecánica y agropecuaria.
+## Un régimen provincial para invertir
 
-Por eso, los debates del Coloquio sobre competitividad, financiamiento, costos y adopción de tecnología impactan de lleno en las pymes de la región, que buscan crecer, exportar y sostener empleo en un escenario de incertidumbre.
+El gobernador mencionó además el **Régimen de Incentivo a las Inversiones, la Innovación y el Empleo** que la Provincia elaboró junto con la UIC. Tiene una modalidad simplificada y otra general, contempla **beneficios impositivos por hasta diez años**, apoyo para incorporar tecnología de la industria 4.0 y para capacitar nuevos trabajadores, y beneficios adicionales para los **parques industriales**.
 
-El Coloquio volvió a mostrar a una industria que pide reglas claras y condiciones para invertir, y que mira con atención cómo la inteligencia artificial empieza a cambiar la forma de producir.
+## Un bellvillense al frente
+
+El coloquio tuvo un fuerte acento regional: la UIC está presidida por **José Manuali**, empresario de **Bell Ville**, que destacó el trabajo conjunto con el Gobierno provincial. Entre los oradores estuvo también el presidente de la Unión Industrial Argentina, **Martín Rappallini**, y entre los asistentes, intendentes del sudeste.
+
+## Por qué nos importa
+
+Alrededor de **Marcos Juárez** se fabrica buena parte de la **maquinaria agrícola** del país, como quedó a la vista hace pocos días en la muestra **EXPIMA 2026**, en el predio La Cantera. Cada discusión sobre impuestos, financiamiento y costos de producción se traduce, en nuestra zona, en fábricas que crecen o que ajustan, y en puestos de trabajo que se sostienen o se pierden.

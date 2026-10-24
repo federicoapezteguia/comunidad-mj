@@ -1,39 +1,37 @@
 ---
-titulo: "Lago El Panal: avanza el dragado y se retirarán más de 17 mil metros cúbicos de sedimentos"
-bajada: "La Municipalidad de Marcos Juárez trabaja desde hace más de un mes en la limpieza y profundización del reservorio del sector noreste, clave para contener el agua de lluvia."
+titulo: "Lago El Panal: las máquinas ya sacan barro del fondo para que el reservorio vuelva a juntar agua"
+bajada: "La obra en el lago del noreste de la ciudad lleva poco más de un mes. Se trabaja sobre casi una hectárea y media y se calcula que saldrán unos 17.450 metros cúbicos de sedimentos."
 seccion: marcos-juarez
 etiquetas: [obras, municipio, clima]
 localidad: marcos-juarez
 fecha: 2026-10-23T09:30:00-03:00
-foto: ./img/dragado-lago-el-panal-marcos-juarez.jpg
-fotoAlt: "Máquinas de dragado junto a un espejo de agua, imagen ilustrativa de la obra en el Lago El Panal"
-fotoCredito: "Imagen ilustrativa. Foto: Agnes Monkelbaan / Wikimedia Commons (CC BY-SA 4.0)"
+foto: ./img/lago-el-panal-dragado-marcos-juarez-obra.jpg
+fotoAlt: "Máquinas trabajando en el dragado del Lago El Panal, en el noreste de Marcos Juárez"
+fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 destacada: true
-seoTitulo: "Dragado del Lago El Panal en Marcos Juárez: avances de la obra"
-seoDescripcion: "La Municipalidad de Marcos Juárez limpia y profundiza el Lago El Panal: 14.541 m² de obra y 17.450 m³ de sedimentos a retirar para contener el agua de lluvia."
+seoTitulo: "Dragado del Lago El Panal en Marcos Juárez: cómo avanza la obra"
+seoDescripcion: "Avanza el dragado del Lago El Panal, en el noreste de Marcos Juárez: 14.541 m² de obra y unos 17.450 m³ de sedimentos para recuperar su capacidad ante las lluvias."
 ---
 
-El **Lago El Panal**, uno de los reservorios más importantes de **Marcos Juárez**, atraviesa una intervención de fondo. La Municipalidad avanza con la obra de **limpieza y dragado** del espejo de agua ubicado en el sector noreste de la ciudad, que comenzó hace poco más de un mes.
+Quien pase estos días por el noreste de **Marcos Juárez** se va a encontrar con máquinas y movimiento de tierra en el **Lago El Panal**. Es la obra de **limpieza y dragado** que encaró la Municipalidad para que el lago vuelva a cumplir bien su función.
 
-El lago, cuyo nombre oficial es **Lago Dr. Loinas**, cumple una función clave en el sistema pluvial: recibe y retiene los excedentes de agua cuando llueve fuerte. Por eso, mantenerlo limpio y con la profundidad adecuada es una tarea preventiva para evitar anegamientos en los barrios cercanos.
+El Panal, que en los papeles se llama **Lago Dr. Loinas**, no es solo un lugar para caminar o tomar mate. Es una pieza del sistema de desagües: cuando llueve fuerte, ahí va a parar buena parte del agua que no da abasto en las calles. Con los años, el fondo se fue llenando de barro y la vegetación ganó terreno, así que entraba cada vez menos agua.
 
-## Qué incluye la obra
+## Qué se está haciendo
 
-Según informó la Municipalidad de Marcos Juárez, los trabajos se dividen en varias etapas:
+El trabajo arrancó hace poco más de un mes y tiene varias etapas que se van superponiendo:
 
-- **Desmalezado** de los bordes y del interior del reservorio.
-- **Extracción de la vegetación invasiva** que crece sobre el agua y reduce su capacidad.
-- **Retiro de sedimentos** acumulados en el fondo.
-- **Profundización** del lecho para recuperar volumen de almacenamiento.
+- **Desmalezar** las orillas y el interior del lago.
+- **Sacar las plantas invasoras** que cubrían parte del agua.
+- **Retirar el barro** acumulado en el fondo.
+- **Bajar el lecho**, para que entre más agua cuando haga falta.
 
-## Los números del dragado
+## Los números de la obra
 
-La intervención abarca una superficie aproximada de **14.541 metros cuadrados**, con una excavación media de **1,20 metros**. En total, se prevé retirar unos **17.450 metros cúbicos de sedimentos**, un volumen que da una idea de cuánto material se fue depositando con el paso del tiempo.
+La intervención abarca unos **14.541 metros cuadrados**, casi una hectárea y media. En promedio, se excava **1,20 metros** de profundidad, y se estima que saldrán alrededor de **17.450 metros cúbicos** de sedimentos y tierra. Para dimensionarlo: equivale a llenar más de mil camiones volcadores.
 
-Desde el municipio remarcaron que el objetivo es mantener en condiciones este reservorio para que funcione correctamente cada vez que la ciudad enfrente lluvias intensas.
+## Justo a tiempo para la temporada de lluvias
 
-## Una obra con la mirada puesta en El Niño
+La obra llega en un momento clave. Los pronósticos anticipan una primavera y un verano con más lluvias de lo normal por **El Niño**, y esta misma semana el departamento estuvo bajo **alerta naranja por tormentas**. Un lago con más capacidad significa menos agua en las calles de los barrios cercanos cuando caiga un chaparrón fuerte.
 
-La obra llega en un momento oportuno. Los pronósticos anticipan una primavera y un verano con lluvias por encima de lo normal en buena parte del país por el fenómeno de El Niño, y el este de Córdoba aparece entre las zonas a seguir de cerca. En ese contexto, la Provincia también reforzó su [plan de obras hídricas](/cordoba/obras-hidricas-cordoba-el-nino-inversion/), y los reservorios urbanos como El Panal toman todavía más relevancia.
-
-Los vecinos de la zona noreste pueden encontrarse con máquinas y movimiento de suelo en los alrededores del lago mientras duren los trabajos. Una vez terminada la obra, el reservorio quedará con mayor capacidad para regular el agua de lluvia y con un entorno más limpio para quienes lo visitan.
+Mientras duren los trabajos, conviene circular con precaución por la zona y respetar los sectores señalizados. Cuando termine, el lago quedará más profundo, más limpio y mejor preparado para lo que venga.

@@ -4,9 +4,9 @@ bajada: "El director del Servicio Meteorológico Nacional compara el episodio co
 seccion: nacionales
 etiquetas: [clima, agro]
 fecha: 2026-10-22T10:00:00-03:00
-foto: ./img/el-nino-2026-argentina-lluvias.jpg
-fotoAlt: "Imagen satelital de zonas inundadas en Argentina"
-fotoCredito: "Imagen satelital: Agencia Espacial Europea (ESA), vía Wikimedia Commons"
+foto: ./img/el-nino-obras-hidricas-cordoba-canal.jpg
+fotoAlt: "Trabajos en un canal de la provincia de Córdoba ante la temporada de lluvias"
+fotoCredito: "Foto: Gobierno de Córdoba"
 seoTitulo: "El Niño 2026: pronóstico de lluvias para Córdoba y el campo"
 seoDescripcion: "El Niño 2026 podría ser uno de los más fuertes de la historia. Qué dice el SMN, cuándo llegaría el pico y qué riesgos hay para el este de Córdoba."
 ---

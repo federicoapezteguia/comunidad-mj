@@ -20,7 +20,9 @@ export type Banner = {
   anunciante: string;
   imagen: string; // ruta dentro de /public, ej. '/banners/super-lopez-970x90.webp'
   imagenMovil?: string;
-  enlace: string;
+  enlace?: string; // opcional: sin enlace, el banner no lleva a ningún lado
+  w?: number; // medida real de la imagen (si no coincide con el espacio)
+  h?: number;
   desde?: string; // 'AAAA-MM-DD'
   hasta?: string; // 'AAAA-MM-DD'
 };
@@ -30,5 +32,13 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
   lateral: [],
   'lateral-largo': [],
   'en-nota': [],
-  campanas: [],
+  campanas: [
+    {
+      anunciante: 'La Paulina – Disproal SRL, distribuidor oficial (Tortugas, Santa Fe)',
+      imagen: '/banners/la-paulina-disproal-tortugas.webp',
+      imagenMovil: '/banners/la-paulina-disproal-tortugas-movil.webp',
+      w: 1920,
+      h: 374,
+    },
+  ],
 };

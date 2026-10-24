@@ -1,37 +1,41 @@
 ---
-titulo: "Marcos Juárez celebró sus 139 años con la entrega de las Distinciones Espinillos 2026"
-bajada: "En el Patio de la Cultura, la ciudad reconoció a vecinos, emprendedores e instituciones que se destacaron en deporte, ciencia, cultura, compromiso social y tradición."
+titulo: "Marcos Juárez cumplió 139 años y reconoció a los vecinos que la hacen grande"
+bajada: "En el Patio de la Cultura, con la Banda Municipal y mucha gente, se entregaron las Distinciones Espinillos 2026. Un nadador de nivel mundial, un histórico de la tradición gaucha y emprendedoras jóvenes, entre los premiados."
 seccion: marcos-juarez
 etiquetas: [cultura, sociedad, instituciones]
 localidad: marcos-juarez
-fecha: 2026-10-21T12:00:00-03:00
-foto: ./img/marcos-juarez-139-aniversario-estacion.jpg
-fotoAlt: "Estación de tren de Marcos Juárez, uno de los edificios históricos de la ciudad"
-fotoCredito: "Foto: Lorena Montoya / Wikimedia Commons (CC BY-SA 4.0)"
+fecha: 2026-10-20T11:00:00-03:00
+foto: ./img/aniversario-139-marcos-juarez-espinillos-2026.jpg
+fotoAlt: "Acto por el 139 aniversario de Marcos Juárez y entrega de las Distinciones Espinillos 2026 en el Patio de la Cultura"
+fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 seoTitulo: "Distinciones Espinillos 2026: los premiados de Marcos Juárez"
-seoDescripcion: "Marcos Juárez cumplió 139 años y entregó las Distinciones Espinillos 2026. Quiénes fueron los vecinos e instituciones reconocidos y por qué."
+seoDescripcion: "Marcos Juárez celebró sus 139 años con la entrega de las Distinciones Espinillos 2026. Todos los vecinos e instituciones reconocidos y por qué."
 ---
 
-**Marcos Juárez** cumplió **139 años** y lo celebró reconociendo a su gente. El lunes 19 de octubre, en el **Patio de la Cultura**, se entregaron las **Distinciones Espinillos 2026**, el reconocimiento que la ciudad otorga a vecinos e instituciones que dejan su huella en distintos ámbitos.
+La mañana del lunes 19 tuvo sabor a cumpleaños. Desde las 10:30, el **Patio de la Cultura** se llenó de vecinos, instituciones y autoridades para celebrar los **139 años de Marcos Juárez**, con la **Banda Municipal** poniéndole música a un acto que tuvo un momento especial: la entrega de las **Distinciones Espinillos 2026**.
 
-La ceremonia formó parte de los festejos por el aniversario y reunió a familias, referentes de instituciones y vecinos que se acercaron a acompañar a los distinguidos.
+Cada año, la ciudad elige a vecinos e instituciones que se destacaron en su campo. Esta vez la lista mezcló generaciones y rubros, y dejó una foto bastante fiel de lo que es Marcos Juárez hoy.
 
-## Los reconocidos de este año
+## Los distinguidos de este año
 
-Estos fueron los premiados en cada categoría:
+**Mención Honorífica.** El reconocimiento más emotivo fue para **Rumaldo "Lito" Fernández**, una vida entera dedicada al trabajo de campo y a las tradiciones criollas. Lito fue uno de los fundadores de la **Agrupación Gaucha Posta Espinillos**, la misma que le da nombre a estas distinciones.
 
-- **Mención Honorífica:** Rumaldo "Lito" Fernández, por su vida dedicada al trabajo rural y a las tradiciones criollas, y por su papel en la fundación de la Agrupación Gaucha Posta Espinillos.
-- **Deporte:** Juan Cruz Terés, nadador con logros en competencias nacionales, sudamericanas y mundiales.
-- **Tecnología y Desarrollo:** Rosetti Deportes, por el crecimiento de su emprendimiento y su expansión fuera de la ciudad.
-- **Cultura y Memoria:** la Comisión del Museo de Marcos Juárez, por preservar la historia local y crear el Museo Malvinas Argentinas.
-- **Compromiso Social:** Rotary Club e Interact Club Marcos Juárez, por sus iniciativas solidarias.
-- **Juventud y Emprendedurismo:** Tania Toledo, de TOLEDA Home Deco, y Ana Reinaudi, creadora de la marca de indumentaria Álamo.
-- **Ciencia y Salud:** María Emilia Zabala, por sus investigaciones sobre agua, suelo y recursos naturales de Marcos Juárez y la región.
+**Deporte.** **Juan Cruz Terés**, el nadador marcosjuarense que viene sumando logros en torneos nacionales, sudamericanos y mundiales.
 
-## Una ciudad que mira hacia adelante
+**Tecnología y Desarrollo.** **Rosetti Deportes**, un comercio local que se animó a innovar en la forma de vender y hoy llega más allá de la ciudad.
 
-Más allá de los premios, el aniversario dejó lugar para pensar la identidad de Marcos Juárez: la plaza como punto de encuentro, la tradicional vuelta al perro y el arraigo de familias que eligen quedarse. También reapareció un desafío conocido para muchas ciudades del interior: lograr que los jóvenes que se van a estudiar a otras ciudades encuentren motivos para volver.
+**Cultura y Memoria.** La **Comisión del Museo de Marcos Juárez**, por cuidar la historia del pueblo y por la creación del **Museo Malvinas Argentinas**.
 
-En esa línea, el municipio firmó el miércoles 21 un convenio con Cáritas Villa María para financiar cuatro plazas en residencias universitarias destinadas a estudiantes marcosjuarenses que deban mudarse para cursar una carrera.
+**Compromiso Social.** El **Rotary Club** y el **Interact Club Marcos Juárez**, por años de trabajo solidario.
 
-Los premiados de este año muestran una ciudad diversa, donde conviven la tradición gaucha, el deporte de alto nivel, la ciencia, el emprendedurismo joven y el trabajo solidario. Desde Comunidad FAN Marcos Juárez, ¡feliz cumpleaños número 139!
+**Juventud y Emprendedurismo.** Dos emprendedoras que nacieron acá y crecieron a fuerza de redes y creatividad: **Tania Toledo**, con su marca de decoración **TOLEDA Home Deco**, y **Ana Reinaudi**, creadora de **Álamo**, una marca de ropa de estilo romántico que ya vende en distintos puntos del país.
+
+**Ciencia y Salud.** **María Emilia Zabala**, investigadora que estudia el agua, el suelo y los recursos naturales de la ciudad y la región.
+
+## Una ciudad que se reconoce en su gente
+
+Más allá de los premios, el aniversario dejó una sensación compartida: Marcos Juárez sigue siendo una ciudad donde la plaza es punto de encuentro, la vuelta al perro es ritual de fin de semana y los logros de un vecino se festejan como propios.
+
+El gran desafío, coinciden muchos, es que los chicos que se van a estudiar afuera tengan motivos para volver. En esa línea, el municipio firmó un convenio con **Cáritas Villa María** para pagar **cuatro lugares en residencias universitarias** para estudiantes de la ciudad.
+
+Desde Comunidad FAN Marcos Juárez, ¡feliz cumpleaños 139!
