@@ -1,0 +1,3 @@
+Contact: mailto:fede@comunidad.fan
+Expires: 2027-10-24T00:00:00.000Z
+Preferred-Languages: es

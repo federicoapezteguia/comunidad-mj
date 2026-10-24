@@ -66,8 +66,9 @@ const LON = -62.1067;
         .map((i) => {
           const f = new Date(d.daily.time[i] + 'T12:00:00');
           const [di, dt] = describir(d.daily.weather_code[i]);
-          const lluvia = d.daily.precipitation_probability_max?.[i];
-          return `<li><span class="dn">${DIAS[f.getDay()]}</span><span class="di" title="${dt}">${ICONOS[di]}</span><span class="dt">${Math.round(d.daily.temperature_2m_max[i])}° / ${Math.round(d.daily.temperature_2m_min[i])}°</span>${lluvia != null ? `<span class="dl">${lluvia}% lluvia</span>` : ''}</li>`;
+          const lluviaCruda = d.daily.precipitation_probability_max?.[i];
+          const lluvia = lluviaCruda == null ? null : Math.round(Number(lluviaCruda));
+          return `<li><span class="dn">${DIAS[f.getDay()]}</span><span class="di" title="${dt}">${ICONOS[di]}</span><span class="dt">${Math.round(d.daily.temperature_2m_max[i])}° / ${Math.round(d.daily.temperature_2m_min[i])}°</span>${lluvia != null && !Number.isNaN(lluvia) ? `<span class="dl">${lluvia}% lluvia</span>` : ''}</li>`;
         })
         .join('');
     } catch {
