@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-22T18:30:00-03:00
 foto: ./img/avenida-san-martin-doble-sentido-marcos-juarez.jpg
 fotoAlt: "Gráfico: la avenida San Martín de Marcos Juárez vuelve al doble sentido entre Bismarck y Fuerza Aérea Argentina"
-fotoCredito: "Gráfico: Comunidad FAN Marcos Juárez"
 seoTitulo: "Marcos Juárez: avenida San Martín vuelve a doble mano"
 seoDescripcion: "Desde el 23 de octubre, la avenida San Martín de Marcos Juárez vuelve al doble sentido entre Bismarck y Fuerza Aérea, con estacionamiento a ambos lados."
 ---

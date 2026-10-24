@@ -7,7 +7,6 @@ etiquetas: [entrevistas, estrenos, shows]
 fecha: 2026-10-22T13:00:00-03:00
 foto: ./img/felipe-colombo-disco-801-comunidad-fan.webp
 fotoAlt: "Felipe Colombo en el estudio de Comunidad FAN presentando su disco 801"
-fotoCredito: "Foto: Comunidad FAN"
 youtube: "iMRS8KjuzLk"
 seoTitulo: "Felipe Colombo presentó su disco solista \"801\" en Comunidad FAN"
 seoDescripcion: "Felipe Colombo presentó \"801\", su primer disco solista. El significado del nombre, el videoclip de \"Miel\" con su hija y el show del 12 de noviembre en el Roxy."

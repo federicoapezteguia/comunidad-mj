@@ -7,7 +7,6 @@ localidad: cordoba-capital
 fecha: 2026-10-23T12:40:00-03:00
 foto: ./img/coloquio-industrial-uic-2026-llaryora.jpg
 fotoAlt: "El gobernador Martín Llaryora en la apertura del 18° Coloquio Industrial de la UIC en Córdoba"
-fotoCredito: "Foto: Gobierno de Córdoba"
 seoTitulo: "Coloquio UIC 2026: Llaryora pidió un RIGI para las pymes"
 seoDescripcion: "En el 18° Coloquio Industrial de Córdoba, Llaryora reclamó un régimen de incentivos para pymes, la prórroga de la Ley de Autopartes y una ley de biocombustibles."
 ---

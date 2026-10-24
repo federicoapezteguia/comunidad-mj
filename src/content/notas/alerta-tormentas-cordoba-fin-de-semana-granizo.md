@@ -6,7 +6,6 @@ etiquetas: [clima]
 fecha: 2026-10-24T08:30:00-03:00
 foto: ./img/alerta-tormentas-cordoba-octubre-2026.jpg
 fotoAlt: "Alerta por tormentas fuertes en la provincia de Córdoba"
-fotoCredito: "Imagen: Gobierno de Córdoba"
 seoTitulo: "Alerta por tormentas en Córdoba: granizo, ráfagas y lluvias"
 seoDescripcion: "Córdoba bajo alerta por tormentas fuertes con granizo, ráfagas y lluvias intensas. Zonas afectadas, recomendaciones y qué esperar en los próximos días."
 ---

@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-20T11:00:00-03:00
 foto: ./img/aniversario-139-marcos-juarez-espinillos-2026.jpg
 fotoAlt: "Acto por el 139 aniversario de Marcos Juárez y entrega de las Distinciones Espinillos 2026 en el Patio de la Cultura"
-fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 seoTitulo: "Distinciones Espinillos 2026: los premiados de Marcos Juárez"
 seoDescripcion: "Marcos Juárez celebró sus 139 años con la entrega de las Distinciones Espinillos 2026. Todos los vecinos e instituciones reconocidos y por qué."
 ---

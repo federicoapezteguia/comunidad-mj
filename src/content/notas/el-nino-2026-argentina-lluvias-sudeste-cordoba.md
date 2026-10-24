@@ -6,7 +6,6 @@ etiquetas: [clima, agro]
 fecha: 2026-10-22T10:00:00-03:00
 foto: ./img/el-nino-obras-hidricas-cordoba-canal.jpg
 fotoAlt: "Trabajos en un canal de la provincia de Córdoba ante la temporada de lluvias"
-fotoCredito: "Foto: Gobierno de Córdoba"
 seoTitulo: "El Niño 2026: pronóstico de lluvias para Córdoba y el campo"
 seoDescripcion: "El Niño 2026 podría ser uno de los más fuertes de la historia. Qué dice el SMN, cuándo llegaría el pico y qué riesgos hay para el este de Córdoba."
 ---

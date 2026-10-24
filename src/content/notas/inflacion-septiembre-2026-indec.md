@@ -6,7 +6,6 @@ etiquetas: [economia]
 fecha: 2026-10-13T17:30:00-03:00
 foto: ./img/inflacion-septiembre-2026-indec.jpg
 fotoAlt: "Billete de pesos argentinos"
-fotoCredito: "Foto: Gobierno de Argentina / Wikimedia Commons (CC BY 4.0)"
 destacada: true
 seoTitulo: "Inflación de septiembre 2026: 1,9% según el INDEC"
 seoDescripcion: "La inflación de septiembre 2026 fue de 1,9% mensual, 23,6% acumulada y 33,4% interanual. Qué rubros subieron más y cuánto aumentó en la región Pampeana."

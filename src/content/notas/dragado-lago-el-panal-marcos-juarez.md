@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-23T09:30:00-03:00
 foto: ./img/lago-el-panal-dragado-marcos-juarez-obra.jpg
 fotoAlt: "Máquinas trabajando en el dragado del Lago El Panal, en el noreste de Marcos Juárez"
-fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 destacada: true
 seoTitulo: "Dragado del Lago El Panal en Marcos Juárez: cómo avanza la obra"
 seoDescripcion: "Avanza el dragado del Lago El Panal, en el noreste de Marcos Juárez: 14.541 m² de obra y unos 17.450 m³ de sedimentos para recuperar su capacidad ante las lluvias."

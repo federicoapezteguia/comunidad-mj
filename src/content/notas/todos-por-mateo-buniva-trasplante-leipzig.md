@@ -8,7 +8,6 @@ fecha: 2026-10-24T12:30:00-03:00
 destacada: true
 foto: ./img/todos-por-mateo-buniva.jpg
 fotoAlt: "Mateo Buniva, el joven nacido en Marcos Juárez que necesita un trasplante de médula ósea"
-fotoCredito: "Foto: campaña Todos por Mateo"
 seoTitulo: "Todos por Mateo: cómo ayudar a Mateo Buniva con su trasplante"
 seoDescripcion: "Mateo Buniva, nacido en Marcos Juárez y vecino de Leones, espera un trasplante de médula en Alemania. Su historia, la campaña Todos por Mateo y cómo donar."
 ---

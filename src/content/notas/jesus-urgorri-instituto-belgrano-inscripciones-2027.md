@@ -7,7 +7,6 @@ etiquetas: [entrevistas, educacion]
 fecha: 2026-10-23T11:00:00-03:00
 foto: ./img/jesus-urgorri-instituto-belgrano-comunidad-fan.webp
 fotoAlt: "Jesús Urgorri, director del nivel superior del Instituto Belgrano, en Comunidad FAN"
-fotoCredito: "Foto: Comunidad FAN"
 youtube: "k1AHsEUACtc"
 seoTitulo: "Instituto Belgrano: inscripciones 2027 y carreras cortas"
 seoDescripcion: "Jesús Urgorri, del Instituto Belgrano, habló en Comunidad FAN de las inscripciones 2027, carreras de tres años, pasantías y el uso de la IA en la formación."

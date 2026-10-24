@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-23T19:00:00-03:00
 foto: ./img/humo-y-terciopelo-diagonal-norte-marcos-juarez.jpg
 fotoAlt: "Afiche de Humo y Terciopelo, noche de burlesque y vinos de Diagonal Norte Dance Studio en Marcos Juárez"
-fotoCredito: "Imagen: Diagonal Norte Dance Studio"
 seoTitulo: "Humo y Terciopelo: burlesque y vinos en Marcos Juárez"
 seoDescripcion: "Humo y Terciopelo llega a Marcos Juárez el sábado 24 de octubre a las 20:30: burlesque, teatro, música en vivo y degustación de vinos. Precio y reservas."
 ---

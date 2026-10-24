@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-22T20:00:00-03:00
 foto: ./img/marcos-juarez-vista-aerea-atardecer.jpg
 fotoAlt: "Vista aérea del centro de Marcos Juárez al atardecer"
-fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 seoTitulo: "Uber en Marcos Juárez: cómo pedir viajes y envíos"
 seoDescripcion: "Uber ya está disponible en Marcos Juárez con UberX y Uber Envíos. Cómo pedir un viaje, formas de pago, seguridad y cómo sumarse como conductor o remisero."
 ---

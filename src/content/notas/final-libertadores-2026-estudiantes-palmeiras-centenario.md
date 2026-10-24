@@ -6,7 +6,6 @@ etiquetas: [deportes, futbol]
 fecha: 2026-10-23T09:00:00-03:00
 foto: ./img/estadio-centenario-montevideo-final-libertadores.jpg
 fotoAlt: "Vista aérea del Estadio Centenario de Montevideo, sede de la final de la Copa Libertadores 2026"
-fotoCredito: "Foto: Wikimedia Commons"
 seoTitulo: "Final Libertadores 2026: Estudiantes vs. Palmeiras en Montevideo"
 seoDescripcion: "Estudiantes eliminó a Flamengo por penales y jugará la final de la Copa Libertadores 2026 ante Palmeiras el 28 de noviembre en el Estadio Centenario."
 ---

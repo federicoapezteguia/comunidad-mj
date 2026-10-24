@@ -7,7 +7,6 @@ localidad: cordoba-capital
 fecha: 2026-10-23T16:00:00-03:00
 foto: ./img/educacion-productiva-cordoba-empresas-escuelas.jpg
 fotoAlt: "Estudiantes de una escuela técnica de Córdoba en un taller"
-fotoCredito: "Foto: Gobierno de Córdoba"
 seoTitulo: "Educación Productiva: empresas y escuelas, juntas en Córdoba"
 seoDescripcion: "El 26 de octubre, el encuentro Educación Productiva reúne en el Instituto Técnico Renault a empresas, parques industriales y escuelas de Córdoba."
 ---

@@ -13,7 +13,6 @@ fecha: 2026-10-23T10:30:00-03:00
 # actualizado: 2026-10-23T12:00:00-03:00
 foto: ./img/nombre-de-la-foto.jpg   # subir la foto a src/content/notas/img/
 fotoAlt: "Descripción de lo que se ve en la foto"
-fotoCredito: "Foto: Nombre"
 destacada: false              # true = aparece arriba en la portada
 
 # Publinota (contenido pago)

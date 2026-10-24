@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-21T10:30:00-03:00
 foto: ./img/octubre-rosa-tercera-jornada-barrio-sur-marcos-juarez.jpg
 fotoAlt: "Vecinas en la tercera jornada de Octubre Rosa en el Centro Periférico N° 1 de barrio Sur, Marcos Juárez"
-fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 seoTitulo: "Octubre Rosa en Marcos Juárez: controles en barrio Sur"
 seoDescripcion: "La tercera jornada de Octubre Rosa en el Centro Periférico N° 1 de Marcos Juárez tuvo gran convocatoria. Cómo sacar turno para los próximos controles."
 ---

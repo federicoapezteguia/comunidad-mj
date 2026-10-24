@@ -7,7 +7,6 @@ etiquetas: [entrevistas, tecnologia]
 fecha: 2026-10-23T13:00:00-03:00
 foto: ./img/roda-azziani-ia-comunidad-fan.webp
 fotoAlt: "Roda Azziani en el estudio de Comunidad FAN hablando de inteligencia artificial"
-fotoCredito: "Foto: Comunidad FAN"
 youtube: "KWxNIS02pZM"
 seoTitulo: "¿Real o IA? El desafío de Roda Azziani en Comunidad FAN"
 seoDescripcion: "Roda Azziani mostró en Comunidad FAN videos hechos con inteligencia artificial y cómo evolucionó la IA desde 2023. ¿Podés distinguir lo real de lo falso?"

@@ -7,7 +7,6 @@ localidad: leones
 fecha: 2026-10-23T20:00:00-03:00
 foto: ./img/octubre-cultural-leones-2026.jpg
 fotoAlt: "Afiche del Octubre Cultural 2026 de Leones con el desfile de carrozas"
-fotoCredito: "Imagen: Municipalidad de Leones"
 seoTitulo: "Octubre Cultural Leones 2026: shows, carrozas y horarios"
 seoDescripcion: "El Octubre Cultural de Leones es el 24 y 25 de octubre con entrada libre: desfile de carrozas, Los Tipitos, Jorge Toro Quevedo y Simón Aguirre."
 ---

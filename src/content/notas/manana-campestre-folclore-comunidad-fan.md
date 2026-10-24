@@ -7,7 +7,6 @@ etiquetas: [folclore, cultura]
 fecha: 2026-10-22T10:30:00-03:00
 foto: ./img/manana-campestre-folclore-comunidad-fan.webp
 fotoAlt: "Ema Rodríguez durante el segmento La Mañana Campestre en Comunidad FAN"
-fotoCredito: "Foto: Comunidad FAN"
 youtube: "t9-uC9HvqSw"
 seoTitulo: "La Mañana Campestre: folclore en vivo en Comunidad FAN"
 seoDescripcion: "Ema Rodríguez y La Mañana Campestre llenaron de folclore la mañana de Comunidad FAN. Mirá el segmento más argentino de la radio, con la participación de la audiencia."

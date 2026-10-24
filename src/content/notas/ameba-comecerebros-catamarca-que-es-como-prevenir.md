@@ -6,7 +6,6 @@ etiquetas: [salud]
 fecha: 2026-10-23T11:00:00-03:00
 foto: ./img/fiambala-catamarca-ameba.jpg
 fotoAlt: "Vista de Fiambalá, en la provincia de Catamarca"
-fotoCredito: "Foto: Wikimedia Commons"
 seoTitulo: "Ameba comecerebros: qué es, cómo se contagia y cómo prevenirla"
 seoDescripcion: "Murió un niño en Catamarca por Naegleria fowleri, la ameba comecerebros. Qué es, cómo entra al cuerpo, síntomas y recomendaciones para prevenir la infección."
 ---

@@ -6,7 +6,6 @@ etiquetas: [cuarteto, estrenos, folclore]
 fecha: 2026-10-24T09:30:00-03:00
 foto: ./img/mona-jimenez-show-en-vivo.jpg
 fotoAlt: "La Mona Jiménez en un show en vivo"
-fotoCredito: "Foto: Wikimedia Commons"
 seoTitulo: "La Mona Jiménez y Abel Pintos estrenaron \"Aire\""
 seoDescripcion: "La Mona Jiménez y Abel Pintos lanzaron \"Aire\", su primera canción juntos, grabada en Córdoba. Cómo nació la colaboración entre el cuarteto y el folclore."
 ---

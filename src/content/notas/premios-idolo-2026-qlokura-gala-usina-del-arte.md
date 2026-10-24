@@ -6,7 +6,6 @@ etiquetas: [cuarteto, shows, eventos]
 fecha: 2026-10-22T15:00:00-03:00
 foto: ./img/usina-del-arte-premios-idolo-2026.jpg
 fotoAlt: "Usina del Arte de Buenos Aires, sede de la gala de los Premios Ídolo 2026"
-fotoCredito: "Foto: Wikimedia Commons"
 seoTitulo: "Premios Ídolo 2026: Q'Lokura actuará en la gala"
 seoDescripcion: "Q'Lokura y La T y La M serán los números musicales de los Premios Ídolo 2026, el 28 de octubre en la Usina del Arte. Nominados, conducción y transmisión."
 ---

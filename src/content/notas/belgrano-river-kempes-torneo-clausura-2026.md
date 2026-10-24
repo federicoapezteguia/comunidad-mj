@@ -7,7 +7,6 @@ localidad: cordoba-capital
 fecha: 2026-10-18T23:30:00-03:00
 foto: ./img/belgrano-river-estadio-kempes.jpg
 fotoAlt: "Vista del estadio Mario Alberto Kempes durante un partido entre Belgrano y River"
-fotoCredito: "Foto de archivo: Alepizarro32 / Wikimedia Commons (CC BY-SA 4.0)"
 seoTitulo: "Belgrano 0-3 River en el Kempes: goles y cómo quedó la tabla"
 seoDescripcion: "River le ganó 3-0 a Belgrano en el Kempes por el Torneo Clausura 2026. Goles de Galván, Correa y Almada, y cómo quedó el Pirata en la Zona B."
 ---

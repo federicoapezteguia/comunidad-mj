@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-21T16:00:00-03:00
 foto: ./img/caritas-residencias-estudiantiles-marcos-juarez.jpg
 fotoAlt: "Firma del convenio entre la Municipalidad de Marcos Juárez y Cáritas Villa María para residencias estudiantiles"
-fotoCredito: "Imagen: Municipalidad de Marcos Juárez"
 seoTitulo: "Marcos Juárez paga residencias universitarias en Villa María"
 seoDescripcion: "La Municipalidad de Marcos Juárez y Cáritas Villa María firmaron un convenio: el municipio financiará cuatro plazas en residencias para estudiantes."
 ---

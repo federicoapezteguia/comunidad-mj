@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-20T17:00:00-03:00
 foto: ./img/mini-ciudad-vial-marcos-juarez-2026.jpg
 fotoAlt: "Flyer de la Mini Ciudad Vial en el SUM de la Escuela Manuel Belgrano de Marcos Juárez"
-fotoCredito: "Imagen: Municipalidad de Marcos Juárez"
 seoTitulo: "Mini Ciudad Vial en Marcos Juárez: días y horarios"
 seoDescripcion: "La Mini Ciudad Vial vuelve a Marcos Juárez en el SUM de la Escuela Manuel Belgrano. Visitas abiertas el 27 de octubre de 16 a 17 y el 30 de 17 a 18."
 ---

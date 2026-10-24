@@ -6,7 +6,6 @@ etiquetas: [policiales, seguridad]
 fecha: 2026-10-19T13:00:00-03:00
 foto: ./img/fpa-operativo-autopista-rosario-cordoba.jpg
 fotoAlt: "Autopista Rosario-Córdoba a la altura del kilómetro 365"
-fotoCredito: "Foto: Dario Alpern / Wikimedia Commons (CC BY-SA 4.0)"
 seoTitulo: "Operativo de la FPA en la autopista Rosario-Córdoba"
 seoDescripcion: "La FPA realizó controles a colectivos de hinchas en la autopista Rosario-Córdoba antes de Belgrano-River: 18 procedimientos positivos por cocaína, marihuana y tussi."
 ---

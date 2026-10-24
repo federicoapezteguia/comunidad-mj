@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-21T16:00:00-03:00
 foto: ./img/intercolegial-ajedrez-escuela-zambruno-marcos-juarez.jpg
 fotoAlt: "Alumnos de escuelas primarias de Marcos Juárez jugando el Intercolegial de Ajedrez en la Escuela Zambruno"
-fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 seoTitulo: "Intercolegial de Ajedrez en Marcos Juárez: ganadores y fotos"
 seoDescripcion: "La Escuela Manuel Belgrano ganó el primer Intercolegial de Ajedrez de Marcos Juárez, jugado en la Escuela Zambruno con 22 alumnos de siete escuelas primarias."
 ---

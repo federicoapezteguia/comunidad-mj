@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-19T10:00:00-03:00
 foto: ./img/pequenos-rescatistas-escuela-mariano-moreno-marcos-juarez.jpg
 fotoAlt: "Alumnos de la Escuela Mariano Moreno de Marcos Juárez junto al equipo de Salud municipal en el taller Pequeños Rescatistas"
-fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 seoTitulo: "Pequeños Rescatistas: primeros auxilios en la Mariano Moreno"
 seoDescripcion: "El equipo de Salud de Marcos Juárez dio talleres de primeros auxilios y RCP a alumnos de la Escuela Mariano Moreno con el programa Pequeños Rescatistas."
 ---

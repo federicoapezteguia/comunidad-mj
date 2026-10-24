@@ -7,7 +7,6 @@ etiquetas: [entrevistas, politica]
 fecha: 2026-10-22T17:00:00-03:00
 foto: ./img/clara-garcia-diputados-santa-fe-comunidad-fan.webp
 fotoAlt: "Clara García, presidenta de la Cámara de Diputados de Santa Fe, en el estudio de Comunidad FAN"
-fotoCredito: "Foto: Comunidad FAN"
 youtube: "godTaLM3dNY"
 seoTitulo: "Clara García en Comunidad FAN: política, rutas y consensos"
 seoDescripcion: "La presidenta de la Cámara de Diputados de Santa Fe, Clara García, analizó en Comunidad FAN la relación con Nación, las obras viales y cómo construir consensos."

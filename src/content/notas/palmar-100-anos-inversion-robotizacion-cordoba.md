@@ -7,7 +7,6 @@ localidad: cordoba-capital
 fecha: 2026-10-24T10:00:00-03:00
 foto: ./img/palmar-100-anos-llaryora-cordoba.jpg
 fotoAlt: "Acto por los 100 años de Palmar SA con el gobernador Martín Llaryora"
-fotoCredito: "Foto: Gobierno de Córdoba"
 seoTitulo: "Palmar cumple 100 años e invierte US$15 millones en Córdoba"
 seoDescripcion: "La ladrillera cordobesa Palmar celebró su centenario con una inversión de US$15 millones en robotización. Producirá 30% más ladrillos cerámicos."
 ---

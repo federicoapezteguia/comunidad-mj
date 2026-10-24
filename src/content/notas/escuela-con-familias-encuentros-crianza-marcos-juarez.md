@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-23T11:00:00-03:00
 foto: ./img/escuela-con-familias-encuentros-marcos-juarez.jpg
 fotoAlt: "Flyer del programa Escuela con Familias de la Municipalidad de Marcos Juárez"
-fotoCredito: "Imagen: Municipalidad de Marcos Juárez"
 seoTitulo: "Escuela con Familias en Marcos Juárez: fechas y temas"
 seoDescripcion: "El programa Escuela con Familias suma encuentros el 27 de octubre y el 17 de noviembre en la guardería Hijitus de Marcos Juárez. Temas, horario e inscripción."
 ---

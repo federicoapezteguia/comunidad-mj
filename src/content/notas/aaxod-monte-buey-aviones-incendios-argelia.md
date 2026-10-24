@@ -7,7 +7,6 @@ localidad: monte-buey
 fecha: 2026-10-23T15:00:00-03:00
 foto: ./img/aaxod-monte-buey-aviones-hidrantes.jpg
 fotoAlt: "Aviones hidrantes de la empresa Aaxod de Monte Buey en vuelo"
-fotoCredito: "Foto: Aaxod"
 seoTitulo: "Aaxod, de Monte Buey: sus aviones combatieron fuego en Argelia"
 seoDescripcion: "Siete aviones hidrantes de Aaxod, empresa de Monte Buey, combatieron incendios forestales en Argelia durante cuatro meses. La ruta, la misión y la vuelta."
 ---

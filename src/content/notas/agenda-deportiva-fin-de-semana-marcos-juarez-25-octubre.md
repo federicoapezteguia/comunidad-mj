@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-24T10:00:00-03:00
 foto: ./img/agenda-deportiva-marcos-juarez-25-octubre.jpg
 fotoAlt: "Agenda deportiva del fin de semana en Marcos Juárez"
-fotoCredito: "Gráfico: Comunidad FAN Marcos Juárez"
 seoTitulo: "Agenda deportiva de Marcos Juárez: domingo 25 de octubre"
 seoDescripcion: "Qué se juega en Marcos Juárez este fin de semana: Maratón, cuartos de final de la Liga Bellvillense, Argentino, rugby del Municipal y el vóley de Argentino."
 ---

@@ -7,7 +7,6 @@ localidad: marcos-juarez
 fecha: 2026-10-22T12:00:00-03:00
 foto: ./img/upc-sede-houssay-puertas-abiertas-2026.jpg
 fotoAlt: "Estudiantes y visitantes en las Jornadas de Puertas Abiertas de la sede Marcos Juárez de la Universidad Provincial de Córdoba"
-fotoCredito: "Foto: Universidad Provincial de Córdoba – Sede Marcos Juárez"
 seoTitulo: "UPC Marcos Juárez: así fueron las Puertas Abiertas 2026"
 seoDescripcion: "La sede regional Bernardo Houssay de la UPC en Marcos Juárez hizo sus Jornadas de Puertas Abiertas: proyectos, carreras actuales y propuestas para 2027."
 ---

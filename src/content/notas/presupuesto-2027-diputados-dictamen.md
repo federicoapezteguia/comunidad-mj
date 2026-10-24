@@ -6,7 +6,6 @@ etiquetas: [politica, economia, gobierno]
 fecha: 2026-10-23T10:30:00-03:00
 foto: ./img/presupuesto-2027-camara-diputados.jpg
 fotoAlt: "Recinto de la Cámara de Diputados de la Nación Argentina"
-fotoCredito: "Foto: Cámara de Diputados de la Nación (dominio público), vía Wikimedia Commons"
 seoTitulo: "Presupuesto 2027 en Diputados: números clave y cronograma"
 seoDescripcion: "Presupuesto 2027: crecimiento de 4%, inflación de 21,1% y dólar a $1.728. El oficialismo busca dictamen el 28 de octubre y sesión a mediados de noviembre."
 ---

@@ -1,13 +1,12 @@
 ---
 titulo: "Martes Chef: una noche de humor y música en el Viejo Bar a beneficio de Manu Vicente"
-bajada: "Es el martes 27 de octubre a las 21 con Diego Pérez y Marcelo Josset. Todo lo recaudado es para Manu, el nene marcosjuarense por el que la ciudad viene organizando colectas, peñas y bingos."
+bajada: "Es el martes 27 de octubre a las 21 con Diego Pérez y Marcelo Josset. Todo lo recaudado es para Manu, la nena marcosjuarense por la que la ciudad viene organizando colectas, peñas y bingos."
 seccion: marcos-juarez
 etiquetas: [sociedad, eventos, shows]
 localidad: marcos-juarez
 fecha: 2026-10-24T12:00:00-03:00
 foto: ./img/todos-por-manu-marcos-juarez.jpg
-fotoAlt: "Manu Vicente, el nene de Marcos Juárez por el que la ciudad organiza la campaña Todos por Manu"
-fotoCredito: "Imagen: Cáritas Marcos Juárez"
+fotoAlt: "Manu Vicente, la nena de Marcos Juárez por la que la ciudad organiza la campaña Todos por Manu"
 seoTitulo: "Martes Chef a beneficio de Manu Vicente en Marcos Juárez"
 seoDescripcion: "Martes Chef, show humorístico musical con Diego Pérez y Marcelo Josset, el 27 de octubre en el Viejo Bar de Marcos Juárez a beneficio de Manu Vicente."
 ---
@@ -29,4 +28,4 @@ La movida por Manu empezó hace semanas y fue sumando gente. En septiembre, **C�
 
 Después llegaron la **peña solidaria "Una esperanza para Manu"** en el Anfiteatro Municipal, con música en vivo, inflables, autos antiguos, rifas y cortes de pelo a beneficio, y un **mate bingo** en el salón Cura Brochero del FASTA, compartido con la campaña de Mateo Buniva.
 
-"Martes Chef" es la próxima cita. Una buena excusa para salir un martes, reírse un rato y, de paso, ayudar a un vecino que lo necesita.
+"Martes Chef" es la próxima cita. Una buena excusa para salir un martes, reírse un rato y, de paso, ayudar a una vecina que lo necesita.

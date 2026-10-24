@@ -6,7 +6,6 @@ etiquetas: [obras, clima, agro, gobierno]
 fecha: 2026-10-22T16:00:00-03:00
 foto: ./img/obras-hidricas-canales-cordoba-2026.jpg
 fotoAlt: "Máquinas trabajando en la limpieza de un canal en la provincia de Córdoba"
-fotoCredito: "Foto: Gobierno de Córdoba"
 seoTitulo: "Obras hídricas en Córdoba por El Niño: inversión y alcance"
 seoDescripcion: "Córdoba invierte más de $93.000 millones en obras hídricas ante El Niño: 16 obras de drenaje en 2026, 1.000 km de canales por año y 350 microembalses."
 ---

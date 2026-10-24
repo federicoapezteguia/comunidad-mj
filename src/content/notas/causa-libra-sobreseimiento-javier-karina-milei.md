@@ -6,7 +6,6 @@ etiquetas: [politica, gobierno]
 fecha: 2026-10-24T09:00:00-03:00
 foto: ./img/casa-rosada-fachada-buenos-aires.jpg
 fotoAlt: "Fachada de la Casa Rosada vista desde la avenida Rivadavia"
-fotoCredito: "Foto: Wikimedia Commons"
 seoTitulo: "Causa $LIBRA: sobreseyeron a Javier y Karina Milei"
 seoDescripcion: "El juez Martínez De Giorgi sobreseyó a Javier Milei, Karina Milei y otros nueve imputados en la causa $LIBRA al considerar que no hubo delito."
 ---

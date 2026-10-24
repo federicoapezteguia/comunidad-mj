@@ -104,7 +104,7 @@ if (d.youtube) {
 
       <figure class="foto-principal">
         <Image src={d.foto} alt={d.fotoAlt} widths={[480, 800, 1100, 1500]} sizes="(min-width: 1000px) 780px, 100vw" loading="eager" fetchpriority="high" data-pagefind-meta="image[src], image_alt[alt]" />
-        {(d.fotoCredito || d.fotoAlt) && <figcaption>{d.fotoAlt}{d.fotoCredito && <> · {d.fotoCredito}</>}</figcaption>}
+        {d.fotoAlt && <figcaption>{d.fotoAlt}</figcaption>}
       </figure>
 
       {d.youtube && (

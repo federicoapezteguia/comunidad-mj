@@ -6,7 +6,6 @@ etiquetas: [deportes, futbol]
 fecha: 2026-10-22T10:00:00-03:00
 foto: ./img/estadio-metropolitano-barranquilla-final-sudamericana.jpg
 fotoAlt: "Estadio Metropolitano Roberto Meléndez de Barranquilla, sede de la final de la Copa Sudamericana 2026"
-fotoCredito: "Foto: Wikimedia Commons"
 seoTitulo: "Final Sudamericana 2026: Boca vs. Atlético Mineiro en Barranquilla"
 seoDescripcion: "Boca le ganó 3-1 a Vasco en el Maracaná y jugará la final de la Copa Sudamericana 2026 ante Atlético Mineiro el 21 de noviembre en Barranquilla."
 ---
