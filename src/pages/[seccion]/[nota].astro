@@ -119,7 +119,7 @@ if (d.youtube) {
       <div class="texto" id="texto-nota">
         <Content />
       </div>
-      <div id="pub-en-nota" class="pub-en-nota" data-pagefind-ignore><Publicidad espacio="en-nota" /></div>
+      <div id="pub-en-nota" class="pub-en-nota" data-pagefind-ignore><Publicidad espacio="en-nota" orden={[...nota.id].reduce((a, c) => a + c.charCodeAt(0), 0)} /></div>
       <script is:inline>
         // Ubica el banner después del 3.er párrafo (antes de que se pinte la página).
         (function () {

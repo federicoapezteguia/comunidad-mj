@@ -64,6 +64,13 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
       imagen: '/banners/ld-performance-300x250.webp',
       enlace: 'https://ldperformance.com.ar',
     },
+    {
+      anunciante: 'Meyer Automotores – Ruta 9 y Las Colonias, Marcos Juárez',
+      imagen: '/banners/meyer-automotores-marcos-juarez.webp',
+      enlace: 'https://www.instagram.com/meyerautos.msjz/',
+      w: 600,
+      h: 600,
+    },
   ],
   campanas: [
     {
