@@ -16,7 +16,7 @@ const anio = new Date().getFullYear();
       <p>
         FM {SITE.frecuencia} · {SITE.ciudad}, {SITE.provincia}<br />
         <strong class="contacto-com">Contacto comercial en Marcos Juárez:</strong><br />
-        {SITE.whatsappComercialVisible} · <a href="mailto:fede@comunidad.fan">fede@comunidad.fan</a>
+        <a href={`https://wa.me/${SITE.whatsappComercial}`} target="_blank" rel="noopener" class="enlace-contacto">{SITE.whatsappComercialVisible}</a> · <a href="mailto:fede@comunidad.fan" class="enlace-contacto">fede@comunidad.fan</a>
       </p>
       <Redes />
     </div>
@@ -72,4 +72,6 @@ const anio = new Date().getFullYear();
   .rok { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; color: var(--violeta); }
   .rok img { height: 40px; width: auto; }
   .rok:hover { color: var(--blanco); }
+  .enlace-contacto { text-decoration: underline; text-underline-offset: 3px; }
+  .enlace-contacto:hover { color: var(--amarillo); }
 </style>
