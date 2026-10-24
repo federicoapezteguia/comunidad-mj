@@ -29,7 +29,15 @@ export type Banner = {
 
 export const BANNERS: Record<EspacioId, Banner[]> = {
   superior: [],
-  lateral: [],
+  lateral: [
+    {
+      anunciante: 'ROK – Desarrollo y diseño de sitios web',
+      imagen: '/banners/rok-desarrollo-diseno-sitios-web.webp',
+      enlace: 'https://agenciarok.com.ar',
+      w: 600,
+      h: 600,
+    },
+  ],
   'lateral-largo': [],
   'en-nota': [],
   campanas: [
