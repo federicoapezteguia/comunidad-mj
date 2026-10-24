@@ -18,13 +18,23 @@ for (const [local, commons] of Object.entries(lista)) {
   const url = commons.startsWith('http')
     ? commons
     : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(commons)}?width=1600`;
-  const r = await fetch(url, {
-    headers: { 'User-Agent': 'ComunidadFanMJ/1.0 (https://comunidad.rokmarketing.com; sitio de noticias)' },
-    redirect: 'follow',
-  });
+  const esCommons = !commons.startsWith('http');
+  const headers = esCommons
+    ? { 'User-Agent': 'ComunidadFanMJ/1.0 (https://comunidad.rokmarketing.com; sitio de noticias)' }
+    : {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',
+        Accept: 'image/avif,image/webp,image/*,*/*;q=0.8',
+        Referer: new URL(url).origin + '/',
+      };
+  let r;
+  try {
+    r = await fetch(url, { headers, redirect: 'follow' });
+  } catch (e) {
+    console.warn(`AVISO: error de red con ${local}: ${e.message}`);
+    continue;
+  }
   if (!r.ok) {
-    console.error(`No se pudo descargar ${commons}: ${r.status}`);
-    process.exitCode = 1;
+    console.warn(`AVISO: no se pudo descargar ${local} (${r.status}) desde ${url}`);
     continue;
   }
   await writeFile(ruta, Buffer.from(await r.arrayBuffer()));
