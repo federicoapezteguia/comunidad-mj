@@ -16,8 +16,24 @@
   "maraton-marcos-juarez-2026-colaboradores.jpg": "https://www.mmj.gob.ar/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-16-at-10.25.41.jpeg",
   "intercolegial-ajedrez-escuela-zambruno-marcos-juarez.jpg": "https://www.mmj.gob.ar/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-21-at-07.48.30-2-1024x576.jpeg",
   "intercolegial-ajedrez-ganadores-marcos-juarez.jpg": "https://www.mmj.gob.ar/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-21-at-07.48.30-1-1024x659.jpeg",
-  "papa-leon-xiv-predio-fadea-cordoba.jpg": "https://www.cba.gov.ar/wp-content/uploads/2026/10/visita-papa-fadea-6-1024x682-1.jpeg",
-  "obras-hidricas-canales-cordoba-2026.jpg": "https://www.cba.gov.ar/wp-content/uploads/2026/10/obras-hidritas-3-1.jpeg",
-  "el-nino-obras-hidricas-cordoba-canal.jpg": "https://www.cba.gov.ar/wp-content/uploads/2026/10/obras-hidritas-7.jpeg",
-  "coloquio-industrial-uic-2026-llaryora.jpg": "https://prensa.cba.gov.ar/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-22-at-16.19.04-1024x602.jpeg"
+  "papa-leon-xiv-predio-fadea-cordoba.jpg": [
+    "https://www.cba.gov.ar/wp-content/uploads/2026/10/visita-papa-fadea-6-1024x682-1.jpeg",
+    "https://wsrv.nl/?url=www.cba.gov.ar/wp-content/uploads/2026/10/visita-papa-fadea-6-1024x682-1.jpeg&w=1600&output=jpg",
+    "https://i0.wp.com/www.cba.gov.ar/wp-content/uploads/2026/10/visita-papa-fadea-6-1024x682-1.jpeg?w=1600"
+  ],
+  "obras-hidricas-canales-cordoba-2026.jpg": [
+    "https://www.cba.gov.ar/wp-content/uploads/2026/10/obras-hidritas-3-1.jpeg",
+    "https://wsrv.nl/?url=www.cba.gov.ar/wp-content/uploads/2026/10/obras-hidritas-3-1.jpeg&w=1600&output=jpg",
+    "https://i0.wp.com/www.cba.gov.ar/wp-content/uploads/2026/10/obras-hidritas-3-1.jpeg?w=1600"
+  ],
+  "el-nino-obras-hidricas-cordoba-canal.jpg": [
+    "https://www.cba.gov.ar/wp-content/uploads/2026/10/obras-hidritas-7.jpeg",
+    "https://wsrv.nl/?url=www.cba.gov.ar/wp-content/uploads/2026/10/obras-hidritas-7.jpeg&w=1600&output=jpg",
+    "https://i0.wp.com/www.cba.gov.ar/wp-content/uploads/2026/10/obras-hidritas-7.jpeg?w=1600"
+  ],
+  "coloquio-industrial-uic-2026-llaryora.jpg": [
+    "https://prensa.cba.gov.ar/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-22-at-16.19.04-1024x602.jpeg",
+    "https://wsrv.nl/?url=prensa.cba.gov.ar/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-22-at-16.19.04-1024x602.jpeg&w=1600&output=jpg",
+    "https://i0.wp.com/prensa.cba.gov.ar/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-22-at-16.19.04-1024x602.jpeg?w=1600"
+  ]
 }

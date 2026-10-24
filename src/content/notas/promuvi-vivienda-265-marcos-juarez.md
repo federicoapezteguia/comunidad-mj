@@ -5,8 +5,8 @@ seccion: marcos-juarez
 etiquetas: [municipio, sociedad, obras]
 localidad: marcos-juarez
 fecha: 2026-10-23T13:30:00-03:00
-foto: ./img/promuvi-vivienda-265-marcos-juarez.jpg
-fotoAlt: "Vivienda número 265 del Programa Municipal de Viviendas en barrio Oddo, Marcos Juárez"
+foto: ./img/promuvi-vivienda-265-marcos-juarez-portada.jpg
+fotoAlt: "Placa de la entrega de la vivienda 265 del PROMUVI en Marcos Juárez"
 fotoCredito: "Foto: Municipalidad de Marcos Juárez"
 seoTitulo: "PROMUVI Marcos Juárez: se entregó la vivienda 265"
 seoDescripcion: "El Programa Municipal de Viviendas de Marcos Juárez entregó la casa 265 en barrio Oddo. Cómo nació el PROMUVI y cómo se financia hoy."

@@ -5,7 +5,7 @@ seccion: deportes
 etiquetas: [atletismo, deportes, eventos]
 localidad: marcos-juarez
 fecha: 2026-10-23T17:20:00-03:00
-foto: ./img/maraton-marcos-juarez-2026-30-anos.jpg
+foto: ./img/maraton-marcos-juarez-2026-portada.jpg
 fotoAlt: "Maratón Marcos Juárez 2026, edición 30 años, domingo 25 de octubre"
 fotoCredito: "Imagen: Municipalidad de Marcos Juárez"
 seoTitulo: "Maratón Marcos Juárez 2026: horarios, distancias e inscripción"
