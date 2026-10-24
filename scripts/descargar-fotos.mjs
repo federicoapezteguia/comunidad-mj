@@ -43,7 +43,7 @@ for (const [local, commons] of Object.entries(lista)) {
           Referer: new URL(url).origin + '/',
         };
     try {
-      const r = await fetch(url, { headers, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+      const r = await fetch(url, { headers, redirect: 'follow', signal: AbortSignal.timeout(90000) });
       const tipo = r.headers.get('content-type') || '';
       if (!r.ok || !tipo.startsWith('image/')) {
         console.warn(`AVISO: ${local} no disponible (${r.status} ${tipo}) en ${url}`);
