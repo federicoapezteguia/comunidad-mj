@@ -43,6 +43,13 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
       w: 600,
       h: 600,
     },
+    {
+      anunciante: "Los Tano's – Parrilla y comedor",
+      imagen: '/banners/los-tanos-parrilla-comedor.webp',
+      enlace: 'https://www.instagram.com/lostanosmsjz/',
+      w: 600,
+      h: 600,
+    },
   ],
   'lateral-largo': [
     {

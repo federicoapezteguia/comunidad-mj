@@ -1,10 +1,11 @@
 ---
 import { BANNERS, MEDIDAS, type EspacioId } from '../data/publicidad';
-interface Props { espacio: EspacioId; class?: string }
-const { espacio, class: clase } = Astro.props;
+interface Props { espacio: EspacioId; class?: string; orden?: number }
+const { espacio, class: clase, orden = 0 } = Astro.props;
 const hoy = new Date().toISOString().slice(0, 10);
 const vigentes = BANNERS[espacio].filter((b) => (!b.desde || b.desde <= hoy) && (!b.hasta || b.hasta >= hoy));
-const b = vigentes[0];
+// Si un espacio tiene varios anunciantes, cada ubicación (orden) muestra uno distinto
+const b = vigentes.length ? vigentes[orden % vigentes.length] : undefined;
 const m = MEDIDAS[espacio];
 const ratio = b?.w && b?.h ? `${b.w} / ${b.h}` : `${m.w} / ${m.h}`;
 const ratioMovil = b?.w && b?.h ? ratio : m.wMovil ? `${m.wMovil} / ${m.hMovil}` : ratio;

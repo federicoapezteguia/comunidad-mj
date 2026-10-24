@@ -103,7 +103,7 @@ const jsonLd = [
           <h2 id="h-nac" class="sec-h"><a href="/nacionales/">{SECCIONES.nacionales.nombre}</a><a href="/nacionales/" class="mas">Ver todas</a></h2>
           <div class="lista-comp">{nac.map((n) => <TarjetaNota nota={n} variante="compacta" />)}</div>
         </div>
-        <div class="lateral"><Publicidad espacio="lateral" /></div>
+        <div class="lateral"><Publicidad espacio="lateral" orden={1} /></div>
       </div>
     </section>
   )}
