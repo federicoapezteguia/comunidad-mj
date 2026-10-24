@@ -16,6 +16,8 @@ export async function getStaticPaths() {
 
 interface Props { nota: Nota; todas: Nota[] }
 const { nota, todas } = Astro.props;
+// Mismo anunciante en la columna y dentro de la nota
+const ordenPub = [...nota.id].reduce((a, c) => a + c.charCodeAt(0), 0);
 const d = nota.data;
 const { Content } = await render(nota);
 const autor = await getEntry('autores', d.autor);
@@ -119,7 +121,7 @@ if (d.youtube) {
       <div class="texto" id="texto-nota">
         <Content />
       </div>
-      <div id="pub-en-nota" class="pub-en-nota" data-pagefind-ignore><Publicidad espacio="en-nota" orden={[...nota.id].reduce((a, c) => a + c.charCodeAt(0), 0)} /></div>
+      <div id="pub-en-nota" class="pub-en-nota" data-pagefind-ignore><Publicidad espacio="en-nota" orden={ordenPub} /></div>
       <script is:inline>
         // Ubica el banner después del 3.er párrafo (antes de que se pinte la página).
         (function () {
@@ -140,7 +142,7 @@ if (d.youtube) {
     </article>
 
     <aside class="lateral">
-      <div class="pegajoso"><Publicidad espacio="lateral-largo" /></div>
+      <div class="pegajoso"><Publicidad espacio="lateral-largo" orden={ordenPub} /></div>
     </aside>
   </div>
 

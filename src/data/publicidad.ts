@@ -27,6 +27,8 @@ export type Banner = {
   hasta?: string; // 'AAAA-MM-DD'
 };
 
+// IMPORTANTE: en 'lateral-largo' y 'en-nota' los anunciantes van en el MISMO orden,
+// así cada nota muestra un solo anunciante en los dos espacios (no se cruzan rubros).
 export const BANNERS: Record<EspacioId, Banner[]> = {
   superior: [
     {
@@ -56,6 +58,11 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
       anunciante: 'LD Performance Automotores – usados, 0 km y taller (San Marcos Sud)',
       imagen: '/banners/ld-performance-300x600.webp',
       enlace: 'https://ldperformance.com.ar',
+    },
+    {
+      anunciante: 'Meyer Automotores – Ruta 9 y Las Colonias, Marcos Juárez',
+      imagen: '/banners/meyer-automotores-300x600.webp',
+      enlace: 'https://www.instagram.com/meyerautos.msjz/',
     },
   ],
   'en-nota': [
