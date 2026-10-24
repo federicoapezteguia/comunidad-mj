@@ -44,8 +44,20 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
       h: 600,
     },
   ],
-  'lateral-largo': [],
-  'en-nota': [],
+  'lateral-largo': [
+    {
+      anunciante: 'LD Performance Automotores – usados, 0 km y taller (San Marcos Sud)',
+      imagen: '/banners/ld-performance-300x600.webp',
+      enlace: 'https://ldperformance.com.ar',
+    },
+  ],
+  'en-nota': [
+    {
+      anunciante: 'LD Performance Automotores – usados, 0 km y taller (San Marcos Sud)',
+      imagen: '/banners/ld-performance-300x250.webp',
+      enlace: 'https://ldperformance.com.ar',
+    },
+  ],
   campanas: [
     {
       anunciante: 'Unicornio Viajes – Volá hacia tus sueños',
