@@ -31,10 +31,8 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
   superior: [
     {
       anunciante: 'La Paulina – Disproal SRL, distribuidor oficial (Tortugas, Santa Fe)',
-      imagen: '/banners/la-paulina-disproal-tortugas.webp',
-      imagenMovil: '/banners/la-paulina-disproal-tortugas-movil.webp',
-      w: 1920,
-      h: 374,
+      imagen: '/banners/la-paulina-disproal-970x90.webp',
+      imagenMovil: '/banners/la-paulina-disproal-320x100.webp',
     },
   ],
   lateral: [
