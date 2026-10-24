@@ -18,7 +18,7 @@ export const MEDIDAS: Record<EspacioId, { w: number; h: number; wMovil?: number;
 
 export type Banner = {
   anunciante: string;
-  imagen: string; // ruta dentro de /public, ej. '/banners/super-lopez-970x90.webp'
+  imagen: string; // ruta dentro de /public, ej. '/banners/super-lopez.webp' (sin medidas en el nombre: los bloqueadores de anuncios ocultan archivos como 300x600)
   imagenMovil?: string;
   enlace?: string; // opcional: sin enlace, el banner no lleva a ningún lado
   w?: number; // medida real de la imagen (si no coincide con el espacio)
@@ -33,8 +33,8 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
   superior: [
     {
       anunciante: 'La Paulina – Disproal SRL, distribuidor oficial (Tortugas, Santa Fe)',
-      imagen: '/banners/la-paulina-disproal-970x90.webp',
-      imagenMovil: '/banners/la-paulina-disproal-320x100.webp',
+      imagen: '/banners/la-paulina-disproal-franja.webp',
+      imagenMovil: '/banners/la-paulina-disproal-franja-movil.webp',
     },
   ],
   lateral: [
@@ -56,19 +56,19 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
   'lateral-largo': [
     {
       anunciante: 'LD Performance Automotores – usados, 0 km y taller (San Marcos Sud)',
-      imagen: '/banners/ld-performance-300x600.webp',
+      imagen: '/banners/ld-performance-vertical.webp',
       enlace: 'https://ldperformance.com.ar',
     },
     {
       anunciante: 'Meyer Automotores – Ruta 9 y Las Colonias, Marcos Juárez',
-      imagen: '/banners/meyer-automotores-300x600.webp',
+      imagen: '/banners/meyer-automotores-vertical.webp',
       enlace: 'https://www.instagram.com/meyerautos.msjz/',
     },
   ],
   'en-nota': [
     {
       anunciante: 'LD Performance Automotores – usados, 0 km y taller (San Marcos Sud)',
-      imagen: '/banners/ld-performance-300x250.webp',
+      imagen: '/banners/ld-performance-cuadrado.webp',
       enlace: 'https://ldperformance.com.ar',
     },
     {
