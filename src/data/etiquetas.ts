@@ -35,6 +35,8 @@ export const ETIQUETAS = {
   industria: 'Industria',
   religion: 'Religión',
   seguridad: 'Seguridad',
+  tecnologia: 'Tecnología',
+  folclore: 'Folclore',
 } as const;
 
 export type EtiquetaId = keyof typeof ETIQUETAS;

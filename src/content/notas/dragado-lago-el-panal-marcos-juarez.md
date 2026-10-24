@@ -13,13 +13,13 @@ seoTitulo: "Dragado del Lago El Panal en Marcos Juárez: avances de la obra"
 seoDescripcion: "La Municipalidad de Marcos Juárez limpia y profundiza el Lago El Panal: 14.541 m² de obra y 17.450 m³ de sedimentos a retirar para contener el agua de lluvia."
 ---
 
-El **Lago El Panal**, uno de los reservorios más importantes de **Marcos Juárez**, atraviesa la intervención más profunda de los últimos años. La Municipalidad avanza con la obra de **limpieza y dragado** del espejo de agua ubicado en el sector noreste de la ciudad, que comenzó hace poco más de un mes.
+El **Lago El Panal**, uno de los reservorios más importantes de **Marcos Juárez**, atraviesa una intervención de fondo. La Municipalidad avanza con la obra de **limpieza y dragado** del espejo de agua ubicado en el sector noreste de la ciudad, que comenzó hace poco más de un mes.
 
 El lago, cuyo nombre oficial es **Lago Dr. Loinas**, cumple una función clave en el sistema pluvial: recibe y retiene los excedentes de agua cuando llueve fuerte. Por eso, mantenerlo limpio y con la profundidad adecuada es una tarea preventiva para evitar anegamientos en los barrios cercanos.
 
 ## Qué incluye la obra
 
-Según informó la [Municipalidad de Marcos Juárez](https://www.mmj.gob.ar/avanza-la-obra-de-limpieza-y-dragado-del-lago-del-panal/), los trabajos se dividen en varias etapas:
+Según informó la Municipalidad de Marcos Juárez, los trabajos se dividen en varias etapas:
 
 - **Desmalezado** de los bordes y del interior del reservorio.
 - **Extracción de la vegetación invasiva** que crece sobre el agua y reduce su capacidad.

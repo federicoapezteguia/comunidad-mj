@@ -19,7 +19,7 @@ Será un hecho histórico: la gira del pontífice por la Argentina, prevista del
 
 ## Una recorrida para ajustar detalles
 
-El miércoles 21 de octubre, la **Mesa General de organización** recorrió el predio encabezada por la vicegobernadora **Myrian Prunotto**, según informó el [Gobierno de Córdoba](https://www.cba.gov.ar/visita-del-papa-avanza-el-montaje-del-predio-de-fadea-para-la-misa-de-leon-xiv-en-cordoba/). Participaron el ministro de Vinculación y Gestión Institucional, **Miguel Siciliano**; el secretario municipal **Héctor "Pichi" Campana**; legisladoras de distintos bloques, como **Viviana Martoccia** y **Graciela Bisotto**, y concejales de varias fuerzas políticas.
+El miércoles 21 de octubre, la **Mesa General de organización** recorrió el predio encabezada por la vicegobernadora **Myrian Prunotto**, según informó el Gobierno de Córdoba. Participaron el ministro de Vinculación y Gestión Institucional, **Miguel Siciliano**; el secretario municipal **Héctor "Pichi" Campana**; legisladoras de distintos bloques, como **Viviana Martoccia** y **Graciela Bisotto**, y concejales de varias fuerzas políticas.
 
 Durante la visita se revisaron los avances de obra y se coordinaron los servicios de **seguridad, transporte, salud y logística** que harán falta para una convocatoria multitudinaria.
 

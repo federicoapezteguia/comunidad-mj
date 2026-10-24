@@ -24,7 +24,7 @@ El partido se jugó el domingo 18 de octubre con el arbitraje de **Pablo Dóvalo
 
 ## Cómo quedó Belgrano
 
-Pese a la derrota, el equipo de **Ricardo Zielinski** se mantiene con **22 puntos** en la Zona B, a tres de los líderes, **Rosario Central** y **Argentinos Juniors**, según el detalle de [Infobae](https://www.infobae.com/deportes/2026/10/18/river-plate-visitara-a-belgrano-con-la-obligacion-de-ganar-para-meterse-en-zona-de-playoffs-del-torneo-clausura-hora-tv-y-formaciones/). En la tabla anual suma **48 puntos**.
+Pese a la derrota, el equipo de **Ricardo Zielinski** se mantiene con **22 puntos** en la Zona B, a tres de los líderes, **Rosario Central** y **Argentinos Juniors**. En la tabla anual suma **48 puntos**.
 
 El Pirata, además, juega con una tranquilidad que pocos tienen: ya está **clasificado a la Copa Libertadores 2027** por haber ganado el **Torneo Apertura**. El desafío ahora es sostenerse entre los de arriba para meterse en los playoffs del Clausura.
 

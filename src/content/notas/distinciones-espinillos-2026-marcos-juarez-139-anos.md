@@ -18,7 +18,7 @@ La ceremonia formó parte de los festejos por el aniversario y reunió a familia
 
 ## Los reconocidos de este año
 
-De acuerdo con lo publicado por [Cadena Sudeste](https://www.cadenasudeste.com/novedad/marcos-juarez-entrego-distinciones-espinillos-2026), estos fueron los premiados en cada categoría:
+Estos fueron los premiados en cada categoría:
 
 - **Mención Honorífica:** Rumaldo "Lito" Fernández, por su vida dedicada al trabajo rural y a las tradiciones criollas, y por su papel en la fundación de la Agrupación Gaucha Posta Espinillos.
 - **Deporte:** Juan Cruz Terés, nadador con logros en competencias nacionales, sudamericanas y mundiales.

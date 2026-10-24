@@ -13,7 +13,7 @@ seoDescripcion: "La FPA realizó controles a colectivos de hinchas en la autopis
 
 La **Fuerza Policial Antinarcotráfico (FPA)** montó un operativo de control sobre la **autopista Rosario-Córdoba** en la previa del partido entre **Belgrano y River**, que se jugó el domingo 18 de octubre en el estadio Kempes. Durante los controles a los **colectivos de hinchas**, se registraron **18 procedimientos positivos** con secuestro de **cocaína, marihuana y tussi**.
 
-Según informó [Cadena Sudeste](https://www.cadenasudeste.com/novedad/fpa-secuestro-cocaina-marihuana-tussi-autopista-cordoba-rosario), en el operativo trabajaron efectivos de la FPA junto con la **Compañía de Intervenciones Especiales (CIE)** y la **División K-9**, con perros entrenados para detectar estupefacientes.
+En el operativo trabajaron efectivos de la FPA junto con la **Compañía de Intervenciones Especiales (CIE)** y la **División K-9**, con perros entrenados para detectar estupefacientes.
 
 ## Un operativo preventivo
 

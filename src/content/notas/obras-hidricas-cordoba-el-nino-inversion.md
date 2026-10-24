@@ -13,7 +13,7 @@ seoDescripcion: "Córdoba invierte más de $93.000 millones en obras hídricas a
 
 Con la mirada puesta en una temporada que se anticipa lluviosa, el **Gobierno de Córdoba** informó que el **Plan Provincial de Mantenimiento y Readecuación de Obras Hídricas** ya acumula una inversión superior a los **$93.000 millones** desde 2024. El objetivo es claro: mejorar el escurrimiento del agua y reducir los riesgos de anegamientos ante un posible aumento de las lluvias asociado al fenómeno de **El Niño**.
 
-El plan lo desarrolla la **Secretaría de Infraestructura Hídrica** y lo ejecuta el **Ministerio de Infraestructura y Servicios Públicos**, según detalló el [Gobierno provincial](https://www.cba.gov.ar/fenomeno-de-el-nino-cordoba-refuerza-la-infraestructura-hidrica-con-una-inversion-superior-a-los-93-000-millones/).
+El plan lo desarrolla la **Secretaría de Infraestructura Hídrica** y lo ejecuta el **Ministerio de Infraestructura y Servicios Públicos**, según detalló el Gobierno provincial.
 
 ## Qué incluye el plan
 

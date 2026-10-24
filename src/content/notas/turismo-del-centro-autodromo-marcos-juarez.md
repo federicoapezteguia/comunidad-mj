@@ -16,7 +16,7 @@ El **autódromo Juan Oria** de **Marcos Juárez** volvió a vibrar con el **Turi
 
 ## Los ganadores de cada categoría
 
-Según el resumen publicado por [Diario Castellanos](https://diariocastellanos.com.ar/deportes/2026/10/13/turismo-del-centro-marcos-juarez-recibio-la-septima-fecha-de-la-temporada.htm), estos fueron los vencedores:
+Estos fueron los vencedores de cada categoría:
 
 - **Karting Pre Escuela:** Nicanor Scaglione.
 - **Karting Escuela:** Francisco Gaido.

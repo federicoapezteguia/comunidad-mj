@@ -1,4 +1,4 @@
-// Descarga las fotos de Wikimedia Commons listadas en src/data/fotos-remotas.json
+// Descarga las fotos (Wikimedia Commons o URLs de Comunidad FAN) listadas en src/data/fotos-remotas.json
 // que todavía no estén en src/content/notas/img/. Lo ejecuta la publicación automática.
 import { readFile, writeFile, access, mkdir } from 'node:fs/promises';
 
@@ -14,7 +14,10 @@ for (const [local, commons] of Object.entries(lista)) {
     await access(ruta);
     continue; // ya está
   } catch {}
-  const url = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(commons)}?width=1600`;
+  // Puede ser un archivo de Wikimedia Commons o una dirección completa (fotos de la red Comunidad FAN)
+  const url = commons.startsWith('http')
+    ? commons
+    : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(commons)}?width=1600`;
   const r = await fetch(url, {
     headers: { 'User-Agent': 'ComunidadFanMJ/1.0 (https://comunidad.rokmarketing.com; sitio de noticias)' },
     redirect: 'follow',

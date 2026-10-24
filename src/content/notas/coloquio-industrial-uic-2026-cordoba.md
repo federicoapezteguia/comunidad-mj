@@ -14,11 +14,11 @@ seoDescripcion: "El 18° Coloquio Industrial de la UIC reunió a la industria de
 
 La industria cordobesa tuvo su cita anual. El jueves 22 de octubre se realizó en el **Centro de Convenciones Córdoba** el **18° Coloquio Industrial** de la **Unión Industrial de Córdoba (UIC)**, bajo el lema "Hacer futuro. En un mundo que cambia, la industria transforma".
 
-El encuentro tuvo un sello regional: la UIC está presidida por **José María Manuali**, empresario de **Bell Ville**, y entre los asistentes hubo intendentes del sudeste provincial, como el de esa ciudad, que según informó la [Municipalidad de Bell Ville](https://bellville.gob.ar/2026/10/23/el-intendente-represento-a-bell-ville-en-el-18-coloquio-industrial-cordobes/) participó en representación de su comunidad.
+El encuentro tuvo un sello regional: la UIC está presidida por **José María Manuali**, empresario de **Bell Ville**, y entre los asistentes hubo intendentes del sudeste provincial, como el de esa ciudad, que participó en representación de su comunidad.
 
 ## Una agenda con economía, política y tecnología
 
-De acuerdo con el programa difundido por [Perfil Córdoba](https://www.perfil.com/noticias/cordoba/llega-el-coloquio-uic-2026-economia-politica-e-inteligencia-artificial-en-agenda.phtml), la jornada se abrió con las palabras de Manuali y del gobernador **Martín Llaryora**, y siguió con un recorrido por los grandes temas que preocupan al sector:
+De acuerdo con el programa oficial del encuentro, la jornada se abrió con las palabras de Manuali y del gobernador **Martín Llaryora**, y siguió con un recorrido por los grandes temas que preocupan al sector:
 
 - **Coyuntura económica y financiera**, con la exposición del economista **Miguel Kiguel**.
 - **Inteligencia artificial y analítica avanzada** aplicadas a la producción, a cargo de especialistas de McKinsey.

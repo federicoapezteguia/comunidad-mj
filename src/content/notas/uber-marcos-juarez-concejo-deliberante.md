@@ -12,13 +12,13 @@ seoTitulo: "Uber en Marcos Juárez: qué dice el Concejo Deliberante"
 seoDescripcion: "Uber ya opera en Marcos Juárez. El presidente del Concejo, Javier Barletta, aclaró que no hubo pedido formal y explicó por qué es difícil regular las aplicaciones."
 ---
 
-**Uber** llegó a **Marcos Juárez**. La aplicación de viajes ya permite pedir autos para trayectos dentro de la ciudad, según informaron medios locales como [GuiaMedia](https://www.guiamedia.com.ar/uber-comenzo-a-operar-en-marcos-juarez/2026/). Es la culminación de un proceso que empezó a mediados de año, cuando la empresa salió a buscar conductores de autos, taxis y motos con incentivos económicos por cantidad de viajes.
+**Uber** llegó a **Marcos Juárez**. La aplicación de viajes ya permite pedir autos para trayectos dentro de la ciudad. Es la culminación de un proceso que empezó a mediados de año, cuando la empresa salió a buscar conductores de autos, taxis y motos con incentivos económicos por cantidad de viajes.
 
 La novedad, sin embargo, abre preguntas que todavía no tienen respuesta: quién controla a los conductores, qué seguros tienen los vehículos y qué reglas se aplican.
 
 ## Qué dice el Concejo Deliberante
 
-El presidente del Concejo Deliberante, **Javier Barletta**, se refirió al tema en una entrevista con [Cadena Sudeste](https://www.cadenasudeste.com/novedad/marcos-juarez-uber-no-presento-solicitud-formal-concejo). Allí aclaró que **Uber no hizo ninguna presentación formal** ante el cuerpo legislativo de la ciudad.
+El presidente del Concejo Deliberante, **Javier Barletta**, se refirió al tema y aclaró que **Uber no hizo ninguna presentación formal** ante el cuerpo legislativo de la ciudad.
 
 Barletta explicó que la plataforma funciona a través de una aplicación en la que cada persona se registra por su cuenta para ofrecer viajes, y que eso vuelve muy difícil el control desde el municipio. "Es muy difícil regular sistemas en que vos no tenés acceso directo", resumió. También recordó que ciudades grandes como **Córdoba y Rosario** tuvieron complicaciones para avanzar con una regulación.
 

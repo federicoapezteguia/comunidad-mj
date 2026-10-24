@@ -17,13 +17,13 @@ La **Organización Meteorológica Mundial (OMM)**, encabezada por la argentina *
 
 ## Qué dice el pronóstico para Córdoba
 
-El pronóstico trimestral del SMN ubica a **Córdoba** en la categoría de lluvias **"normales o superiores"** a lo habitual, con temperaturas con mayor probabilidad de ubicarse **por debajo de lo normal**. Pero el dato que más preocupa es otro: el **este cordobés**, junto con el Litoral, Santa Fe y el norte bonaerense, figura entre las zonas con **mayor riesgo de tormentas** y eventos extremos durante la primavera y el verano, según el relevamiento publicado por [Infobae](https://www.infobae.com/america/medio-ambiente/2026/09/27/los-efectos-de-el-nino-en-argentina-por-que-se-espera-una-primavera-con-mas-lluvias-segun-el-smn/).
+El pronóstico trimestral del SMN ubica a **Córdoba** en la categoría de lluvias **"normales o superiores"** a lo habitual, con temperaturas con mayor probabilidad de ubicarse **por debajo de lo normal**. Pero el dato que más preocupa es otro: el **este cordobés**, junto con el Litoral, Santa Fe y el norte bonaerense, figura entre las zonas con **mayor riesgo de tormentas** y eventos extremos durante la primavera y el verano.
 
 De acuerdo con Di Nezio, las **inundaciones** serían más probables en **enero y febrero**, y los efectos podrían extenderse hasta **abril de 2027**.
 
 ## El campo, en alerta
 
-Para una región agrícola como el sudeste cordobés, el escenario obliga a planificar. Según [La Nación](https://www.lanacion.com.ar/sociedad/super-nino-2026-que-se-sabe-del-fenomeno-que-cambiara-por-completo-el-clima-en-la-argentina-y-nid05102026/), el **sur de Córdoba** y el norte pampeano tienen un riesgo extra porque las **napas ya están muy cerca de la superficie**. Muchos productores evalúan **adelantar la siembra de maíz y soja** en los lotes más altos y firmes.
+Para una región agrícola como el sudeste cordobés, el escenario obliga a planificar. Según los especialistas, el **sur de Córdoba** y el norte pampeano tienen un riesgo extra porque las **napas ya están muy cerca de la superficie**. Muchos productores evalúan **adelantar la siembra de maíz y soja** en los lotes más altos y firmes.
 
 Desde la Secretaría de Agricultura recomendaron reducir con anticipación la carga animal, reservar sectores altos y bien drenados y prever lugares de emergencia para trasladar el ganado, con especial cuidado de las vacas próximas a parir y los terneros.
 

@@ -18,7 +18,7 @@ En la **región Pampeana**, que incluye a Córdoba y a localidades como **Marcos
 
 ## Qué fue lo que más aumentó
 
-El empuje vino sobre todo de los **servicios regulados**. De acuerdo con el análisis de [Chequeado](https://chequeado.com/el-explicador/la-inflacion-de-septiembre-fue-del-19-y-acumula-236-en-lo-que-va-del-ano/) sobre los datos oficiales, las mayores subas fueron:
+El empuje vino sobre todo de los **servicios regulados**. De acuerdo con los datos oficiales, las mayores subas fueron:
 
 - **Tarifas de servicios públicos:** 3,1%.
 - **Educación:** 3%.

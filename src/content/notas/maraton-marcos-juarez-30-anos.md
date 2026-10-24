@@ -37,7 +37,7 @@ Las escuelas también tienen su lugar: habrá sorteo de una bicicleta en la cate
 
 ## Una fiesta del deporte local
 
-"Va a ser una carrera excelente y 30 años no se cumplen todos los días", destacó **Horacio Pochettino**, director de Deportes de la Municipalidad, en diálogo con [Cadena Sudeste](https://www.cadenasudeste.com/novedad/maraton-marcos-juarez-celebra-30-anos-700-corredores). Según contó, ya hay alrededor de **500 maratonistas** anotados, a los que se suman cerca de **160 corredores de las escuelas**.
+"Va a ser una carrera excelente y 30 años no se cumplen todos los días", destacó **Horacio Pochettino**, director de Deportes de la Municipalidad. Según contó, ya hay alrededor de **500 maratonistas** anotados, a los que se suman cerca de **160 corredores de las escuelas**.
 
 Pochettino también repasó el trabajo cotidiano del área con clubes e instituciones educativas, y destacó la **Escuela de Deporte Adaptado**, que en temporada de verano recibe a entre 30 y 35 chicos.
 

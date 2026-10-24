@@ -17,7 +17,7 @@ El debate en comisión arrancó el 13 de octubre con la exposición del secretar
 
 ## Los números del proyecto
 
-El texto que envió el Poder Ejecutivo proyecta para 2027, según detalló [Infobae](https://www.infobae.com/politica/2026/09/16/el-presupuesto-2027-entro-a-diputados-comenzara-a-debatirse-en-octubre-y-condicionara-otras-negociaciones/):
+El texto que envió el Poder Ejecutivo proyecta para 2027:
 
 - **Crecimiento económico:** 4%.
 - **Inflación anual:** 21,1%.
@@ -28,7 +28,7 @@ El texto que envió el Poder Ejecutivo proyecta para 2027, según detalló [Info
 
 ## El reclamo por las universidades
 
-La oposición ya marcó sus diferencias. El jefe del bloque de **Unión por la Patria**, **Germán Martínez**, pidió reformular el proyecto para aumentar las partidas destinadas a las **universidades nacionales**, según el relato de [Parlamentario](https://www.parlamentario.com/2026/10/13/arranco-el-debate-del-presupuesto-2027-en-diputados-y-el-oficialismo-confirmo-cuando-quiere-dictaminar-y-sesionar/). Benegas Lynch consideró "razonable" la inquietud, aunque aclaró que no le corresponde a la comisión dar indicaciones de gestión al jefe de Gabinete.
+La oposición ya marcó sus diferencias. El jefe del bloque de **Unión por la Patria**, **Germán Martínez**, pidió reformular el proyecto para aumentar las partidas destinadas a las **universidades nacionales** durante la primera reunión de la comisión. Benegas Lynch consideró "razonable" la inquietud, aunque aclaró que no le corresponde a la comisión dar indicaciones de gestión al jefe de Gabinete.
 
 Los gobernadores, en tanto, esperan conocer en detalle las partidas para sus provincias, un punto clave para que el oficialismo consiga los votos que necesita.
 
