@@ -46,5 +46,14 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
   ],
   'lateral-largo': [],
   'en-nota': [],
-  campanas: [],
+  campanas: [
+    {
+      anunciante: 'Unicornio Viajes – Volá hacia tus sueños',
+      imagen: '/banners/unicornio-viajes.webp',
+      imagenMovil: '/banners/unicornio-viajes-movil.webp',
+      enlace: 'https://unicornioviajes.tur.ar/',
+      w: 1920,
+      h: 480,
+    },
+  ],
 };
