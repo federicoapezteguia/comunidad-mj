@@ -6,6 +6,7 @@ import Base from '../../layouts/Base.astro';
 import TarjetaNota from '../../components/TarjetaNota.astro';
 import Publicidad from '../../components/Publicidad.astro';
 import Compartir from '../../components/Compartir.astro';
+import Clima from '../../components/Clima.astro';
 import { getNotas, relacionadas, volanta, fecha, nombreEtiqueta, nombreLocalidad, urlNota, type Nota } from '../../lib/notas';
 import { SECCIONES, SITE, type SeccionId } from '../../config';
 
@@ -16,13 +17,14 @@ export async function getStaticPaths() {
 
 interface Props { nota: Nota; todas: Nota[] }
 const { nota, todas } = Astro.props;
-// Mismo anunciante en la columna y dentro de la nota
+// Anunciante del espacio dentro de la nota (uno por nota)
 const ordenPub = [...nota.id].reduce((a, c) => a + c.charCodeAt(0), 0);
 const d = nota.data;
 const { Content } = await render(nota);
 const autor = await getEntry('autores', d.autor);
 const seccion = SECCIONES[d.seccion as SeccionId];
 const rel = relacionadas(nota, todas);
+const onDemand = todas.filter((n) => n.data.seccion === 'on-demand' && n.id !== nota.id).slice(0, 4);
 const url = new URL(urlNota(nota), Astro.site).href;
 
 const img = await getImage({ src: d.foto, width: 1200, height: 675, format: 'jpg', fit: 'cover' });
@@ -141,8 +143,15 @@ if (d.youtube) {
       <Compartir url={url} titulo={d.titulo} />
     </article>
 
-    <aside class="lateral">
-      <div class="pegajoso"><Publicidad espacio="lateral-largo" orden={ordenPub} /></div>
+    <aside class="lateral" data-pagefind-ignore>
+      <Publicidad espacio="lateral" />
+      <Clima />
+      {onDemand.length > 0 && (
+        <section class="od" aria-labelledby="h-od">
+          <h2 id="h-od" class="sec-h od-h"><a href="/on-demand/">On Demand</a><a href="/on-demand/" class="mas">Ver todo</a></h2>
+          <div class="od-lista">{onDemand.map((n) => <TarjetaNota nota={n} variante="compacta" />)}</div>
+        </section>
+      )}
     </aside>
   </div>
 
@@ -193,7 +202,10 @@ if (d.youtube) {
   .etiquetas { list-style: none; padding: 0; margin: 28px 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
   .etiquetas a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid #cdbde2; border-radius: 500px; font-size: 13px; font-weight: 700; }
   .etiquetas a:hover { background: var(--violeta); color: #fff; border-color: var(--violeta); }
-  .pegajoso { position: sticky; top: 24px; width: 100%; }
+  .od { width: 100%; }
+  .od-h { font-size: 17px; margin-bottom: 14px; }
+  .od-lista { display: flex; flex-direction: column; gap: 16px; }
+  .od-lista :global(.titulo) { font-size: 14px !important; }
   .pub-en-nota { margin: 8px 0 30px; }
   .texto :global(.pub a) { text-decoration: none; font-weight: inherit; color: inherit; }
 </style>
