@@ -22,6 +22,7 @@ const deSeccion = (s: SeccionId) => noticias.filter((n) => n.data.seccion === s)
 const mj = tomar(deSeccion('marcos-juarez'), 6);
 const cba = tomar(deSeccion('cordoba'), 4);
 const nac = tomar(deSeccion('nacionales'), 6);
+const dep = tomar(deSeccion('deportes'), 4);
 const mus = tomar(deSeccion('musica'), 3);
 const od = tomar(deSeccion('on-demand'), 3);
 const marca = todas.filter((n) => n.data.patrocinado).slice(0, 2);
@@ -88,6 +89,13 @@ const jsonLd = [
     </section>
   )}
 
+  {dep.length > 0 && (
+    <section class="wrap bloque" aria-labelledby="h-dep">
+      <h2 id="h-dep" class="sec-h"><a href="/deportes/">{SECCIONES.deportes.nombre}</a><a href="/deportes/" class="mas">Ver todas</a></h2>
+      <div class="grid-notas">{dep.map((n) => <TarjetaNota nota={n} />)}</div>
+    </section>
+  )}
+
   {nac.length > 0 && (
     <section class="wrap bloque" aria-labelledby="h-nac">
       <div class="con-lateral">
@@ -104,7 +112,7 @@ const jsonLd = [
     <div class="con-lateral">
       <div class="principal">
         <h2 id="h-mus" class="sec-h"><a href="/musica/">{SECCIONES.musica.nombre}</a><a href="/musica/" class="mas">Ver todas</a></h2>
-        <div class="grid-notas">{mus.map((n) => <TarjetaNota nota={n} />)}</div>
+        {mus.length > 0 ? <div class="grid-notas">{mus.map((n) => <TarjetaNota nota={n} />)}</div> : <p class="intro-seccion">Estrenos, shows y lo que suena en Comunidad FAN, muy pronto en esta sección.</p>}
       </div>
       <div class="lateral"><Ranking /></div>
     </div>

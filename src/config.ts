@@ -59,6 +59,7 @@ export type SeccionId =
   | 'marcos-juarez'
   | 'cordoba'
   | 'nacionales'
+  | 'deportes'
   | 'musica'
   | 'on-demand'
   | 'contenido-de-marca';
@@ -86,6 +87,13 @@ export const SECCIONES: Record<
     titulo: 'Actualidad nacional',
     descripcion:
       'Lo más importante de la actualidad argentina, resumido y con su impacto en Córdoba y Marcos Juárez.',
+    enMenu: true,
+  },
+  deportes: {
+    nombre: 'Deportes',
+    titulo: 'Deportes: Marcos Juárez, Córdoba y el país',
+    descripcion:
+      'Deportes de Marcos Juárez y la región: fútbol de la Liga Bellvillense, automovilismo, atletismo y clubes, más Belgrano, Talleres, Instituto y la Selección.',
     enMenu: true,
   },
   musica: {

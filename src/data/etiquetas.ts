@@ -29,6 +29,12 @@ export const ETIQUETAS = {
   entrevistas: 'Entrevistas',
   'cine-y-series': 'Cine y series',
   turismo: 'Turismo',
+  automovilismo: 'Automovilismo',
+  atletismo: 'Atletismo',
+  transporte: 'Transporte',
+  industria: 'Industria',
+  religion: 'Religión',
+  seguridad: 'Seguridad',
 } as const;
 
 export type EtiquetaId = keyof typeof ETIQUETAS;
@@ -50,6 +56,7 @@ export const LOCALIDADES = {
   'arias': 'Arias',
   'bell-ville': 'Bell Ville',
   'cordoba-capital': 'Córdoba Capital',
+  'maria-juana': 'María Juana',
 } as const;
 
 export type LocalidadId = keyof typeof LOCALIDADES;

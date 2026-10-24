@@ -18,6 +18,9 @@ on:
     # y actualiza el sitemap de Google News (últimas 48 h).
     - cron: '7 * * * *'
 
+permissions:
+  contents: write
+
 concurrency:
   group: publicar
   cancel-in-progress: false
@@ -36,6 +39,17 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - name: Descargar fotos nuevas (Wikimedia Commons)
+        run: |
+          node scripts/descargar-fotos.mjs
+          if [ -n "$(git status --porcelain src/content/notas/img)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/content/notas/img
+            git commit -m "Fotos descargadas automáticamente [skip ci]"
+            git push
+          fi
 
       - name: Generar el sitio
         run: npm run build
