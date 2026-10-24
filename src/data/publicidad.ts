@@ -6,7 +6,7 @@
 // "Publicitá acá" que lleva a /publicidad/.
 // ============================================================
 
-export type EspacioId = 'superior' | 'lateral' | 'lateral-largo' | 'en-nota' | 'campanas';
+export type EspacioId = 'superior' | 'lateral' | 'lateral-largo' | 'en-nota' | 'campanas' | 'horizontal';
 
 export const MEDIDAS: Record<EspacioId, { w: number; h: number; wMovil?: number; hMovil?: number }> = {
   superior: { w: 970, h: 90, wMovil: 320, hMovil: 100 },
@@ -14,6 +14,7 @@ export const MEDIDAS: Record<EspacioId, { w: number; h: number; wMovil?: number;
   'lateral-largo': { w: 300, h: 600 },
   'en-nota': { w: 300, h: 250 },
   campanas: { w: 1920, h: 550, wMovil: 800, hMovil: 450 },
+  horizontal: { w: 1200, h: 300, wMovil: 800, hMovil: 400 },
 };
 
 export type Banner = {
@@ -75,6 +76,14 @@ export const BANNERS: Record<EspacioId, Banner[]> = {
       enlace: 'https://unicornioviajes.tur.ar/',
       w: 1920,
       h: 480,
+    },
+  ],
+  horizontal: [
+    {
+      anunciante: 'Farmacia Bosio-Scortichini – H. Yrigoyen 1296',
+      imagen: '/banners/farmacia-bosio-scortichini.webp',
+      imagenMovil: '/banners/farmacia-bosio-scortichini-movil.webp',
+      enlace: 'https://www.instagram.com/farmacia.bosioscortichini/',
     },
   ],
 };
