@@ -1,6 +1,19 @@
 // Descarga las fotos (Wikimedia Commons o URLs de Comunidad FAN) listadas en src/data/fotos-remotas.json
 // que todavía no estén en src/content/notas/img/. Lo ejecuta la publicación automática.
 import { readFile, writeFile, access, mkdir, copyFile } from 'node:fs/promises';
+import sharp from 'sharp';
+
+// Si la imagen es vertical o cuadrada (un flyer, una foto de celular), arma una portada 16:9:
+// la misma imagen desenfocada de fondo y la original entera al centro.
+async function aPortada(buf) {
+  const meta = await sharp(buf).metadata();
+  if (!meta.width || !meta.height || meta.width / meta.height >= 1.3) return buf;
+  const W = 1600, H = 900;
+  const fondo = await sharp(buf).resize(W, H, { fit: 'cover' }).blur(30).modulate({ brightness: 0.7 }).toBuffer();
+  const frente = await sharp(buf).resize({ height: H - 60 }).toBuffer();
+  const fm = await sharp(frente).metadata();
+  return sharp(fondo).composite([{ input: frente, left: Math.round((W - fm.width) / 2), top: 30 }]).jpeg({ quality: 84 }).toBuffer();
+}
 
 const lista = JSON.parse(await readFile('src/data/fotos-remotas.json', 'utf8'));
 const destino = 'src/content/notas/img/';
@@ -38,7 +51,7 @@ for (const [local, commons] of Object.entries(lista)) {
       }
       const buf = Buffer.from(await r.arrayBuffer());
       if (buf.length < 5000) { console.warn(`AVISO: ${local} demasiado chica en ${url}`); continue; }
-      await writeFile(ruta, buf);
+      await writeFile(ruta, await aPortada(buf));
       console.log(`Descargada: ${local}`);
       nuevas++;
       ok = true;
