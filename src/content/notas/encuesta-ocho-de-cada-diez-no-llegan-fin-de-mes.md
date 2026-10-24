@@ -5,7 +5,7 @@ seccion: nacionales
 etiquetas: [economia, sociedad]
 fecha: 2026-10-24T11:00:00-03:00
 foto: ./img/encuesta-fin-de-mes-argentina-2026.jpg
-fotoAlt: "Gráfico: ocho de cada diez argentinos llegan justos o no llegan a fin de mes"
+fotoAlt: "Ocho de cada diez argentinos llegan justos o no llegan a fin de mes"
 seoTitulo: "Encuesta: 8 de cada 10 argentinos no llegan bien a fin de mes"
 seoDescripcion: "Una encuesta de Brain Network muestra que el 79% de los argentinos llega justo o no llega a fin de mes. Tarjetas, deudas y expectativas para el año próximo."
 ---
