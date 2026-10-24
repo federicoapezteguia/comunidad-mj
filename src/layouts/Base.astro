@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/animaciones.css';
 import { getImage } from 'astro:assets';
 import { ClientRouter } from 'astro:transitions';
 import type { ImageMetadata } from 'astro';
@@ -123,5 +124,66 @@ const organizacion = {
     {!sinMarco && <Footer />}
     {!sinMarco && <BarraEnVivo />}
     {!sinMarco && <WhatsAppFlotante />}
+    <script>
+      // Animaciones: aparición al hacer scroll, fotos que entran suave y barra de lectura.
+      const OBJETIVOS = [
+        '.sec-h', '.grid-notas > *', '.lista-comp > *', '.d-lado > *', '.pub', '.clima', '.ultimas li',
+        '.ranking li', '.intro-seccion', '.nota .texto > *', '.foto-principal', '.compartir', '.etiquetas',
+        '.footer .wrap > *', '.listado > *', '.paginacion', '.pagina-simple > *',
+      ].join(',');
+      let observador: IntersectionObserver | null = null;
+      let alScroll: (() => void) | null = null;
+
+      function animar() {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        observador?.disconnect();
+        observador = new IntersectionObserver(
+          (entradas) => {
+            for (const e of entradas) {
+              if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observador?.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+        );
+        document.querySelectorAll<HTMLElement>(OBJETIVOS).forEach((el) => {
+          if (el.closest('.pegajoso') || el.classList.contains('rev')) return;
+          const hermanos = el.parentElement ? Array.from(el.parentElement.children) : [];
+          el.style.setProperty('--i', String(Math.min(hermanos.indexOf(el), 5)));
+          el.classList.add('rev');
+          observador!.observe(el);
+        });
+
+        // Fotos: se desvanecen al entrar cuando terminan de cargar
+        document.querySelectorAll<HTMLImageElement>('main img').forEach((img) => {
+          if (img.complete) return;
+          img.classList.add('cargando');
+          img.addEventListener('load', () => { img.classList.remove('cargando'); img.classList.add('cargada'); }, { once: true });
+          img.addEventListener('error', () => img.classList.remove('cargando'), { once: true });
+        });
+
+        // Barra de lectura en las notas
+        document.querySelector('.barra-lectura')?.remove();
+        if (alScroll) removeEventListener('scroll', alScroll);
+        const texto = document.querySelector<HTMLElement>('.nota');
+        if (texto) {
+          const barra = document.createElement('div');
+          barra.className = 'barra-lectura';
+          barra.setAttribute('aria-hidden', 'true');
+          document.body.appendChild(barra);
+          alScroll = () => {
+            const r = texto.getBoundingClientRect();
+            const total = r.height - innerHeight * 0.6;
+            const avance = Math.min(1, Math.max(0, -r.top / (total > 0 ? total : 1)));
+            barra.style.setProperty('--avance', avance.toFixed(3));
+          };
+          addEventListener('scroll', alScroll, { passive: true });
+          alScroll();
+        }
+      }
+      document.addEventListener('astro:page-load', animar);
+    </script>
   </body>
 </html>

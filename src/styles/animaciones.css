@@ -1,0 +1,142 @@
+/* ============================================================
+   Animaciones del sitio.
+   Todo queda dentro de prefers-reduced-motion: no-preference,
+   así quien pidió menos movimiento en su equipo ve el sitio quieto.
+   Las clases .rev / .visible las agrega el script del layout;
+   sin JavaScript el contenido se ve normal.
+   ============================================================ */
+
+@keyframes cf-subir { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes cf-aparecer { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cf-zoom-lento { from { transform: scale(1); } to { transform: scale(1.09); } }
+@keyframes cf-pulso {
+  0% { box-shadow: 0 0 0 0 rgba(255, 204, 51, 0.75); }
+  70% { box-shadow: 0 0 0 14px rgba(255, 204, 51, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 204, 51, 0); }
+}
+@keyframes cf-latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes cf-flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes cf-entrar-der { from { opacity: 0; transform: translateX(120%); } to { opacity: 1; transform: none; } }
+@keyframes cf-sacudir {
+  0%, 84%, 100% { transform: rotate(0); }
+  87% { transform: rotate(-14deg); }
+  90% { transform: rotate(12deg); }
+  93% { transform: rotate(-8deg); }
+  96% { transform: rotate(5deg); }
+}
+@keyframes cf-brillo { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+@keyframes cf-pagina-sale { to { opacity: 0; transform: translateY(-10px); } }
+@keyframes cf-pagina-entra { from { opacity: 0; transform: translateY(14px); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+
+  /* ---------- Aparición al hacer scroll ---------- */
+  .rev {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: calc(var(--i, 0) * 80ms);
+  }
+  .rev.visible { opacity: 1; transform: none; }
+
+  /* Títulos de sección: la línea fucsia crece al aparecer */
+  .sec-h { position: relative; }
+  .sec-h::after {
+    content: '';
+    position: absolute; left: 0; bottom: -2px;
+    height: 4px; width: 0;
+    background: var(--fucsia);
+    transition: width 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s;
+  }
+  .sec-h.visible::after, .sec-h:not(.rev)::after { width: 90px; }
+
+  /* ---------- Destacadas ---------- */
+  .destacadas .sup.grande .foto { animation: cf-zoom-lento 16s ease-in-out infinite alternate; }
+  .destacadas .capa > * { animation: cf-subir 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .destacadas .capa > *:nth-child(2) { animation-delay: 0.15s; }
+  .destacadas .sup .tag { animation: cf-aparecer 0.6s ease 0.3s both; }
+
+  /* ---------- Tarjetas ---------- */
+  article.grilla .link { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  article.grilla .link:hover { transform: translateY(-5px); }
+  article.grilla .marco { transition: box-shadow 0.35s ease; }
+  article.grilla .link:hover .marco { box-shadow: 0 14px 30px -12px rgba(45, 0, 93, 0.55); }
+  article .tag { transition: padding 0.3s ease, background-color 0.3s ease; }
+  article .link:hover .tag { padding-right: 20px; background: var(--amarillo); }
+  article.comp .foto, article.comp :where(img) { transition: transform 0.35s ease, border-radius 0.35s ease; }
+  article.comp .link:hover :where(img) { transform: scale(1.05); }
+
+  /* Fotos: aparecen suave cuando terminan de cargar */
+  img.cargando { opacity: 0; }
+  img.cargada { animation: cf-aparecer 0.6s ease both; }
+
+  /* ---------- Header ---------- */
+  .header .marca { display: inline-block; transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1); }
+  .header .marca:hover { transform: scale(1.06) rotate(-3deg); }
+  .header .nav a { position: relative; }
+  .header .nav a::after {
+    content: '';
+    position: absolute; left: 50%; right: 50%; bottom: -4px;
+    height: 3px; background: var(--violeta);
+    transition: left 0.3s ease, right 0.3s ease;
+  }
+  .header .nav a:hover::after, .header .nav a[aria-current]::after { left: 0; right: 0; }
+  .header .leyenda p { animation: cf-aparecer 1s ease both; }
+
+  /* Botón En vivo: late mientras la radio no suena */
+  html:not([data-radio='sonando']) .en-vivo { animation: cf-pulso 2.2s ease-out infinite; }
+  html[data-radio='sonando'] .en-vivo { animation: cf-latido 1.2s ease-in-out infinite; }
+
+  /* Botones */
+  .boton { transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; }
+  .boton:hover { transform: translateY(-2px); box-shadow: 0 8px 18px -8px rgba(45, 0, 93, 0.6); }
+  .boton:active { transform: translateY(0); }
+
+  /* ---------- Clima ---------- */
+  .clima { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+  .clima:hover { transform: translateY(-4px); box-shadow: 0 16px 30px -14px rgba(45, 0, 93, 0.7); }
+  .clima .icono { display: inline-block; animation: cf-flotar 4s ease-in-out infinite; }
+
+  /* ---------- Publicidad ---------- */
+  .pub a { transition: transform 0.35s ease, filter 0.35s ease; }
+  .pub a:hover { transform: scale(1.015); filter: brightness(1.05); }
+
+  /* ---------- Lo último ---------- */
+  .ultimas li { transition: transform 0.25s ease; }
+  .ultimas li:hover { transform: translateX(6px); }
+
+  /* ---------- WhatsApp flotante ---------- */
+  .wa-flotante { animation: cf-entrar-der 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.2) 1.2s backwards; transition: transform 0.25s ease; }
+  .wa-flotante:hover { transform: translateY(-3px) scale(1.03); }
+  .wa-flotante .icono { display: inline-flex; animation: cf-sacudir 7s ease-in-out 3s infinite; transform-origin: 50% 60%; }
+
+  /* ---------- Nota: barra de lectura ---------- */
+  .barra-lectura {
+    position: fixed; left: 0; top: 0; z-index: 200;
+    height: 4px; width: 100%;
+    transform-origin: 0 50%; transform: scaleX(var(--avance, 0));
+    background: linear-gradient(90deg, var(--fucsia), var(--amarillo));
+    pointer-events: none;
+  }
+
+  /* Etiquetas de la nota */
+  .etiquetas a { display: inline-block; transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease; }
+  .etiquetas a:hover { transform: translateY(-2px); }
+
+  /* Paginación */
+  .paginacion a { transition: transform 0.2s ease, background-color 0.2s ease; }
+  .paginacion a:hover { transform: translateY(-2px); }
+
+  /* "Tu marca acá": brillo que recorre el aviso */
+  .pub .propia {
+    background-image: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%) !important;
+    background-size: 200% 100% !important;
+    animation: cf-brillo 3.5s linear infinite;
+  }
+  .campanas .propia { background-color: var(--violeta) !important; }
+
+  /* ---------- Transición entre páginas ---------- */
+  ::view-transition-old(root) { animation: cf-pagina-sale 0.22s ease both; }
+  ::view-transition-new(root) { animation: cf-pagina-entra 0.38s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+}
