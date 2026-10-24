@@ -14,7 +14,7 @@ export const MEDIDAS: Record<EspacioId, { w: number; h: number; wMovil?: number;
   'lateral-largo': { w: 300, h: 600 },
   'en-nota': { w: 300, h: 250 },
   campanas: { w: 1920, h: 550, wMovil: 800, hMovil: 450 },
-  horizontal: { w: 900, h: 225, wMovil: 800, hMovil: 400 },
+  horizontal: { w: 1180, h: 220, wMovil: 800, hMovil: 400 },
 };
 
 export type Banner = {
