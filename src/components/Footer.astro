@@ -1,9 +1,11 @@
 ---
+import Dial from './Dial.astro';
 import Redes from './Redes.astro';
 import { SITE, SECCIONES } from '../config';
 const anio = new Date().getFullYear();
 ---
 <footer class="footer">
+  <Dial />
   <div class="wrap">
     <div class="sello">
       <img src="/favicon.svg" alt="" width="56" height="56" class="mano" aria-hidden="true" />
@@ -49,6 +51,7 @@ const anio = new Date().getFullYear();
 
 <style>
   .footer { background: var(--fucsia); color: var(--violeta); padding: 40px 0 96px; margin-top: 64px; }
+  .footer > :global(.dial-franja:first-child) { margin: -40px 0 32px; }
   .sello {
     display: flex; align-items: center; justify-content: center; gap: 16px;
     background: var(--violeta); border-radius: 16px; padding: 18px 24px; margin-bottom: 36px; text-align: left;
