@@ -1,6 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import Redes from './Redes.astro';
+import Dial from './Dial.astro';
 import { SECCIONES, SITE } from '../config';
 
 const actual = Astro.url.pathname.split('/')[1] ?? '';
@@ -11,7 +12,16 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
     <p class="wrap">La repetidora oficial de <strong>Comunidad FAN</strong> en Marcos Juárez<span class="frec"> · FM {SITE.frecuencia}</span></p>
   </div>
   <div class="wrap fila">
-    <a href="/" class="marca" aria-label="Comunidad FAN Marcos Juárez, ir al inicio"><Logo /></a>
+    <div class="marca-grupo">
+      <a href="/" class="marca" aria-label="Comunidad FAN Marcos Juárez, ir al inicio"><Logo /></a>
+      <a href="/" class="sello-fm" aria-label={`FM ${SITE.frecuencia} Marcos Juárez`} tabindex="-1">
+        <span class="ondas" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="sello-txt">
+          <span class="sello-num"><small>FM</small>{SITE.frecuencia}</span>
+          <span class="sello-ciudad">Marcos Juárez</span>
+        </span>
+      </a>
+    </div>
 
     <nav aria-label="Secciones" class="nav">
       <ul>
@@ -34,6 +44,7 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
       <div class="redes-header"><Redes /></div>
     </div>
   </div>
+  <Dial />
 </header>
 
 <style>
@@ -58,6 +69,46 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
     padding-block: 10px;
   }
   .marca { display: inline-flex; }
+  .marca-grupo { display: flex; align-items: center; gap: 14px; }
+  .sello-fm {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--amarillo); color: var(--violeta-noche);
+    padding: 7px 14px 7px 10px; border-radius: 14px;
+    box-shadow: 0 6px 16px -8px rgba(45, 0, 93, 0.7), inset 0 -3px 0 rgba(45, 0, 93, 0.15);
+    line-height: 1; text-decoration: none;
+  }
+  .sello-fm:hover { color: var(--violeta-noche); }
+  .sello-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+  .sello-num { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; display: flex; align-items: flex-start; gap: 3px; }
+  .sello-num small { font-size: 12px; font-weight: 900; margin-top: 3px; letter-spacing: 0.04em; }
+  .sello-ciudad { font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
+  .ondas { position: relative; width: 26px; height: 26px; flex: none; }
+  .ondas i {
+    position: absolute; left: 50%; top: 50%; border-radius: 50%;
+    border: 3px solid var(--violeta-noche); border-left-color: transparent; border-bottom-color: transparent;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .ondas i:nth-child(1) { width: 8px; height: 8px; background: var(--violeta-noche); border: 0; }
+  .ondas i:nth-child(2) { width: 16px; height: 16px; }
+  .ondas i:nth-child(3) { width: 26px; height: 26px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .ondas i:nth-child(2) { animation: onda 1.8s ease-in-out infinite; }
+    .ondas i:nth-child(3) { animation: onda 1.8s ease-in-out 0.3s infinite; }
+    @keyframes onda { 0%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
+  }
+  @media (max-width: 560px) {
+    .fila { flex-wrap: wrap; }
+    .acciones { gap: 4px; }
+    .en-vivo { width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: 50%; }
+    .en-vivo .txt-play, .en-vivo .txt-carga, .en-vivo .txt-pausa { display: none !important; }
+    .marca-grupo { gap: 10px; }
+    .sello-fm { padding: 6px 10px 6px 8px; gap: 7px; border-radius: 12px; }
+    .sello-num { font-size: 24px; }
+    .ondas { width: 20px; height: 20px; }
+    .ondas i:nth-child(3) { width: 20px; height: 20px; }
+    .ondas i:nth-child(2) { width: 12px; height: 12px; }
+    .ondas i:nth-child(1) { width: 6px; height: 6px; }
+  }
   .nav { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
   .nav::-webkit-scrollbar { display: none; }
   .nav ul { display: flex; gap: 6px 22px; list-style: none; margin: 0; padding: 4px 0; white-space: nowrap; }
@@ -80,8 +131,10 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
   }
   .icono-btn:hover { background: rgba(255, 255, 255, 0.3); color: var(--violeta); }
   .redes-header { display: none; }
-  @media (min-width: 1100px) {
-    .nav { order: 0; width: auto; }
-    .redes-header { display: block; }
+  @media (min-width: 1180px) {
+    .nav { order: 0; width: auto; flex: 1 1 auto; display: flex; justify-content: center; }
+    .nav ul { gap: 6px 18px; }
+    .nav a { font-size: 14px; }
+    .fila { flex-wrap: nowrap; }
   }
 </style>

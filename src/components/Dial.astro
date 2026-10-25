@@ -1,0 +1,86 @@
+---
+// Franja con el dial de la radio: la aguja se desliza hasta la frecuencia local.
+import { SITE } from '../config';
+const MIN = 88, MAX = 108;
+const frec = parseFloat(SITE.frecuencia);
+const pos = ((frec - MIN) / (MAX - MIN)) * 100;
+const marcas = [88, 92, 96, 100, 104, 108];
+---
+<div class="dial-franja">
+  <div class="wrap dial-fila">
+    <p class="dial-txt">
+      <span class="punto" aria-hidden="true"></span>
+      Estás en la <strong>{SITE.frecuencia}</strong> de Marcos Juárez
+    </p>
+    <div class="dial" aria-hidden="true" style={`--pos:${pos}%`}>
+      <div class="escala">
+        {marcas.map((m) => <span class="num" style={`left:${((m - MIN) / (MAX - MIN)) * 100}%`}>{m}</span>)}
+      </div>
+      <div class="aguja"><span class="etq">FM {SITE.frecuencia}</span></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dial-franja {
+    background: linear-gradient(90deg, var(--violeta-noche), var(--violeta) 60%, var(--violeta-noche));
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .dial-fila { display: flex; align-items: center; gap: 10px 28px; padding-block: 8px; flex-wrap: wrap; }
+  .dial-txt {
+    margin: 0; display: flex; align-items: center; gap: 8px; white-space: nowrap;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .dial-txt strong { color: var(--amarillo); font-size: 17px; font-weight: 900; letter-spacing: 0; }
+  .punto { width: 9px; height: 9px; border-radius: 50%; background: #ff3b5c; box-shadow: 0 0 0 0 rgba(255, 59, 92, 0.7); }
+
+  .dial { position: relative; flex: 1 1 320px; height: 34px; min-width: 240px; }
+  .escala {
+    position: absolute; left: 0; right: 0; top: 0; height: 14px;
+    background:
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0 1px, transparent 1px 2.5%) 0 0 / 100% 8px no-repeat,
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0 2px, transparent 2px 20%) 0 0 / calc(100% + 2px) 14px no-repeat;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .num {
+    position: absolute; top: 17px; transform: translateX(-50%);
+    font-size: 10.5px; font-weight: 700; color: rgba(255, 255, 255, 0.7); letter-spacing: 0.03em;
+  }
+  .num:first-child { transform: none; }
+  .num:last-child { transform: translateX(-100%); }
+  .aguja {
+    position: absolute; top: -4px; bottom: -2px; left: var(--pos); width: 3px; margin-left: -1.5px;
+    background: var(--fucsia); border-radius: 2px;
+    box-shadow: 0 0 8px 2px rgba(255, 0, 255, 0.75);
+  }
+  .etq {
+    position: absolute; top: 50%; right: 8px; transform: translateY(-50%);
+    background: var(--amarillo); color: var(--violeta-noche);
+    font-size: 11px; font-weight: 900; padding: 2px 7px; border-radius: 4px; white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .dial-fila { justify-content: center; }
+    .dial-txt { font-size: 11.5px; }
+    .dial { flex-basis: 100%; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .aguja { animation: dial-sintonizar 2.4s cubic-bezier(0.3, 0.7, 0.3, 1) 0.3s both; }
+    .etq { animation: dial-etq 0.5s ease 2.4s both; }
+    .punto { animation: dial-punto 1.6s ease-out infinite; }
+    @keyframes dial-sintonizar {
+      0% { left: 1%; }
+      35% { left: 82%; }
+      60% { left: calc(var(--pos) - 9%); }
+      78% { left: calc(var(--pos) + 3%); }
+      90% { left: calc(var(--pos) - 1%); }
+      100% { left: var(--pos); }
+    }
+    @keyframes dial-etq { from { opacity: 0; transform: translateY(-50%) scale(0.6); } to { opacity: 1; transform: translateY(-50%) scale(1); } }
+    @keyframes dial-punto {
+      0% { box-shadow: 0 0 0 0 rgba(255, 59, 92, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(255, 59, 92, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 59, 92, 0); }
+    }
+  }
+</style>
