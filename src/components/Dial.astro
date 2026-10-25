@@ -59,6 +59,10 @@ const marcas = [88, 92, 96, 100, 104, 108];
     background: var(--amarillo); color: var(--violeta-noche);
     font-size: 11px; font-weight: 900; padding: 2px 7px; border-radius: 4px; white-space: nowrap;
   }
+  /* En celular no se muestra el dial (queda la leyenda superior) */
+  @media (max-width: 560px) {
+    .dial-franja { display: none; }
+  }
   @media (max-width: 640px) {
     .dial-fila { padding-block: 6px 4px; gap: 10px; flex-wrap: nowrap; }
     .dial-txt { font-size: 0; gap: 0; }
