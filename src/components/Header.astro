@@ -57,8 +57,7 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
   .leyenda strong { color: var(--fucsia); font-weight: 900; }
   .leyenda .frec { color: var(--amarillo); }
   @media (max-width: 560px) {
-    .leyenda p { font-size: 10.5px; letter-spacing: 0.05em; }
-    .leyenda .frec { display: none; }
+    .leyenda { display: none; }
   }
   .fila {
     display: flex;
@@ -97,13 +96,18 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
     @keyframes onda { 0%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
   }
   @media (max-width: 560px) {
-    .fila { flex-wrap: wrap; }
+    .fila { flex-wrap: wrap; padding-block: 6px 2px; gap: 2px 10px; }
+    .nav ul { gap: 4px 18px; padding: 0; }
+    .nav a { font-size: 13px; padding: 6px 0 4px; }
+    .icono-btn { width: 38px; height: 38px; }
     .acciones { gap: 4px; }
-    .en-vivo { width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: 50%; }
+    .en-vivo { width: 40px; height: 40px; padding: 0; justify-content: center; border-radius: 50%; }
     .en-vivo .txt-play, .en-vivo .txt-carga, .en-vivo .txt-pausa { display: none !important; }
     .marca-grupo { gap: 10px; }
-    .sello-fm { padding: 6px 10px 6px 8px; gap: 7px; border-radius: 12px; }
-    .sello-num { font-size: 24px; }
+    .sello-fm { padding: 5px 9px 5px 7px; gap: 6px; border-radius: 10px; }
+    .sello-num { font-size: 20px; }
+    .sello-num small { font-size: 10px; margin-top: 2px; }
+    .sello-ciudad { font-size: 8px; }
     .ondas { width: 20px; height: 20px; }
     .ondas i:nth-child(3) { width: 20px; height: 20px; }
     .ondas i:nth-child(2) { width: 12px; height: 12px; }
