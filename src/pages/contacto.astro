@@ -4,10 +4,11 @@ import { SITE } from '../config';
 const waRadio = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMensaje)}`;
 const waComercial = `https://wa.me/${SITE.whatsappComercial}?text=${encodeURIComponent('Hola, quiero información para publicitar en Comunidad FAN Marcos Juárez')}`;
 ---
-<PaginaSimple titulo="Contacto" descripcion={`Contactate con ${SITE.nombre}: WhatsApp para saludos y mensajes a la radio, y contacto comercial.`}>
-  <h2>Mensajes y saludos para la radio</h2>
-  <p>¿Querés mandar un saludo, pedir tu tema favorito, participar de los sorteos o contarnos algo? Escribinos por WhatsApp y salís al aire en la 99.9.</p>
-  <p><a href={waRadio} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">WhatsApp de la radio · {SITE.whatsappVisible}</a></p>
+<PaginaSimple titulo="Contacto" descripcion={`Contactate con ${SITE.nombre}: mensajes para los programas de Comunidad FAN y contacto comercial en Marcos Juárez.`}>
+  <h2>Mensajes para los programas de Comunidad FAN</h2>
+  <p>Los programas de Comunidad FAN se transmiten desde los estudios de Rosario y en Marcos Juárez los escuchás por la <strong>FM 99.9</strong>.</p>
+  <p>¿Querés mandar un saludo, pedir tu canción favorita o participar de los sorteos y de la programación? Comunicate directamente con los estudios centrales por WhatsApp.</p>
+  <p><a href={waRadio} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">WhatsApp de los estudios · {SITE.whatsappVisible}</a></p>
 
   <h2>Contacto comercial</h2>
   <p>¿Querés que tu marca llegue a Marcos Juárez y la zona? Te ayudamos a armar la propuesta que mejor se adapte a tu negocio: <strong>spots publicitarios en la radio</strong>, <strong>banners en el sitio</strong> y <strong>notas de contenido de marca</strong> para contar lo que hacés.</p>
