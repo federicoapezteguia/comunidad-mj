@@ -51,6 +51,8 @@ const anio = new Date().getFullYear();
 
 <style>
   .footer { background: var(--fucsia); color: var(--violeta); padding: 40px 0 96px; margin-top: 64px; }
+  /* Si la página termina con la franja violeta de On Demand, sin espacio blanco antes del pie */
+  :global(main:has(> .franja-od:last-child)) + .footer { margin-top: 0; }
   .footer > :global(.dial-franja:first-child) { margin: -40px 0 32px; }
   .sello {
     display: flex; align-items: center; justify-content: center; gap: 16px;

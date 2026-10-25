@@ -3,8 +3,8 @@ import PaginaSimple from '../components/PaginaSimple.astro';
 import { SITE } from '../config';
 const wa = SITE.whatsappComercial ? `https://wa.me/${SITE.whatsappComercial}?text=${encodeURIComponent('Hola, quiero información para publicitar en Comunidad FAN Marcos Juárez')}` : '';
 ---
-<PaginaSimple titulo="Publicitá en Comunidad FAN Marcos Juárez" descripcion="Banners, publinotas y menciones al aire para comercios y empresas de Marcos Juárez y el sudeste cordobés.">
-  <p>Llegá a los vecinos de {SITE.ciudad} y la región en la web, en el aire y en redes.</p>
+<PaginaSimple titulo="Publicitá en Comunidad FAN Marcos Juárez" descripcion="Spots publicitarios en la radio, banners en el sitio y contenido de marca para comercios y empresas de Marcos Juárez y el sudeste cordobés.">
+  <p>Llegá a los vecinos de {SITE.ciudad} y la región con la FM 99.9: en la radio, en el sitio y en redes.</p>
   <h2>Espacios en el sitio</h2>
   <table>
     <thead><tr><th>Espacio</th><th>Medida</th><th>Dónde aparece</th></tr></thead>
@@ -12,11 +12,14 @@ const wa = SITE.whatsappComercial ? `https://wa.me/${SITE.whatsappComercial}?tex
       <tr><td>Superior</td><td>970 × 90 (celular 320 × 100)</td><td>Arriba en todas las páginas</td></tr>
       <tr><td>Campañas</td><td>1920 × 550 (celular 800 × 450)</td><td>Portada y listados</td></tr>
       <tr><td>Lateral</td><td>300 × 250</td><td>Portada y secciones</td></tr>
-      <tr><td>Lateral largo</td><td>300 × 600</td><td>Junto a cada nota</td></tr>
+      <tr><td>Horizontal</td><td>1180 × 220 (celular 800 × 400)</td><td>Portada y al final de cada nota</td></tr>
       <tr><td>Dentro de la nota</td><td>300 × 250</td><td>En el medio del texto de cada nota</td></tr>
     </tbody>
   </table>
+  <h2>Spots en la radio</h2>
+  <p>Spots publicitarios en la programación de la FM 99.9 de Marcos Juárez, para que tu marca suene en toda la ciudad y la zona.</p>
   <h2>Contenido de marca</h2>
-  <p>Publinotas sobre tu negocio, siempre identificadas como contenido de marca, que se pueden combinar con menciones al aire y publicaciones en redes.</p>
+  <p>Notas sobre tu negocio, tus productos o tus novedades, escritas por nuestro equipo y siempre identificadas como contenido de marca. Se pueden combinar con spots en la radio y publicaciones en redes.</p>
   {wa ? <p><a href={wa} class="boton boton-violeta" target="_blank" rel="noopener" style="text-decoration:none">Pedí tarifas por WhatsApp · {SITE.whatsappComercialVisible}</a></p> : <p>Pedí tarifas a {SITE.email} o al {SITE.telefono}.</p>}
+  <p>También podés escribirnos a <a href="mailto:fede@comunidad.fan">fede@comunidad.fan</a>.</p>
 </PaginaSimple>
