@@ -65,3 +65,6 @@ npm install
 npm run dev      # sitio en http://localhost:4321
 npm run build    # genera la carpeta dist/
 ```
+
+## Fuentes y reglas editoriales
+Ver [FUENTES.md](FUENTES.md).
