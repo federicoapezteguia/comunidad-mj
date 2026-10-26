@@ -21,6 +21,15 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
     <a href={url} class="link">
       <Image src={d.foto} alt={d.fotoAlt} widths={anchos} sizes={sizes} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : 'auto'} class="foto" />
       <span class="tag">{volanta(nota)}</span>
+      {tamanio === 'grande' && (
+        <span class="senal" aria-hidden="true">
+          <i class="onda o1"></i><i class="onda o2"></i><i class="onda o3"></i>
+          <svg class="antena" viewBox="0 0 64 96" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="14" r="5" fill="currentColor" stroke="none"></circle>
+            <path d="M32 19 L14 92 M32 19 L50 92 M23 56 H41 M18 76 H46 M27 37 H37 M23 56 L46 76 M41 56 L18 76"></path>
+          </svg>
+        </span>
+      )}
       <div class="capa">
         <Tit class="titulo">{d.titulo}</Tit>
         {tamanio === 'grande' && <p class="bajada">{d.bajada}</p>}
@@ -95,6 +104,32 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
   .sup.grande .capa { padding: 80px 28px 26px; }
   .sup .bajada { margin: 10px 0 0; color: #f1e8fb; font-size: 16px; max-width: 640px; }
   .sup .link:hover .titulo { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+  /* Antena emitiendo señal sobre la destacada principal (decorativa y sutil) */
+  .senal {
+    position: absolute; top: 22px; right: 26px; z-index: 1;
+    width: 150px; height: 150px; color: #fff; opacity: 0.42; pointer-events: none;
+    mix-blend-mode: screen;
+  }
+  .antena { position: absolute; left: 50%; bottom: 0; width: 46px; height: 70px; transform: translateX(-50%); }
+  .onda {
+    position: absolute; left: 50%; top: 90px; width: 24px; height: 24px; margin: -12px 0 0 -12px;
+    border-radius: 50%; border: 2px solid currentColor; opacity: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .onda { animation: emitir 3.6s ease-out infinite; }
+    .o2 { animation-delay: 1.2s; }
+    .o3 { animation-delay: 2.4s; }
+    @keyframes emitir {
+      0% { transform: scale(0.4); opacity: 0.9; border-color: #fff; }
+      60% { border-color: var(--fucsia); }
+      100% { transform: scale(6); opacity: 0; border-color: var(--fucsia); }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .o1 { opacity: 0.6; transform: scale(2); } .o2 { opacity: 0.35; transform: scale(3.5); }
+  }
+  @media (max-width: 720px) { .senal { width: 100px; height: 100px; top: 14px; right: 14px; } .antena { width: 32px; height: 48px; } .onda { top: 59px; } }
 
   /* Compacta */
   .comp .link { display: flex; gap: 14px; align-items: flex-start; }
