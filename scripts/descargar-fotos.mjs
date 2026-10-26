@@ -5,6 +5,28 @@ import sharp from 'sharp';
 
 // Si la imagen es vertical o cuadrada (un flyer, una foto de celular), arma una portada 16:9:
 // la misma imagen desenfocada de fondo y la original entera al centro.
+// "buscar:texto" → primera imagen horizontal y grande de Wikimedia Commons para esa búsqueda
+async function buscarEnCommons(q) {
+  try {
+    const api = 'https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=15'
+      + '&prop=imageinfo&iiprop=url|size|mime&iiurlwidth=1600&gsrsearch=' + encodeURIComponent(q + ' filetype:bitmap');
+    const r = await fetch(api, { headers: { 'User-Agent': 'ComunidadFanMJ/1.0 (sitio de noticias)' } });
+    const j = await r.json();
+    const paginas = Object.values(j.query?.pages ?? {}).sort((a, b) => a.index - b.index);
+    // primero una horizontal grande; si no hay, cualquiera razonable (las verticales se arman como portada)
+    for (const horizontal of [true, false]) {
+      for (const p of paginas) {
+        const ii = p.imageinfo?.[0];
+        if (ii && ii.width >= 800 && (!horizontal || ii.width >= ii.height) && /jpeg|png/.test(ii.mime)) {
+          console.log(`Commons "${q}" → ${p.title}`);
+          return ii.thumburl || ii.url;
+        }
+      }
+    }
+  } catch (e) { console.warn(`AVISO: búsqueda en Commons falló (${q}): ${e.message}`); }
+  return null;
+}
+
 async function aPortada(buf) {
   const meta = await sharp(buf).metadata();
   if (!meta.width || !meta.height || meta.width / meta.height >= 1.3) return buf;
@@ -30,11 +52,13 @@ for (const [local, commons] of Object.entries(lista)) {
   } catch {}
   // Puede ser un archivo de Commons, una dirección completa o una lista de direcciones alternativas
   const fuentes = (Array.isArray(commons) ? commons : [commons]).map((c) =>
-    c.startsWith('http') ? c : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(c)}?width=1600`,
+    c.startsWith('http') || c.startsWith('buscar:') ? c : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(c)}?width=1600`,
   );
   let ok = false;
-  for (const url of fuentes) {
-    const esCommons = url.includes('commons.wikimedia.org');
+  for (let url of fuentes) {
+    if (url.startsWith('buscar:')) url = await buscarEnCommons(url.slice(7).trim());
+    if (!url) continue;
+    const esCommons = url.includes('wikimedia.org');
     const headers = esCommons
       ? { 'User-Agent': 'ComunidadFanMJ/1.0 (https://comunidad.rokmarketing.com; sitio de noticias)' }
       : {
