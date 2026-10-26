@@ -4,7 +4,7 @@ bajada: "La edición aniversario superó todas las expectativas. Salvador Gorosi
 seccion: deportes
 etiquetas: [atletismo, deportes, eventos]
 localidad: marcos-juarez
-fecha: 2026-10-26T10:40:00-03:00
+fecha: 2026-10-26T10:15:00-03:00
 foto: ./img/maraton-marcos-juarez-2026-largada.jpg
 fotoAlt: "Corredores en la Maratón Marcos Juárez 2026, edición de los 30 años"
 seoTitulo: "Maratón Marcos Juárez 2026: ganadores de los 30 años"

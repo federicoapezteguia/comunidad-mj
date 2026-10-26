@@ -4,7 +4,7 @@ bajada: "Argentino empató en Justiniano Posse y cerró la fase regular como lí
 seccion: deportes
 etiquetas: [deportes, futbol]
 localidad: marcos-juarez
-fecha: 2026-10-26T10:50:00-03:00
+fecha: 2026-10-26T10:12:00-03:00
 foto: ./img/liga-bellvillense-resultados-25-octubre.jpg
 fotoAlt: "Resultados de los equipos de Marcos Juárez en la Liga Bellvillense"
 seoTitulo: "Liga Bellvillense: resultados de Argentino, Tiro y San Martín"

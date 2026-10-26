@@ -4,7 +4,7 @@ bajada: "La Gloria juega esta noche a las 21:15 en el Monumental Presidente Per�
 seccion: deportes
 etiquetas: [deportes, futbol]
 localidad: cordoba-capital
-fecha: 2026-10-26T11:00:00-03:00
+fecha: 2026-10-26T10:10:00-03:00
 foto: ./img/estadio-instituto-alta-cordoba.jpg
 fotoAlt: "Estadio Monumental Presidente Perón de Instituto, en Alta Córdoba"
 seoTitulo: "Instituto vs. Riestra: hora y cómo llega la Gloria"
