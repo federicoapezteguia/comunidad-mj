@@ -37,6 +37,12 @@ export const ETIQUETAS = {
   seguridad: 'Seguridad',
   tecnologia: 'Tecnología',
   folclore: 'Folclore',
+  series: 'Series',
+  novelas: 'Novelas',
+  television: 'Televisión',
+  famosos: 'Famosos',
+  virales: 'Virales',
+  plataformas: 'Plataformas',
 } as const;
 
 export type EtiquetaId = keyof typeof ETIQUETAS;

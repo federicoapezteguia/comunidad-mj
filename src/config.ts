@@ -59,6 +59,7 @@ export type SeccionId =
   | 'marcos-juarez'
   | 'cordoba'
   | 'nacionales'
+  | 'espectaculos'
   | 'deportes'
   | 'musica'
   | 'on-demand'
@@ -101,6 +102,13 @@ export const SECCIONES: Record<
     titulo: 'Música: estrenos, shows y cuarteto',
     descripcion:
       'Estrenos, lanzamientos, recitales en Córdoba y la región, cuarteto y artistas cordobeses. Con el Ranking FAN.',
+    enMenu: true,
+  },
+  espectaculos: {
+    nombre: 'Espectáculos',
+    titulo: 'Espectáculos: series, novelas, famosos y virales',
+    descripcion:
+      'Novedades de series, novelas, plataformas, televisión, famosos y los virales del momento, con todo lo que se comenta en Córdoba y el país.',
     enMenu: true,
   },
   'on-demand': {

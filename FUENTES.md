@@ -33,6 +33,10 @@
 - a24.com
 - **Siempre además:** fuentes oficiales y gubernamentales (Casa Rosada / argentina.gob.ar, Boletín Oficial, INDEC, BCRA, Congreso, Poder Judicial, ministerios).
 
+### Espectáculos (series, novelas, TV, famosos, virales)
+- Las secciones de espectáculos de los medios nacionales de la lista (Infobae, TN, Clarín, La Nación, Página/12, Perfil, A24) y de los provinciales (La Voz, El Doce, Cadena 3).
+- Siempre además: anuncios oficiales de plataformas, canales y productoras.
+
 ## Reglas de redacción
 - Redacción propia, títulos y textos SEO, longitud media.
 - **Nunca** mencionar, citar ni enlazar a otros medios en las notas ni en el sitio.
