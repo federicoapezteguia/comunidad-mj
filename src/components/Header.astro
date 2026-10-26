@@ -13,13 +13,13 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
   <div class="wrap fila">
     <div class="marca-grupo">
       <a href="/" class="marca" aria-label="Comunidad FAN Marcos Juárez, ir al inicio"><Logo /></a>
-      <a href="/" class="sello-fm" aria-label={`FM ${SITE.frecuencia} Marcos Juárez`} tabindex="-1">
+      <div class="sello-fm" aria-label={`FM ${SITE.frecuencia} Marcos Juárez`} role="img">
         <span class="ondas" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="sello-txt">
           <span class="sello-num"><small>FM</small>{SITE.frecuencia}</span>
           <span class="sello-ciudad">Marcos Juárez</span>
         </span>
-      </a>
+      </div>
     </div>
 
     <nav aria-label="Secciones" class="nav">
@@ -71,13 +71,12 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
   .sello-fm {
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--amarillo); color: var(--violeta-noche);
-    padding: 7px 14px 7px 10px; border-radius: 14px;
+    padding: 6px 12px 6px 9px; border-radius: 12px;
     box-shadow: 0 6px 16px -8px rgba(45, 0, 93, 0.7), inset 0 -3px 0 rgba(45, 0, 93, 0.15);
     line-height: 1; text-decoration: none;
   }
-  .sello-fm:hover { color: var(--violeta-noche); }
   .sello-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
-  .sello-num { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; display: flex; align-items: flex-start; gap: 3px; }
+  .sello-num { font-size: 26px; font-weight: 900; letter-spacing: -0.02em; display: flex; align-items: flex-start; gap: 3px; }
   .sello-num small { font-size: 12px; font-weight: 900; margin-top: 3px; letter-spacing: 0.04em; }
   .sello-ciudad { font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
   .ondas { position: relative; width: 26px; height: 26px; flex: none; }
