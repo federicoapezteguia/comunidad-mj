@@ -79,9 +79,10 @@
     content: '';
     position: absolute; left: 50%; right: 50%; bottom: -4px;
     height: 3px; background: var(--violeta);
-    transition: left 0.3s ease, right 0.3s ease;
+    transition: left 0.3s ease, right 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
   }
-  .header .nav a:hover::after, .header .nav a[aria-current]::after { left: 0; right: 0; }
+  .header .nav a:hover::after, .header .nav a[aria-current]::after { left: 0; right: 0; opacity: 1; }
   .header .leyenda p { animation: cf-aparecer 1s ease both; }
 
   /* Botón En vivo: late mientras la radio no suena */
