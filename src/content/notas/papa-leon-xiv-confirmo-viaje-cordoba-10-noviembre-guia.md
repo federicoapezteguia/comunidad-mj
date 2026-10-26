@@ -35,10 +35,6 @@ El predio de FADEA está dividido en **58 parcelas** de 100 por 100 metros, con 
 - Habrá **colectivos especiales**: 150 desde la zona sur, 150 desde la zona norte, 80 entre FADEA y la Catedral y 30 desde el Estadio Kempes.
 - Las autoridades advirtieron que **el estacionamiento no alcanzará** para todos y que habrá que caminar bastante.
 
-## Si viajás desde Marcos Juárez y la zona
-
-Desde el sudeste cordobés son entre tres y cuatro horas de ruta, así que conviene **salir la noche anterior**, llegar con tiempo antes del cierre de los accesos y dejar el auto en los estacionamientos habilitados para seguir en los colectivos especiales. Lo ideal es llevar agua, protector solar, abrigo para la madrugada y calzado cómodo. Las parroquias de la región suelen organizar viajes grupales: vale la pena consultar en cada comunidad.
-
 ## El resto de la visita
 
 León XIV llegará a Buenos Aires el **domingo 8**, donde será recibido en la Casa Rosada. El **lunes 9** celebrará una misa en el Monumento de los Españoles y, tras su paso por Córdoba, encabezará la vigilia con jóvenes el martes a la noche. El **miércoles 11** celebrará misa en **Luján** y partirá hacia Perú.
