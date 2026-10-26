@@ -135,11 +135,11 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
   .redes-header { display: none; }
   /* Escritorio: logo, sello, menú y En vivo en una sola fila */
   @media (min-width: 1280px) {
-    .header .fila { max-width: 1340px; flex-wrap: nowrap; }
+    .header .fila { flex-wrap: nowrap; gap: 10px 16px; }
     .marca-grupo, .acciones { flex: none; }
     .nav { order: 0; width: auto; flex: 1 1 auto; display: flex; justify-content: center; min-width: 0; }
-    .nav ul { gap: 6px 15px; }
-    .nav a { font-size: 13px; }
+    .nav ul { gap: 6px 13px; }
+    .nav a { font-size: 12.5px; }
     .en-vivo { white-space: nowrap; }
   }
 </style>
