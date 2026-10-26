@@ -5,7 +5,7 @@ seccion: espectaculos
 etiquetas: [famosos, virales]
 fecha: 2026-10-26T07:45:00-03:00
 foto: ./img/lali-esposito.jpg
-fotoAlt: "Lali Espósito"
+fotoAlt: "Lali Espósito con amigos en el yate durante su despedida de soltera en Miami"
 seoTitulo: "Lali Espósito y su despedida de soltera en Miami: las fotos"
 seoDescripcion: "Lali Espósito celebró su despedida de soltera en un yate en Miami. Los detalles del festejo y lo que se sabe de su casamiento con Pedro Rosemblat."
 ---
