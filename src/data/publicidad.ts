@@ -9,7 +9,7 @@
 export type EspacioId = 'superior' | 'lateral' | 'lateral-largo' | 'en-nota' | 'campanas' | 'horizontal';
 
 export const MEDIDAS: Record<EspacioId, { w: number; h: number; wMovil?: number; hMovil?: number }> = {
-  superior: { w: 970, h: 90, wMovil: 320, hMovil: 100 },
+  superior: { w: 1200, h: 111, wMovil: 320, hMovil: 100 },
   lateral: { w: 300, h: 250 },
   'lateral-largo': { w: 300, h: 600 },
   'en-nota': { w: 300, h: 250 },
