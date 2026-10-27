@@ -165,8 +165,12 @@ const jsonLd = [
 <style>
   .pub-sup { padding-block: 20px; }
   /* Franja de destacadas con antena de radio animada de fondo */
+  /* Las ondas salen de la franja y siguen por los bloques de arriba y abajo
+     hasta desvanecerse; el main las recorta para que no pisen header ni footer. */
+  :global(main#contenido) { overflow: clip; }
+  :global(main#contenido > *:not(.franja-dest)) { position: relative; z-index: 1; }
   .franja-dest {
-    position: relative; overflow: hidden; padding-block: 28px;
+    position: relative; overflow: visible; padding-block: 28px;
     background: transparent;
   }
   .destacadas { position: relative; z-index: 1; }
@@ -177,14 +181,14 @@ const jsonLd = [
     border-radius: 50%; border: 3px solid currentColor; opacity: 0;
   }
   @media (prefers-reduced-motion: no-preference) {
-    .fondo-antena .onda { animation: emitir-fondo 6s ease-out infinite; }
-    .fondo-antena .o2 { animation-delay: 1.5s; }
-    .fondo-antena .o3 { animation-delay: 3s; }
-    .fondo-antena .o4 { animation-delay: 4.5s; }
+    .fondo-antena .onda { animation: emitir-fondo 8s ease-out infinite; }
+    .fondo-antena .o2 { animation-delay: 2s; }
+    .fondo-antena .o3 { animation-delay: 4s; }
+    .fondo-antena .o4 { animation-delay: 6s; }
     @keyframes emitir-fondo {
       0% { transform: scale(0.3); opacity: 1; border-color: var(--fucsia); }
       50% { border-color: var(--fucsia); }
-      100% { transform: scale(28); opacity: 0; border-color: var(--violeta); }
+      100% { transform: scale(40); opacity: 0; border-color: var(--violeta); }
     }
   }
   @media (prefers-reduced-motion: reduce) {
