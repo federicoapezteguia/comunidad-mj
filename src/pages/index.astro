@@ -50,6 +50,14 @@ const jsonLd = [
   <div class="wrap pub-sup"><Publicidad espacio="superior" /></div>
 
   {destacadas.length > 0 && (
+    <div class="franja-dest">
+      <div class="fondo-antena" aria-hidden="true">
+        <i class="onda o1"></i><i class="onda o2"></i><i class="onda o3"></i><i class="onda o4"></i>
+        <svg class="antena" viewBox="0 0 120 300" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="60" cy="16" r="9" fill="currentColor" stroke="none"></circle>
+          <path d="M60 25 L18 296 M60 25 L102 296 M48 70 H72 M40 120 H80 M32 170 H88 M25 220 H95 M20 260 H100 M48 70 L80 120 M72 70 L40 120 M40 120 L88 170 M80 120 L32 170 M32 170 L95 220 M88 170 L25 220 M25 220 L100 260 M95 220 L20 260"></path>
+        </svg>
+      </div>
     <section class="wrap destacadas" aria-label="Noticias destacadas">
       <div class="d-principal">
         <TarjetaNota nota={destacadas[0]} variante="superpuesta" tamanio="grande" titular="h2" prioridad />
@@ -58,6 +66,7 @@ const jsonLd = [
         {destacadas.slice(1).map((n) => <TarjetaNota nota={n} variante="superpuesta" titular="h2" />)}
       </div>
     </section>
+    </div>
   )}
 
   <section class="wrap bloque" aria-labelledby="h-mj">
@@ -155,8 +164,39 @@ const jsonLd = [
 
 <style>
   .pub-sup { padding-block: 20px; }
-  .destacadas { display: grid; gap: 4px; grid-template-columns: 1fr; }
-  .d-lado { display: grid; gap: 4px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+  /* Franja de destacadas con antena de radio animada de fondo */
+  .franja-dest {
+    position: relative; overflow: hidden; padding-block: 28px;
+    background: radial-gradient(ellipse at 78% 40%, #4a0a8a 0%, var(--violeta) 35%, var(--violeta-noche) 80%);
+  }
+  .destacadas { position: relative; z-index: 1; }
+  .fondo-antena { position: absolute; inset: 0; color: #fff; pointer-events: none; opacity: 0.28; }
+  .fondo-antena .antena { position: absolute; right: max(4px, calc((100% - 1200px) / 2 - 190px)); bottom: -8px; width: 200px; height: 96%; }
+  .fondo-antena .onda {
+    position: absolute; right: calc(max(4px, calc((100% - 1200px) / 2 - 190px)) + 100px); top: calc(4% + 22px); width: 60px; height: 60px; margin: -30px -30px 0 0;
+    border-radius: 50%; border: 3px solid currentColor; opacity: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .fondo-antena .onda { animation: emitir-fondo 6s ease-out infinite; }
+    .fondo-antena .o2 { animation-delay: 1.5s; }
+    .fondo-antena .o3 { animation-delay: 3s; }
+    .fondo-antena .o4 { animation-delay: 4.5s; }
+    @keyframes emitir-fondo {
+      0% { transform: scale(0.3); opacity: 1; border-color: #fff; }
+      50% { border-color: var(--fucsia); }
+      100% { transform: scale(28); opacity: 0; border-color: var(--fucsia); }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fondo-antena .o1 { opacity: 0.8; transform: scale(4); } .fondo-antena .o2 { opacity: 0.5; transform: scale(9); } .fondo-antena .o3 { opacity: 0.3; transform: scale(15); }
+  }
+  @media (max-width: 720px) {
+    .franja-dest { padding-block: 16px; }
+    .fondo-antena .antena { right: 4px; width: 90px; height: 92%; }
+    .fondo-antena .onda { right: 49px; top: calc(8% + 10px); }
+  }
+  .destacadas { display: grid; gap: 8px; grid-template-columns: 1fr; }
+  .d-lado { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
   @media (min-width: 900px) {
     .destacadas { grid-template-columns: 2fr 1fr; min-height: 480px; }
     .d-lado { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
