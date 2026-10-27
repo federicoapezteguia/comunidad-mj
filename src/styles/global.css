@@ -38,6 +38,19 @@ body {
   font-size: 16px;
 }
 
+/* Mosaico de manitos de fondo, en degradé de marca y muy tenue */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(135deg, var(--fucsia), #7a2bd0 50%, var(--amarillo));
+  opacity: 0.15;
+  -webkit-mask-image: url('/img/mosaico-manito.svg');
+  mask-image: url('/img/mosaico-manito.svg');
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+}
+
 img {
   max-width: 100%;
   height: auto;
