@@ -25,6 +25,17 @@
   96% { transform: rotate(5deg); }
 }
 @keyframes cf-brillo { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+@keyframes cf-glitch {
+  0%, 100% { text-shadow: none; transform: none; }
+  20% { text-shadow: -2px 0 var(--fucsia), 2px 0 var(--amarillo); transform: translateX(1px); }
+  40% { text-shadow: 2px 0 var(--fucsia), -2px 0 var(--amarillo); transform: translateX(-1px); }
+  60% { text-shadow: -1px 0 var(--fucsia), 1px 0 var(--amarillo); transform: translateX(1px); }
+  80% { text-shadow: 1px 0 var(--fucsia), -1px 0 var(--amarillo); transform: none; }
+}
+@keyframes cf-onda-titulo {
+  0% { opacity: 0.9; transform: translateY(-50%) scale(0.2); }
+  100% { opacity: 0; transform: translateY(-50%) scale(1); }
+}
 @keyframes cf-pagina-sale { to { opacity: 0; transform: translateY(-10px); } }
 @keyframes cf-pagina-entra { from { opacity: 0; transform: translateY(14px); } }
 
@@ -50,6 +61,20 @@
     transition: width 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s;
   }
   .sec-h.visible::after, .sec-h:not(.rev)::after { width: 90px; }
+
+  /* Títulos de sección: al aparecer "transmiten" una onda */
+  .sec-h::before {
+    content: '';
+    position: absolute; left: -14px; top: 40%;
+    width: 120px; height: 120px; margin-top: 0;
+    border: 3px solid var(--fucsia); border-radius: 50%;
+    opacity: 0; pointer-events: none;
+    transform-origin: 50% 50%;
+  }
+  .sec-h.visible::before { animation: cf-onda-titulo 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s both; }
+
+  /* Títulos de notas: interferencia de señal al pasar el mouse */
+  article .link:hover .titulo { animation: cf-glitch 0.45s steps(2, end) 1; }
 
   /* ---------- Destacadas ---------- */
   .destacadas .sup.grande .foto { animation: cf-zoom-lento 16s ease-in-out infinite alternate; }

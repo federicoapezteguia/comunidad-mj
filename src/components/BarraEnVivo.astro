@@ -17,6 +17,7 @@ import { SITE } from '../config';
         <span class="txt-pausa">Estás escuchando Comunidad FAN Marcos Juárez</span>
       </span>
     </div>
+    <span class="al-aire" aria-hidden="true"><i></i>Al aire</span>
     <label class="volumen">
       <span class="sr-only">Volumen</span>
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path></svg>
@@ -107,6 +108,28 @@ import { SITE } from '../config';
 </script>
 
 <style>
+  /* Cartel "Al aire" de estudio: se enciende cuando la radio suena */
+  .al-aire {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 10px; border-radius: 6px;
+    background: #5a0f1c; color: rgba(255, 255, 255, 0.45);
+    border: 2px solid rgba(45, 0, 93, 0.35);
+    font-size: 11px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .al-aire i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); }
+  :global(html[data-radio='sonando']) .al-aire {
+    background: #e3152f; color: #fff;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 18px 2px rgba(227, 21, 47, 0.8);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  }
+  :global(html[data-radio='sonando']) .al-aire i { background: #fff; box-shadow: 0 0 6px #fff; }
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html[data-radio='sonando']) .al-aire { animation: titilar 2.4s ease-in-out infinite; }
+    @keyframes titilar { 0%, 100% { opacity: 1; } 50% { opacity: 0.78; } }
+  }
+  @media (max-width: 719px) { .al-aire { display: none; } }
+
   .barra {
     position: fixed;
     left: 0;
