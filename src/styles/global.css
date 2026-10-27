@@ -33,7 +33,7 @@ body {
   margin: 0;
   font-family: var(--fuente);
   color: var(--texto);
-  background: var(--blanco);
+  background: #fafafa;
   line-height: 1.5;
   font-size: 16px;
 }
