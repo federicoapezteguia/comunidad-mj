@@ -40,7 +40,7 @@ const jsonLd = [
 const primeras = notas.slice(0, 6);
 const resto = notas.slice(6);
 ---
-<Base titulo={tituloSeo + sufijo} descripcion={descripcion} anterior={anterior} siguiente={siguiente} noindex={noindex} jsonLd={jsonLd}>
+<Base titulo={tituloSeo + sufijo} descripcion={pagina > 1 ? `${descripcion} Página ${pagina}.` : descripcion} anterior={anterior} siguiente={siguiente} noindex={noindex} jsonLd={jsonLd}>
   <div class="wrap pub-sup"><Publicidad espacio="superior" /></div>
   <div class="wrap">
     <h1 class="sec-h h1">{h1}{sufijo}</h1>
@@ -51,11 +51,11 @@ const resto = notas.slice(6);
           <p>Todavía no hay notas en esta sección.</p>
         ) : (
           <>
-            <div class="grid-notas">{primeras.map((n, i) => <TarjetaNota nota={n} prioridad={i < 2} variante={video ? 'grilla' : 'grilla'} />)}</div>
+            <div class="grid-notas">{primeras.map((n, i) => <TarjetaNota nota={n} prioridad={i < 2} titular="h2" />)}</div>
             {resto.length > 0 && (
               <>
                 <div class="pub-medio"><Publicidad espacio="campanas" /></div>
-                <div class="grid-notas">{resto.map((n) => <TarjetaNota nota={n} />)}</div>
+                <div class="grid-notas">{resto.map((n) => <TarjetaNota nota={n} titular="h2" />)}</div>
               </>
             )}
           </>

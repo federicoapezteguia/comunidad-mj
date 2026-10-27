@@ -36,7 +36,7 @@ const jsonLd: Record<string, unknown>[] = [
     '@context': 'https://schema.org',
     '@type': d.patrocinado ? 'Article' : 'NewsArticle',
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    headline: d.titulo,
+    headline: d.titulo.length > 110 ? d.titulo.slice(0, 107).replace(/\s+\S*$/, '') + '…' : d.titulo,
     description: d.seoDescripcion ?? d.bajada,
     image: [imgUrl],
     datePublished: d.fecha.toISOString(),

@@ -20,13 +20,13 @@ export default defineConfig({
   integrations: [
     sitemap({
       // En staging no publicamos sitemap útil: Google no debe indexar.
-      filter: (page) => !STAGING && !page.includes('/buscar/') && !page.includes('/pagina/'),
+      filter: (page) => !STAGING && !/\/(buscar|pagina|etiqueta|localidad|autor)\//.test(page),
       changefreq: 'hourly',
     }),
   ],
   vite: {
     define: {
-      'import.meta.env.STAGING': JSON.stringify(STAGING),
+      __STAGING__: JSON.stringify(STAGING),
     },
   },
 });

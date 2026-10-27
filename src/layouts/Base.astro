@@ -39,9 +39,12 @@ const {
   sinMarco = false,
 } = Astro.props;
 
-const staging = import.meta.env.STAGING;
+const staging = __STAGING__;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const tituloCompleto = Astro.url.pathname === '/' ? titulo : `${titulo} | ${SITE.nombre}`;
+const conMarca = `${titulo} | ${SITE.nombre}`;
+// Google corta los títulos de más de ~65 caracteres: si no entra la marca, va solo el título.
+const tituloCompleto = Astro.url.pathname === '/' || conMarca.length > 65 ? titulo : conMarca;
+const descMeta = descripcion.length > 160 ? descripcion.slice(0, 157).replace(/\s+\S*$/, '') + '…' : descripcion;
 
 const og = await getImage({ src: imagen ?? fallbackOg, width: 1200, height: 675, format: 'jpg', quality: 82, fit: 'cover' });
 const ogUrl = new URL(og.src, Astro.site).href;
@@ -76,7 +79,7 @@ const organizacion = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{tituloCompleto}</title>
-    <meta name="description" content={descripcion} />
+    <meta name="description" content={descMeta} />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content={robots} />
     {anterior && <link rel="prev" href={new URL(anterior, Astro.site).href} />}

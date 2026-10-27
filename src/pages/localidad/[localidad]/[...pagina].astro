@@ -24,6 +24,6 @@ const desc = `Noticias de ${nombre} hoy: lo que pasa en la ciudad, contado por C
   descripcion={desc}
   intro={desc}
   base={`/localidad/${localidad}/`}
-  noindex={Astro.props.cantidad < MIN_NOTAS_INDEXAR}
+  noindex={localidad === 'marcos-juarez' || Astro.props.cantidad < MIN_NOTAS_INDEXAR}
   {...Astro.props}
 />

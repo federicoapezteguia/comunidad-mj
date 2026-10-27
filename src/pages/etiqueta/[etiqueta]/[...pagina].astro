@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 interface Props { notas: Nota[]; pagina: number; total: number; cantidad: number }
 const { etiqueta } = Astro.params as { etiqueta: EtiquetaId };
 const nombre = ETIQUETAS[etiqueta];
-const desc = `Todas las noticias sobre ${nombre.toLowerCase()} en Marcos Juárez, la región y Córdoba.`;
+const desc = `Todas las noticias sobre ${nombre.toLowerCase()} en Marcos Juárez, la región y Córdoba, en Comunidad FAN Marcos Juárez, FM 99.9.`;
 ---
 <Listado
   h1={nombre}
