@@ -6,7 +6,7 @@ etiquetas: [shows, cuarteto, folclore, eventos]
 localidad: bell-ville
 fecha: 2026-10-27T22:33:00-03:00
 foto: ./img/fiesta-nacional-pelota-futbol-bell-ville.jpg
-fotoAlt: "Monumento a la pelota de fútbol en Bell Ville"
+fotoAlt: "Presentación de la Fiesta Nacional de la Pelota de Fútbol 2026 en Bell Ville"
 seoTitulo: "Fiesta de la Pelota 2026 en Bell Ville: grilla y fechas"
 seoDescripcion: "La Fiesta Nacional de la Pelota de Fútbol en Bell Ville será el 21 y 22 de noviembre con Los Tekis, Euge Quevedo, LBC y artistas de la región. Grilla completa."
 ---

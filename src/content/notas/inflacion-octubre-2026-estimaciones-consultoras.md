@@ -4,8 +4,8 @@ bajada: "Los relevamientos privados coinciden en una leve desaceleración frente
 seccion: nacionales
 etiquetas: [economia]
 fecha: 2026-10-27T22:20:00-03:00
-foto: ./img/inflacion-octubre-2026-supermercado.jpg
-fotoAlt: "Góndolas de un supermercado en Argentina"
+foto: ./img/inflacion-septiembre-2026-indec.jpg
+fotoAlt: "Billete argentino de 100.000 pesos"
 seoTitulo: "Inflación de octubre 2026: las consultoras estiman 1,8%"
 seoDescripcion: "Las consultoras privadas estiman que la inflación de octubre de 2026 será de 1,8%, una décima menos que septiembre. Qué rubros empujan los precios."
 ---

@@ -17,8 +17,8 @@ seoDescripcion: "Cierre de \"El lienzo en el tiempo\" en el Museo el viernes 30 
 
 La muestra, que reunió distintas expresiones artísticas, tendrá una despedida a lo grande en el **Museo de Marcos Juárez**. A las **20** está prevista una **performance especial de Carolina López**, y la noche seguirá con:
 
-- **Música en vivo** con el invitado **Javier Guerini**.
-- **Desfile** a cargo de **Laura Olguín, Julieta Biondini y Maxi Botallo**.
+- **Música en vivo** con el invitado **Cristian Guerrini**.
+- **Desfile** a cargo de **Laura Olguín, Julieta Biondoni y Maxi Botallo**.
 - **Pintura en acción** y **lectura de poesía**.
 
 ## Sábado 31 y domingo 1: "La síntesis del caos"

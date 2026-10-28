@@ -5,8 +5,8 @@ seccion: deportes
 etiquetas: [instituciones, deportes]
 localidad: marcos-juarez
 fecha: 2026-10-27T22:28:00-03:00
-foto: ./img/club-argentino-marcos-juarez.jpg
-fotoAlt: "Club Argentino de Marcos Juárez"
+foto: ./img/marcos-juarez-vista-aerea-atardecer.jpg
+fotoAlt: "Vista aérea de Marcos Juárez al atardecer"
 seoTitulo: "Club Argentino: nuevas autoridades y apertura del country"
 seoDescripcion: "El Club Argentino de Marcos Juárez renovó autoridades, sigue Ros Artayeta como presidente y abre la temporada de verano del country el 20 de noviembre."
 ---

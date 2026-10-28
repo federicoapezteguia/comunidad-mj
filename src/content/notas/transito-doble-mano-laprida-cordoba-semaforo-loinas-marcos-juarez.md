@@ -6,7 +6,7 @@ etiquetas: [transito, municipio]
 localidad: marcos-juarez
 fecha: 2026-10-27T22:25:00-03:00
 foto: ./img/transito-calles-doble-mano-marcos-juarez.jpg
-fotoAlt: "Calle de Marcos Juárez"
+fotoAlt: "Estación de tren y calle lindera en Marcos Juárez"
 seoTitulo: "Tránsito en Marcos Juárez: calles a doble mano y nuevo semáforo"
 seoDescripcion: "Remedios de Escalada, Córdoba y Laprida vuelven a doble mano en Marcos Juárez. El lunes 2 de noviembre se habilita el semáforo de Loinas y Fuerza Aérea."
 ---

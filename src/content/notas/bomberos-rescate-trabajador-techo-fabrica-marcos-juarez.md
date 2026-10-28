@@ -5,8 +5,8 @@ seccion: marcos-juarez
 etiquetas: [sociedad, salud]
 localidad: marcos-juarez
 fecha: 2026-10-27T22:31:00-03:00
-foto: ./img/bomberos-voluntarios-marcos-juarez.jpg
-fotoAlt: "Bomberos Voluntarios de Marcos Juárez"
+foto: ./img/bomberos-rescate-marcos-juarez.jpg
+fotoAlt: "Placa: rescate en altura de Bomberos Voluntarios en Marcos Juárez"
 seoTitulo: "Marcos Juárez: rescatan a un hombre que cayó de un techo"
 seoDescripcion: "Bomberos Voluntarios rescataron a un hombre que cayó del techo de una fábrica en Fuerza Aérea y Ruta 9. Tiene una fractura de muñeca y será operado."
 ---
