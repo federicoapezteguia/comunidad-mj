@@ -20,7 +20,3 @@ Al lugar acudió una dotación de **Bomberos Voluntarios de Marcos Juárez**, co
 ## Cómo está
 
 El hombre se encuentra **internado en la sala general del Hospital Abel Ayerza**. Desde la dirección del hospital informaron que **"está bien"**: ya fue evaluado por el servicio de Traumatología y será **operado de la muñeca en los próximos días**.
-
-## La importancia de trabajar seguros en altura
-
-Los trabajos en techos y altura están entre las tareas con más riesgo de accidentes. Usar **arnés y línea de vida**, no trabajar solo y evitar subir con lluvia o viento son medidas básicas para prevenir caídas. Ante una emergencia, en Marcos Juárez se puede llamar a los Bomberos Voluntarios al **100** y al SUM para la atención sanitaria.
