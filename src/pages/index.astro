@@ -16,8 +16,12 @@ const tomar = (lista: Nota[], cant: number) => {
   return r;
 };
 
-// Destacadas: las marcadas como destacadas; si faltan, las últimas.
-const destacadas = tomar([...noticias.filter((n) => n.data.destacada), ...noticias], 3);
+// Destacadas: las marcadas como destacadas de las últimas 48 horas (más nuevas primero);
+// si faltan, se completan con las últimas publicadas. Así la portada nunca queda con temas viejos arriba.
+const VIGENCIA_DESTACADA = 48 * 60 * 60 * 1000;
+const ahora = Date.now();
+const recientes = (n: Nota) => ahora - n.data.fecha.getTime() <= VIGENCIA_DESTACADA;
+const destacadas = tomar([...noticias.filter((n) => n.data.destacada && recientes(n)), ...noticias], 3);
 const deSeccion = (s: SeccionId) => noticias.filter((n) => n.data.seccion === s);
 const mj = tomar(deSeccion('marcos-juarez'), 6);
 const cba = tomar(deSeccion('cordoba'), 4);

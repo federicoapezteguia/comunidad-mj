@@ -4,6 +4,7 @@ bajada: "La medida es nacional y alcanza a las universidades de Córdoba. El rec
 seccion: cordoba
 etiquetas: [educacion, politica]
 localidad: cordoba-capital
+destacada: true
 fecha: 2026-10-27T22:05:00-03:00
 foto: ./img/paro-docentes-universitarios-cordoba-2026.jpg
 fotoAlt: "Ciudad Universitaria de Córdoba"

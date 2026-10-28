@@ -49,3 +49,8 @@
 ## Publicidad
 - Archivos de banners sin medidas en el nombre (los bloqueadores ocultan "300x600", etc.).
 - No mostrar en la misma nota dos anunciantes del mismo rubro (por ejemplo, LD Performance y Meyer Automotores).
+
+## Criterio para elegir y destacar noticias
+- Orden de peso: cercanía (Marcos Juárez > región > Córdoba > país), impacto en el vecino, utilidad, actualidad, magnitud, interés humano, confirmación oficial.
+- Siempre recientes: noticias de hoy o ayer, o de algo que está por pasar en los próximos días.
+- Destacadas de portada: se marcan con `destacada: true` y solo cuentan durante 48 horas desde su fecha; si no hay suficientes, la portada se completa con las últimas publicadas.

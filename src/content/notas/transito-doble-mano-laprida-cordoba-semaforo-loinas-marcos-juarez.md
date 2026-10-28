@@ -4,6 +4,7 @@ bajada: "Remedios de Escalada de San Martín, Córdoba y el último tramo de Lap
 seccion: marcos-juarez
 etiquetas: [transito, municipio]
 localidad: marcos-juarez
+destacada: true
 fecha: 2026-10-27T22:25:00-03:00
 foto: ./img/transito-calles-doble-mano-marcos-juarez.jpg
 fotoAlt: "Estación de tren y calle lindera en Marcos Juárez"
