@@ -5,13 +5,29 @@ seccion: deportes
 etiquetas: [instituciones, deportes]
 localidad: marcos-juarez
 fecha: 2026-10-27T22:28:00-03:00
-foto: ./img/marcos-juarez-vista-aerea-atardecer.jpg
-fotoAlt: "Vista aérea de Marcos Juárez al atardecer"
+foto: ./img/club-argentino-sede-marcos-juarez.jpg
+fotoAlt: "Entrada de la sede del Club Argentino de Marcos Juárez"
 seoTitulo: "Club Argentino: nuevas autoridades y apertura del country"
 seoDescripcion: "El Club Argentino de Marcos Juárez renovó autoridades, sigue Ros Artayeta como presidente y abre la temporada de verano del country el 20 de noviembre."
 ---
 
 El **Club Argentino** de **Marcos Juárez** realizó el lunes por la noche su **asamblea ordinaria**, en la que renovó parte de su **comisión directiva** y de la **Junta Fiscalizadora**. **Alejandro Ros Artayeta** continuará **un año más como presidente** de una institución que reúne a unos **4.500 socios**, **90 empleados** y cerca de **2.000 deportistas**.
+
+## Así quedó la comisión directiva
+
+- **Presidente:** Alejandro Ros Artayeta.
+- **Vicepresidente:** Diego Viganó.
+- **Secretario:** Cristián Cravero.
+- **Prosecretario:** Diego Heredia.
+- **Tesorero:** Nicolás Barrera.
+- **Protesorero:** Pablo Tenaglia.
+- **Vocales titulares:** Pablo Meyer, Martín Dalpos, Guillermo Gilli, Alejandro Battigelli, Guillermo Massa y Julián Verdini.
+- **Vocales suplentes:** Germán Moessner, Carlos Barcaroli, Carlos Ercoli y Juan José Halpin.
+
+**Junta Fiscalizadora**
+
+- **Titulares:** José María Lunghi, Franco Maggi y Wálter Feresin.
+- **Suplentes:** Gustavo Franicevich y Andrés Elisseche.
 
 ## Cambios en el área deportiva
 
@@ -19,11 +35,11 @@ Desde el **1 de noviembre**, la dirección deportiva estará compartida entre **
 
 ## El country abre el 20 de noviembre
 
-La **temporada de verano 2026-2027** del country arranca el **20 de noviembre** y ya se vendieron **700 carnets**. Todavía hay descuentos y distintas formas de pago para quienes quieran sumarse. Entre las novedades:
+La **temporada de verano 2026-2027** del country arranca el **20 de noviembre** y, al 27 de octubre, ya se vendieron **700 carnets**. Todavía hay descuentos y distintas formas de pago para quienes quieran sumarse. Entre las novedades:
 
 - Un **nuevo sistema de filtrado** para la pileta, con tres bombas y tres filtros, que demandó una inversión cercana a los **$40 millones**.
 - **Canchas de pádel renovadas**.
-- Nueva propuesta **gastronómica y musical** para el verano.
+- Propuestas **gastronómicas y musicales** a cargo de **Alrescoldo**.
 
 ## Obras en la sede
 
