@@ -101,8 +101,8 @@
   .clima .icono { display: inline-block; animation: cf-flotar 4s ease-in-out infinite; }
 
   /* ---------- Publicidad ---------- */
-  .pub a { transition: transform 0.35s ease, filter 0.35s ease; }
-  .pub a:hover { transform: scale(1.015); filter: brightness(1.05); }
+  .pub:not(.campanas) a { transition: transform 0.35s ease, filter 0.35s ease; }
+  .pub:not(.campanas) a:hover { transform: scale(1.015); filter: brightness(1.05); }
 
   /* ---------- Lo último ---------- */
   .ultimas li { transition: transform 0.25s ease; }
