@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import TarjetaNota from '../components/TarjetaNota.astro';
 import Publicidad from '../components/Publicidad.astro';
-import Ranking from '../components/Ranking.astro';
+import AlAire from '../components/AlAire.astro';
 import Clima from '../components/Clima.astro';
 import { getNotas, type Nota } from '../lib/notas';
 import { SITE, SECCIONES, type SeccionId } from '../config';
@@ -130,7 +130,7 @@ const jsonLd = [
         <h2 id="h-mus" class="sec-h"><a href="/musica/">{SECCIONES.musica.nombre}</a><a href="/musica/" class="mas">Ver todas</a></h2>
         {mus.length > 0 ? <div class="grid-notas">{mus.map((n) => <TarjetaNota nota={n} />)}</div> : <p class="intro-seccion">Estrenos, shows y lo que suena en Comunidad FAN, muy pronto en esta sección.</p>}
       </div>
-      <div class="lateral"><Ranking /></div>
+      <div class="lateral"><AlAire /></div>
     </div>
   </section>
 

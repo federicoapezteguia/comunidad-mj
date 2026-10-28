@@ -29,7 +29,3 @@ Por su parte, la **Conadu Histórica** resolvió un paro más largo: **siete dí
 ## Qué cambia para los estudiantes
 
 El impacto concreto depende de cada facultad y de la adhesión de cada docente, por lo que conviene consultar los canales oficiales de cada unidad académica antes de viajar. ADIUC también llevó al congreso de su federación la posibilidad de afectar las próximas **mesas de examen**, un punto clave para quienes cierran el año.
-
-## Por qué importa en Marcos Juárez
-
-Muchos jóvenes de **Marcos Juárez** y la región cursan en la capital provincial, en Villa María o en Rosario. Para ellos y sus familias, cada jornada sin clases implica reorganizar viajes, alquileres y fechas de examen en el tramo final del cuatrimestre. El debate de fondo se definirá en el Congreso, donde el oficialismo busca dictamen del [Presupuesto 2027](/nacionales/presupuesto-2027-diputados-dictamen/) en estos días.
