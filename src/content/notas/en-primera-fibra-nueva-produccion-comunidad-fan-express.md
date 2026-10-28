@@ -2,6 +2,7 @@
 titulo: "\"En Primera Fibra\": Comunidad FAN estrena un ciclo de entrevistas junto a Express"
 bajada: "La nueva producción propone charlas a fondo sobre la carrera y la personalidad de cada invitado. El primer capítulo, con Franco Pisso, ya está disponible."
 seccion: on-demand
+volanta: "On Demand"
 etiquetas: [entrevistas, estrenos]
 fecha: 2026-10-28T07:35:00-03:00
 foto: ./img/en-primera-fibra-comunidad-fan.webp
