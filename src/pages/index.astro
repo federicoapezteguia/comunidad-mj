@@ -4,6 +4,7 @@ import TarjetaNota from '../components/TarjetaNota.astro';
 import Publicidad from '../components/Publicidad.astro';
 import Encuesta from '../components/Encuesta.astro';
 import YouTubeFan from '../components/YouTubeFan.astro';
+import IngresoMJ from '../components/IngresoMJ.astro';
 import Clima from '../components/Clima.astro';
 import { getNotas, type Nota } from '../lib/notas';
 import { SITE, SECCIONES, type SeccionId } from '../config';
@@ -75,10 +76,11 @@ const jsonLd = [
   )}
 
   <section class="wrap bloque" aria-labelledby="h-mj">
-    <div class="con-lateral">
+    <div class="con-lateral con-ingreso">
       <div class="principal">
         <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
         <div class="grid-notas">{mj.map((n) => <TarjetaNota nota={n} />)}</div>
+        <div class="hueco-ingreso"><IngresoMJ /></div>
       </div>
       <div class="lateral">
         <Clima />
@@ -170,6 +172,11 @@ const jsonLd = [
 </Base>
 
 <style>
+  /* Bloque Marcos Juárez: el símbolo del ingreso a la ciudad ocupa el espacio libre bajo las notas */
+  .con-ingreso { align-items: stretch; }
+  .con-ingreso > .principal { display: flex; flex-direction: column; }
+  .hueco-ingreso { flex: 1; display: flex; align-items: flex-end; justify-content: center; padding-top: 24px; min-height: 0; }
+  @media (max-width: 899px) { .hueco-ingreso { display: none; } }
   .pub-sup { padding-block: 20px; }
   /* Franja de destacadas con antena de radio animada de fondo */
   /* Las ondas salen de la franja y siguen por los bloques de arriba y abajo

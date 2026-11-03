@@ -1,0 +1,40 @@
+---
+// Símbolo del ingreso a Marcos Juárez (arco con el nombre de la ciudad y las letras MJ),
+// dibujado en línea con brillo tipo neón, como se ve de noche.
+---
+<div class="ingreso-mj" aria-hidden="true">
+  <svg viewBox="0 0 640 230" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <defs>
+      <filter id="neon-mj" x="-20%" y="-40%" width="140%" height="180%">
+        <feGaussianBlur stdDeviation="4" result="b1"></feGaussianBlur>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="b2"></feGaussianBlur>
+        <feMerge><feMergeNode in="b2"></feMergeNode><feMergeNode in="b1"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+      </filter>
+      <path id="arco-mj" d="M40 206 C120 80 300 48 430 120"></path>
+    </defs>
+    <!-- Suelo -->
+    <path d="M10 214 H630" stroke="var(--violeta)" stroke-width="2" opacity="0.35"></path>
+    <!-- Estructura del arco (cemento) -->
+    <path d="M22 210 C110 64 300 30 446 112 L446 136 C306 64 126 96 52 210 Z" fill="var(--violeta)" opacity="0.08" stroke="var(--violeta)" stroke-width="2.5" stroke-opacity="0.45"></path>
+    <!-- Letras M J (bloques) -->
+    <path d="M446 112 V206 M446 112 L486 168 L526 112 V206 M552 112 H600 M584 112 V180 Q584 206 560 206 Q544 206 538 194" stroke="var(--violeta)" stroke-width="26" opacity="0.1"></path>
+    <!-- Neón -->
+    <g class="neon" filter="url(#neon-mj)" stroke="var(--fucsia)" stroke-width="4">
+      <path d="M36 208 C120 74 300 44 440 118"></path>
+      <path d="M446 206 V114 L486 170 L526 114 V206"></path>
+      <path d="M552 114 H600 M584 114 V180 Q584 204 560 204 Q546 204 540 194"></path>
+    </g>
+    <text class="nombre" font-size="17" font-weight="900" letter-spacing="3" fill="var(--violeta)" font-family="'Montserrat Variable', Montserrat, sans-serif">
+      <textPath href="#arco-mj" startOffset="12%">MARCOS JUÁREZ</textPath>
+    </text>
+  </svg>
+</div>
+<style>
+  .ingreso-mj { width: 100%; max-width: 640px; margin: 0 auto; opacity: 0.7; pointer-events: none; }
+  .ingreso-mj svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .nombre { opacity: 0.55; }
+  @media (prefers-reduced-motion: no-preference) {
+    .neon { animation: neon-mj 5s ease-in-out infinite; }
+    @keyframes neon-mj { 0%, 100% { opacity: 1; } 45% { opacity: 0.85; } 48% { opacity: 0.35; } 50% { opacity: 0.95; } 52% { opacity: 0.5; } 55% { opacity: 1; } }
+  }
+</style>
