@@ -4,8 +4,8 @@ bajada: "Hubo 50 casos entre enero y septiembre, contra 72 del mismo período de
 seccion: cordoba
 etiquetas: [seguridad, gobierno]
 fecha: 2026-10-27T22:10:00-03:00
-foto: ./img/seguridad-cordoba-estadisticas-2026.jpg
-fotoAlt: "Placa con la baja de 30,6% en los homicidios dolosos en Córdoba"
+foto: ./img/policia-cordoba-patrullero-archivo.jpg
+fotoAlt: "Edificio de la Jefatura de Policía (imagen de archivo)"
 seoTitulo: "Homicidios en Córdoba: bajaron 30,6% en nueve meses"
 seoDescripcion: "Córdoba tuvo 50 homicidios dolosos entre enero y septiembre de 2026, un 30,6% menos que en 2025. También bajaron los robos y hurtos, según el informe oficial."
 ---
