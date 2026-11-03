@@ -5,8 +5,8 @@ seccion: marcos-juarez
 etiquetas: [transito, municipio]
 localidad: marcos-juarez
 fecha: 2026-11-03T19:10:00-03:00
-foto: ./img/motos-estacionadas-archivo.jpg
-fotoAlt: "Motos estacionadas en la calle (imagen de archivo)"
+foto: ./img/motos-secuestradas-marcos-juarez.jpg
+fotoAlt: "Motos secuestradas en un depósito"
 seoTitulo: "Motos secuestradas en Marcos Juárez: cómo recuperarlas"
 seoDescripcion: "La Municipalidad de Marcos Juárez da cinco días a los dueños de 18 motos secuestradas para retirarlas. Dónde ir, qué llevar y qué pasa si no se reclaman."
 ---
