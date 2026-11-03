@@ -1,4 +1,5 @@
-// Descarga los últimos videos del canal de YouTube de Comunidad FAN (feed RSS público)
+// Descarga los últimos videos de la pestaña "Videos" del canal de Comunidad FAN (feed RSS público),
+// del más reciente al más viejo
 // y los guarda en src/data/youtube.json. Si falla, deja el archivo anterior como está.
 import { readFile, writeFile } from 'node:fs/promises';
 
@@ -23,12 +24,15 @@ try {
     canalId = html.match(/"(?:channelId|externalId)":"(UC[\w-]{22})"/)?.[1] || html.match(/channel\/(UC[\w-]{22})/)?.[1];
     if (!canalId) throw new Error('No se encontró el ID del canal');
   }
-  const xml = await traer(`https://www.youtube.com/feeds/videos.xml?channel_id=${canalId}`);
+  // Lista "Videos" del canal (sin Shorts ni vivos): playlist UULF + ID del canal
+  const xml = await traer(`https://www.youtube.com/feeds/videos.xml?playlist_id=UULF${canalId.slice(2)}`);
   const videos = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(([, e]) => ({
     id: e.match(/<yt:videoId>([^<]+)/)?.[1],
     titulo: decodificar(e.match(/<title>([^<]*)/)?.[1] ?? ''),
     fecha: e.match(/<published>([^<]+)/)?.[1],
-  })).filter((v) => v.id && !/#shorts?\b/i.test(v.titulo)).slice(0, 12);
+  })).filter((v) => v.id && !/#shorts?\b/i.test(v.titulo))
+    .sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''))
+    .slice(0, 12);
   if (!videos.length) throw new Error('El feed no trajo videos');
   const nuevo = { canalId, videos };
   if (JSON.stringify(nuevo) !== JSON.stringify(anterior)) {
