@@ -4,8 +4,8 @@ bajada: "Ya está disponible para revisar los datos y presentar reclamos por err
 seccion: nacionales
 etiquetas: [politica, gobierno]
 fecha: 2026-11-03T19:30:00-03:00
-foto: ./img/urna-elecciones-archivo.jpg
-fotoAlt: "Urna electoral (imagen de archivo)"
+foto: ./img/dni-argentino-archivo.jpg
+fotoAlt: "Documento Nacional de Identidad (imagen de archivo)"
 seoTitulo: "Padrón provisorio 2027: cómo consultarlo y reclamar"
 seoDescripcion: "Ya se puede consultar el padrón electoral provisorio para las elecciones 2027. Cómo revisar tus datos y hasta cuándo reclamar errores: 27 de noviembre."
 ---

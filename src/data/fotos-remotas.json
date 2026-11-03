@@ -152,11 +152,6 @@
     "buscar:patrullero policía Córdoba Argentina",
     "buscar:Policía de Córdoba Argentina"
   ],
-  "metalfor-pulverizadora.jpg": [
-    "buscar:Metalfor pulverizadora",
-    "buscar:pulverizadora autopropulsada",
-    "buscar:fumigadora autopropulsada campo"
-  ],
   "motos-estacionadas-archivo.jpg": [
     "buscar:motocicletas estacionadas Argentina calle",
     "buscar:motos estacionadas"
@@ -176,10 +171,6 @@
     "buscar:Ushuaia ciudad vista",
     "buscar:Ushuaia"
   ],
-  "urna-elecciones-archivo.jpg": [
-    "buscar:urna elecciones Argentina",
-    "buscar:elecciones Argentina votación urna"
-  ],
   "semaforo-transito-archivo.jpg": [
     "buscar:semáforo Córdoba Argentina",
     "buscar:semáforo en rojo calle"
@@ -193,15 +184,21 @@
     "buscar:maizal Argentina"
   ],
   "bombonera-estadio-archivo.jpg": [
-    "buscar:La Bombonera estadio Boca Juniors",
-    "buscar:Estadio Alberto J. Armando"
+    "buscar:La Bombonera",
+    "buscar:Boca Juniors stadium",
+    "buscar:Estadio Boca Juniors"
   ],
   "senado-nacion-recinto-archivo.jpg": [
-    "buscar:Senado de la Nación Argentina recinto",
-    "buscar:Palacio del Congreso Senado Argentina"
+    "buscar:Congreso de la Nación Argentina",
+    "buscar:Palacio del Congreso Buenos Aires"
   ],
   "pena-folclorica-guitarra-archivo.jpg": [
-    "buscar:peña folclórica Argentina guitarra",
-    "buscar:folclore argentino guitarra músicos"
+    "buscar:guitarra criolla",
+    "buscar:chacarera danza",
+    "buscar:folklore Argentina danza"
+  ],
+  "dni-argentino-archivo.jpg": [
+    "buscar:Documento Nacional de Identidad Argentina DNI",
+    "buscar:DNI argentino"
   ]
 }
