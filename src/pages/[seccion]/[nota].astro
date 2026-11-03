@@ -7,6 +7,7 @@ import TarjetaNota from '../../components/TarjetaNota.astro';
 import Publicidad from '../../components/Publicidad.astro';
 import Compartir from '../../components/Compartir.astro';
 import Encuesta from '../../components/Encuesta.astro';
+import MasLeido from '../../components/MasLeido.astro';
 import Clima from '../../components/Clima.astro';
 import { getNotas, relacionadas, volanta, fecha, nombreEtiqueta, nombreLocalidad, urlNota, type Nota } from '../../lib/notas';
 import { SECCIONES, SITE, type SeccionId } from '../../config';
@@ -86,7 +87,7 @@ if (d.youtube) {
   <div class="wrap pub-sup"><Publicidad espacio="superior" /></div>
 
   <div class="wrap con-lateral cuerpo-pagina">
-    <article class="principal nota" data-pagefind-body>
+    <article class="principal nota" data-pagefind-body data-nota-id={nota.id}>
       <nav aria-label="Ruta" class="ruta">
         <a href="/">Inicio</a><span aria-hidden="true">›</span>
         <a href={`/${d.seccion}/`} data-pagefind-filter="seccion">{seccion.nombre}</a>
@@ -180,6 +181,7 @@ if (d.youtube) {
           <div class="od-lista">{ultimas.map((n) => <TarjetaNota nota={n} variante="compacta" />)}</div>
         </section>
       )}
+      <MasLeido />
     </aside>
   </div>
 

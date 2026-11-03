@@ -1,0 +1,58 @@
+---
+// "Lo más leído" de los últimos 7 días (contador propio en el hosting). Se oculta si todavía no hay datos.
+---
+<section class="mas-leido" data-mas-leido hidden aria-labelledby="h-mas-leido">
+  <h2 id="h-mas-leido" class="sec-h chico">Lo más leído</h2>
+  <ol data-lista></ol>
+</section>
+
+<script>
+  async function masLeido() {
+    // Suma la lectura de la nota actual (una vez por día y por navegador)
+    const nota = document.querySelector<HTMLElement>('[data-nota-id]')?.dataset.notaId;
+    if (nota) {
+      const clave = 'leida-' + nota + '-' + new Date().toISOString().slice(0, 10);
+      let ya = false;
+      try { ya = !!localStorage.getItem(clave); localStorage.setItem(clave, '1'); } catch {}
+      if (!ya) fetch('/api/visitas.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: nota }), keepalive: true }).catch(() => {});
+    }
+    const cajas = document.querySelectorAll<HTMLElement>('[data-mas-leido]');
+    if (!cajas.length) return;
+    try {
+      const r = await fetch('/api/visitas.php');
+      if (!r.ok || !(r.headers.get('content-type') || '').includes('json')) return;
+      const { notas } = await r.json();
+      if (!notas || notas.length < 3) return;
+      cajas.forEach((c) => {
+        const ol = c.querySelector('[data-lista]')!;
+        ol.replaceChildren(...notas.map((n: { titulo: string; url: string; volanta: string }, i: number) => {
+          const li = document.createElement('li');
+          const num = document.createElement('span'); num.className = 'num'; num.textContent = String(i + 1); num.setAttribute('aria-hidden', 'true');
+          const cuerpo = document.createElement('div');
+          const vol = document.createElement('span'); vol.className = 'vol'; vol.textContent = n.volanta;
+          const a = document.createElement('a'); a.href = n.url; a.textContent = n.titulo;
+          cuerpo.append(vol, a); li.append(num, cuerpo);
+          return li;
+        }));
+        c.hidden = false;
+      });
+    } catch {}
+  }
+  document.addEventListener('astro:page-load', masLeido);
+</script>
+
+<style>
+  .mas-leido { width: 100%; }
+  .mas-leido[hidden] { display: none; }
+  .sec-h.chico { font-size: 18px; }
+  ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  ol :global(li) { display: flex; gap: 12px; align-items: flex-start; }
+  ol :global(.num) {
+    flex: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    background: var(--violeta); color: var(--amarillo); font-weight: 900; font-size: 16px;
+  }
+  ol :global(li:first-child .num) { background: var(--fucsia); color: var(--violeta-noche); }
+  ol :global(.vol) { display: block; font-size: 11px; font-weight: 800; color: var(--fucsia-oscuro); text-transform: uppercase; letter-spacing: 0.04em; }
+  ol :global(a) { font-size: 15px; font-weight: 700; color: var(--violeta); line-height: 1.3; }
+  ol :global(a:hover) { color: var(--fucsia-oscuro); }
+</style>

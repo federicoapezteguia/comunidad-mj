@@ -5,6 +5,7 @@ import Publicidad from '../components/Publicidad.astro';
 import Encuesta from '../components/Encuesta.astro';
 import YouTubeFan from '../components/YouTubeFan.astro';
 import IngresoMJ from '../components/IngresoMJ.astro';
+import MasLeido from '../components/MasLeido.astro';
 import Clima from '../components/Clima.astro';
 import { getNotas, type Nota } from '../lib/notas';
 import { SITE, SECCIONES, type SeccionId } from '../config';
@@ -122,7 +123,7 @@ const jsonLd = [
           <h2 id="h-nac" class="sec-h"><a href="/nacionales/">{SECCIONES.nacionales.nombre}</a><a href="/nacionales/" class="mas">Ver todas</a></h2>
           <div class="lista-comp">{nac.map((n) => <TarjetaNota nota={n} variante="compacta" />)}</div>
         </div>
-        <div class="lateral"><Publicidad espacio="lateral" orden={1} /></div>
+        <div class="lateral"><Publicidad espacio="lateral" orden={1} /><MasLeido /></div>
       </div>
     </section>
   )}
