@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import TarjetaNota from '../components/TarjetaNota.astro';
 import Publicidad from '../components/Publicidad.astro';
-import AlAire from '../components/AlAire.astro';
 import Encuesta from '../components/Encuesta.astro';
 import YouTubeFan from '../components/YouTubeFan.astro';
 import Clima from '../components/Clima.astro';
@@ -83,7 +82,6 @@ const jsonLd = [
       </div>
       <div class="lateral">
         <Clima />
-        <Encuesta />
         <Publicidad espacio="lateral" />
         <div class="ultimas">
           <h2 class="sec-h chico">Lo último</h2>
@@ -133,7 +131,7 @@ const jsonLd = [
         <h2 id="h-mus" class="sec-h"><a href="/musica/">{SECCIONES.musica.nombre}</a><a href="/musica/" class="mas">Ver todas</a></h2>
         {mus.length > 0 ? <div class="grid-notas">{mus.map((n) => <TarjetaNota nota={n} />)}</div> : <p class="intro-seccion">Estrenos, shows y lo que suena en Comunidad FAN, muy pronto en esta sección.</p>}
       </div>
-      <div class="lateral"><AlAire /></div>
+      <div class="lateral"><Encuesta alta /></div>
     </div>
   </section>
 

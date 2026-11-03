@@ -1,12 +1,16 @@
 ---
-// Encuesta del sitio: se carga desde /api/encuesta.php y no aparece si no hay una activa.
+// Encuesta del sitio: se carga desde /api/encuesta.php.
+// Versión normal: no aparece si no hay una activa. Versión alta (portada): muestra un aviso.
+interface Props { alta?: boolean }
+const { alta = false } = Astro.props;
+const idH = alta ? 'h-encuesta-alta' : 'h-encuesta';
 ---
-<section class="encuesta" data-encuesta hidden aria-labelledby="h-encuesta">
+<section class:list={['encuesta', { alta }]} data-encuesta data-alta={alta ? '1' : undefined} hidden={!alta} aria-labelledby={idH}>
   <i class="mano" aria-hidden="true"></i>
-  <h2 id="h-encuesta" class="cab"><span>Encuesta</span><small>Comunidad FAN</small></h2>
-  <p class="preg" data-preg></p>
+  <h2 id={idH} class="cab"><span>Encuesta</span><small>Comunidad FAN</small></h2>
+  <p class="preg" data-preg>{alta ? '¡Muy pronto, una nueva encuesta!' : ''}</p>
   <div class="ops" data-ops></div>
-  <p class="pie" data-pie></p>
+  <p class="pie" data-pie>{alta ? 'Opiná sobre los temas de Marcos Juárez y la región.' : ''}</p>
 </section>
 
 <script>
@@ -87,17 +91,25 @@
   .cab small { font-size: 11px; font-weight: 800; color: var(--gris); text-transform: uppercase; letter-spacing: 0.08em; }
   .preg { margin: 0 0 12px; font-size: 17px; font-weight: 800; color: var(--violeta); line-height: 1.25; }
   .ops { display: flex; flex-direction: column; gap: 8px; }
-  .op {
+  .encuesta :global(.op) {
     text-align: left; font: inherit; font-size: 14px; font-weight: 700; color: var(--violeta);
     background: var(--lila-claro, #f4ecfd); border: 2px solid transparent; border-radius: 10px; padding: 10px 12px; cursor: pointer;
     transition: border-color 0.2s ease, transform 0.15s ease, background-color 0.2s ease;
   }
-  .op:hover { border-color: var(--fucsia); transform: translateX(3px); background: #fff; }
-  .op:disabled { opacity: 0.6; cursor: wait; }
-  .res { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; border-radius: 10px; background: #f4ecfd; overflow: hidden; font-size: 14px; font-weight: 700; color: var(--violeta); }
-  .res .barra { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, rgba(255, 0, 255, 0.28), rgba(255, 204, 51, 0.45)); transition: width 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
-  .res.gana .barra { background: linear-gradient(90deg, rgba(255, 0, 255, 0.55), rgba(255, 204, 51, 0.8)); }
-  .res .txt, .res .pct { position: relative; }
-  .res .pct { font-weight: 900; }
+  .encuesta :global(.op:hover) { border-color: var(--fucsia); transform: translateX(3px); background: #fff; }
+  .encuesta :global(.op:disabled) { opacity: 0.6; cursor: wait; }
+  .encuesta :global(.res) { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; border-radius: 10px; background: #f4ecfd; overflow: hidden; font-size: 14px; font-weight: 700; color: var(--violeta); }
+  .encuesta :global(.res .barra) { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, rgba(255, 0, 255, 0.28), rgba(255, 204, 51, 0.45)); transition: width 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .encuesta :global(.res.gana .barra) { background: linear-gradient(90deg, rgba(255, 0, 255, 0.55), rgba(255, 204, 51, 0.8)); }
+  .encuesta :global(.res .txt), .encuesta :global(.res .pct) { position: relative; }
+  .encuesta :global(.res .pct) { font-weight: 900; }
   .pie { margin: 10px 0 0; font-size: 12px; color: var(--gris); }
+  /* Versión alta para la portada */
+  .alta { min-height: 460px; display: flex; flex-direction: column; padding: 24px 22px 20px; background: radial-gradient(circle at 90% 0%, #fdf2ff, #fff 60%); }
+  .alta .mano { width: 220px; height: 220px; right: -50px; top: auto; bottom: -40px; opacity: 0.12; }
+  .alta .cab { margin-bottom: 14px; }
+  .alta .preg { font-size: 21px; margin-bottom: 18px; }
+  .alta .ops { gap: 10px; flex: 1; }
+  .alta :global(.op), .alta :global(.res) { padding: 13px 14px; font-size: 15px; }
+  .alta .pie { margin-top: 16px; font-size: 13px; }
 </style>
