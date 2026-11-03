@@ -5,7 +5,7 @@ seccion: nacionales
 etiquetas: [politica, gobierno]
 fecha: 2026-11-03T19:31:00-03:00
 foto: ./img/senado-nacion-recinto-archivo.jpg
-fotoAlt: "Recinto del Senado de la Nación (imagen de archivo)"
+fotoAlt: "Palacio del Congreso de la Nación Argentina"
 seoTitulo: "PASO: el Gobierno no tiene los votos en el Senado"
 seoDescripcion: "El Gobierno no consigue los votos en el Senado para eliminar o suspender las PASO de 2027. Qué dicen los aliados, los gobernadores y cuáles son los plazos."
 ---
