@@ -33,3 +33,10 @@ Options -Indexes
   Header always set Content-Security-Policy "frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
   Header always unset X-Powered-By
 </IfModule>
+
+# Encuestas: los archivos internos de PHP no se sirven directo
+<FilesMatch "^(_encuestas|config)\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>

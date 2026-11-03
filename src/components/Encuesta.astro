@@ -1,0 +1,103 @@
+---
+// Encuesta del sitio: se carga desde /api/encuesta.php y no aparece si no hay una activa.
+---
+<section class="encuesta" data-encuesta hidden aria-labelledby="h-encuesta">
+  <i class="mano" aria-hidden="true"></i>
+  <h2 id="h-encuesta" class="cab"><span>Encuesta</span><small>Comunidad FAN</small></h2>
+  <p class="preg" data-preg></p>
+  <div class="ops" data-ops></div>
+  <p class="pie" data-pie></p>
+</section>
+
+<script>
+  type Enc = { id: string; pregunta: string; opciones: string[]; votos: number[] | null; total: number | null; votado: boolean; activa: boolean };
+
+  function pintar(box: HTMLElement, e: Enc) {
+    box.querySelector('[data-preg]')!.textContent = e.pregunta;
+    const ops = box.querySelector<HTMLElement>('[data-ops]')!;
+    const pie = box.querySelector<HTMLElement>('[data-pie]')!;
+    ops.replaceChildren();
+    if (e.votado && e.votos) {
+      const total = e.total || 0;
+      const max = Math.max(...e.votos);
+      e.opciones.forEach((t, i) => {
+        const pct = total ? Math.round((e.votos![i] * 100) / total) : 0;
+        const fila = document.createElement('div');
+        fila.className = 'res' + (e.votos![i] === max && total ? ' gana' : '');
+        const barra = document.createElement('span'); barra.className = 'barra';
+        const txt = document.createElement('span'); txt.className = 'txt'; txt.textContent = t;
+        const num = document.createElement('span'); num.className = 'pct'; num.textContent = pct + '%';
+        fila.append(barra, txt, num);
+        ops.append(fila);
+        requestAnimationFrame(() => requestAnimationFrame(() => { barra.style.width = pct + '%'; }));
+      });
+      pie.textContent = total === 1 ? '1 voto · ¡Gracias por participar!' : `${total} votos · ¡Gracias por participar!`;
+    } else {
+      e.opciones.forEach((t, i) => {
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'op'; b.textContent = t;
+        b.addEventListener('click', () => votar(box, e.id, i));
+        ops.append(b);
+      });
+      pie.textContent = 'Elegí una opción para ver los resultados.';
+    }
+  }
+
+  async function votar(box: HTMLElement, id: string, opcion: number) {
+    box.querySelectorAll<HTMLButtonElement>('.op').forEach((b) => (b.disabled = true));
+    try {
+      const r = await fetch('/api/encuesta.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id, opcion }), credentials: 'same-origin' });
+      const j = await r.json();
+      if (j.encuesta) pintar(box, j.encuesta);
+      else box.querySelector('[data-pie]')!.textContent = j.error || 'No se pudo registrar el voto.';
+    } catch {
+      box.querySelector('[data-pie]')!.textContent = 'No se pudo registrar el voto. Probá de nuevo.';
+      box.querySelectorAll<HTMLButtonElement>('.op').forEach((b) => (b.disabled = false));
+    }
+  }
+
+  async function cargar() {
+    const cajas = document.querySelectorAll<HTMLElement>('[data-encuesta]');
+    if (!cajas.length) return;
+    try {
+      const r = await fetch('/api/encuesta.php', { credentials: 'same-origin', cache: 'no-store' });
+      if (!r.ok || !(r.headers.get('content-type') || '').includes('json')) return;
+      const j = await r.json();
+      if (!j.encuesta) return;
+      cajas.forEach((c) => { pintar(c, j.encuesta); c.hidden = false; });
+    } catch { /* sin encuesta: el recuadro queda oculto */ }
+  }
+  document.addEventListener('astro:page-load', cargar);
+</script>
+
+<style>
+  .encuesta {
+    position: relative; overflow: hidden; isolation: isolate;
+    background: #fff; border: 2px solid var(--violeta); border-radius: var(--radio);
+    padding: 18px 18px 14px; box-shadow: 0 14px 30px -18px rgba(45, 0, 93, 0.55);
+  }
+  .encuesta[hidden] { display: none; }
+  .mano {
+    position: absolute; z-index: -1; right: -26px; top: -18px; width: 120px; height: 120px; opacity: 0.1; transform: rotate(14deg);
+    background: linear-gradient(135deg, var(--fucsia), var(--violeta));
+    -webkit-mask: url('/favicon.svg') center / contain no-repeat; mask: url('/favicon.svg') center / contain no-repeat;
+  }
+  .cab { display: flex; align-items: baseline; gap: 8px; margin: 0 0 8px; }
+  .cab span { background: var(--fucsia); color: var(--violeta-noche); font-size: 12px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; }
+  .cab small { font-size: 11px; font-weight: 800; color: var(--gris); text-transform: uppercase; letter-spacing: 0.08em; }
+  .preg { margin: 0 0 12px; font-size: 17px; font-weight: 800; color: var(--violeta); line-height: 1.25; }
+  .ops { display: flex; flex-direction: column; gap: 8px; }
+  .op {
+    text-align: left; font: inherit; font-size: 14px; font-weight: 700; color: var(--violeta);
+    background: var(--lila-claro, #f4ecfd); border: 2px solid transparent; border-radius: 10px; padding: 10px 12px; cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.15s ease, background-color 0.2s ease;
+  }
+  .op:hover { border-color: var(--fucsia); transform: translateX(3px); background: #fff; }
+  .op:disabled { opacity: 0.6; cursor: wait; }
+  .res { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; border-radius: 10px; background: #f4ecfd; overflow: hidden; font-size: 14px; font-weight: 700; color: var(--violeta); }
+  .res .barra { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, rgba(255, 0, 255, 0.28), rgba(255, 204, 51, 0.45)); transition: width 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .res.gana .barra { background: linear-gradient(90deg, rgba(255, 0, 255, 0.55), rgba(255, 204, 51, 0.8)); }
+  .res .txt, .res .pct { position: relative; }
+  .res .pct { font-weight: 900; }
+  .pie { margin: 10px 0 0; font-size: 12px; color: var(--gris); }
+</style>

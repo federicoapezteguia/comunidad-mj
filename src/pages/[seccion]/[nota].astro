@@ -6,6 +6,7 @@ import Base from '../../layouts/Base.astro';
 import TarjetaNota from '../../components/TarjetaNota.astro';
 import Publicidad from '../../components/Publicidad.astro';
 import Compartir from '../../components/Compartir.astro';
+import Encuesta from '../../components/Encuesta.astro';
 import Clima from '../../components/Clima.astro';
 import { getNotas, relacionadas, volanta, fecha, nombreEtiqueta, nombreLocalidad, urlNota, type Nota } from '../../lib/notas';
 import { SECCIONES, SITE, type SeccionId } from '../../config';
@@ -146,6 +147,7 @@ if (d.youtube) {
     <aside class="lateral" data-pagefind-ignore>
       <Publicidad espacio="lateral" />
       <Clima />
+      <Encuesta />
       {onDemand.length > 0 && (
         <section class="od" aria-labelledby="h-od">
           <h2 id="h-od" class="sec-h od-h"><a href="/on-demand/">On Demand</a><a href="/on-demand/" class="mas">Ver todo</a></h2>
