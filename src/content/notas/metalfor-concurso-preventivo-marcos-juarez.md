@@ -6,8 +6,8 @@ etiquetas: [industria, empresas, economia]
 localidad: marcos-juarez
 destacada: true
 fecha: 2026-11-03T19:05:00-03:00
-foto: ./img/marcos-juarez-vista-aerea-atardecer.jpg
-fotoAlt: "Vista aérea de Marcos Juárez"
+foto: ./img/metalfor-stand-pulverizadoras.jpg
+fotoAlt: "Pulverizadoras de Metalfor exhibidas en una muestra agroindustrial"
 seoTitulo: "Metalfor pidió el concurso preventivo en Marcos Juárez"
 seoDescripcion: "La fábrica de maquinaria agrícola Metalfor pidió el concurso preventivo en Marcos Juárez para ordenar sus deudas. Qué dijo la empresa y cómo sigue la producción."
 ---
