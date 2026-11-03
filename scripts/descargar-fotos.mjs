@@ -27,6 +27,18 @@ async function buscarEnCommons(q) {
   return null;
 }
 
+// "pagina:URL" → la imagen principal (og:image) de esa página, por ejemplo una gacetilla oficial
+async function imagenDePagina(url) {
+  try {
+    const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36' }, redirect: 'follow', signal: AbortSignal.timeout(60000) });
+    const html = await r.text();
+    const m = html.match(/<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]+content=["']([^"']+)["']/i) || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+    if (m) { console.log(`Página ${url} → ${m[1]}`); return new URL(m[1].replace(/&amp;/g, '&'), r.url).href; }
+    console.warn(`AVISO: ${url} no tiene og:image`);
+  } catch (e) { console.warn(`AVISO: no se pudo leer ${url}: ${e.message}`); }
+  return null;
+}
+
 async function aPortada(buf) {
   const meta = await sharp(buf).metadata();
   if (!meta.width || !meta.height || meta.width / meta.height >= 1.3) return buf;
@@ -52,11 +64,12 @@ for (const [local, commons] of Object.entries(lista)) {
   } catch {}
   // Puede ser un archivo de Commons, una dirección completa o una lista de direcciones alternativas
   const fuentes = (Array.isArray(commons) ? commons : [commons]).map((c) =>
-    c.startsWith('http') || c.startsWith('buscar:') ? c : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(c)}?width=1600`,
+    c.startsWith('http') || c.startsWith('buscar:') || c.startsWith('pagina:') ? c : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(c)}?width=1600`,
   );
   let ok = false;
   for (let url of fuentes) {
     if (url.startsWith('buscar:')) url = await buscarEnCommons(url.slice(7).trim());
+    else if (url.startsWith('pagina:')) url = await imagenDePagina(url.slice(7).trim());
     if (!url) continue;
     const esCommons = url.includes('wikimedia.org');
     const headers = esCommons

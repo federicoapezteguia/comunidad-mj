@@ -141,5 +141,12 @@
   "en-primera-fibra-comunidad-fan.webp": "https://api.comunidad.fan/web/uploads/news/10303/0-desktop.webp",
   "manu-ansaldi-comunidad-fan.webp": "https://api.comunidad.fan/web/uploads/news/10296/0-desktop.webp",
   "silvina-rinaldi-comunidad-fan.webp": "https://api.comunidad.fan/web/uploads/news/10299/0-desktop.webp",
-  "cami-oderda-comunidad-fan.webp": "https://api.comunidad.fan/web/uploads/news/10300/0-desktop.webp"
+  "cami-oderda-comunidad-fan.webp": "https://api.comunidad.fan/web/uploads/news/10300/0-desktop.webp",
+  "bomberos-voluntarios-marcos-juarez-archivo.jpg": [
+    "pagina:https://prensa.cba.gov.ar/informacion-general/llaryora-encabezo-el-65-aniversario-de-los-bomberos-voluntarios-de-marcos-juarez/"
+  ],
+  "policia-cordoba-moviles-archivo.jpg": [
+    "https://archivoprensa.cba.gov.ar/wp-content/uploads/2023/10/1D7A7854.jpg",
+    "https://archivoprensa.cba.gov.ar/wp-content/uploads/2023/10/DJI_0037.jpg"
+  ]
 }
