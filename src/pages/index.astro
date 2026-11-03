@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import TarjetaNota from '../components/TarjetaNota.astro';
 import Publicidad from '../components/Publicidad.astro';
 import AlAire from '../components/AlAire.astro';
-import CintaComunidad from '../components/CintaComunidad.astro';
 import Clima from '../components/Clima.astro';
 import { getNotas, type Nota } from '../lib/notas';
 import { SITE, SECCIONES, type SeccionId } from '../config';
@@ -94,8 +93,6 @@ const jsonLd = [
       </div>
     </div>
   </section>
-
-  <CintaComunidad />
 
   <section class="wrap bloque" aria-label="Campañas"><Publicidad espacio="campanas" /></section>
 
