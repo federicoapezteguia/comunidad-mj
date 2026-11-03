@@ -13,6 +13,8 @@
 - Cadena Sudeste
 - radiocentromj.com.ar
 - cordobainteriorinforma.com
+- guiamedia.com.ar
+- radiomasmj.com.ar
 
 ### Provincia de Córdoba
 - lavoz.com.ar
