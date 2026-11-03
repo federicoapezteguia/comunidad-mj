@@ -2,6 +2,7 @@
 // Últimos videos del canal de YouTube de Comunidad FAN (se actualizan en cada publicación)
 import { existsSync, readFileSync } from 'node:fs';
 import { SITE } from '../config';
+import Adorno from './Adorno.astro';
 
 type Video = { id: string; titulo: string; fecha: string };
 const archivo = 'src/data/youtube.json';
@@ -10,6 +11,7 @@ const canal = SITE.redes.youtube;
 ---
 {videos.length > 0 && (
   <section class="wrap bloque yt" aria-labelledby="h-yt" data-yt>
+    <Adorno tipo="microfono" lado="der" arriba="10px" />
     <div class="yt-caja">
       <div class="yt-cab">
         <h2 id="h-yt">
