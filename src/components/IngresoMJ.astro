@@ -7,7 +7,7 @@
     <defs>
       <filter id="neon-mj" x="-20%" y="-40%" width="140%" height="180%">
         <feGaussianBlur stdDeviation="4" result="b1"></feGaussianBlur>
-        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="b2"></feGaussianBlur>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b2"></feGaussianBlur>
         <feMerge><feMergeNode in="b2"></feMergeNode><feMergeNode in="b1"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
       </filter>
       <path id="arco-mj" d="M44 204 C128 44 352 36 424 184"></path>
@@ -15,11 +15,12 @@
     <!-- Suelo -->
     <path d="M10 214 H630" stroke="var(--violeta)" stroke-width="2" opacity="0.35"></path>
     <!-- Estructura de cemento: el arco baja y nace en la base de la M -->
-    <path d="M14 212 C110 22 372 14 456 200 L456 212 L436 212 C362 52 132 60 46 212 Z" fill="var(--violeta)" opacity="0.08" stroke="var(--violeta)" stroke-width="2.5" stroke-opacity="0.45"></path>
-    <path d="M456 206 L470 70 L500 148 L532 70 L540 206 M560 206 Q596 206 596 178 V72 H566" stroke="var(--violeta)" stroke-width="26" opacity="0.1"></path>
+    <path d="M14 212 C110 22 372 14 438 196 Q442 210 452 212 L436 212 C362 52 132 60 46 212 Z" fill="var(--violeta)" opacity="0.08" stroke="var(--violeta)" stroke-width="2.5" stroke-opacity="0.45"></path>
+    <path d="M446 112 V206 M446 112 L486 168 L526 112 V206 M552 112 H600 M584 112 V180 Q584 206 560 206 Q544 206 538 194" stroke="var(--violeta)" stroke-width="26" opacity="0.1"></path>
     <!-- Neón: una sola línea continua, del arco a la M y de la M a la J -->
-    <g class="neon" filter="url(#neon-mj)" stroke="var(--fucsia)" stroke-width="4">
-      <path d="M30 210 C120 40 360 30 432 192 Q440 208 452 206 L468 72 L500 150 L532 72 L540 196 Q543 210 558 210 Q592 208 594 180 L596 76 H566"></path>
+    <g class="neon" filter="url(#neon-mj)" stroke="var(--fucsia)" stroke-width="3.5">
+      <path d="M30 210 C120 40 352 32 428 186 Q436 206 446 206 V114 L486 170 L526 114 V206"></path>
+      <path d="M552 114 H600 M584 114 V180 Q584 204 560 204 Q546 204 540 194"></path>
     </g>
     <text class="nombre" font-size="17" font-weight="900" letter-spacing="3" fill="var(--violeta)" font-family="'Montserrat Variable', Montserrat, sans-serif">
       <textPath href="#arco-mj" startOffset="14%">MARCOS JUÁREZ</textPath>
@@ -27,7 +28,7 @@
   </svg>
 </div>
 <style>
-  .ingreso-mj { width: 100%; max-width: 640px; margin: 0 auto; opacity: 0.7; pointer-events: none; }
+  .ingreso-mj { width: 100%; max-width: 860px; margin: 0 auto; opacity: 0.38; pointer-events: none; }
   .ingreso-mj svg { width: 100%; height: auto; display: block; overflow: visible; }
   .nombre { opacity: 0.55; }
   @media (prefers-reduced-motion: no-preference) {
