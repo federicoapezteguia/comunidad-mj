@@ -2,6 +2,8 @@
 
 ## Fuentes para investigar
 
+**Regla:** cada vez que se pida un relevamiento de noticias, revisar TODAS las fuentes de esta lista (las locales de Marcos Juárez, las de Córdoba y las nacionales, más las oficiales). Si un sitio no abre directo, llegar a sus notas por el buscador. Al proponer, indicar qué fuentes se revisaron.
+
 ### Marcos Juárez y la zona (sudeste cordobés)
 - Municipalidad de Marcos Juárez (mmj.gob.ar)
 - redpanorama.com.ar
