@@ -1,39 +1,9 @@
 ---
-// Sticker "¡Qué linda es esta comunidad!" (recreado en SVG con la tipografía Lilita One)
-import '@fontsource/lilita-one/latin-400.css';
+// Logo oficial "¡Qué linda es esta comunidad!" (recortado con fondo transparente)
 interface Props { class?: string; tamanio?: number }
 const { class: clase, tamanio = 220 } = Astro.props;
-const id = 'ql' + Math.random().toString(36).slice(2, 7);
 ---
-<svg class:list={['que-linda', clase]} viewBox="0 0 360 268" width={tamanio} height={Math.round(tamanio * 268 / 360)} role="img" aria-label="¡Qué linda es esta comunidad!">
-  <defs>
-    <linearGradient id={`${id}g`} x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ff2fa3" />
-      <stop offset="0.55" stop-color="#ff4f6d" />
-      <stop offset="1" stop-color="#ffb02e" />
-    </linearGradient>
-  </defs>
-  <g font-family="'Lilita One', 'Montserrat', sans-serif" text-anchor="middle" stroke-linejoin="round" stroke-linecap="round" paint-order="stroke">
-    <!-- Troquel blanco y cuerpo violeta del sticker -->
-    <g fill="#fff" stroke="#fff" stroke-width="34">
-      <text x="160" y="82" font-size="82">¡Qué</text>
-      <text x="175" y="158" font-size="92">linda</text>
-      <text x="262" y="192" font-size="22" font-family="'Montserrat Variable', 'Montserrat', sans-serif" font-weight="800">es esta</text>
-      <text x="180" y="248" font-size="58" font-family="'Montserrat Variable', 'Montserrat', sans-serif" font-weight="900" letter-spacing="-1">COMUNIDAD!</text>
-    </g>
-    <g fill="#2d005d" stroke="#2d005d" stroke-width="20">
-      <text x="160" y="82" font-size="82">¡Qué</text>
-      <text x="175" y="158" font-size="92">linda</text>
-      <text x="262" y="192" font-size="22" font-family="'Montserrat Variable', 'Montserrat', sans-serif" font-weight="800">es esta</text>
-      <text x="180" y="248" font-size="58" font-family="'Montserrat Variable', 'Montserrat', sans-serif" font-weight="900" letter-spacing="-1">COMUNIDAD!</text>
-    </g>
-    <!-- Letras -->
-    <text x="160" y="82" font-size="82" fill={`url(#${id}g)`}>¡Qué</text>
-    <text x="175" y="158" font-size="92" fill={`url(#${id}g)`}>linda</text>
-    <text fill="#fff" x="262" y="192" font-size="22" font-family="'Montserrat Variable', 'Montserrat', sans-serif" font-weight="800">es esta</text>
-    <text x="180" y="248" font-size="58" fill="#fff" font-family="'Montserrat Variable', 'Montserrat', sans-serif" font-weight="900" letter-spacing="-1">COMUNIDAD!</text>
-  </g>
-</svg>
+<img src="/img/que-linda-comunidad.webp" alt="¡Qué linda es esta comunidad!" width={tamanio} height={Math.round(tamanio * 386 / 864)} loading="lazy" class:list={['que-linda', clase]} />
 <style>
-  .que-linda { display: block; overflow: visible; max-width: 100%; height: auto; }
+  .que-linda { display: block; max-width: 100%; height: auto; }
 </style>
