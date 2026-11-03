@@ -1,19 +1,47 @@
 ---
 import Base from '../layouts/Base.astro';
 import TarjetaNota from '../components/TarjetaNota.astro';
+import QueLinda from '../components/QueLinda.astro';
 import { getNoticias } from '../lib/notas';
 const ultimas = (await getNoticias()).slice(0, 4);
 ---
 <Base titulo="Página no encontrada" noindex>
   <div class="wrap no">
-    <h1>No encontramos esta página</h1>
-    <p>Puede que la nota haya cambiado de dirección. Probá con el <a href="/buscar/">buscador</a> o mirá las últimas noticias.</p>
+    <div class="hero-404">
+      <div class="num" aria-hidden="true">4<i class="mano"></i>4</div>
+      <div class="txt">
+        <h1>Esta página no existe…</h1>
+        <p class="pero">pero</p>
+        <QueLinda tamanio={340} class="ql-404" />
+        <p>Puede que la nota haya cambiado de dirección. Volvé al inicio, probá con el <a href="/buscar/">buscador</a> o mirá las últimas noticias.</p>
+        <a href="/" class="boton boton-amarillo volver">Volver al inicio</a>
+      </div>
+    </div>
+    <h2 class="sec-h">Lo último</h2>
     <div class="grid-notas">{ultimas.map((n) => <TarjetaNota nota={n} />)}</div>
   </div>
 </Base>
 <style>
   .no { padding-top: 40px; }
-  h1 { color: var(--violeta); font-size: 32px; margin: 0 0 8px; }
-  p { margin: 0 0 32px; font-size: 17px; }
-  p a { color: var(--fucsia-oscuro); font-weight: 700; text-decoration: underline; }
+  .hero-404 {
+    display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 24px 56px;
+    background: radial-gradient(circle at 85% 15%, #5a1a9e, var(--violeta) 55%, var(--violeta-noche));
+    color: #fff; border-radius: 16px; padding: 40px clamp(20px, 5vw, 56px); margin-bottom: 48px; overflow: hidden;
+  }
+  .num { display: flex; align-items: center; font-size: clamp(90px, 16vw, 190px); font-weight: 900; line-height: 1; color: var(--amarillo); letter-spacing: -0.04em; }
+  .num .mano {
+    width: 0.8em; height: 0.8em; margin-inline: 0.02em; background: linear-gradient(135deg, var(--fucsia), #ff9a3c);
+    -webkit-mask: url('/favicon.svg') center / contain no-repeat; mask: url('/favicon.svg') center / contain no-repeat; transform: rotate(-10deg);
+  }
+  h1 { color: #fff; font-size: clamp(24px, 3vw, 34px); margin: 0; }
+  .pero { margin: 6px 0 -4px; font-size: 20px; font-weight: 700; color: #d8c8ee; font-style: italic; }
+  .txt :global(.ql-404) { margin: 6px 0 14px -10px; filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.35)); }
+  .txt p:not(.pero) { margin: 0 0 20px; font-size: 16px; color: #e8dcf7; max-width: 520px; }
+  .txt p a { color: var(--amarillo); font-weight: 700; text-decoration: underline; }
+  .volver { display: inline-flex; }
+  @media (max-width: 760px) { .hero-404 { grid-template-columns: 1fr; text-align: left; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .num .mano { animation: rockear 1.6s ease-in-out infinite; }
+    @keyframes rockear { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(8deg) scale(1.06); } }
+  }
 </style>

@@ -1,12 +1,14 @@
 ---
 import Dial from './Dial.astro';
 import Redes from './Redes.astro';
+import QueLinda from './QueLinda.astro';
 import { SITE, SECCIONES } from '../config';
 const anio = new Date().getFullYear();
 ---
 <footer class="footer">
   <Dial />
-  <div class="wrap">
+  <div class="wrap sello-zona">
+    <div class="sticker-ql"><QueLinda tamanio={200} /></div>
     <div class="sello">
       <img src="/favicon.svg" alt="" width="56" height="56" class="mano" aria-hidden="true" />
       <p><span class="s1">La repetidora oficial de</span><span class="s2">Comunidad FAN <em>en Marcos Juárez</em></span></p>
@@ -64,6 +66,19 @@ const anio = new Date().getFullYear();
   .s2 { font-size: clamp(20px, 3.2vw, 30px); font-weight: 900; color: var(--fucsia); }
   .s2 em { font-style: normal; color: #fff; }
   @media (max-width: 480px) { .sello { padding: 16px; gap: 12px; } .mano { width: 44px; height: 44px; } }
+  /* Sticker "¡Qué linda es esta comunidad!" pegado sobre el recuadro */
+  .sello-zona { position: relative; }
+  .sticker-ql {
+    position: absolute; z-index: 2; right: 8px; top: 50%; transform: translateY(-62%) rotate(-7deg);
+    filter: drop-shadow(0 8px 10px rgba(45, 0, 93, 0.45)); transition: transform 0.35s cubic-bezier(0.3, 1.5, 0.5, 1), filter 0.35s ease;
+  }
+  .sticker-ql:hover { transform: translateY(-68%) rotate(-3deg) scale(1.06); filter: drop-shadow(0 16px 16px rgba(45, 0, 93, 0.45)); }
+  @media (max-width: 1100px) {
+    .sticker-ql { position: static; transform: rotate(-5deg); width: 190px; margin: -6px auto 24px; order: 2; }
+    .sticker-ql:hover { transform: rotate(-2deg) scale(1.04); }
+    .sello-zona { display: flex; flex-direction: column; }
+    .sello-zona .sello { order: 1; }
+  }
   .fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
   .datos { max-width: 340px; display: flex; flex-direction: column; gap: 12px; }
   .logo-senal { width: 130px; height: auto; }

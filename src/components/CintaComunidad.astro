@@ -1,0 +1,32 @@
+---
+// Cinta que corre con la frase de la marca
+const item = ['¡Qué linda es esta comunidad!', 'FM 99.9', 'Marcos Juárez', 'Comunidad FAN'];
+const vuelta = [...item, ...item, ...item];
+---
+<div class="cinta" aria-label="¡Qué linda es esta comunidad! FM 99.9 Marcos Juárez" role="img">
+  <div class="pista" aria-hidden="true">
+    {[0, 1].map(() => (
+      <div class="tramo">
+        {vuelta.map((t, i) => <span class:list={['txt', { fuerte: i % item.length === 0 }]}>{t}</span><i class="mano"></i>)}
+      </div>
+    ))}
+  </div>
+</div>
+<style>
+  .cinta {
+    background: var(--violeta); overflow: hidden; padding-block: 14px; margin-block: 8px 40px;
+    transform: rotate(-1deg) scale(1.02); box-shadow: 0 10px 24px -14px rgba(45, 0, 93, 0.8);
+  }
+  .pista { display: flex; width: max-content; }
+  .tramo { display: flex; align-items: center; gap: 22px; padding-right: 22px; flex: none; }
+  .txt { font-weight: 900; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; white-space: nowrap; }
+  .txt.fuerte { font-family: 'Lilita One', 'Montserrat', sans-serif; font-weight: 400; font-size: 24px; letter-spacing: 0.01em; text-transform: none;
+    background: linear-gradient(90deg, #ff2fa3, #ff4f6d 55%, #ffb02e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .mano { width: 22px; height: 22px; flex: none; background: var(--amarillo); -webkit-mask: url('/favicon.svg') center / contain no-repeat; mask: url('/favicon.svg') center / contain no-repeat; }
+  @media (prefers-reduced-motion: no-preference) {
+    .pista { animation: correr 38s linear infinite; }
+    .cinta:hover .pista { animation-play-state: paused; }
+    @keyframes correr { to { transform: translateX(-50%); } }
+  }
+  @media (max-width: 560px) { .txt { font-size: 14px; } .txt.fuerte { font-size: 19px; } .cinta { padding-block: 10px; } }
+</style>
