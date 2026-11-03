@@ -142,22 +142,30 @@ if (d.youtube) {
           var p = document.getElementById('pub-en-nota');
           var r = document.getElementById('te-puede-interesar');
           var ps = t ? t.querySelectorAll(':scope > p') : [];
-          if (p && ps.length >= 4) ps[2].after(p);
-          var hijos = t ? Array.prototype.filter.call(t.children, function (x) { return x !== p; }) : [];
-          if (r && hijos.length >= 6) {
-            var el = hijos[Math.floor(hijos.length * 0.55)];
-            if (/^H[2-4]$/.test(el.tagName)) el.before(r); else el.after(r);
-            // Que no quede pegado al banner: se corre al siguiente subtítulo con texto de por medio
-            if (p && (r.previousElementSibling === p || r.nextElementSibling === p)) {
-              var x = p.nextElementSibling, contenido = 0;
-              while (x) {
-                if (x !== r) {
-                  if (/^H[2-4]$/.test(x.tagName)) { if (contenido > 0) { x.before(r); break; } }
-                  else contenido++;
-                }
-                x = x.nextElementSibling;
-              }
+          // El banner va siempre entre secciones (antes de un subtítulo), nunca cortando un párrafo o una lista
+          if (p && t) {
+            var bloques = Array.prototype.slice.call(t.children);
+            var destino = null;
+            for (var i = 2; i < bloques.length; i++) {
+              if (/^H[2-4]$/.test(bloques[i].tagName)) { destino = bloques[i]; break; }
             }
+            if (destino) destino.before(p);
+            else if (ps.length >= 4) {
+              var tras = ps[2], sig = tras.nextElementSibling;
+              if (!/:\s*$/.test(tras.textContent || '') && !(sig && /^(UL|OL)$/.test(sig.tagName))) tras.after(p);
+            }
+          }
+          // Las recomendadas también van entre secciones (antes de un subtítulo), lejos del banner
+          if (r && t) {
+            var hs = Array.prototype.slice.call(t.children).filter(function (x) { return x !== p && x !== r; });
+            var meta = hs.length * 0.55, mejor = null, dist = 1e9;
+            hs.forEach(function (x, k) {
+              if (k < 3 || !/^H[2-4]$/.test(x.tagName)) return;
+              if (p && (x.previousElementSibling === p)) return;
+              var dd = Math.abs(k - meta);
+              if (dd < dist) { dist = dd; mejor = x; }
+            });
+            if (mejor) mejor.before(r);
           }
         })();
       </script>

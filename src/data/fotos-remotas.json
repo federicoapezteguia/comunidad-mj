@@ -197,7 +197,10 @@
     "buscar:Cosquín festival folklore escenario",
     "buscar:danza folklórica argentina"
   ],
-  "metalfor-planta-marcos-juarez.jpg": "https://news.agrofystatic.com/metalfor-215510.jpeg?d=1200x675",
+  "metalfor-planta-marcos-juarez.jpg": [
+    "https://news.agrofystatic.com/metalfor-215510.jpeg?d=1200x675",
+    "https://news.agrofystatic.com/metalfor-215510.jpeg"
+  ],
   "motos-secuestradas-marcos-juarez.jpg": "https://eldiariociudad.com/images/noticias/8798.jpg",
   "papa-leon-xiv-visita-cordoba.jpg": "https://eldoce.tv/resizer/v2/el-papa-leon-xiv-visita-cordoba-UQSYA55SYBE4FGJXQSSRPBRDXY.jpeg?auth=1a19ce6ea5efbf9b67fbcf147683935113c4e688a79c2b54dcc48f73fd8da296&width=1440"
 }
