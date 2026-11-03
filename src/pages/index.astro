@@ -4,7 +4,6 @@ import TarjetaNota from '../components/TarjetaNota.astro';
 import Publicidad from '../components/Publicidad.astro';
 import Encuesta from '../components/Encuesta.astro';
 import YouTubeFan from '../components/YouTubeFan.astro';
-import Adorno from '../components/Adorno.astro';
 import Clima from '../components/Clima.astro';
 import { getNotas, type Nota } from '../lib/notas';
 import { SITE, SECCIONES, type SeccionId } from '../config';
@@ -76,7 +75,6 @@ const jsonLd = [
   )}
 
   <section class="wrap bloque" aria-labelledby="h-mj">
-      <Adorno tipo="silos" lado="izq" arriba="60px" ancho={210} />
     <div class="con-lateral">
       <div class="principal">
         <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
@@ -108,7 +106,6 @@ const jsonLd = [
 
   {dep.length > 0 && (
     <section class="wrap bloque" aria-labelledby="h-dep">
-      <Adorno tipo="pelota" lado="der" arriba="20px" />
       <h2 id="h-dep" class="sec-h"><a href="/deportes/">{SECCIONES.deportes.nombre}</a><a href="/deportes/" class="mas">Ver todas</a></h2>
       <div class="grid-notas">{dep.map((n) => <TarjetaNota nota={n} />)}</div>
     </section>
@@ -118,7 +115,6 @@ const jsonLd = [
 
   {nac.length > 0 && (
     <section class="wrap bloque" aria-labelledby="h-nac">
-      <Adorno tipo="parabolica" lado="izq" arriba="30px" />
       <div class="con-lateral">
         <div class="principal">
           <h2 id="h-nac" class="sec-h"><a href="/nacionales/">{SECCIONES.nacionales.nombre}</a><a href="/nacionales/" class="mas">Ver todas</a></h2>
@@ -130,7 +126,6 @@ const jsonLd = [
   )}
 
   <section class="wrap bloque" aria-labelledby="h-mus">
-      <Adorno tipo="auriculares" lado="izq" arriba="40px" />
     <div class="con-lateral">
       <div class="principal">
         <h2 id="h-mus" class="sec-h"><a href="/musica/">{SECCIONES.musica.nombre}</a><a href="/musica/" class="mas">Ver todas</a></h2>
@@ -142,7 +137,6 @@ const jsonLd = [
 
   {esp.length > 0 && (
     <section class="wrap bloque" aria-labelledby="h-esp">
-      <Adorno tipo="cassette" lado="der" arriba="40px" />
       <h2 id="h-esp" class="sec-h"><a href="/espectaculos/">{SECCIONES.espectaculos.nombre}</a><a href="/espectaculos/" class="mas">Ver todas</a></h2>
       <div class="grid-notas">{esp.map((n) => <TarjetaNota nota={n} />)}</div>
     </section>
@@ -152,7 +146,6 @@ const jsonLd = [
 
   {od.length > 0 && (
     <section class="franja-od" aria-labelledby="h-od">
-      <div class="wrap" style="position:relative;height:0"><Adorno tipo="parlante" lado="izq" arriba="-10px" claro /></div>
       <div class="wrap">
         <h2 id="h-od" class="sec-h claro"><a href="/on-demand/">On Demand</a><a href="/on-demand/" class="mas">Ver todo</a></h2>
         <div class="grid-notas">{od.map((n) => <TarjetaNota nota={n} variante="video" />)}</div>

@@ -2,7 +2,6 @@
 import Dial from './Dial.astro';
 import Redes from './Redes.astro';
 import QueLinda from './QueLinda.astro';
-import Adorno from './Adorno.astro';
 import { SITE, SECCIONES } from '../config';
 const anio = new Date().getFullYear();
 ---
@@ -16,7 +15,6 @@ const anio = new Date().getFullYear();
     </div>
   </div>
   <div class="wrap fila">
-    <Adorno tipo="mapa" lado="der" arriba="-10px" ancho={210} sobreFucsia />
     <div class="datos">
       <img src={SITE.logoSenal.src} alt={SITE.logoSenal.alt} title={SITE.logoSenal.titulo} width={SITE.logoSenal.w} height={SITE.logoSenal.h} loading="lazy" class="logo-senal" />
       <p>
@@ -81,7 +79,6 @@ const anio = new Date().getFullYear();
     .sello-zona { display: flex; flex-direction: column; }
     .sello-zona .sello { order: 1; }
   }
-  .fila { position: relative; isolation: isolate; }
   .fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
   .datos { max-width: 340px; display: flex; flex-direction: column; gap: 12px; }
   .logo-senal { width: 130px; height: auto; }
