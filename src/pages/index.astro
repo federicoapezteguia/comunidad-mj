@@ -4,6 +4,7 @@ import TarjetaNota from '../components/TarjetaNota.astro';
 import Publicidad from '../components/Publicidad.astro';
 import AlAire from '../components/AlAire.astro';
 import Encuesta from '../components/Encuesta.astro';
+import YouTubeFan from '../components/YouTubeFan.astro';
 import Clima from '../components/Clima.astro';
 import { getNotas, type Nota } from '../lib/notas';
 import { SITE, SECCIONES, type SeccionId } from '../config';
@@ -142,6 +143,8 @@ const jsonLd = [
       <div class="grid-notas">{esp.map((n) => <TarjetaNota nota={n} />)}</div>
     </section>
   )}
+
+  <YouTubeFan />
 
   {od.length > 0 && (
     <section class="franja-od" aria-labelledby="h-od">

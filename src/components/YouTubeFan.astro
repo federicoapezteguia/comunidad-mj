@@ -1,0 +1,127 @@
+---
+// Últimos videos del canal de YouTube de Comunidad FAN (se actualizan en cada publicación)
+import { existsSync, readFileSync } from 'node:fs';
+import { SITE } from '../config';
+
+type Video = { id: string; titulo: string; fecha: string };
+const archivo = 'src/data/youtube.json';
+const videos: Video[] = existsSync(archivo) ? (JSON.parse(readFileSync(archivo, 'utf8')).videos ?? []) : [];
+const canal = SITE.redes.youtube;
+---
+{videos.length > 0 && (
+  <section class="wrap bloque yt" aria-labelledby="h-yt" data-yt>
+    <div class="yt-caja">
+      <div class="yt-cab">
+        <h2 id="h-yt">
+          Comunidad FAN en YouTube
+          <svg class="yt-logo" viewBox="0 0 28 20" width="34" height="24" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#ff0000"></rect><path d="M11 5.5l7.5 4.5-7.5 4.5z" fill="#fff"></path></svg>
+        </h2>
+        <a class="yt-sub" href={`${canal}?sub_confirmation=1`} target="_blank" rel="noopener">Suscribite</a>
+      </div>
+      <div class="yt-carril">
+        <button type="button" class="yt-flecha ant" data-yt-ant aria-label="Videos anteriores">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+        </button>
+        <ul class="yt-lista" data-yt-lista>
+          {videos.map((v) => (
+            <li>
+              <a href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener" class="yt-video" data-yt-id={v.id} data-yt-titulo={v.titulo}>
+                <span class="yt-mini">
+                  <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" />
+                  <span class="yt-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 12 12"><path d="M3 1l8 5-8 5z" fill="currentColor"></path></svg></span>
+                </span>
+                <span class="yt-tit">{v.titulo}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button type="button" class="yt-flecha sig" data-yt-sig aria-label="Más videos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+)}
+
+<dialog class="yt-modal" data-yt-modal aria-label="Video de YouTube">
+  <button type="button" class="yt-cerrar" data-yt-cerrar aria-label="Cerrar video">✕</button>
+  <div class="yt-marco" data-yt-marco></div>
+</dialog>
+
+<script>
+  function videosYT() {
+    const sec = document.querySelector<HTMLElement>('[data-yt]');
+    const modal = document.querySelector<HTMLDialogElement>('[data-yt-modal]');
+    if (!sec || !modal || sec.dataset.listo) return;
+    sec.dataset.listo = '1';
+    const lista = sec.querySelector<HTMLElement>('[data-yt-lista]')!;
+    const paso = () => lista.clientWidth * 0.9;
+    sec.querySelector('[data-yt-ant]')!.addEventListener('click', () => lista.scrollBy({ left: -paso(), behavior: 'smooth' }));
+    sec.querySelector('[data-yt-sig]')!.addEventListener('click', () => lista.scrollBy({ left: paso(), behavior: 'smooth' }));
+    const marco = modal.querySelector<HTMLElement>('[data-yt-marco]')!;
+    const cerrar = () => { marco.replaceChildren(); modal.close(); };
+    modal.querySelector('[data-yt-cerrar]')!.addEventListener('click', cerrar);
+    modal.addEventListener('click', (e) => { if (e.target === modal) cerrar(); });
+    modal.addEventListener('close', () => marco.replaceChildren());
+    sec.querySelectorAll<HTMLAnchorElement>('[data-yt-id]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || !modal.showModal) return;
+        e.preventDefault();
+        // Si la radio está sonando, la pausamos para ver el video
+        if (document.documentElement.dataset.radio === 'sonando') document.querySelector<HTMLElement>('[data-radio-toggle]')?.click();
+        const f = document.createElement('iframe');
+        f.src = `https://www.youtube-nocookie.com/embed/${a.dataset.ytId}?autoplay=1&rel=0`;
+        f.title = a.dataset.ytTitulo || 'Video de YouTube';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        marco.replaceChildren(f);
+        modal.showModal();
+      });
+    });
+  }
+  document.addEventListener('astro:page-load', videosYT);
+</script>
+
+<style>
+  .yt-caja {
+    background: radial-gradient(circle at 90% 0%, #4a1286, var(--violeta-noche) 60%);
+    border-radius: 18px; padding: clamp(20px, 3vw, 32px); color: #fff;
+    box-shadow: 0 20px 40px -24px rgba(45, 0, 93, 0.8);
+  }
+  .yt-cab { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 18px; margin-bottom: 22px; border-bottom: 1px solid rgba(255, 255, 255, 0.2); flex-wrap: wrap; }
+  .yt-cab h2 { margin: 0; display: flex; align-items: center; gap: 12px; font-size: clamp(22px, 3vw, 32px); font-weight: 900; }
+  .yt-sub { background: #ff0000; color: #fff; font-weight: 800; font-size: 14px; padding: 11px 34px; border-radius: 999px; transition: transform 0.2s ease, background-color 0.2s ease; }
+  .yt-sub:hover { background: #d90000; color: #fff; transform: translateY(-2px); }
+  .yt-carril { position: relative; }
+  .yt-lista {
+    list-style: none; margin: 0; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 2 * 20px) / 3);
+    gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  }
+  .yt-lista::-webkit-scrollbar { display: none; }
+  .yt-lista li { scroll-snap-align: start; }
+  .yt-video { display: flex; flex-direction: column; gap: 10px; color: #fff; }
+  .yt-mini { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #1a0036; }
+  .yt-mini img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .yt-play {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; border-radius: 50%;
+    background: var(--fucsia); color: var(--violeta-noche); display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+  .yt-video:hover img { transform: scale(1.05); }
+  .yt-video:hover .yt-play { transform: translate(-50%, -50%) scale(1.12); background: var(--amarillo); }
+  .yt-tit { font-weight: 700; font-size: 15px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .yt-video:hover .yt-tit { color: var(--amarillo); }
+  .yt-flecha {
+    position: absolute; z-index: 2; top: calc((100% - 50px) / 2 - 22px); width: 44px; height: 44px; border-radius: 50%; border: 0;
+    background: #fff; color: var(--violeta); display: flex; align-items: center; justify-content: center; cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  }
+  .yt-flecha.ant { left: -22px; } .yt-flecha.sig { right: -22px; }
+  .yt-flecha:hover { background: var(--amarillo); }
+  @media (max-width: 900px) { .yt-lista { grid-auto-columns: 70%; } .yt-flecha { display: none; } }
+  .yt-modal { width: min(960px, 94vw); padding: 0; border: 0; border-radius: 14px; background: #000; overflow: visible; }
+  .yt-modal::backdrop { background: rgba(20, 0, 40, 0.85); }
+  .yt-marco { aspect-ratio: 16 / 9; }
+  .yt-marco :global(iframe) { width: 100%; height: 100%; border: 0; border-radius: 14px; display: block; }
+  .yt-cerrar { position: absolute; top: -46px; right: 0; width: 38px; height: 38px; border-radius: 50%; border: 0; background: #fff; color: var(--violeta); font-size: 18px; font-weight: 900; cursor: pointer; }
+</style>
