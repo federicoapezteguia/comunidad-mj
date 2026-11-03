@@ -70,7 +70,8 @@ const canal = SITE.redes.youtube;
         // Si la radio está sonando, la pausamos para ver el video
         if (document.documentElement.dataset.radio === 'sonando') document.querySelector<HTMLElement>('[data-radio-toggle]')?.click();
         const f = document.createElement('iframe');
-        f.src = `https://www.youtube-nocookie.com/embed/${a.dataset.ytId}?autoplay=1&rel=0`;
+        // hl=es: interfaz y títulos en español (sin traducción automática); cc_load_policy=0: sin subtítulos
+        f.src = `https://www.youtube-nocookie.com/embed/${a.dataset.ytId}?autoplay=1&rel=0&hl=es&cc_lang_pref=es&cc_load_policy=0&iv_load_policy=3`;
         f.title = a.dataset.ytTitulo || 'Video de YouTube';
         f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
         f.allowFullscreen = true;
@@ -119,7 +120,7 @@ const canal = SITE.redes.youtube;
   .yt-flecha.ant { left: -22px; } .yt-flecha.sig { right: -22px; }
   .yt-flecha:hover { background: var(--amarillo); }
   @media (max-width: 900px) { .yt-lista { grid-auto-columns: 70%; } .yt-flecha { display: none; } }
-  .yt-modal { width: min(960px, 94vw); padding: 0; border: 0; border-radius: 14px; background: #000; overflow: visible; }
+  .yt-modal { position: fixed; inset: 0; margin: auto; height: fit-content; width: min(960px, 94vw); padding: 0; border: 0; border-radius: 14px; background: #000; overflow: visible; }
   .yt-modal::backdrop { background: rgba(20, 0, 40, 0.85); }
   .yt-marco { aspect-ratio: 16 / 9; }
   .yt-marco :global(iframe) { width: 100%; height: 100%; border: 0; border-radius: 14px; display: block; }
