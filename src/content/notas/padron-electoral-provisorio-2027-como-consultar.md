@@ -5,7 +5,7 @@ seccion: nacionales
 etiquetas: [politica, gobierno]
 fecha: 2026-11-03T19:30:00-03:00
 foto: ./img/dni-argentino-archivo.jpg
-fotoAlt: "Documento Nacional de Identidad (imagen de archivo)"
+fotoAlt: "Jornada electoral en la Argentina (imagen de archivo)"
 seoTitulo: "Padrón provisorio 2027: cómo consultarlo y reclamar"
 seoDescripcion: "Ya se puede consultar el padrón electoral provisorio para las elecciones 2027. Cómo revisar tus datos y hasta cuándo reclamar errores: 27 de noviembre."
 ---
