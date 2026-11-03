@@ -142,11 +142,14 @@
   "manu-ansaldi-comunidad-fan.webp": "https://api.comunidad.fan/web/uploads/news/10296/0-desktop.webp",
   "silvina-rinaldi-comunidad-fan.webp": "https://api.comunidad.fan/web/uploads/news/10299/0-desktop.webp",
   "cami-oderda-comunidad-fan.webp": "https://api.comunidad.fan/web/uploads/news/10300/0-desktop.webp",
-  "bomberos-voluntarios-marcos-juarez-archivo.jpg": [
-    "pagina:https://prensa.cba.gov.ar/informacion-general/llaryora-encabezo-el-65-aniversario-de-los-bomberos-voluntarios-de-marcos-juarez/",
-    "pagina:https://archivoprensa.cba.gov.ar/informacion-general/llaryora-encabezo-el-65-aniversario-de-los-bomberos-voluntarios-de-marcos-juarez/"
+  "bomberos-voluntarios-archivo.jpg": [
+    "buscar:Bomberos Voluntarios Argentina autobomba",
+    "buscar:Bomberos Voluntarios Argentina",
+    "buscar:autobomba bomberos voluntarios"
   ],
-  "policia-cordoba-patrulleros-archivo.jpg": [
-    "https://archivoprensa.cba.gov.ar/wp-content/uploads/2023/10/DJI_0037.jpg"
+  "policia-cordoba-patrullero-archivo.jpg": [
+    "buscar:Policía de la Provincia de Córdoba patrullero",
+    "buscar:patrullero policía Córdoba Argentina",
+    "buscar:Policía de Córdoba Argentina"
   ]
 }
