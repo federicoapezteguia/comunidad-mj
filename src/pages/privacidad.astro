@@ -1,0 +1,53 @@
+---
+import PaginaSimple from '../components/PaginaSimple.astro';
+import { SITE } from '../config';
+const actualizada = '3 de noviembre de 2026';
+---
+<PaginaSimple titulo="Política de privacidad" descripcion={`Cómo trata ${SITE.nombre} la información de quienes visitan el sitio: encuestas, contador de lecturas, servicios externos y tus derechos.`}>
+  <p><em>Última actualización: {actualizada}.</em></p>
+
+  <p>En <strong>{SITE.nombre}</strong> (FM {SITE.frecuencia}) respetamos la privacidad de quienes nos leen y escuchan. Esta política explica qué información se usa cuando visitás este sitio, para qué y cuáles son tus derechos, de acuerdo con la <strong>Ley 25.326 de Protección de los Datos Personales</strong> de la República Argentina.</p>
+
+  <h2>1. Quiénes somos</h2>
+  <p>El responsable del sitio es {SITE.nombre}, la repetidora oficial de la red Comunidad FAN en {SITE.ciudad}, provincia de {SITE.provincia}. Para cualquier consulta sobre privacidad podés escribirnos a <a href="mailto:fede@comunidad.fan">fede@comunidad.fan</a>.</p>
+
+  <h2>2. Qué información usamos</h2>
+  <p>Para leer las noticias o escuchar la radio <strong>no hace falta registrarse</strong> ni darnos datos personales. No pedimos tu nombre, correo ni teléfono para usar el sitio.</p>
+  <ul>
+    <li><strong>Encuestas:</strong> cuando votás, guardamos tu respuesta junto con la fecha y la hora. Para evitar votos repetidos usamos una cookie en tu navegador y un código anónimo e irreversible generado a partir de tu conexión. <strong>No guardamos tu dirección IP</strong> ni datos que te identifiquen.</li>
+    <li><strong>"Lo más leído":</strong> contamos cuántas veces se lee cada nota para armar el ranking. Es un conteo general y anónimo: tu navegador recuerda por un día que ya leíste esa nota, para no contarla dos veces.</li>
+    <li><strong>Datos técnicos del servidor:</strong> como cualquier sitio web, nuestro proveedor de alojamiento puede registrar datos técnicos de las visitas (por ejemplo, la dirección IP y el tipo de navegador) para su funcionamiento y seguridad.</li>
+    <li><strong>Contacto:</strong> si nos escribís por WhatsApp o por correo, usamos los datos que nos envíes solo para responderte o para gestionar saludos y mensajes en la radio.</li>
+  </ul>
+
+  <h2>3. Cookies y almacenamiento en tu navegador</h2>
+  <p>Usamos solo cookies y almacenamiento local <strong>necesarios para el funcionamiento</strong> del sitio: recordar que ya votaste en una encuesta, que ya leíste una nota y las preferencias del reproductor de radio, como el volumen. <strong>No usamos cookies publicitarias ni de seguimiento</strong> propias. Podés borrar estos datos cuando quieras desde la configuración de tu navegador.</p>
+
+  <h2>4. Servicios de terceros</h2>
+  <p>Algunas funciones del sitio dependen de servicios externos, que tienen sus propias políticas de privacidad:</p>
+  <ul>
+    <li><strong>YouTube:</strong> los videos se reproducen desde YouTube en su modo de privacidad mejorada. Al darle play, YouTube puede recibir datos de tu navegador.</li>
+    <li><strong>Radio en vivo:</strong> la señal se transmite desde el servidor de streaming de la red Comunidad FAN.</li>
+    <li><strong>Clima:</strong> el pronóstico se obtiene de servicios meteorológicos públicos, sin enviar datos personales.</li>
+    <li><strong>Redes sociales y WhatsApp:</strong> los botones para compartir y los enlaces a nuestras redes te llevan a esas plataformas, que aplican sus propias reglas.</li>
+    <li><strong>Anunciantes:</strong> los banners publicitarios son imágenes que enlazan al sitio de cada anunciante. Al hacer clic, salís de nuestro sitio y rige la política de ese anunciante.</li>
+  </ul>
+
+  <h2>5. Para qué usamos la información</h2>
+  <ul>
+    <li>Mostrar los resultados de las encuestas y el ranking de notas más leídas.</li>
+    <li>Mejorar los contenidos y el funcionamiento del sitio.</li>
+    <li>Responder tus consultas y mensajes.</li>
+  </ul>
+  <p>No vendemos ni cedemos información a terceros con fines comerciales.</p>
+
+  <h2>6. Tus derechos</h2>
+  <p>Como titular de tus datos, podés solicitar en forma gratuita el <strong>acceso, la rectificación, la actualización o la supresión</strong> de la información personal que nos hayas enviado, escribiendo a <a href="mailto:fede@comunidad.fan">fede@comunidad.fan</a>. Te responderemos en los plazos que establece la ley.</p>
+  <p>La <strong>Agencia de Acceso a la Información Pública</strong>, en su carácter de órgano de control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.</p>
+
+  <h2>7. Menores de edad</h2>
+  <p>El sitio es de acceso libre y no solicita datos personales. Si sos padre, madre o tutor y creés que un menor nos envió información personal, escribinos y la eliminaremos.</p>
+
+  <h2>8. Cambios en esta política</h2>
+  <p>Podemos actualizar esta política cuando incorporemos nuevas funciones al sitio. La fecha de la última actualización figura al comienzo de esta página.</p>
+</PaginaSimple>

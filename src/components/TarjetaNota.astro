@@ -94,7 +94,11 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
   .sup.grande .titulo { font-size: clamp(22px, 3vw, 34px); }
   .sup.grande .capa { padding: 80px 28px 26px; }
   .sup .bajada { margin: 10px 0 0; color: #f1e8fb; font-size: 16px; max-width: 640px; }
-  .sup .link:hover .titulo { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  /* Destacadas: al pasar el mouse el título sube un poco y se enciende en amarillo, sin subrayado */
+  .sup .titulo { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.35s ease, text-shadow 0.35s ease; }
+  .sup .bajada { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) 0.04s, opacity 0.35s ease; }
+  .sup .link:hover .titulo { color: var(--amarillo); transform: translateY(-5px); text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45); }
+  .sup .link:hover .bajada { transform: translateY(-5px); }
 
   /* Compacta */
   .comp .link { display: flex; gap: 14px; align-items: flex-start; }

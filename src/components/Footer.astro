@@ -16,7 +16,7 @@ const anio = new Date().getFullYear();
   </div>
   <div class="wrap fila">
     <div class="datos">
-      <img src={SITE.logoSenal.src} alt={SITE.logoSenal.alt} title={SITE.logoSenal.titulo} width={SITE.logoSenal.w} height={SITE.logoSenal.h} loading="lazy" class="logo-senal" />
+      <a href="/" aria-label="Ir al inicio" class="logo-inicio"><img src={SITE.logoSenal.src} alt={SITE.logoSenal.alt} title={SITE.logoSenal.titulo} width={SITE.logoSenal.w} height={SITE.logoSenal.h} loading="lazy" class="logo-senal" /></a>
       <p>
         FM {SITE.frecuencia} · {SITE.ciudad}, {SITE.provincia}<br />
         <strong class="contacto-com">Contacto comercial en Marcos Juárez:</strong><br />
@@ -27,6 +27,7 @@ const anio = new Date().getFullYear();
     <nav aria-label="Secciones del sitio">
       <h2>Secciones</h2>
       <ul>
+        <li><a href="/">Inicio</a></li>
         {Object.entries(SECCIONES).map(([id, s]) => <li><a href={`/${id}/`}>{s.nombre}</a></li>)}
       </ul>
     </nav>
@@ -39,6 +40,7 @@ const anio = new Date().getFullYear();
         <li><a href="/en-vivo/">Escuchar en vivo</a></li>
         <li><a href={SITE.youtubeVivo} target="_blank" rel="noopener">Mirar en YouTube</a></li>
         <li><a href={SITE.red} target="_blank" rel="noopener">Red Comunidad FAN</a></li>
+        <li><a href="/privacidad/">Política de privacidad</a></li>
       </ul>
     </nav>
   </div>
@@ -82,6 +84,8 @@ const anio = new Date().getFullYear();
   .fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
   .datos { max-width: 340px; display: flex; flex-direction: column; gap: 12px; }
   .logo-senal { width: 130px; height: auto; }
+  .logo-inicio { display: inline-block; align-self: flex-start; transition: transform 0.3s ease; }
+  .logo-inicio:hover { transform: scale(1.05) rotate(-2deg); }
   .datos p { margin: 0; font-size: 14px; font-weight: 600; }
   h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
