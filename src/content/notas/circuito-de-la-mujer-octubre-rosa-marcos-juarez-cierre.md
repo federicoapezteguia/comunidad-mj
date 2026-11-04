@@ -1,5 +1,5 @@
 ---
-titulo: "Terminó el Circuito de la Mujer de Octubre Rosa en Marcos Juárez: los resultados se entregan en noviembre"
+titulo: "Terminó el Circuito de la Mujer de Octubre Rosa: los resultados se entregan en noviembre"
 bajada: "La última jornada se hizo en el Centro Periférico N.º 1, donde las participantes completaron sus estudios de prevención del cáncer de mama."
 seccion: marcos-juarez
 etiquetas: [salud, municipio]

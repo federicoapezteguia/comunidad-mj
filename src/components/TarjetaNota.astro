@@ -64,6 +64,7 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
   .grilla .foto { transition: transform 0.35s ease; }
   .grilla .link:hover .foto { transform: scale(1.04); }
   .grilla .titulo { margin: 12px 0 6px; font-size: 18px; font-weight: 700; color: var(--violeta); }
+  .grilla .titulo { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
   .grilla .link:hover .titulo { color: var(--fucsia-oscuro); }
   .grilla .bajada {
     margin: 0; font-size: 14px; color: var(--gris);

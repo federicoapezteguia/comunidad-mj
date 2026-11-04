@@ -196,7 +196,9 @@ const jsonLd = [
   .fondo-mj { position: absolute; z-index: -1; left: 50%; bottom: 0; transform: translateX(-50%); width: min(1300px, 100%); pointer-events: none; opacity: 0.55; }
   .fondo-mj :global(.ingreso-mj) { max-width: none; }
   @media (max-width: 899px) { .fondo-mj { display: none; } }
-  .col-mj { display: flex; flex-direction: column; gap: 28px; }
+  /* Marcos Juárez: dos filas alineadas entre columnas (la segunda fila arranca a la misma altura en todas) */
+  .bloque-mj :global([aria-label='Notas de Marcos Juárez'] .car-lista) { grid-template-rows: auto auto; row-gap: 28px; }
+  .col-mj { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 28px; }
   .bloque-region { margin-top: 44px; }
   .pub-sup { padding-block: 20px; }
   /* Franja de destacadas con antena de radio animada de fondo */
