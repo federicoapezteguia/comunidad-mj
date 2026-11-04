@@ -1,12 +1,12 @@
 ---
 import Listado from '../../components/Listado.astro';
-import { getNotas, type Nota } from '../../lib/notas';
+import { getNotas, esRegion, type Nota } from '../../lib/notas';
 import { rutasPaginadas } from '../../lib/paginar';
 import { SECCIONES, SECCION_IDS, SITE, type SeccionId } from '../../config';
 
 export async function getStaticPaths() {
   const notas = await getNotas();
-  return SECCION_IDS.flatMap((s) => rutasPaginadas({ seccion: s }, notas.filter((n) => n.data.seccion === s)));
+  return SECCION_IDS.flatMap((s) => rutasPaginadas({ seccion: s }, notas.filter((n) => (s === 'region' ? esRegion(n) : n.data.seccion === s))));
 }
 
 interface Props { notas: Nota[]; pagina: number; total: number }

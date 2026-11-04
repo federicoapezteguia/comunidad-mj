@@ -4,11 +4,10 @@ import TarjetaNota from '../components/TarjetaNota.astro';
 import Publicidad from '../components/Publicidad.astro';
 import Encuesta from '../components/Encuesta.astro';
 import YouTubeFan from '../components/YouTubeFan.astro';
-import IngresoMJ from '../components/IngresoMJ.astro';
 import Carrusel from '../components/Carrusel.astro';
 import MasLeido from '../components/MasLeido.astro';
 import Clima from '../components/Clima.astro';
-import { getNotas, type Nota } from '../lib/notas';
+import { getNotas, esRegion, type Nota } from '../lib/notas';
 import { SITE, SECCIONES, type SeccionId } from '../config';
 
 const todas = await getNotas();
@@ -32,9 +31,13 @@ const esMJ = (n: Nota) => n.data.seccion === 'marcos-juarez' || (n.data.localida
 const delaCiudad = noticias.filter((n) => esMJ(n) && n.data.seccion !== 'contenido-de-marca');
 const destacadas = tomar([...delaCiudad.filter((n) => n.data.destacada && recientes(n)), ...delaCiudad, ...noticias], 3);
 const deSeccion = (s: SeccionId) => noticias.filter((n) => n.data.seccion === s);
-const mj = tomar(deSeccion('marcos-juarez'), 12);
+// Región primero: las notas de otras localidades de la zona van ahí y no en Marcos Juárez
+const reg = tomar(noticias.filter(esRegion), 10);
+const mj = tomar(deSeccion('marcos-juarez').filter((n) => !esRegion(n)), 12);
 // Marcos Juárez: páginas de 6 notas (dos filas de 3) que se pasan como carrusel
-const paginasMJ = Array.from({ length: Math.ceil(mj.length / 6) }, (_, i) => mj.slice(i * 6, i * 6 + 6));
+// En orden de columnas (arriba, abajo, arriba, abajo...) para que el carrusel avance de a una columna
+const columnasMJ = Array.from({ length: Math.ceil(mj.length / 6) }, (_, i) => mj.slice(i * 6, i * 6 + 6))
+  .flatMap((pag) => [0, 1, 2].map((c) => [pag[c], pag[c + 3]].filter(Boolean)));
 const cba = tomar(deSeccion('cordoba'), 10);
 const nac = tomar(deSeccion('nacionales'), 6);
 const dep = tomar(deSeccion('deportes'), 10);
@@ -85,11 +88,16 @@ const jsonLd = [
   )}
 
   <section class="wrap bloque" aria-labelledby="h-mj">
-    <div class="con-lateral con-ingreso">
+    <div class="con-lateral">
       <div class="principal">
         <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
-        <Carrusel visibles={1} etiqueta="Notas de Marcos Juárez">{paginasMJ.map((pag) => <div class="pagina-mj">{pag.map((n) => <TarjetaNota nota={n} />)}</div>)}</Carrusel>
-        <div class="hueco-ingreso"><IngresoMJ /></div>
+        <Carrusel visibles={3} etiqueta="Notas de Marcos Juárez">{columnasMJ.map((col) => <div class="col-mj">{col.map((n) => <TarjetaNota nota={n} />)}</div>)}</Carrusel>
+        {reg.length > 0 && (
+          <div class="bloque-region">
+            <h2 id="h-reg" class="sec-h"><a href="/region/">Región</a><a href="/region/" class="mas">Ver todas</a></h2>
+            <Carrusel visibles={3} etiqueta="Notas de la región">{reg.map((n) => <TarjetaNota nota={n} />)}</Carrusel>
+          </div>
+        )}
       </div>
       <div class="lateral">
         <Clima />
@@ -181,13 +189,8 @@ const jsonLd = [
 </Base>
 
 <style>
-  .pagina-mj { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; align-content: start; }
-  @media (max-width: 640px) { .pagina-mj { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; } }
-  /* Bloque Marcos Juárez: el símbolo del ingreso a la ciudad ocupa el espacio libre bajo las notas */
-  .con-ingreso { align-items: stretch; }
-  .con-ingreso > .principal { display: flex; flex-direction: column; }
-  .hueco-ingreso { flex: 1; display: flex; align-items: flex-end; justify-content: center; padding-top: 24px; min-height: 0; }
-  @media (max-width: 899px) { .hueco-ingreso { display: none; } }
+  .col-mj { display: flex; flex-direction: column; gap: 28px; }
+  .bloque-region { margin-top: 44px; }
   .pub-sup { padding-block: 20px; }
   /* Franja de destacadas con antena de radio animada de fondo */
   /* Las ondas salen de la franja y siguen por los bloques de arriba y abajo

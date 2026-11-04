@@ -63,6 +63,7 @@ export type SeccionId =
   | 'deportes'
   | 'musica'
   | 'on-demand'
+  | 'region'
   | 'contenido-de-marca';
 
 export const SECCIONES: Record<
@@ -75,6 +76,13 @@ export const SECCIONES: Record<
     descripcion:
       'Las noticias de Marcos Juárez: municipio, Concejo Deliberante, policiales, deportes, agro e instituciones de la ciudad y la región.',
     enMenu: true,
+  },
+  region: {
+    nombre: 'Región',
+    titulo: 'Noticias de la región: sudeste cordobés',
+    descripcion:
+      'Las noticias de las localidades de la zona: Leones, Bell Ville, Monte Buey, General Roca, Inriville, Corral de Bustos, Cruz Alta, Camilo Aldao y todo el sudeste cordobés.',
+    enMenu: false,
   },
   cordoba: {
     nombre: 'Córdoba',

@@ -25,12 +25,15 @@ const { visibles = 4, oscuro = false, etiqueta = 'Notas' } = Astro.props;
         const item = lista.firstElementChild as HTMLElement | null;
         const gap = parseFloat(getComputedStyle(lista).columnGap) || 0;
         const ancho = item ? item.offsetWidth + gap : lista.clientWidth;
-        return Math.max(ancho, Math.floor(lista.clientWidth / ancho) * ancho);
+        return ancho; // de a una columna
       };
       const estado = () => {
         // Flechas centradas sobre las fotos
+        // Flechas: centradas en la foto; si hay columnas con dos notas apiladas, al medio de las dos filas
+        const col = lista.firstElementChild as HTMLElement | null;
         const foto = lista.querySelector<HTMLElement>('.marco, img');
-        if (foto) c.style.setProperty('--centro', foto.offsetHeight / 2 + 'px');
+        if (col && col.children.length > 1) c.style.setProperty('--centro', lista.offsetHeight / 2 + 'px');
+        else if (foto) c.style.setProperty('--centro', foto.offsetHeight / 2 + 'px');
         ant.disabled = lista.scrollLeft <= 4;
         sig.disabled = lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 4;
         c.classList.toggle('sin-scroll', lista.scrollWidth <= lista.clientWidth + 4);

@@ -77,3 +77,9 @@ export function relacionadas(nota: Nota, todas: Nota[], cantidad = 4): Nota[] {
 export function minutosLectura(texto = ''): number {
   return Math.max(1, Math.round(texto.split(/\s+/).length / 220));
 }
+
+/** Notas de la región: sección Región o notas de otras localidades de la zona (no Marcos Juárez ni la capital). */
+export function esRegion(n: Nota): boolean {
+  const l = n.data.localidad;
+  return n.data.seccion === 'region' || (!!l && l !== 'marcos-juarez' && l !== 'cordoba-capital' && n.data.seccion !== 'contenido-de-marca');
+}
