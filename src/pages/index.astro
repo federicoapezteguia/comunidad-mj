@@ -5,6 +5,7 @@ import Publicidad from '../components/Publicidad.astro';
 import Encuesta from '../components/Encuesta.astro';
 import YouTubeFan from '../components/YouTubeFan.astro';
 import Carrusel from '../components/Carrusel.astro';
+import IngresoMJ from '../components/IngresoMJ.astro';
 import MasLeido from '../components/MasLeido.astro';
 import Clima from '../components/Clima.astro';
 import { getNotas, esRegion, type Nota } from '../lib/notas';
@@ -87,7 +88,8 @@ const jsonLd = [
     </div>
   )}
 
-  <section class="wrap bloque" aria-labelledby="h-mj">
+  <section class="wrap bloque bloque-mj" aria-labelledby="h-mj">
+    <div class="fondo-mj" aria-hidden="true"><IngresoMJ /></div>
     <div class="con-lateral">
       <div class="principal">
         <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
@@ -189,6 +191,11 @@ const jsonLd = [
 </Base>
 
 <style>
+  /* Símbolo del ingreso a Marcos Juárez de fondo, detrás de las secciones Marcos Juárez y Región */
+  .bloque-mj { position: relative; isolation: isolate; }
+  .fondo-mj { position: absolute; z-index: -1; left: 50%; bottom: 0; transform: translateX(-50%); width: min(1300px, 100%); pointer-events: none; opacity: 0.55; }
+  .fondo-mj :global(.ingreso-mj) { max-width: none; }
+  @media (max-width: 899px) { .fondo-mj { display: none; } }
   .col-mj { display: flex; flex-direction: column; gap: 28px; }
   .bloque-region { margin-top: 44px; }
   .pub-sup { padding-block: 20px; }
