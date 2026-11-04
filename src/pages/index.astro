@@ -14,7 +14,7 @@ const todas = await getNotas();
 const noticias = todas.filter((n) => !n.data.patrocinado);
 const usadas = new Set<string>();
 const tomar = (lista: Nota[], cant: number) => {
-  const r = lista.filter((n) => !usadas.has(n.id)).slice(0, cant);
+  const r = [...new Map(lista.filter((n) => !usadas.has(n.id)).map((n) => [n.id, n])).values()].slice(0, cant);
   r.forEach((n) => usadas.add(n.id));
   return r;
 };
