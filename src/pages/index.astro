@@ -24,7 +24,11 @@ const tomar = (lista: Nota[], cant: number) => {
 const VIGENCIA_DESTACADA = 48 * 60 * 60 * 1000;
 const ahora = Date.now();
 const recientes = (n: Nota) => ahora - n.data.fecha.getTime() <= VIGENCIA_DESTACADA;
-const destacadas = tomar([...noticias.filter((n) => n.data.destacada && recientes(n)), ...noticias], 3);
+// La destacada principal es siempre de Marcos Juárez (la marcada más reciente o, si no hay, la última publicada);
+// las otras dos, las marcadas de las últimas 48 horas, completando con lo último.
+const esMJ = (n: Nota) => n.data.seccion === 'marcos-juarez';
+const principalMJ = noticias.filter((n) => esMJ(n) && n.data.destacada && recientes(n))[0] ?? noticias.filter(esMJ)[0];
+const destacadas = tomar([...(principalMJ ? [principalMJ] : []), ...noticias.filter((n) => n.data.destacada && recientes(n)), ...noticias], 3);
 const deSeccion = (s: SeccionId) => noticias.filter((n) => n.data.seccion === s);
 const mj = tomar(deSeccion('marcos-juarez'), 6);
 const cba = tomar(deSeccion('cordoba'), 4);

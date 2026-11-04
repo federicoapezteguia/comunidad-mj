@@ -46,7 +46,7 @@
 - **Nunca** mencionar, citar ni enlazar a otros medios en las notas ni en el sitio.
 - Policiales solo si son importantes, y nunca delitos como violación, homicidio o robos graves.
 - Notas locales con contexto real de Marcos Juárez (por ejemplo: en la ciudad hay remises, no taxis).
-- Fotos reales del lugar o tema de la nota. Si no hay foto de la noticia en particular, usar una foto de archivo relacionada con el tema (bomberos, policía, escuela, etc.), preferentemente de fuentes oficiales; si no existe, una foto real de Marcos Juárez. Nada de placas con texto como foto de nota.
+- Fotos reales del lugar o tema de la nota. Si no hay foto de la noticia en particular, usar una foto de archivo relacionada con el tema (bomberos, policía, escuela, etc.), preferentemente de fuentes oficiales; si no existe, una foto real de Marcos Juárez. Nada de placas con texto (ni placas propias de la marca) como foto de nota: siempre fotos o imágenes reales.
 - Sin créditos ni autor en las fotos.
 - En las notas solo la fecha (sin hora ni minutos de lectura).
 
@@ -57,4 +57,5 @@
 ## Criterio para elegir y destacar noticias
 - Orden de peso: cercanía (Marcos Juárez > región > Córdoba > país), impacto en el vecino, utilidad, actualidad, magnitud, interés humano, confirmación oficial.
 - Siempre recientes: noticias de hoy o ayer, o de algo que está por pasar en los próximos días.
+- Portada: siempre tiene que haber notas de Marcos Juárez arriba (la destacada principal es de Marcos Juárez).
 - Destacadas de portada: se marcan con `destacada: true` y solo cuentan durante 48 horas desde su fecha; si no hay suficientes, la portada se completa con las últimas publicadas.

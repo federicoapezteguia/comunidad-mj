@@ -4,8 +4,8 @@ bajada: "Un documental sobre Matthew Perry, la cuarta temporada de La edad dorad
 seccion: espectaculos
 etiquetas: [series, plataformas, estrenos]
 fecha: 2026-10-26T10:08:00-03:00
-foto: ./img/que-ver-estrenos-plataformas-octubre.jpg
-fotoAlt: "Guía de estrenos de series y películas en las plataformas de streaming"
+foto: ./img/streaming-control-remoto-archivo.jpg
+fotoAlt: "Control remoto frente a un televisor (imagen de archivo)"
 seoTitulo: "Estrenos de la semana en Netflix, HBO Max, Prime y Disney+"
 seoDescripcion: "Los estrenos de series y películas del 26 de octubre al 1 de noviembre en Netflix, Prime Video, HBO Max, Disney+, Paramount+ y Apple TV."
 ---

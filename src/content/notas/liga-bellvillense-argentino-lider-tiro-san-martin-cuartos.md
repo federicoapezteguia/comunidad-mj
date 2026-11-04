@@ -5,8 +5,8 @@ seccion: deportes
 etiquetas: [deportes, futbol]
 localidad: marcos-juarez
 fecha: 2026-10-26T10:12:00-03:00
-foto: ./img/liga-bellvillense-resultados-25-octubre.jpg
-fotoAlt: "Resultados de los equipos de Marcos Juárez en la Liga Bellvillense"
+foto: ./img/club-argentino-sede-marcos-juarez.jpg
+fotoAlt: "Sede del Club Argentino de Marcos Juárez"
 seoTitulo: "Liga Bellvillense: resultados de Argentino, Tiro y San Martín"
 seoDescripcion: "Argentino empató y terminó líder de la Categoría A. Tiro Federal y San Martín perdieron la ida de cuartos en la B. Resultados, tabla y cruces."
 ---
