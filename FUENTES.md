@@ -57,5 +57,5 @@
 ## Criterio para elegir y destacar noticias
 - Orden de peso: cercanía (Marcos Juárez > región > Córdoba > país), impacto en el vecino, utilidad, actualidad, magnitud, interés humano, confirmación oficial.
 - Siempre recientes: noticias de hoy o ayer, o de algo que está por pasar en los próximos días.
-- Portada: siempre tiene que haber notas de Marcos Juárez arriba (la destacada principal es de Marcos Juárez).
+- Portada: las tres destacadas son siempre notas de Marcos Juárez (o de clubes y eventos de la ciudad).
 - Destacadas de portada: se marcan con `destacada: true` y solo cuentan durante 48 horas desde su fecha; si no hay suficientes, la portada se completa con las últimas publicadas.
