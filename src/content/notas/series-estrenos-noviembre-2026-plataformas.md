@@ -4,8 +4,8 @@ bajada: "Netflix, Prime Video, HBO Max, Disney+, Apple TV y Paramount+ renuevan 
 seccion: espectaculos
 etiquetas: [series, plataformas, estrenos]
 fecha: 2026-11-03T19:34:00-03:00
-foto: ./img/streaming-control-remoto-archivo.jpg
-fotoAlt: "Smart TV con una aplicación abierta (imagen de archivo)"
+foto: ./img/los-anillos-de-poder-temporada-3.jpg
+fotoAlt: "Escena de la temporada 3 de Los anillos de poder"
 seoTitulo: "Series de noviembre 2026: los 10 estrenos en plataformas"
 seoDescripcion: "Los estrenos de series de noviembre 2026 en Netflix, Prime Video, HBO Max, Disney+, Apple TV y Paramount+: Los anillos de poder, Percy Jackson y más."
 ---
