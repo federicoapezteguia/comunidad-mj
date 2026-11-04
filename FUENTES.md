@@ -55,6 +55,7 @@
 - No mostrar en la misma nota dos anunciantes del mismo rubro (por ejemplo, LD Performance y Meyer Automotores).
 
 ## Criterio para elegir y destacar noticias
+- Sección Córdoba: noticias de alcance provincial (gobierno, economía, educación, salud, seguridad, clima y obras de toda la provincia) o hechos muy destacados de alguna ciudad cordobesa. No centrarse en temas que solo afectan a la ciudad de Córdoba (por ejemplo, multas municipales de la capital).
 - Orden de peso: cercanía (Marcos Juárez > región > Córdoba > país), impacto en el vecino, utilidad, actualidad, magnitud, interés humano, confirmación oficial.
 - Siempre recientes: noticias de hoy o ayer, o de algo que está por pasar en los próximos días.
 - Portada: las tres destacadas son siempre notas de Marcos Juárez (o de clubes y eventos de la ciudad).
