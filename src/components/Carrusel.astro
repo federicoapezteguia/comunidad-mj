@@ -53,8 +53,8 @@ const { visibles = 4, oscuro = false, etiqueta = 'Notas' } = Astro.props;
   .car-lista {
     display: grid; grid-auto-flow: column; gap: 24px;
     grid-auto-columns: calc((100% - (var(--visibles) - 1) * 24px) / var(--visibles));
-    overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
-    scrollbar-width: none; padding-bottom: 6px; overscroll-behavior-x: contain;
+    overflow-x: auto; overflow-y: hidden; touch-action: pan-x pan-y pinch-zoom; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    scrollbar-width: none; padding-bottom: 12px; overscroll-behavior-x: contain;
   }
   .car-lista::-webkit-scrollbar { display: none; }
   .car-lista > :global(*) { scroll-snap-align: start; min-width: 0; }

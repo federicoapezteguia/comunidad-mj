@@ -112,7 +112,7 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
     .ondas i:nth-child(2) { width: 12px; height: 12px; }
     .ondas i:nth-child(1) { width: 6px; height: 6px; }
   }
-  .nav { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .nav { order: 3; width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
   .nav::-webkit-scrollbar { display: none; }
   .nav ul { display: flex; gap: 6px 22px; list-style: none; margin: 0; padding: 4px 0; white-space: nowrap; }
   .nav a {

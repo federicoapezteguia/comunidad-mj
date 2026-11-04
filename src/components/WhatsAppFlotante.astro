@@ -27,10 +27,10 @@ const url = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whats
   .t1 { font-size: 14px; font-weight: 800; }
   .t2 { font-size: 12px; font-weight: 600; opacity: 0.9; }
   @media (max-width: 560px) {
-    .wa-flotante { right: 12px; bottom: 76px; padding: 4px 14px 4px 4px; gap: 8px; }
-    .icono { width: 44px; height: 44px; }
-    .t1 { font-size: 13px; }
-    .t2 { display: none; }
+    /* En celular, solo el ícono redondo para no tapar el contenido */
+    .wa-flotante { right: 12px; bottom: 80px; padding: 4px; gap: 0; border-radius: 50%; }
+    .icono { width: 48px; height: 48px; }
+    .txt { display: none; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .icono { animation: pulso 2.4s ease-out 1.5s 3; }
