@@ -89,7 +89,6 @@ const jsonLd = [
   )}
 
   <section class="wrap bloque bloque-mj" aria-labelledby="h-mj">
-    <div class="fondo-mj" aria-hidden="true"><IngresoMJ /></div>
     <div class="con-lateral">
       <div class="principal">
         <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
@@ -115,6 +114,8 @@ const jsonLd = [
       </div>
     </div>
   </section>
+
+  <div class="wrap franja-ingreso" aria-hidden="true"><IngresoMJ /></div>
 
   <section class="wrap bloque" aria-label="Campañas"><Publicidad espacio="campanas" /></section>
 
@@ -191,11 +192,9 @@ const jsonLd = [
 </Base>
 
 <style>
-  /* Símbolo del ingreso a Marcos Juárez de fondo, detrás de las secciones Marcos Juárez y Región */
-  .bloque-mj { position: relative; isolation: isolate; }
-  .fondo-mj { position: absolute; z-index: -1; left: 50%; bottom: 0; transform: translateX(-50%); width: min(1300px, 100%); pointer-events: none; opacity: 0.55; }
-  .fondo-mj :global(.ingreso-mj) { max-width: none; }
-  @media (max-width: 899px) { .fondo-mj { display: none; } }
+  /* Símbolo del ingreso a Marcos Juárez, bien visible entre Marcos Juárez/Región y las campañas */
+  .franja-ingreso { padding-top: 40px; }
+  .franja-ingreso :global(.ingreso-mj) { max-width: 760px; opacity: 1; }
   /* Marcos Juárez: dos filas alineadas entre columnas (la segunda fila arranca a la misma altura en todas) */
   .bloque-mj :global([aria-label='Notas de Marcos Juárez'] .car-lista) { grid-template-rows: auto auto; row-gap: 28px; }
   .col-mj { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 28px; }
