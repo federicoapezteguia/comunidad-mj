@@ -5,6 +5,7 @@ import Publicidad from '../components/Publicidad.astro';
 import Encuesta from '../components/Encuesta.astro';
 import YouTubeFan from '../components/YouTubeFan.astro';
 import IngresoMJ from '../components/IngresoMJ.astro';
+import Carrusel from '../components/Carrusel.astro';
 import MasLeido from '../components/MasLeido.astro';
 import Clima from '../components/Clima.astro';
 import { getNotas, type Nota } from '../lib/notas';
@@ -31,13 +32,13 @@ const esMJ = (n: Nota) => n.data.seccion === 'marcos-juarez' || (n.data.localida
 const delaCiudad = noticias.filter((n) => esMJ(n) && n.data.seccion !== 'contenido-de-marca');
 const destacadas = tomar([...delaCiudad.filter((n) => n.data.destacada && recientes(n)), ...delaCiudad, ...noticias], 3);
 const deSeccion = (s: SeccionId) => noticias.filter((n) => n.data.seccion === s);
-const mj = tomar(deSeccion('marcos-juarez'), 6);
-const cba = tomar(deSeccion('cordoba'), 4);
+const mj = tomar(deSeccion('marcos-juarez'), 12);
+const cba = tomar(deSeccion('cordoba'), 10);
 const nac = tomar(deSeccion('nacionales'), 6);
-const dep = tomar(deSeccion('deportes'), 4);
-const mus = tomar(deSeccion('musica'), 3);
-const esp = tomar(deSeccion('espectaculos'), 4);
-const od = tomar(deSeccion('on-demand'), 4);
+const dep = tomar(deSeccion('deportes'), 10);
+const mus = tomar(deSeccion('musica'), 9);
+const esp = tomar(deSeccion('espectaculos'), 10);
+const od = tomar(deSeccion('on-demand'), 10);
 const marca = todas.filter((n) => n.data.patrocinado).slice(0, 2);
 const ultimas = noticias.slice(0, 5);
 
@@ -85,7 +86,7 @@ const jsonLd = [
     <div class="con-lateral con-ingreso">
       <div class="principal">
         <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
-        <div class="grid-notas">{mj.map((n) => <TarjetaNota nota={n} />)}</div>
+        <Carrusel visibles={3} etiqueta="Notas de Marcos Juárez">{mj.map((n) => <TarjetaNota nota={n} />)}</Carrusel>
         <div class="hueco-ingreso"><IngresoMJ /></div>
       </div>
       <div class="lateral">
@@ -108,14 +109,14 @@ const jsonLd = [
   {cba.length > 0 && (
     <section class="wrap bloque" aria-labelledby="h-cba">
       <h2 id="h-cba" class="sec-h"><a href="/cordoba/">{SECCIONES.cordoba.nombre}</a><a href="/cordoba/" class="mas">Ver todas</a></h2>
-      <div class="grid-notas">{cba.map((n) => <TarjetaNota nota={n} />)}</div>
+      <Carrusel visibles={4} etiqueta="Notas de Córdoba">{cba.map((n) => <TarjetaNota nota={n} />)}</Carrusel>
     </section>
   )}
 
   {dep.length > 0 && (
     <section class="wrap bloque" aria-labelledby="h-dep">
       <h2 id="h-dep" class="sec-h"><a href="/deportes/">{SECCIONES.deportes.nombre}</a><a href="/deportes/" class="mas">Ver todas</a></h2>
-      <div class="grid-notas">{dep.map((n) => <TarjetaNota nota={n} />)}</div>
+      <Carrusel visibles={4} etiqueta="Notas de Deportes">{dep.map((n) => <TarjetaNota nota={n} />)}</Carrusel>
     </section>
   )}
 
@@ -137,7 +138,7 @@ const jsonLd = [
     <div class="con-lateral">
       <div class="principal">
         <h2 id="h-mus" class="sec-h"><a href="/musica/">{SECCIONES.musica.nombre}</a><a href="/musica/" class="mas">Ver todas</a></h2>
-        {mus.length > 0 ? <div class="grid-notas">{mus.map((n) => <TarjetaNota nota={n} />)}</div> : <p class="intro-seccion">Estrenos, shows y lo que suena en Comunidad FAN, muy pronto en esta sección.</p>}
+        {mus.length > 0 ? <Carrusel visibles={3} etiqueta="Notas de Música">{mus.map((n) => <TarjetaNota nota={n} />)}</Carrusel> : <p class="intro-seccion">Estrenos, shows y lo que suena en Comunidad FAN, muy pronto en esta sección.</p>}
       </div>
       <div class="lateral"><Encuesta alta /></div>
     </div>
@@ -146,7 +147,7 @@ const jsonLd = [
   {esp.length > 0 && (
     <section class="wrap bloque" aria-labelledby="h-esp">
       <h2 id="h-esp" class="sec-h"><a href="/espectaculos/">{SECCIONES.espectaculos.nombre}</a><a href="/espectaculos/" class="mas">Ver todas</a></h2>
-      <div class="grid-notas">{esp.map((n) => <TarjetaNota nota={n} />)}</div>
+      <Carrusel visibles={4} etiqueta="Notas de Espectáculos">{esp.map((n) => <TarjetaNota nota={n} />)}</Carrusel>
     </section>
   )}
 
@@ -156,7 +157,7 @@ const jsonLd = [
     <section class="franja-od" aria-labelledby="h-od">
       <div class="wrap">
         <h2 id="h-od" class="sec-h claro"><a href="/on-demand/">On Demand</a><a href="/on-demand/" class="mas">Ver todo</a></h2>
-        <div class="grid-notas">{od.map((n) => <TarjetaNota nota={n} variante="video" />)}</div>
+        <Carrusel visibles={4} oscuro etiqueta="On Demand">{od.map((n) => <TarjetaNota nota={n} variante="video" />)}</Carrusel>
       </div>
     </section>
   )}

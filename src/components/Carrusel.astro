@@ -1,0 +1,75 @@
+---
+// Carrusel horizontal de notas: se desliza con el dedo, con la rueda/trackpad o con las flechas.
+interface Props { visibles?: number; oscuro?: boolean; etiqueta?: string }
+const { visibles = 4, oscuro = false, etiqueta = 'Notas' } = Astro.props;
+---
+<div class:list={['carrusel', { oscuro }]} style={`--visibles:${visibles}`} data-carrusel role="region" aria-label={etiqueta}>
+  <button type="button" class="car-flecha ant" data-ant aria-label="Notas anteriores" disabled>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+  </button>
+  <div class="car-lista" data-lista><slot /></div>
+  <button type="button" class="car-flecha sig" data-sig aria-label="Más notas">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+  </button>
+</div>
+
+<script>
+  function carruseles() {
+    document.querySelectorAll<HTMLElement>('[data-carrusel]').forEach((c) => {
+      if (c.dataset.listo) return;
+      c.dataset.listo = '1';
+      const lista = c.querySelector<HTMLElement>('[data-lista]')!;
+      const ant = c.querySelector<HTMLButtonElement>('[data-ant]')!;
+      const sig = c.querySelector<HTMLButtonElement>('[data-sig]')!;
+      const paso = () => {
+        const item = lista.firstElementChild as HTMLElement | null;
+        const gap = parseFloat(getComputedStyle(lista).columnGap) || 0;
+        const ancho = item ? item.offsetWidth + gap : lista.clientWidth;
+        return Math.max(ancho, Math.floor(lista.clientWidth / ancho) * ancho);
+      };
+      const estado = () => {
+        // Flechas centradas sobre las fotos
+        const foto = lista.querySelector<HTMLElement>('.marco, img');
+        if (foto) c.style.setProperty('--centro', foto.offsetHeight / 2 + 'px');
+        ant.disabled = lista.scrollLeft <= 4;
+        sig.disabled = lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 4;
+        c.classList.toggle('sin-scroll', lista.scrollWidth <= lista.clientWidth + 4);
+      };
+      ant.addEventListener('click', () => lista.scrollBy({ left: -paso(), behavior: 'smooth' }));
+      sig.addEventListener('click', () => lista.scrollBy({ left: paso(), behavior: 'smooth' }));
+      lista.addEventListener('scroll', estado, { passive: true });
+      addEventListener('resize', estado);
+      estado();
+    });
+  }
+  document.addEventListener('astro:page-load', carruseles);
+</script>
+
+<style>
+  .carrusel { position: relative; }
+  .car-lista {
+    display: grid; grid-auto-flow: column; gap: 24px;
+    grid-auto-columns: calc((100% - (var(--visibles) - 1) * 24px) / var(--visibles));
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    scrollbar-width: none; padding-bottom: 6px; overscroll-behavior-x: contain;
+  }
+  .car-lista::-webkit-scrollbar { display: none; }
+  .car-lista > :global(*) { scroll-snap-align: start; min-width: 0; }
+  .car-flecha {
+    position: absolute; z-index: 3; top: var(--centro, 30%); transform: translateY(-50%);
+    width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+    background: #fff; color: var(--violeta); display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 16px rgba(45, 0, 93, 0.3); transition: opacity 0.25s ease, background-color 0.2s ease, transform 0.2s ease;
+  }
+  .car-flecha:hover:not(:disabled) { background: var(--amarillo); transform: translateY(-50%) scale(1.08); }
+  .car-flecha:disabled { opacity: 0; pointer-events: none; }
+  .car-flecha.ant { left: -22px; }
+  .car-flecha.sig { right: -22px; }
+  .sin-scroll .car-flecha { display: none; }
+  .oscuro .car-flecha { box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); }
+  @media (max-width: 1000px) { .car-lista { grid-auto-columns: calc((100% - 24px) / 2.3); } }
+  @media (max-width: 640px) {
+    .car-lista { grid-auto-columns: 78%; gap: 16px; }
+    .car-flecha { display: none; }
+  }
+</style>
