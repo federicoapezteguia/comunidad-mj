@@ -67,9 +67,10 @@ const { visibles = 4, oscuro = false, etiqueta = 'Notas' } = Astro.props;
   .car-flecha.sig { right: -22px; }
   .sin-scroll .car-flecha { display: none; }
   .oscuro .car-flecha { box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); }
-  @media (max-width: 1000px) { .car-lista { grid-auto-columns: calc((100% - 24px) / 2.3); } }
+  @media (max-width: 1000px) { .carrusel:not([style*='--visibles:1']) .car-lista { grid-auto-columns: calc((100% - 24px) / 2.3); } }
   @media (max-width: 640px) {
-    .car-lista { grid-auto-columns: 78%; gap: 16px; }
+    .carrusel:not([style*='--visibles:1']) .car-lista { grid-auto-columns: 78%; gap: 16px; }
+    .carrusel[style*='--visibles:1'] .car-lista { grid-auto-columns: 92%; gap: 16px; }
     .car-flecha { display: none; }
   }
 </style>

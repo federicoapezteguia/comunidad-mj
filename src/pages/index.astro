@@ -33,6 +33,8 @@ const delaCiudad = noticias.filter((n) => esMJ(n) && n.data.seccion !== 'conteni
 const destacadas = tomar([...delaCiudad.filter((n) => n.data.destacada && recientes(n)), ...delaCiudad, ...noticias], 3);
 const deSeccion = (s: SeccionId) => noticias.filter((n) => n.data.seccion === s);
 const mj = tomar(deSeccion('marcos-juarez'), 12);
+// Marcos Juárez: páginas de 6 notas (dos filas de 3) que se pasan como carrusel
+const paginasMJ = Array.from({ length: Math.ceil(mj.length / 6) }, (_, i) => mj.slice(i * 6, i * 6 + 6));
 const cba = tomar(deSeccion('cordoba'), 10);
 const nac = tomar(deSeccion('nacionales'), 6);
 const dep = tomar(deSeccion('deportes'), 10);
@@ -86,7 +88,7 @@ const jsonLd = [
     <div class="con-lateral con-ingreso">
       <div class="principal">
         <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
-        <Carrusel visibles={3} etiqueta="Notas de Marcos Juárez">{mj.map((n) => <TarjetaNota nota={n} />)}</Carrusel>
+        <Carrusel visibles={1} etiqueta="Notas de Marcos Juárez">{paginasMJ.map((pag) => <div class="pagina-mj">{pag.map((n) => <TarjetaNota nota={n} />)}</div>)}</Carrusel>
         <div class="hueco-ingreso"><IngresoMJ /></div>
       </div>
       <div class="lateral">
@@ -179,6 +181,8 @@ const jsonLd = [
 </Base>
 
 <style>
+  .pagina-mj { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; align-content: start; }
+  @media (max-width: 640px) { .pagina-mj { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; } }
   /* Bloque Marcos Juárez: el símbolo del ingreso a la ciudad ocupa el espacio libre bajo las notas */
   .con-ingreso { align-items: stretch; }
   .con-ingreso > .principal { display: flex; flex-direction: column; }
