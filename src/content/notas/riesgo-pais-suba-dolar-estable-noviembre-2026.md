@@ -4,8 +4,8 @@ bajada: "Los bonos cayeron y el índice tocó 939 puntos. El Gobierno intervino 
 seccion: nacionales
 etiquetas: [economia, gobierno]
 fecha: 2026-11-09T09:50:00-03:00
-foto: ./img/dolares-billetes-archivo.jpg
-fotoAlt: "Billetes de dólar"
+foto: ./img/dolar-billetes-cien-archivo.jpg
+fotoAlt: "Billetes de 100 dólares"
 seoTitulo: "Riesgo país arriba de 900 y dólar quieto: las claves"
 seoDescripcion: "El riesgo país llegó a 939 puntos y los bonos cayeron, pero el dólar se mantuvo estable. Por qué pasó, cuánto cotiza y cuál es la próxima prueba del Gobierno."
 ---
