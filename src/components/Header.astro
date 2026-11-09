@@ -112,9 +112,9 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
     .ondas i:nth-child(2) { width: 12px; height: 12px; }
     .ondas i:nth-child(1) { width: 6px; height: 6px; }
   }
-  .nav { order: 3; width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+  .nav { order: 3; width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent); }
   .nav::-webkit-scrollbar { display: none; }
-  .nav ul { display: flex; gap: 6px 22px; list-style: none; margin: 0; padding: 4px 0; white-space: nowrap; }
+  .nav ul { display: flex; gap: 6px 22px; list-style: none; margin: 0; padding: 4px 48px 4px 0; white-space: nowrap; }
   .nav a {
     color: var(--violeta);
     font-size: 15px;
@@ -138,8 +138,8 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
   @media (min-width: 1280px) {
     .header .fila { flex-wrap: nowrap; gap: 10px 16px; }
     .marca-grupo, .acciones { flex: none; }
-    .nav { order: 0; width: auto; flex: 1 1 auto; display: flex; justify-content: center; min-width: 0; }
-    .nav ul { gap: 6px 13px; }
+    .nav { order: 0; width: auto; flex: 1 1 auto; display: flex; justify-content: center; min-width: 0; -webkit-mask-image: none; mask-image: none; }
+    .nav ul { gap: 6px 13px; padding: 4px 0; }
     .nav a { font-size: 12.5px; }
     .en-vivo { white-space: nowrap; }
   }
