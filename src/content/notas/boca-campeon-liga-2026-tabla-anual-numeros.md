@@ -4,7 +4,7 @@ bajada: "Un gol de Enner Valencia en el último minuto ante Defensa y Justicia l
 seccion: deportes
 etiquetas: [futbol, deportes]
 fecha: 2026-11-08T11:00:00-03:00
-foto: ./img/boca-campeon-liga-2026.jpg
+foto: ./img/boca-campeon-liga-2026-festejo.jpg
 fotoAlt: "Boca celebra el título de campeón de la Liga 2026"
 seoTitulo: "Boca campeón de la Liga 2026: los números del título"
 seoDescripcion: "Boca ganó la Tabla Anual 2026 con 63 puntos gracias a un gol de Enner Valencia ante Defensa y Justicia. Los números del campeón: 17 triunfos y apenas 3 derrotas."
