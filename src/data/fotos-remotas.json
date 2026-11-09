@@ -225,9 +225,9 @@
     "buscar:blue gas flame stove",
     "buscar:gas meter"
   ],
-  "economia-billetera-archivo.jpg": [
-    "buscar:empty wallet",
-    "buscar:open wallet",
-    "buscar:grocery receipt"
+  "economia-caja-super-archivo.jpg": [
+    "buscar:supermarket checkout",
+    "buscar:cash register supermarket",
+    "buscar:greengrocer market stall"
   ]
 }
