@@ -227,11 +227,6 @@
     "buscar:art exhibition gallery paintings visitors",
     "buscar:art gallery paintings"
   ],
-  "bpa-monte-buey-siembra-directa.jpg": [
-    "buscar:siembra directa",
-    "buscar:no-till farming",
-    "buscar:soybean field Argentina"
-  ],
   "papa-leon-xiv-cordoba-visita-papal.jpg": [
     "pagina:https://www.cba.gov.ar/visita-papal/",
     "buscar:Catedral de Córdoba Argentina"
@@ -262,5 +257,6 @@
   "turismo-cordoba-cabildo-archivo.jpg": [
     "buscar:Cabildo de Córdoba Argentina",
     "buscar:Paseo del Buen Pastor Córdoba"
-  ]
+  ],
+  "bpa-monte-buey-entrega-aportes.jpg": "https://img.cordobainteriorinforma.com/2026/11/monte-buey-dos-scaled.jpg"
 }

@@ -6,8 +6,8 @@ etiquetas: [agro, gobierno, economia]
 localidad: monte-buey
 destacada: true
 fecha: 2026-11-08T13:00:00-03:00
-foto: ./img/bpa-monte-buey-siembra-directa.jpg
-fotoAlt: "Lote sembrado en siembra directa"
+foto: ./img/bpa-monte-buey-entrega-aportes.jpg
+fotoAlt: "Entrega de aportes por Buenas Prácticas Agropecuarias en Monte Buey"
 seoTitulo: "Monte Buey: $57 millones para productores por Buenas Prácticas"
 seoDescripcion: "En la Fiesta Nacional de la Siembra Directa, en Monte Buey, Córdoba entregó $57 millones a 105 productores de Marcos Juárez y Unión por Buenas Prácticas Agropecuarias."
 ---
