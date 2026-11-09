@@ -215,19 +215,19 @@
     "pagina:https://www.diariodemexico.com/escena/sauron-regresa-prime-video-confirma-fecha-estreno-revela-primera-imagen-los-anillos-poder-temporada-3",
     "pagina:https://vandal.elespanol.com/random/ya-es-oficial-los-anillos-de-poder-ya-tiene-fecha-de-estreno-para-su-temporada-3-en-prime-video-y-desvela-su-primera-imagen/41992.html"
   ],
-  "economia-supermercado-archivo.jpg": [
-    "buscar:supermarket aisle shelves",
-    "buscar:supermercado góndola",
-    "buscar:supermarket shopping cart aisle"
-  ],
   "economia-hornalla-gas-archivo.jpg": [
     "buscar:gas stove burner flame",
     "buscar:blue gas flame stove",
     "buscar:gas meter"
   ],
-  "economia-caja-super-archivo.jpg": [
-    "buscar:supermarket checkout",
-    "buscar:cash register supermarket",
-    "buscar:greengrocer market stall"
+  "economia-super-argentina-archivo.jpg": [
+    "buscar:supermercado Coto interior",
+    "buscar:supermercado Buenos Aires góndola",
+    "buscar:Supermercados Día Argentina"
+  ],
+  "economia-verduleria-archivo.jpg": [
+    "buscar:verdulería Buenos Aires",
+    "buscar:feria barrial Buenos Aires",
+    "buscar:Mercado Central de Buenos Aires"
   ]
 }
