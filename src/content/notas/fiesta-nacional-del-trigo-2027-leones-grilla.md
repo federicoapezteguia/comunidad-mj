@@ -1,5 +1,5 @@
 ---
-titulo: "Fiesta Nacional del Trigo 2027: Ulises Bueno, el Chaqueño, Coti y Prisma, en la grilla de Leones"
+titulo: "Fiesta Nacional del Trigo 2027: Ulises Bueno, el Chaqueño, Coti y Los Caligaris, en la grilla de Leones"
 bajada: "La 71ª edición será del 5 al 7 de febrero, en el fin de semana largo de Carnaval. Habrá una noche de cuarteto, otra de folclore y un cierre con la elección de la Reina, Coti, Los Caligaris y la banda marcosjuarense Prisma."
 seccion: musica
 etiquetas: [shows, eventos, folclore]
@@ -8,7 +8,7 @@ fecha: 2026-11-06T10:00:00-03:00
 foto: ./img/fiesta-nacional-trigo-2027-presentacion-grilla.jpg
 fotoAlt: "Presentación de la 71ª Fiesta Nacional del Trigo en Leones"
 seoTitulo: "Fiesta Nacional del Trigo 2027 en Leones: grilla completa"
-seoDescripcion: "Grilla de la 71ª Fiesta Nacional del Trigo en Leones, del 5 al 7 de febrero de 2027: Ulises Bueno, Chaqueño Palavecino, Coti, Los Caligaris y Prisma."
+seoDescripcion: "Grilla de la 71ª Fiesta Nacional del Trigo en Leones, del 5 al 7 de febrero de 2027: Ulises Bueno, Chaqueño Palavecino, Coti, Los Caligaris y más."
 ---
 
 **Leones** ya tiene la música para su gran fiesta del verano. En un acto abierto al público en el **gimnasio del Club Leones**, los organizadores presentaron la grilla oficial de la **71ª edición de la Fiesta Nacional del Trigo**, que se hará del **5 al 7 de febrero de 2027**, en coincidencia con el fin de semana largo de Carnaval.
