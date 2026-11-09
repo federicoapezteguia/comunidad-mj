@@ -4,7 +4,7 @@ bajada: "En su primer discurso en el país, el Papa habló de trabajo, democraci
 seccion: nacionales
 etiquetas: [religion, politica, economia]
 fecha: 2026-11-09T09:00:00-03:00
-foto: ./img/leon-xiv-llegada-argentina.jpg
+foto: ./img/papa-leon-xiv-palacio-libertad-discurso.jpg
 fotoAlt: "El papa León XIV durante su discurso en el Palacio Libertad"
 seoTitulo: "Mensaje de León XIV sobre la economía: claves y reacciones"
 seoDescripcion: "Claves del primer discurso de León XIV en la Argentina: economía al servicio de la persona, límites del poder y diálogo. Qué dijeron Milei y los gobernadores."
