@@ -5,10 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          for id in 6w-cQ7Y7lvY q_81r0v6Np0 XzKgA9hQgyU d51aawbmaXQ pWEeoTUfz0c HTKiaAlDLtY H0KRijmmll4 ADQvpT81GmY 82iOeexFBeo XQstklKpyHQ G1jTt90jf38 lWyxvkRD3AY Cx1OZoxrfGU NcyEsBoZso0 eFO0UxNzyZM TzNuLVaveEQ LGYKj8CpTs4 MhBEn0C1uuo F5KAflulFH4 OTSxrGLOnuo ogJaQ266BcE HzU_qbcrU3Y P2HM1o2By1Q x_NBe7xPYiE; do
+          for id in D3xS-rVqT0k E5wW3NW30Ag odjtaHwcFow I4CFQtjcb04 oau8HgOotmg E0s95hiAq3g rLDjyReqDlM vmp6i6ain3E ksBV3i6ofpY 6MbE2kzOXzM -mbn1cW1Xn4 JSDtb5WZKG4 p1sptvjt5mg FSzpMONeENQ wA0RnXA611E E9_f3YccarQ Biy7kIO0qLs Qh0XbmE4U80 TDkZtdgoU-4 nT9FHgGm9Xo izzDI_VOJ2A 7AWlYx8cVDs OsF0622Cdo4 MXBcha4QxJE CgD2vLrL16U C_bSLeTr6gw XOZBqJK1DAE TUIuaFydFw8 Hs-6vrBm6GE agbfKT3HW0w h0-fCma6ctg Lm2jdrok30Q; do
             echo "$id | $(curl -s "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=$id&format=json" | grep -oE '"title":"[^"]*"')"
-          done
-          for q in "Manu Ansaldi melodía eterna Comunidad FAN" "Cami Oderda Juegos del Hambre"; do
-            echo "--- $q"
-            curl -sL -G --data-urlencode "search_query=$q" https://www.youtube.com/results | grep -oE '"videoId":"[A-Za-z0-9_-]{11}"' | awk '!s[$0]++' | head -6 | while read l; do id=$(echo $l | cut -d'"' -f4); echo "$id | $(curl -s "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=$id&format=json" | grep -oE '"(title|author_name)":"[^"]*"' | tr '\n' ' ')"; done
           done
