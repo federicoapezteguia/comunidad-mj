@@ -1,0 +1,16 @@
+name: buscar-videos
+on: workflow_dispatch
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for t in videos streams shorts; do
+            echo "=== $t"
+            curl -sL -H 'Accept-Language: es' "https://www.youtube.com/@ComunidadFAN/$t" | grep -oE '"videoId":"[A-Za-z0-9_-]{11}"[^}]{0,400}?"title":\{"runs":\[\{"text":"[^"]*"|"videoId":"[A-Za-z0-9_-]{11}"|"title":\{"runs":\[\{"text":"[^"]{5,200}"' | head -300
+          done
+          echo "=== search"
+          for q in "Cami Oderda Comunidad FAN" "Manu Ansaldi Comunidad FAN" "Silvina Rinaldi Comunidad FAN" "En Primera Fibra Comunidad FAN"; do
+            echo "--- $q"
+            curl -sL -G --data-urlencode "search_query=$q" https://www.youtube.com/results | grep -oE '"videoId":"[A-Za-z0-9_-]{11}"|"title":\{"runs":\[\{"text":"[^"]{5,200}"' | awk '!s[$0]++' | head -16
+          done
