@@ -5,6 +5,7 @@ seccion: on-demand
 volanta: "On Demand"
 etiquetas: [entrevistas, salud]
 fecha: 2026-10-27T11:00:00-03:00
+youtube: "lWyxvkRD3AY"
 foto: ./img/silvina-rinaldi-comunidad-fan.webp
 fotoAlt: "La doctora Silvina Rinaldi en el estudio de Comunidad FAN"
 seoTitulo: "Fertilidad tras el cáncer de mama: qué opciones existen"

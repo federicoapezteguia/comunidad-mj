@@ -5,6 +5,7 @@ seccion: on-demand
 volanta: "On Demand"
 etiquetas: [entrevistas, estrenos]
 fecha: 2026-10-28T07:35:00-03:00
+youtube: "G1jTt90jf38"
 foto: ./img/en-primera-fibra-comunidad-fan.webp
 fotoAlt: "En Primera Fibra, el nuevo ciclo de entrevistas de Comunidad FAN y Express"
 seoTitulo: "En Primera Fibra: el nuevo ciclo de entrevistas de Comunidad FAN"
