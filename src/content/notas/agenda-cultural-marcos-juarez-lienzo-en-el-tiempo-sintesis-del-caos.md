@@ -5,8 +5,8 @@ seccion: marcos-juarez
 etiquetas: [cultura, eventos, municipio]
 localidad: marcos-juarez
 fecha: 2026-10-27T22:15:00-03:00
-foto: ./img/muestra-arte-museo-archivo.jpg
-fotoAlt: "Afiche del cierre de la muestra El lienzo en el tiempo en el Museo de Marcos Juárez"
+foto: ./img/marcos-juarez-vista-aerea-atardecer.jpg
+fotoAlt: "Vista aérea de Marcos Juárez al atardecer"
 seoTitulo: "Agenda cultural en Marcos Juárez: muestras del 30/10 al 1/11"
 seoDescripcion: "Cierre de \"El lienzo en el tiempo\" en el Museo el viernes 30 a las 20 y muestra de joyería cerámica \"La síntesis del caos\" el 31/10 y el 1/11 en la Casa de la Cultura."
 ---

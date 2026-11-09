@@ -4,8 +4,8 @@ bajada: "Más de 200 músicos participan de la visita. Abel Pintos canta en Clay
 seccion: espectaculos
 etiquetas: [famosos, religion, shows]
 fecha: 2026-11-07T17:00:00-03:00
-foto: ./img/abel-pintos-cantante.jpg
-fotoAlt: "Abel Pintos en vivo"
+foto: ./img/papa-leon-xiv-visita-cordoba.jpg
+fotoAlt: "El papa León XIV saluda a los fieles"
 seoTitulo: "Los artistas que le cantan al papa León XIV en la Argentina"
 seoDescripcion: "Abel Pintos, Jairo, Jorge Rojas, Luciano Pereyra y Nahuel Pennisi, entre los más de 200 músicos que acompañan la visita del papa León XIV."
 ---

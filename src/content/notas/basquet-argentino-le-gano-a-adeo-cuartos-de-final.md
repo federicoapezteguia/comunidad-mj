@@ -5,8 +5,8 @@ seccion: deportes
 etiquetas: [basquet, deportes]
 localidad: marcos-juarez
 fecha: 2026-11-07T11:00:00-03:00
-foto: ./img/basquet-partido-archivo.jpg
-fotoAlt: "Partido de básquet"
+foto: ./img/club-argentino-sede-marcos-juarez.jpg
+fotoAlt: "Sede del Club Argentino de Marcos Juárez"
 seoTitulo: "Argentino 96-75 Adeo: ganó el primer juego de cuartos"
 seoDescripcion: "Argentino de Marcos Juárez venció 96 a 75 a Adeo de Cañada de Gómez en el primer partido de cuartos de final y el viernes 13 puede cerrar la serie."
 ---
