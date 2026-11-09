@@ -5,7 +5,7 @@ seccion: musica
 etiquetas: [shows, cuarteto, eventos]
 localidad: cordoba-capital
 fecha: 2026-11-09T01:00:00-03:00
-foto: ./img/festival-bum-bum-2027-grilla.jpg
+foto: ./img/festival-bum-bum-2027-grilla-completa.jpg
 fotoAlt: "Grilla del Festival Bum Bum 2027"
 seoTitulo: "Festival Bum Bum 2027 en el Kempes: grilla, fecha y entradas"
 seoDescripcion: "El Festival Bum Bum 2027 será el sábado 16 de enero en el Kempes con La Mona Jiménez, Andrés Calamaro y Paulo Londra. Grilla completa y precios."
