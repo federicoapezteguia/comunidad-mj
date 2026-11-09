@@ -5,8 +5,8 @@ seccion: cordoba
 etiquetas: [turismo, economia, religion]
 localidad: cordoba-capital
 fecha: 2026-11-08T12:00:00-03:00
-foto: ./img/efecto-papa-turismo-cordoba.jpg
-fotoAlt: "Centro histórico de la ciudad de Córdoba"
+foto: ./img/turismo-cordoba-cabildo-archivo.jpg
+fotoAlt: "Cabildo de la ciudad de Córdoba"
 seoTitulo: "Efecto Papa en Córdoba: hoteles y alquileres al límite"
 seoDescripcion: "La visita del papa León XIV moviliza el turismo en Córdoba: alquileres temporarios casi agotados en el centro y expectativa en comercio y gastronomía."
 ---

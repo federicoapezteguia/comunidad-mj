@@ -129,7 +129,6 @@
     "buscar:Ciudad Universitaria Universidad Nacional de Córdoba",
     "buscar:Pabellón Argentina Universidad Nacional de Córdoba"
   ],
-  "el-lienzo-en-el-tiempo-museo-marcos-juarez.jpg": "https://www.mmj.gob.ar/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-27-at-09.48.20.jpeg",
   "transito-calles-doble-mano-marcos-juarez.jpg": [
     "buscar:Marcos Juárez Córdoba calle",
     "buscar:Marcos Juárez Córdoba"
@@ -223,7 +222,6 @@
   "inflacion-octubre-supermercado.webp": "https://zonales.com/wp-content/uploads/2026/02/FotoJet-2026-02-12T190833.322.jpg.webp",
   "fin-de-mes-encuesta.jpg": "https://media.minutouno.com/p/f338b9c1bf19e6fd740e81a2d8330fe6/adjuntos/150/imagenes/042/209/0042209736/llegar-fin-mes.jpg",
   "cordoba-exportaciones-2026-campo.jpg": "https://blog.adblickagro.com/wp-content/uploads/2017/07/03-672x372.jpg",
-  "castraciones-7000-marcos-juarez.jpg": "https://www.mmj.gob.ar/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-06-at-11.17.40.jpeg",
   "promuvi-vivienda-267-marcos-juarez.jpg": "https://www.mmj.gob.ar/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-06-at-09.04.38.jpeg",
   "noche-museos-voces-y-trazos-marcos-juarez.jpg": [
     "buscar:art exhibition gallery paintings visitors",
@@ -234,19 +232,11 @@
     "buscar:no-till farming",
     "buscar:soybean field Argentina"
   ],
-  "basquet-argentino-adeo-cuartos.jpg": [
-    "buscar:basketball game Argentina",
-    "buscar:basketball game arena"
-  ],
   "papa-leon-xiv-cordoba-visita-papal.jpg": [
     "pagina:https://www.cba.gov.ar/visita-papal/",
     "buscar:Catedral de Córdoba Argentina"
   ],
   "premios-cordoba-en-el-mundo-2026.jpg": "https://media.losagusti.com/fotos/2026/6e256be3-966c-4630-97d1-2abc6444afcc/original.jpg",
-  "efecto-papa-turismo-cordoba.jpg": [
-    "buscar:Catedral de Córdoba Argentina",
-    "buscar:Córdoba Argentina Plaza San Martín"
-  ],
   "leon-xiv-llegada-argentina.jpg": [
     "pagina:https://mdzol.com/politica/2026/11/8/leon-xiv-llego-a-la-argentina-y-es-recibido-por-javier-milei-en-aeroparque-1993967.html",
     "pagina:https://www.ewtnnews.com/es/vaticano/papa-leon-xiv-visita-uruguay-argentina",
@@ -260,12 +250,31 @@
     "buscar:Ronnie Wood live",
     "buscar:Ronnie Wood"
   ],
-  "abel-pintos-en-vivo.jpg": [
-    "buscar:Abel Pintos",
-    "buscar:Abel Pintos en vivo"
-  ],
   "festival-bum-bum-2027-kempes.jpg": [
     "buscar:Andrés Calamaro concierto",
     "buscar:Andrés Calamaro"
+  ],
+  "castraciones-perros-gatos-archivo.jpg": [
+    "buscar:veterinarian examining dog",
+    "buscar:veterinary clinic dog",
+    "buscar:mixed-breed dog"
+  ],
+  "basquet-partido-archivo.jpg": [
+    "buscar:Liga Nacional de Básquet Argentina",
+    "buscar:basketball game FIBA Americas",
+    "buscar:basketball layup game"
+  ],
+  "turismo-cordoba-cabildo-archivo.jpg": [
+    "buscar:Cabildo de Córdoba Argentina",
+    "buscar:Paseo del Buen Pastor Córdoba"
+  ],
+  "abel-pintos-cantante.jpg": [
+    "buscar:Abel Pintos cantante",
+    "buscar:Abel Pintos concierto",
+    "buscar:Jorge Rojas cantante"
+  ],
+  "muestra-arte-museo-archivo.jpg": [
+    "buscar:museum exhibition paintings people",
+    "buscar:art museum visitors paintings wall"
   ]
 }

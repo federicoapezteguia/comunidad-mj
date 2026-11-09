@@ -6,8 +6,8 @@ etiquetas: [municipio, salud, sociedad]
 localidad: marcos-juarez
 destacada: true
 fecha: 2026-11-06T12:30:00-03:00
-foto: ./img/castraciones-7000-marcos-juarez.jpg
-fotoAlt: "Jornada de castración de mascotas en Marcos Juárez"
+foto: ./img/castraciones-perros-gatos-archivo.jpg
+fotoAlt: "Perro en una consulta veterinaria"
 seoTitulo: "Marcos Juárez superó las 7.000 castraciones de perros y gatos"
 seoDescripcion: "El programa municipal de castraciones de Marcos Juárez ya superó los 7.000 perros y gatos esterilizados en distintos barrios de la ciudad."
 ---
