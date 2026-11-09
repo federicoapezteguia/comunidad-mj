@@ -225,9 +225,9 @@
     "buscar:blue gas flame stove",
     "buscar:gas meter"
   ],
-  "economia-monedas-pesos-archivo.jpg": [
-    "buscar:Argentine peso coins",
-    "buscar:monedas pesos argentinos",
-    "buscar:coins wallet money"
+  "economia-billetera-archivo.jpg": [
+    "buscar:empty wallet",
+    "buscar:open wallet",
+    "buscar:grocery receipt"
   ]
 }
