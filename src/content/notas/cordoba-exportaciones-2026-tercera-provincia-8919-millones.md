@@ -4,7 +4,7 @@ bajada: "Entre enero y septiembre vendió al exterior US$8.919 millones, el 11,5
 seccion: cordoba
 etiquetas: [economia, agro]
 fecha: 2026-11-03T19:46:00-03:00
-foto: ./img/cosecha-maiz-cordoba-archivo.jpg
+foto: ./img/cordoba-exportaciones-2026-campo.jpg
 fotoAlt: "Cosecha de maíz en un campo (imagen de archivo)"
 seoTitulo: "Córdoba exportó US$8.919 millones en nueve meses"
 seoDescripcion: "Córdoba exportó US$8.919 millones entre enero y septiembre de 2026 y es la tercera provincia exportadora. Maíz, maní y trigo, y Brasil como principal destino."
