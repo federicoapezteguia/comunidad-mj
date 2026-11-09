@@ -5,12 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          for t in videos streams shorts; do
-            echo "=== $t"
-            curl -sL -H 'Accept-Language: es' "https://www.youtube.com/@ComunidadFAN/$t" | grep -oE '"videoId":"[A-Za-z0-9_-]{11}"[^}]{0,400}?"title":\{"runs":\[\{"text":"[^"]*"|"videoId":"[A-Za-z0-9_-]{11}"|"title":\{"runs":\[\{"text":"[^"]{5,200}"' | head -300
+          for id in Cx1OZoxrfGU NcyEsBoZso0 eFO0UxNzyZM TzNuLVaveEQ LGYKj8CpTs4 MhBEn0C1uuo F5KAflulFH4 OTSxrGLOnuo ogJaQ266BcE lWyxvkRD3AY godTaLM3dNY -mbn1cW1Xn4 JSDtb5WZKG4 p1sptvjt5mg FSzpMONeENQ wA0RnXA611E; do
+            h=$(curl -sL -H 'Accept-Language: es' "https://www.youtube.com/watch?v=$id")
+            t=$(echo "$h" | grep -oE '<meta name="title" content="[^"]*"' | head -1)
+            d=$(echo "$h" | grep -oE '"(uploadDate|startDate)":"[^"]*"' | head -2 | tr '\n' ' ')
+            k=$(echo "$h" | grep -oiE 'oderda|ansaldi|rinaldi|primera fibra|express' | sort | uniq -c | tr '\n' ' ')
+            echo "$id | $t | $d | $k"
           done
-          echo "=== search"
-          for q in "Cami Oderda Comunidad FAN" "Manu Ansaldi Comunidad FAN" "Silvina Rinaldi Comunidad FAN" "En Primera Fibra Comunidad FAN"; do
-            echo "--- $q"
-            curl -sL -G --data-urlencode "search_query=$q" https://www.youtube.com/results | grep -oE '"videoId":"[A-Za-z0-9_-]{11}"|"title":\{"runs":\[\{"text":"[^"]{5,200}"' | awk '!s[$0]++' | head -16
-          done
+          echo "--- Silvina"
+          curl -sL -G --data-urlencode "search_query=Silvina Rinaldi Proar Comunidad FAN" https://www.youtube.com/results | grep -oE '"videoId":"[A-Za-z0-9_-]{11}"|"title":\{"runs":\[\{"text":"[^"]{5,200}"' | awk '!s[$0]++' | head -8
+          echo "--- Primera Fibra"
+          curl -sL -G --data-urlencode "search_query=\"En Primera Fibra\" Express" https://www.youtube.com/results | grep -oE '"videoId":"[A-Za-z0-9_-]{11}"|"title":\{"runs":\[\{"text":"[^"]{5,200}"' | awk '!s[$0]++' | head -8
