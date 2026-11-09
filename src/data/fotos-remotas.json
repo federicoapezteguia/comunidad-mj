@@ -214,5 +214,20 @@
     "pagina:https://35milimetros.es/prime-video-estreno-temporada-3-los-anillos-de-poder/",
     "pagina:https://www.diariodemexico.com/escena/sauron-regresa-prime-video-confirma-fecha-estreno-revela-primera-imagen-los-anillos-poder-temporada-3",
     "pagina:https://vandal.elespanol.com/random/ya-es-oficial-los-anillos-de-poder-ya-tiene-fecha-de-estreno-para-su-temporada-3-en-prime-video-y-desvela-su-primera-imagen/41992.html"
+  ],
+  "economia-supermercado-archivo.jpg": [
+    "buscar:supermarket aisle shelves",
+    "buscar:supermercado góndola",
+    "buscar:supermarket shopping cart aisle"
+  ],
+  "economia-hornalla-gas-archivo.jpg": [
+    "buscar:gas stove burner flame",
+    "buscar:blue gas flame stove",
+    "buscar:gas meter"
+  ],
+  "economia-monedas-pesos-archivo.jpg": [
+    "buscar:Argentine peso coins",
+    "buscar:monedas pesos argentinos",
+    "buscar:coins wallet money"
   ]
 }

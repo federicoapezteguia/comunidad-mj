@@ -89,7 +89,6 @@ const jsonLd = [
   )}
 
   <section class="wrap bloque bloque-mj" aria-labelledby="h-mj">
-    <div class="fondo-mj" aria-hidden="true"><IngresoMJ /></div>
     <div class="con-lateral">
       <div class="principal">
         <h2 id="h-mj" class="sec-h"><a href="/marcos-juarez/">{SECCIONES['marcos-juarez'].nombre}</a><a href="/marcos-juarez/" class="mas">Ver todas</a></h2>
@@ -140,6 +139,10 @@ const jsonLd = [
         <div class="principal">
           <h2 id="h-nac" class="sec-h"><a href="/nacionales/">{SECCIONES.nacionales.nombre}</a><a href="/nacionales/" class="mas">Ver todas</a></h2>
           <div class="lista-comp">{nac.map((n) => <TarjetaNota nota={n} variante="compacta" />)}</div>
+          <a href="/marcos-juarez/" class="caja-mj" aria-label="Noticias de Marcos Juárez">
+            <IngresoMJ />
+            <span class="caja-mj-txt">Noticias de Marcos Juárez <span aria-hidden="true">→</span></span>
+          </a>
         </div>
         <div class="lateral"><Publicidad espacio="lateral" orden={1} /><MasLeido /></div>
       </div>
@@ -194,9 +197,19 @@ const jsonLd = [
   /* Símbolo del ingreso a Marcos Juárez de fondo: ocupa todo el ancho de la pantalla para que se vea en los márgenes
      y entre las notas, con el neón bien encendido */
   .bloque-mj { position: relative; isolation: isolate; }
-  .fondo-mj { position: absolute; z-index: -1; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100vw; max-width: 1900px; pointer-events: none; }
-  .fondo-mj :global(.ingreso-mj) { max-width: none; opacity: 0.25; }
-  @media (max-width: 899px) { .fondo-mj { display: none; } }
+  .con-lateral > .principal:has(.caja-mj) { display: flex; flex-direction: column; }
+  .caja-mj {
+    flex: 1; min-height: 240px; margin-top: 32px; padding: 28px 32px 22px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+    border: 1px solid #e6d9f3; border-radius: 18px; text-decoration: none;
+    background: radial-gradient(ellipse at 50% 100%, #fde6fb 0%, #fafafa 70%);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .caja-mj :global(.ingreso-mj) { max-width: 560px; opacity: 0.85; }
+  .caja-mj:hover { border-color: var(--fucsia); box-shadow: 0 10px 30px rgba(120, 20, 160, 0.12); }
+  .caja-mj-txt { font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--violeta); }
+  .caja-mj:hover .caja-mj-txt { color: var(--fucsia-oscuro); }
+  @media (max-width: 899px) { .caja-mj { display: none; } }
   /* Marcos Juárez: dos filas alineadas entre columnas (la segunda fila arranca a la misma altura en todas) */
   .bloque-mj :global([aria-label='Notas de Marcos Juárez'] .car-lista) { grid-template-rows: auto auto; row-gap: 28px; }
   .col-mj { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 28px; }

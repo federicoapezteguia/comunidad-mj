@@ -4,8 +4,8 @@ bajada: "Las prepagas aumentan entre 1,7% y 2,95%, los alquileres se ajustan seg
 seccion: nacionales
 etiquetas: [economia]
 fecha: 2026-11-03T19:36:00-03:00
-foto: ./img/inflacion-septiembre-2026-indec.jpg
-fotoAlt: "Billete argentino de 100.000 pesos"
+foto: ./img/economia-hornalla-gas-archivo.jpg
+fotoAlt: "Hornalla de gas encendida"
 seoTitulo: "Aumentos de noviembre 2026: prepagas, alquileres y gas"
 seoDescripcion: "Todos los aumentos de noviembre 2026: prepagas entre 1,7% y 2,95%, alquileres según contrato y gas 2,17%. Qué cambia para las familias del interior."
 ---
