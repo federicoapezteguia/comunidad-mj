@@ -1,0 +1,17 @@
+name: dns-check
+on: workflow_dispatch
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for d in comunidadmj.com.ar www.comunidadmj.com.ar comunidad.rokmarketing.com; do
+            echo "A $d (8.8.8.8): $(dig +short A $d @8.8.8.8 | tr '\n' ' ')"
+            echo "A $d (1.1.1.1): $(dig +short A $d @1.1.1.1 | tr '\n' ' ')"
+          done
+          echo "NS comunidadmj.com.ar: $(dig +short NS comunidadmj.com.ar @8.8.8.8 | tr '\n' ' ')"
+          echo "NS en NIC (a.lactld.org): $(dig +norec NS comunidadmj.com.ar @a.lactld.org | grep -E 'IN\s+NS' | awk '{print $5}' | tr '\n' ' ')"
+          echo "--- HTTP"
+          curl -sI --max-time 15 http://comunidadmj.com.ar | head -5 || true
+          echo "--- HTTPS"
+          curl -sI --max-time 15 https://comunidadmj.com.ar 2>&1 | head -5 || true
