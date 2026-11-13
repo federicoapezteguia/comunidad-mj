@@ -5,13 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          for d in comunidadmj.com.ar www.comunidadmj.com.ar comunidad.rokmarketing.com; do
-            echo "A $d (8.8.8.8): $(dig +short A $d @8.8.8.8 | tr '\n' ' ')"
-            echo "A $d (1.1.1.1): $(dig +short A $d @1.1.1.1 | tr '\n' ' ')"
+          echo "STATUS 8.8.8.8: $(dig comunidadmj.com.ar A @8.8.8.8 | grep -oE 'status: [A-Z]+')"
+          echo "STATUS 1.1.1.1: $(dig comunidadmj.com.ar A @1.1.1.1 | grep -oE 'status: [A-Z]+')"
+          AR=$(dig +short NS com.ar @8.8.8.8 | head -1)
+          echo "Servidor de com.ar consultado: $AR"
+          echo "DELEGACION en com.ar:"; dig +norec NS comunidadmj.com.ar @$AR | grep -E 'status:|IN\s+NS' | sed 's/^/   /'
+          echo "A en 8.8.8.8: $(dig +short A comunidadmj.com.ar @8.8.8.8)"
+          for ns in $(dig +norec NS comunidadmj.com.ar @$AR | grep -E 'IN\s+NS' | awk '{print $5}' | sort -u); do
+            echo "Consulta directa a $ns: A=$(dig +short A comunidadmj.com.ar @$ns | tr '\n' ' ') www=$(dig +short A www.comunidadmj.com.ar @$ns | tr '\n' ' ')"
           done
-          echo "NS comunidadmj.com.ar: $(dig +short NS comunidadmj.com.ar @8.8.8.8 | tr '\n' ' ')"
-          echo "NS en NIC (a.lactld.org): $(dig +norec NS comunidadmj.com.ar @a.lactld.org | grep -E 'IN\s+NS' | awk '{print $5}' | tr '\n' ' ')"
-          echo "--- HTTP"
-          curl -sI --max-time 15 http://comunidadmj.com.ar | head -5 || true
-          echo "--- HTTPS"
-          curl -sI --max-time 15 https://comunidadmj.com.ar 2>&1 | head -5 || true
+          echo "WHOIS:"; whois comunidadmj.com.ar 2>/dev/null | grep -iE 'domain|status|nserver|created|expire|registrant' | head -12 | sed 's/^/   /'
