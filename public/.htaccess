@@ -43,3 +43,56 @@ Options -Indexes
     Require all denied
   </IfModule>
 </FilesMatch>
+
+# ============================================================
+# Página de error propia
+# ============================================================
+ErrorDocument 404 /404.html
+
+# ============================================================
+# Compresión (páginas y textos viajan mucho más livianos)
+# ============================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml application/manifest+json
+</IfModule>
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/xml
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml application/rss+xml
+</IfModule>
+
+# ============================================================
+# Caché del navegador
+# Las fotos y el CSS/JS llevan un código único en el nombre:
+# si cambian, cambia el nombre, así que se pueden guardar un año.
+# El HTML no se guarda, para que las notas nuevas aparezcan enseguida.
+# ============================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 week"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType application/rss+xml "access plus 1 hour"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|avif|jpg|jpeg|png|gif|svg|css|js|woff2|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(xml|txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
