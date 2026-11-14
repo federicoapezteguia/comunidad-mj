@@ -6,7 +6,7 @@ etiquetas: [obras, municipio, clima]
 localidad: marcos-juarez
 destacada: true
 fecha: 2026-11-13T16:00:00-03:00
-foto: ./img/laguna-del-panal-dragado-marcos-juarez.jpg
+foto: ./img/laguna-del-panal-excavadora-marcos-juarez.jpg
 fotoAlt: "Máquinas trabajando en la limpieza y el dragado de la laguna del Panal, en Marcos Juárez"
 seoTitulo: "Dragado de la laguna del Panal en Marcos Juárez: cómo avanza"
 seoDescripcion: "Marcos Juárez avanza con el dragado de la laguna del Panal: se removerán 17.450 m³ de sedimento para mejorar el drenaje de la ciudad en las lluvias fuertes."
@@ -23,6 +23,8 @@ Los números dan una idea del tamaño de la tarea:
 - **14.541 metros cuadrados** de superficie a intervenir.
 - **1,20 metros** de profundidad promedio de excavación.
 - Unos **17.450 metros cúbicos** de material a remover, el equivalente a más de 1.700 viajes de camión.
+
+![Vista general de la laguna del Panal durante los trabajos de dragado](./img/laguna-del-panal-dragado-marcos-juarez.jpg)
 
 ## Para qué sirve
 
