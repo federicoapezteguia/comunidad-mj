@@ -2,10 +2,9 @@
 #
 # Configuración (una sola vez), en GitHub → Settings → Secrets and variables → Actions:
 #   Secrets:   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
-#   Variables: SITE_URL     (ej. https://prueba.tudominio.com.ar)
-#              STAGING      (true mientras sea el subdominio de prueba; false al migrar)
-#              FTP_DIR      (carpeta destino en el hosting, ej. /  o  /public_html/)
-#              FTP_PROTOCOL (ftps o ftp; por defecto ftps)
+#   Variables: FTP_PROTOCOL (ftps o ftp; por defecto ftps)
+#   El dominio (www.comunidadfanmj.com.ar), STAGING=false y la carpeta destino
+#   (/comunidadfanmj.com.ar/) están fijados abajo, en este mismo archivo.
 
 name: Publicar sitio
 
@@ -69,8 +68,9 @@ jobs:
       - name: Generar el sitio
         run: npm run build
         env:
-          SITE_URL: ${{ vars.SITE_URL }}
-          STAGING: ${{ vars.STAGING }}
+          # Dominio definitivo (migrado el 13/11/2026)
+          SITE_URL: https://www.comunidadfanmj.com.ar
+          STAGING: 'false'
 
       - name: Subir al hosting por FTP
         if: ${{ env.FTP_SERVER != '' }}
@@ -81,4 +81,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
           local-dir: ./dist/
-          server-dir: ${{ vars.FTP_DIR || './' }}
+          server-dir: /comunidadfanmj.com.ar/
