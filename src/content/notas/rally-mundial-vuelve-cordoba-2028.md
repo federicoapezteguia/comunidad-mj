@@ -4,8 +4,8 @@ bajada: "Llaryora lo anunció junto a la FIA y al ACA después de nueve años si
 seccion: cordoba
 etiquetas: [automovilismo, deportes, turismo]
 fecha: 2026-11-13T18:00:00-03:00
-foto: ./img/rally-argentina-cordoba-wrc.jpg
-fotoAlt: "Un auto del Rally Mundial en los caminos de tierra de las sierras de Córdoba"
+foto: ./img/rally-argentina-el-condor-hyundai.jpg
+fotoAlt: "Un Hyundai del Rally Mundial pasa frente al público en las sierras de Córdoba"
 seoTitulo: "El Rally Mundial vuelve a Córdoba en 2028"
 seoDescripcion: "Córdoba será sede del WRC en 2028. Llaryora, la FIA y el ACA confirmaron el regreso del Rally Argentina, con una carrera candidata en marzo de 2027."
 ---
@@ -31,8 +31,6 @@ La historia del rally en la provincia arranca en **1984**, y durante más de tre
 El presidente de la FIA, **Mohammed Ben Sulayem**, aseguró que la Argentina es “un país con el deporte motor en la sangre” y recordó que en su visita a Córdoba de este año se había comprometido a traer de vuelta la competencia. El vicepresidente deportivo del organismo, **Malcolm Wilson**, habló de la “historia increíble” del país en el campeonato.
 
 Desde la Agencia Córdoba Deportes, **Agustín Calleri** destacó que la gestión empezó hace más de dos años, cuando la Provincia se acercó al promotor con el objetivo concreto de recuperar la fecha.
-
-El presidente **Javier Milei** también se sumó a la celebración y compartió en sus redes el video institucional de la FIA con el anuncio.
 
 ## Más que una carrera
 
