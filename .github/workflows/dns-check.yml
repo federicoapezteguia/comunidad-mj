@@ -6,7 +6,11 @@ jobs:
     steps:
       - run: |
           for ns in dns1.raiolanetworks.es dns2.raiolanetworks.es dns3.raiolanetworks.es; do
-            echo "R $ns ($(dig +short A $ns | head -1)): $(dig comunidadfanmj.com.ar SOA @$ns | grep -oE 'status: [A-Z]+'), flags: $(dig comunidadfanmj.com.ar SOA @$ns | grep -oE 'flags: [a-z ]+')"
+            echo "R $ns: $(dig comunidadfanmj.com.ar A @$ns | grep -oE 'status: [A-Z]+') raiz=$(dig +short A comunidadfanmj.com.ar @$ns | tr '\n' ' ') www=$(dig +short A www.comunidadfanmj.com.ar @$ns | tr '\n' ' ')"
           done
-          echo "R rokmarketing NS: $(dig +short NS rokmarketing.com @8.8.8.8 | tr '\n' ' ')"
-          echo "R ptr 178.211.133.102: $(dig +short -x 178.211.133.102)"
+          for r in 8.8.8.8 1.1.1.1; do echo "R publico $r: $(dig comunidadfanmj.com.ar A @$r | grep -oE 'status: [A-Z]+') raiz=$(dig +short A comunidadfanmj.com.ar @$r | tr '\n' ' ') www=$(dig +short A www.comunidadfanmj.com.ar @$r | tr '\n' ' ')"; done
+          for u in http://comunidadfanmj.com.ar/ https://comunidadfanmj.com.ar/ https://www.comunidadfanmj.com.ar/; do
+            echo "R web $u: $(curl -sS -o /dev/null --max-time 20 -w '%{http_code} -> %{redirect_url}' "$u" 2>&1)"; done
+          echo "R cert: $(echo | openssl s_client -connect www.comunidadfanmj.com.ar:443 -servername www.comunidadfanmj.com.ar 2>/dev/null | openssl x509 -noout -subject -issuer -enddate 2>/dev/null | tr '\n' ' ')"
+          echo "R meta: $(curl -s --max-time 20 https://www.comunidadfanmj.com.ar/ | grep -oE '<meta name="robots"[^>]*>|<link rel="canonical"[^>]*>' | tr '\n' ' ')"
+          echo "R api: $(curl -s --max-time 20 https://www.comunidadfanmj.com.ar/api/encuesta.php | head -c 120)"
