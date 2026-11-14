@@ -1,0 +1,17 @@
+name: ftp-carpetas
+on: workflow_dispatch
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install -y -qq lftp >/dev/null
+      - env:
+          S: ${{ secrets.FTP_SERVER }}
+          U: ${{ secrets.FTP_USERNAME }}
+          P: ${{ secrets.FTP_PASSWORD }}
+          D: ${{ vars.FTP_DIR }}
+          PROTO: ${{ vars.FTP_PROTOCOL }}
+        run: |
+          echo "R FTP_DIR actual: '$D'"
+          echo "R SITE_URL actual: '${{ vars.SITE_URL }}'"
+          lftp -u "$U","$P" -e "set ssl:verify-certificate no; set ftp:ssl-allow yes; cls -1 --dirsfirst /; echo ---; cls -1 -d /*/ ; bye" "$S" 2>&1 | sed 's/^/R /' | head -60
