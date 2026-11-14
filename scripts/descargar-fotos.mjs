@@ -73,7 +73,7 @@ for (const [local, commons] of Object.entries(lista)) {
     if (!url) continue;
     const esCommons = url.includes('wikimedia.org');
     const headers = esCommons
-      ? { 'User-Agent': 'ComunidadFanMJ/1.0 (https://comunidad.rokmarketing.com; sitio de noticias)' }
+      ? { 'User-Agent': 'ComunidadFanMJ/1.0 (https://www.comunidadfanmj.com.ar; sitio de noticias)' }
       : {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',
           Accept: 'image/avif,image/webp,image/*,*/*;q=0.8',
