@@ -5,13 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "STATUS 8.8.8.8: $(dig comunidadmj.com.ar A @8.8.8.8 | grep -oE 'status: [A-Z]+')"
-          echo "STATUS 1.1.1.1: $(dig comunidadmj.com.ar A @1.1.1.1 | grep -oE 'status: [A-Z]+')"
-          AR=$(dig +short NS com.ar @8.8.8.8 | head -1)
-          echo "Servidor de com.ar consultado: $AR"
-          echo "DELEGACION en com.ar:"; dig +norec NS comunidadmj.com.ar @$AR | grep -E 'status:|IN\s+NS' | sed 's/^/   /'
-          echo "A en 8.8.8.8: $(dig +short A comunidadmj.com.ar @8.8.8.8)"
-          for ns in $(dig +norec NS comunidadmj.com.ar @$AR | grep -E 'IN\s+NS' | awk '{print $5}' | sort -u); do
-            echo "Consulta directa a $ns: A=$(dig +short A comunidadmj.com.ar @$ns | tr '\n' ' ') www=$(dig +short A www.comunidadmj.com.ar @$ns | tr '\n' ' ')"
-          done
-          echo "WHOIS:"; whois comunidadmj.com.ar 2>/dev/null | grep -iE 'domain|status|nserver|created|expire|registrant' | head -12 | sed 's/^/   /'
+          for d in comunidadfanmj.com.ar www.comunidadfanmj.com.ar; do echo "A $d: $(dig +short A $d @8.8.8.8 | tr '\n' ' ')"; done
+          for u in http://comunidadfanmj.com.ar/ https://comunidadfanmj.com.ar/ https://www.comunidadfanmj.com.ar/; do
+            echo "--- $u"; curl -sSI --max-time 20 "$u" 2>&1 | grep -iE '^(HTTP|location|server)|curl' ; done
+          echo "--- robots"; curl -s --max-time 20 https://www.comunidadfanmj.com.ar/robots.txt | head -8
+          echo "--- meta"; curl -s --max-time 20 https://www.comunidadfanmj.com.ar/ | grep -oE '<meta name="robots"[^>]*>|<link rel="canonical"[^>]*>|<meta property="og:url"[^>]*>' | head
+          echo "--- sitemap $(curl -s -o /dev/null -w '%{http_code}' https://www.comunidadfanmj.com.ar/sitemap-index.xml)"
+          echo "--- encuesta $(curl -s --max-time 20 'https://www.comunidadfanmj.com.ar/api/encuesta.php' | head -c 200)"
+          echo "--- visitas $(curl -s --max-time 20 'https://www.comunidadfanmj.com.ar/api/visitas.php' | head -c 200)"
+          echo "--- cert"; echo | openssl s_client -connect www.comunidadfanmj.com.ar:443 -servername www.comunidadfanmj.com.ar 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName 2>/dev/null
+          echo "--- staging"; curl -sSI --max-time 20 https://comunidad.rokmarketing.com/ | grep -iE '^(HTTP|location)'
