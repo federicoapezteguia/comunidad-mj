@@ -4,7 +4,7 @@ bajada: "El viernes 20 de noviembre, el autor de “Morrissey” y “La isla de
 seccion: musica
 etiquetas: [shows, eventos]
 localidad: marcos-juarez
-fecha: 2026-11-14T13:00:00-03:00
+fecha: 2026-11-14T11:40:00-03:00
 foto: ./img/leo-garcia-la-flasheria-marcos-juarez.jpg
 fotoAlt: "Leo García"
 seoTitulo: "Leo García en Marcos Juárez: show en La Flasheria el 20/11"
