@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          for r in 8.8.8.8 1.1.1.1 9.9.9.9; do echo "R $r: $(dig comunidadfanmj.com.ar A @$r | grep -oE 'status: [A-Z]+') A=$(dig +short A www.comunidadfanmj.com.ar @$r | tr '\n' ' ')"; done
-          AR=$(dig +short NS com.ar @8.8.8.8 | head -1)
-          echo "R zona .com.ar ($AR):"; dig +norec NS comunidadfanmj.com.ar @$AR | grep -E 'status:|IN\s+NS' | sed 's/^/R    /'
-          for ns in $(dig +norec NS comunidadfanmj.com.ar @$AR | grep -E 'IN\s+NS' | awk '{print $5}' | sort -u); do
-            echo "R directo $ns: raiz=$(dig +short A comunidadfanmj.com.ar @$ns | tr '\n' ' ') www=$(dig +short A www.comunidadfanmj.com.ar @$ns | tr '\n' ' ')"
+          for ns in dns1.raiolanetworks.es dns2.raiolanetworks.es dns3.raiolanetworks.es; do
+            echo "R $ns ($(dig +short A $ns | head -1)): $(dig comunidadfanmj.com.ar SOA @$ns | grep -oE 'status: [A-Z]+'), flags: $(dig comunidadfanmj.com.ar SOA @$ns | grep -oE 'flags: [a-z ]+')"
           done
+          echo "R rokmarketing NS: $(dig +short NS rokmarketing.com @8.8.8.8 | tr '\n' ' ')"
+          echo "R ptr 178.211.133.102: $(dig +short -x 178.211.133.102)"
