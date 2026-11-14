@@ -9,7 +9,7 @@ fecha: 2026-11-13T16:00:00-03:00
 foto: ./img/laguna-del-panal-dragado-marcos-juarez.jpg
 fotoAlt: "Máquinas trabajando en la limpieza y el dragado de la laguna del Panal, en Marcos Juárez"
 seoTitulo: "Dragado de la laguna del Panal en Marcos Juárez: cómo avanza"
-seoDescripcion: "La Municipalidad de Marcos Juárez avanza con la limpieza y el dragado de la laguna del Panal: 14.541 m² de superficie y 17.450 m³ de material a remover para mejorar el drenaje."
+seoDescripcion: "Marcos Juárez avanza con el dragado de la laguna del Panal: se removerán 17.450 m³ de sedimento para mejorar el drenaje de la ciudad en las lluvias fuertes."
 ---
 
 Las máquinas trabajan desde hace dos meses en el noreste de **Marcos Juárez**, y la Municipalidad asegura que la obra va a buen ritmo. Se trata de la **limpieza y el dragado de la laguna del Panal**, el reservorio que recibe el agua de los barrios de esa zona de la ciudad y que, con los años, había perdido buena parte de su capacidad.
