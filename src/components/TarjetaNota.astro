@@ -91,7 +91,11 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
     padding: 56px 20px 20px;
     background: linear-gradient(to top, rgba(20, 0, 40, 0.92) 0%, rgba(20, 0, 40, 0.6) 55%, rgba(20, 0, 40, 0) 100%);
   }
-  .sup .titulo { margin: 0; color: #fff; font-size: 19px; font-weight: 700; }
+  .sup .titulo {
+    margin: 0; color: #fff; font-size: 19px; font-weight: 700;
+    /* Antes el título se cortaba a mitad de palabra contra el borde */
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
   .sup.grande .titulo { font-size: clamp(22px, 3vw, 34px); }
   .sup.grande .capa { padding: 80px 28px 26px; }
   .sup .bajada { margin: 10px 0 0; color: #f1e8fb; font-size: 16px; max-width: 640px; }

@@ -46,7 +46,8 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
 </header>
 
 <style>
-  .header { background: var(--fucsia); }
+  /* La barra pasa a violeta: el fucsia queda para la radio (sello, vivo, dial) */
+  .header { background: var(--violeta); }
   .leyenda { background: var(--violeta-noche); }
   .leyenda p {
     margin: 0 auto; padding-block: 7px; text-align: center;
@@ -115,8 +116,8 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
   .nav { order: 3; width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent); }
   .nav::-webkit-scrollbar { display: none; }
   .nav ul { display: flex; gap: 6px 22px; list-style: none; margin: 0; padding: 4px 48px 4px 0; white-space: nowrap; }
-  .nav a {
-    color: var(--violeta);
+    .nav a {
+    color: #fff;
     font-size: 15px;
     font-weight: 800;
     text-transform: uppercase;
@@ -125,14 +126,14 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
     border-bottom: 3px solid transparent;
     display: inline-block;
   }
-  .nav a:hover { border-bottom-color: var(--violeta); color: var(--violeta); }
-  .nav a[aria-current='page'] { border-bottom-color: var(--violeta); }
+  .nav a:hover { border-bottom-color: var(--fucsia); color: #fff; }
+  .nav a[aria-current='page'] { border-bottom-color: var(--fucsia); }
   .acciones { display: flex; align-items: center; gap: 8px; }
   .icono-btn {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 44px; height: 44px; border-radius: 50%; color: var(--violeta);
+    width: 44px; height: 44px; border-radius: 50%; color: #fff;
   }
-  .icono-btn:hover { background: rgba(255, 255, 255, 0.3); color: var(--violeta); }
+  .icono-btn:hover { background: rgba(255, 255, 255, 0.16); color: #fff; }
   .redes-header { display: none; }
   /* Escritorio: logo, sello, menú y En vivo en una sola fila */
   @media (min-width: 1280px) {

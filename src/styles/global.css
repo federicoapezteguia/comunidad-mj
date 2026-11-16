@@ -1,4 +1,5 @@
 @import '@fontsource-variable/montserrat';
+@import '@fontsource-variable/archivo';
 
 :root {
   --fucsia: #ff00ff;
@@ -14,8 +15,22 @@
   --texto: #16131c;
   --blanco: #ffffff;
   --fuente: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
+  /* Titulares: grotesca editorial, más angosta, para que entren en menos líneas */
+  --fuente-titulo: 'Archivo Variable', 'Archivo', var(--fuente);
   --ancho: 1200px;
   --radio: 8px;
+}
+
+/* Los titulares llevan la tipografía editorial; el menú, los botones
+   y las etiquetas siguen en Montserrat, que es la voz de la marca. */
+h1,
+h2,
+h3,
+.titulo,
+.sec-h {
+  font-family: var(--fuente-titulo);
+  font-stretch: 92%;
+  letter-spacing: -0.015em;
 }
 
 *,
@@ -40,7 +55,8 @@ body {
   font-size: 16px;
 }
 
-/* Mosaico de manitos de fondo, en degradé de marca y muy tenue */
+/* Mosaico de manitos de fondo: queda en los bordes, la zona de lectura
+   va plana para que no compita con las fotos ni con el texto. */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: -1;
@@ -51,6 +67,22 @@ body::before {
   mask-image: url('/img/mosaico-manito.svg');
   -webkit-mask-repeat: repeat;
   mask-repeat: repeat;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  pointer-events: none;
+  background: #fafafa;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+@media (max-width: 1100px) {
+  /* No hay márgenes donde dejar el patrón: se atenúa en vez de recortarse */
+  body::after {
+    -webkit-mask-image: none;
+    mask-image: none;
+    opacity: 0.55;
+  }
 }
 
 img {
@@ -119,17 +151,23 @@ h4 {
 }
 
 /* Etiqueta fucsia sobre la foto (estilo Comunidad FAN) */
+/* El nombre de la sección ubica, no decora: texto, sin recuadro ni mayúsculas. */
 .tag {
   display: inline-block;
-  background: var(--fucsia);
-  color: var(--violeta-noche);
-  font-size: 12px;
+  background: transparent;
+  color: var(--violeta);
+  font-family: var(--fuente);
+  font-size: 12.5px;
   font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 0 0 var(--radio) 0;
-  line-height: 1.4;
+  letter-spacing: 0.01em;
+  padding: 8px 12px 4px;
+  line-height: 1.3;
+}
+/* Sobre foto, el nombre necesita contraste propio */
+.sup .tag,
+.marco .tag {
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.75);
 }
 
 /* Título de sección con línea violeta */
