@@ -55,14 +55,14 @@ body {
   font-size: 16px;
 }
 
-/* Mosaico de manitos de fondo: queda en los bordes, la zona de lectura
-   va plana para que no compita con las fotos ni con el texto. */
+/* Mosaico de manitos de fondo. Se ve en toda la página, más fuerte en los
+   márgenes y apenas atenuado detrás de la columna de lectura. */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: -1;
   pointer-events: none;
   background: linear-gradient(135deg, var(--fucsia), #7a2bd0 50%, var(--amarillo));
-  opacity: 0.15;
+  opacity: 0.34;
   -webkit-mask-image: url('/img/mosaico-manito.svg');
   mask-image: url('/img/mosaico-manito.svg');
   -webkit-mask-repeat: repeat;
@@ -73,15 +73,16 @@ body::after {
   position: fixed; inset: 0; z-index: -1;
   pointer-events: none;
   background: #fafafa;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  opacity: 0.45;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
 }
 @media (max-width: 1100px) {
-  /* No hay márgenes donde dejar el patrón: se atenúa en vez de recortarse */
+  /* No hay márgenes donde esconder nada: el patrón baja un poco y listo */
   body::after {
     -webkit-mask-image: none;
     mask-image: none;
-    opacity: 0.55;
+    opacity: 0.4;
   }
 }
 

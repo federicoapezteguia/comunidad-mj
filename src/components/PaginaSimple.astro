@@ -11,6 +11,9 @@ const { titulo, descripcion } = Astro.props;
 </Base>
 <style>
   .simple { padding-top: 32px; max-width: 860px; }
+  /* Igual que las notas: hoja blanca sobre el mosaico */
+  .texto { background: var(--blanco); border: 1px solid var(--borde); border-radius: 14px; padding: 22px 26px 28px; }
+  @media (max-width: 720px) { .texto { padding: 18px 16px 24px; } }
   .texto :global(p), .texto :global(li) { font-size: 17px; line-height: 1.7; }
   .texto :global(h2) { font-size: 22px; color: var(--violeta); margin: 32px 0 12px; }
   .texto :global(a) { color: var(--fucsia-oscuro); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }

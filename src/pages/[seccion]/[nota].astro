@@ -207,7 +207,17 @@ if (d.youtube) {
 <style>
   .pub-sup { padding-block: 20px; }
   .cuerpo-pagina { padding-top: 16px; }
-  .nota { max-width: 780px; }
+  /* Hoja de lectura: el mosaico de fondo queda alrededor y no debajo del texto */
+  .nota {
+    max-width: 780px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 22px 26px 30px;
+  }
+  @media (max-width: 720px) {
+    .nota { padding: 18px 16px 24px; border-radius: 12px; }
+  }
   .ruta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 13px; font-weight: 600; color: var(--gris); }
   .ruta a { color: var(--gris); }
   .vol { margin-top: 18px; border-radius: 0 var(--radio) var(--radio) 0; }
