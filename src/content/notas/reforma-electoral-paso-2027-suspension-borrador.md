@@ -5,8 +5,8 @@ seccion: nacionales
 etiquetas: [politica, gobierno]
 autor: redaccion
 fecha: 2026-11-16T16:25:00-03:00
-foto: ./img/senado-nacion-recinto-archivo.jpg
-fotoAlt: "Recinto del Senado de la Nación Argentina"
+foto: ./img/reforma-electoral-paso-congreso.jpg
+fotoAlt: "Interior del Congreso de la Nación durante una sesión"
 destacada: false
 seoTitulo: "PASO 2027: el borrador del Gobierno propone suspenderlas"
 seoDescripcion: "El proyecto suspende las primarias solo para 2027, habilita listas colectoras y crea Ficha Limpia. Se negocia con los gobernadores."

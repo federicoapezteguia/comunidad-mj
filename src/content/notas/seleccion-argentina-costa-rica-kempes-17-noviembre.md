@@ -6,8 +6,8 @@ etiquetas: [futbol, deportes]
 localidad: cordoba-capital
 autor: redaccion
 fecha: 2026-11-16T15:30:00-03:00
-foto: ./img/belgrano-river-estadio-kempes.jpg
-fotoAlt: "Vista del estadio Mario Alberto Kempes de Córdoba con las tribunas llenas"
+foto: ./img/seleccion-argentina-enzo-fernandez.jpg
+fotoAlt: "Jugador de la selección argentina durante un partido"
 destacada: false
 seoTitulo: "Argentina vs Costa Rica en el Kempes: hora, árbitro y cambios"
 seoDescripcion: "La Selección juega el martes a las 20 en Córdoba ante Costa Rica. Arbitra el brasileño Bruno Arleu y el plantel viaja el mismo día."
