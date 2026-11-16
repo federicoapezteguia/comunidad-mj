@@ -50,7 +50,13 @@ const jsonLd: Record<string, unknown>[] = [
     inLanguage: 'es-AR',
     author: [{ '@type': d.autor === 'redaccion' ? 'Organization' : 'Person', name: autor?.data.nombre, url: autorUrl }],
     publisher: { '@id': new URL('/#organizacion', Astro.site).href },
-    ...(d.localidad ? { contentLocation: { '@type': 'Place', name: `${nombreLocalidad(d.localidad)}, Córdoba, Argentina` } } : {}),
+    // Las notas de la sección Marcos Juárez que no tienen localidad cargada
+    // igual son de la ciudad: conviene decirlo.
+    ...(d.localidad
+      ? { contentLocation: { '@type': 'Place', name: `${nombreLocalidad(d.localidad)}, Córdoba, Argentina` } }
+      : d.seccion === 'marcos-juarez'
+        ? { contentLocation: { '@type': 'Place', name: 'Marcos Juárez, Córdoba, Argentina' } }
+        : {}),
     ...(d.patrocinado && d.anunciante ? { sponsor: { '@type': 'Organization', name: d.anunciante } } : {}),
   },
   {

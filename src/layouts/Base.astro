@@ -62,13 +62,26 @@ const organizacion = {
   broadcastFrequency: `FM ${SITE.frecuencia}`,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: SITE.direccion,
+    // La calle solo se publica cuando está cargada de verdad: un dato
+    // de relleno en los datos estructurados es peor que no ponerlo.
+    ...(SITE.direccion.startsWith('[') ? {} : { streetAddress: SITE.direccion }),
     addressLocality: SITE.ciudad,
     addressRegion: SITE.provincia,
     postalCode: SITE.codigoPostal,
     addressCountry: SITE.pais,
   },
-  areaServed: [SITE.ciudad, 'Sudeste de Córdoba', 'Provincia de Córdoba'],
+  geo: { '@type': 'GeoCoordinates', latitude: -32.6947, longitude: -62.1058 },
+  areaServed: [
+    { '@type': 'City', name: 'Marcos Juárez', containedInPlace: { '@type': 'AdministrativeArea', name: 'Departamento Marcos Juárez, Córdoba, Argentina' } },
+    { '@type': 'AdministrativeArea', name: 'Departamento Marcos Juárez' },
+    ...['Leones', 'Monte Buey', 'General Roca', 'Inriville', 'Corral de Bustos', 'Camilo Aldao', 'Cruz Alta', 'Los Surgentes', 'Isla Verde', 'Saira', 'Guatimozín', 'Arias'].map((n) => ({ '@type': 'City', name: n })),
+  ],
+  knowsAbout: [
+    'Noticias de Marcos Juárez',
+    'Municipalidad de Marcos Juárez',
+    'Departamento Marcos Juárez',
+    'Sudeste de Córdoba',
+  ],
   parentOrganization: { '@type': 'Organization', name: 'Comunidad FAN', url: SITE.red },
   sameAs: Object.values(SITE.redes).filter(Boolean),
 };
