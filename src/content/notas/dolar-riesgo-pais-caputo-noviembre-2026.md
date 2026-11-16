@@ -6,7 +6,7 @@ etiquetas: [economia]
 autor: redaccion
 fecha: 2026-11-16T16:10:00-03:00
 foto: ./img/dolar-pizarra-casa-de-cambio.jpg
-fotoAlt: "Pizarra con las cotizaciones del dólar en una casa de cambio"
+fotoAlt: "Billetes de cien dólares apilados"
 destacada: false
 seoTitulo: "Dólar en nuevo máximo y riesgo país sobre 840 puntos"
 seoDescripcion: "El oficial subió a $1.575 y el riesgo país superó los 840 puntos. Caputo reconoció que la economía creció menos de lo previsto."

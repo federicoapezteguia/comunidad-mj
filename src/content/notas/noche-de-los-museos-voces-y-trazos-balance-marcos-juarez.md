@@ -7,7 +7,7 @@ localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-16T14:10:00-03:00
 foto: ./img/voces-y-trazos-casa-de-la-cultura-marcos-juarez.jpg
-fotoAlt: "Artistas y vecinos en la jornada Voces y Trazos en la Casa de la Cultura de Marcos Juárez"
+fotoAlt: "Público y obras de artistas locales durante Voces y Trazos en la Casa de la Cultura de Marcos Juárez"
 destacada: true
 seoTitulo: "Voces y Trazos: la Noche de los Museos en Marcos Juárez"
 seoDescripcion: "Música, pintura en vivo y exposiciones en la Casa de la Cultura durante la Noche de los Museos 2026 en Marcos Juárez."
