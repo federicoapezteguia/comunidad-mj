@@ -138,8 +138,10 @@ const pasos = [
 </Base>
 
 <style>
+  /* Ojo: solo padding vertical. La clase .wrap aporta el margen lateral
+     (padding-inline), y la forma abreviada "padding" lo borraría. */
   .pub {
-    padding: 28px 0 56px;
+    padding-block: 28px 56px;
     max-width: 980px;
   }
 
