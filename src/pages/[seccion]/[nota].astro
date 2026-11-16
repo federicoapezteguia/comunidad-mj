@@ -209,7 +209,9 @@ if (d.youtube) {
   .cuerpo-pagina { padding-top: 16px; }
   /* Hoja de lectura: el mosaico de fondo queda alrededor y no debajo del texto */
   .nota {
-    max-width: 780px;
+    /* 820 + 32 de separación + 300 de la lateral = el ancho del contenido,
+       así el borde derecho coincide con el del banner de arriba. */
+    max-width: 820px;
     background: var(--blanco);
     border: 1px solid var(--borde);
     border-radius: 14px;
