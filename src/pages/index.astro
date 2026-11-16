@@ -40,8 +40,9 @@ const mj = tomar(deSeccion('marcos-juarez').filter((n) => !esRegion(n)), 12);
 const columnasMJ = Array.from({ length: Math.ceil(mj.length / 6) }, (_, i) => mj.slice(i * 6, i * 6 + 6))
   .flatMap((pag) => [0, 1, 2].map((c) => [pag[c], pag[c + 3]].filter(Boolean)));
 const cba = tomar(deSeccion('cordoba'), 10);
-const nac = tomar(deSeccion('nacionales'), 6);
-const dep = tomar(deSeccion('deportes'), 10);
+// Nacionales va en el carrusel (más piezas) y Deportes en la lista compacta
+const nac = tomar(deSeccion('nacionales'), 10);
+const dep = tomar(deSeccion('deportes'), 6);
 const mus = tomar(deSeccion('musica'), 9);
 const esp = tomar(deSeccion('espectaculos'), 10);
 const od = tomar(deSeccion('on-demand'), 10);
@@ -125,21 +126,21 @@ const jsonLd = [
     </section>
   )}
 
-  {dep.length > 0 && (
-    <section class="wrap bloque" aria-labelledby="h-dep">
-      <h2 id="h-dep" class="sec-h"><a href="/deportes/">{SECCIONES.deportes.nombre}</a><a href="/deportes/" class="mas">Ver todas</a></h2>
-      <Carrusel visibles={4} etiqueta="Notas de Deportes">{dep.map((n) => <TarjetaNota nota={n} />)}</Carrusel>
+  {nac.length > 0 && (
+    <section class="wrap bloque" aria-labelledby="h-nac">
+      <h2 id="h-nac" class="sec-h"><a href="/nacionales/">{SECCIONES.nacionales.nombre}</a><a href="/nacionales/" class="mas">Ver todas</a></h2>
+      <Carrusel visibles={4} etiqueta="Notas de Nacionales">{nac.map((n) => <TarjetaNota nota={n} />)}</Carrusel>
     </section>
   )}
 
   <section class="wrap bloque" aria-label="Publicidad"><Publicidad espacio="horizontal" /></section>
 
-  {nac.length > 0 && (
-    <section class="wrap bloque" aria-labelledby="h-nac">
+  {dep.length > 0 && (
+    <section class="wrap bloque" aria-labelledby="h-dep">
       <div class="con-lateral">
         <div class="principal">
-          <h2 id="h-nac" class="sec-h"><a href="/nacionales/">{SECCIONES.nacionales.nombre}</a><a href="/nacionales/" class="mas">Ver todas</a></h2>
-          <div class="lista-comp">{nac.map((n) => <TarjetaNota nota={n} variante="compacta" />)}</div>
+          <h2 id="h-dep" class="sec-h"><a href="/deportes/">{SECCIONES.deportes.nombre}</a><a href="/deportes/" class="mas">Ver todas</a></h2>
+          <div class="lista-comp">{dep.map((n) => <TarjetaNota nota={n} variante="compacta" />)}</div>
           <a href="/marcos-juarez/" class="caja-mj" aria-label="Noticias de Marcos Juárez">
             <IngresoMJ />
             <span class="caja-mj-txt">Noticias de Marcos Juárez <span aria-hidden="true">→</span></span>

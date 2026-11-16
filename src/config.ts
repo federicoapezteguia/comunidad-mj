@@ -91,18 +91,18 @@ export const SECCIONES: Record<
       'Lo que pasa en la provincia de Córdoba y cómo impacta en el sudeste cordobés: gobierno, economía, agro, sociedad y cultura.',
     enMenu: true,
   },
-  deportes: {
-    nombre: 'Deportes',
-    titulo: 'Deportes: Marcos Juárez, Córdoba y el país',
-    descripcion:
-      'Deportes de Marcos Juárez y la región: fútbol de la Liga Bellvillense, automovilismo, atletismo y clubes, más Belgrano, Talleres, Instituto y la Selección.',
-    enMenu: true,
-  },
   nacionales: {
     nombre: 'Nacionales',
     titulo: 'Actualidad nacional',
     descripcion:
       'Lo más importante de la actualidad argentina, resumido y con su impacto en Córdoba y Marcos Juárez.',
+    enMenu: true,
+  },
+  deportes: {
+    nombre: 'Deportes',
+    titulo: 'Deportes: Marcos Juárez, Córdoba y el país',
+    descripcion:
+      'Deportes de Marcos Juárez y la región: fútbol de la Liga Bellvillense, automovilismo, atletismo y clubes, más Belgrano, Talleres, Instituto y la Selección.',
     enMenu: true,
   },
   musica: {
