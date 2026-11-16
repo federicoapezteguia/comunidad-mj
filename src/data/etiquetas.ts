@@ -59,6 +59,7 @@ export const LOCALIDADES = {
   inriville: 'Inriville',
   'corral-de-bustos': 'Corral de Bustos',
   saira: 'Saira',
+  guatimozin: 'Guatimozín',
   'los-surgentes': 'Los Surgentes',
   'isla-verde': 'Isla Verde',
   'arias': 'Arias',
