@@ -114,7 +114,8 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
   .comp .link { display: flex; gap: 14px; align-items: flex-start; }
   .comp .foto { width: 128px; height: 72px; flex: none; }
   .comp :global(img) { width: 128px; height: 72px; flex: none; object-fit: cover; }
-  .vol { font-size: 11.5px; font-weight: 800; color: var(--fucsia-oscuro); text-transform: uppercase; letter-spacing: 0.04em; }
+  /* Mismo criterio que las tarjetas grandes: la sección ubica, no decora */
+  .vol { font-size: 12px; font-weight: 800; color: var(--violeta); letter-spacing: 0; }
   .comp .titulo { margin: 3px 0 4px; font-size: 16px; font-weight: 700; color: var(--violeta); }
   .comp .link:hover .titulo { color: var(--fucsia-oscuro); }
   .cuando { font-size: 12px; color: var(--gris); }

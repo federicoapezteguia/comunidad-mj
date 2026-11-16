@@ -100,16 +100,6 @@ if (d.youtube) {
       <h1>{d.titulo}</h1>
       <p class="bajada">{d.bajada}</p>
 
-      <div class="meta">
-        <div class="autor">
-          <span class="autor-nombre">Por {autor?.data.nombre}</span>
-          <span class="cuando">
-            <time datetime={d.fecha.toISOString()}>{fecha(d.fecha)}</time>
-          </span>
-        </div>
-        <Compartir url={url} titulo={d.titulo} />
-      </div>
-
       {!d.youtube && (
         <figure class="foto-principal">
           <Image src={d.foto} alt={d.fotoAlt} widths={[480, 800, 1100, 1500]} sizes="(min-width: 1000px) 780px, 100vw" loading="eager" fetchpriority="high" data-pagefind-meta="image[src], image_alt[alt]" />
@@ -121,6 +111,16 @@ if (d.youtube) {
           <iframe src={`https://www.youtube-nocookie.com/embed/${d.youtube}`} title={`Video: ${d.titulo}`} loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       )}
+
+      <div class="meta">
+        <div class="autor">
+          <span class="autor-nombre">Por {autor?.data.nombre}</span>
+          <span class="cuando">
+            <time datetime={d.fecha.toISOString()}>{fecha(d.fecha)}</time>
+          </span>
+        </div>
+        <Compartir url={url} titulo={d.titulo} />
+      </div>
       {d.audio && (
         <div class="audio"><span>Escuchá la entrevista</span><audio controls preload="none" src={d.audio}></audio></div>
       )}
@@ -181,8 +181,8 @@ if (d.youtube) {
     </article>
 
     <aside class="lateral" data-pagefind-ignore>
-      <Publicidad espacio="lateral" />
       <Clima />
+      <Publicidad espacio="lateral" />
       <Encuesta />
       {ultimas.length > 0 && (
         <section class="od" aria-labelledby="h-ult">
@@ -216,14 +216,14 @@ if (d.youtube) {
   .bajada { margin: 0 0 22px; font-size: clamp(18px, 2.2vw, 21px); line-height: 1.45; color: #3d4450; }
   .meta {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px;
-    padding: 14px 0; border-block: 1px solid var(--borde);
+    margin: 0 0 28px; padding: 14px 0; border-bottom: 1px solid var(--borde);
   }
   .autor { display: flex; flex-direction: column; }
   .autor-nombre { font-weight: 700; font-size: 13px; color: var(--violeta); }
   .cuando { font-size: 12px; color: var(--gris); }
-  .foto-principal { margin: 24px 0 28px; }
+  .foto-principal { margin: 22px 0 0; }
   .foto-principal :global(img) { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--lila); }
-  .video { position: relative; aspect-ratio: 16 / 9; margin: 0 0 28px; background: #000; }
+  .video { position: relative; aspect-ratio: 16 / 9; margin: 22px 0 0; background: #000; }
   .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .audio { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; margin: 0 0 28px; background: var(--lila-claro); border-radius: var(--radio); }
   .audio span { font-size: 12px; font-weight: 800; color: var(--fucsia-oscuro); text-transform: uppercase; letter-spacing: 0.08em; }
