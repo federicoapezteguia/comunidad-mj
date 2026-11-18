@@ -15,16 +15,19 @@ export const SITE = {
 
   // --- Señal de radio ---
   frecuencia: '99.9',
-  direccion: '[DIRECCIÓN]', // ej. 'San Martín 123'
+  // La ficha de Google no publica domicilio: la radio figura con zona de
+  // servicio, así que acá tampoco se publica una calle.
+  direccion: '',
   codigoPostal: '2580',
-  telefono: '[TELÉFONO]',
+  telefono: '0351 760-4328',       // tal cual figura en Google
+  telefonoE164: '+543517604328',   // formato internacional, para los datos estructurados
   // WhatsApp: solo números con 549 + código de área sin 0 + número sin 15
   whatsapp: '5493416660326', // saludos y mensajes para la radio
   whatsappVisible: '341 666-0326',
   whatsappMensaje: '¡Hola Comunidad FAN! ', // va al estudio central de Rosario
   whatsappComercial: '5493517604328', // contacto comercial / publicidad
   whatsappComercialVisible: '351 760-4328',
-  email: '[EMAIL]',
+  email: 'fede@comunidad.fan',
 
   // Reproductor en vivo de la señal
   reproductor: 'https://comunidadmj.miradio.ar/',
@@ -38,6 +41,7 @@ export const SITE = {
     instagram: 'https://www.instagram.com/comunidadfan.mj/',
     facebook: '',
     youtube: 'https://www.youtube.com/@ComunidadFAN',
+    google: 'https://share.google/hHErU9aT1kckaFjdN',
     tiktok: '',
     x: '',
   },

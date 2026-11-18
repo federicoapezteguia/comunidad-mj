@@ -62,13 +62,21 @@ const organizacion = {
   broadcastFrequency: `FM ${SITE.frecuencia}`,
   address: {
     '@type': 'PostalAddress',
-    // La calle solo se publica cuando está cargada de verdad: un dato
-    // de relleno en los datos estructurados es peor que no ponerlo.
-    ...(SITE.direccion.startsWith('[') ? {} : { streetAddress: SITE.direccion }),
+    // Sin calle: la ficha de Google tampoco la publica, y los dos tienen
+    // que decir lo mismo.
+    ...(SITE.direccion ? { streetAddress: SITE.direccion } : {}),
     addressLocality: SITE.ciudad,
     addressRegion: SITE.provincia,
     postalCode: SITE.codigoPostal,
     addressCountry: SITE.pais,
+  },
+  telephone: SITE.telefonoE164,
+  email: SITE.email,
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
   },
   geo: { '@type': 'GeoCoordinates', latitude: -32.6947, longitude: -62.1058 },
   areaServed: [
