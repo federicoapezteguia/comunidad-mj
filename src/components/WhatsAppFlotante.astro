@@ -10,6 +10,7 @@ const url = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whats
       <span class="t1">¡Mandá tu saludo al aire!</span>
       <span class="t2">Escribinos por WhatsApp</span>
     </span>
+    <span class="txt-corto" aria-hidden="true">Saludo al aire</span>
   </a>
 )}
 <style>
@@ -26,11 +27,13 @@ const url = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whats
   .txt { display: flex; flex-direction: column; line-height: 1.2; }
   .t1 { font-size: 14px; font-weight: 800; }
   .t2 { font-size: 12px; font-weight: 600; opacity: 0.9; }
+  .txt-corto { display: none; }
   @media (max-width: 560px) {
-    /* En celular, solo el ícono redondo para no tapar el contenido */
-    .wa-flotante { right: 12px; bottom: 80px; padding: 4px; gap: 0; border-radius: 50%; }
-    .icono { width: 48px; height: 48px; }
+    /* En celular el ícono solo no dice para qué es: queda una pastilla corta */
+    .wa-flotante { right: 12px; bottom: 80px; padding: 4px 15px 4px 4px; gap: 9px; }
+    .icono { width: 44px; height: 44px; }
     .txt { display: none; }
+    .txt-corto { display: block; font-size: 13px; font-weight: 800; line-height: 1.15; max-width: 7.5em; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .icono { animation: pulso 2.4s ease-out 1.5s 3; }

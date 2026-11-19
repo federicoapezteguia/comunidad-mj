@@ -59,7 +59,9 @@ body {
    márgenes y apenas atenuado detrás de la columna de lectura. */
 body::before {
   content: '';
-  position: fixed; inset: 0; z-index: -1;
+  /* Alto fijo al viewport grande: si usa inset:0, en iOS el patrón se
+     reacomoda cada vez que Safari muestra o esconde la barra de arriba. */
+  position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100lvh; z-index: -1;
   pointer-events: none;
   background: linear-gradient(135deg, var(--fucsia), #7a2bd0 50%, var(--amarillo));
   opacity: 0.34;
@@ -70,7 +72,7 @@ body::before {
 }
 body::after {
   content: '';
-  position: fixed; inset: 0; z-index: -1;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100lvh; z-index: -1;
   pointer-events: none;
   background: #fafafa;
   opacity: 0.45;
@@ -235,15 +237,21 @@ h4 {
   justify-content: center;
   gap: 8px;
   min-height: 44px;
-  padding: 0 20px;
+  padding: 9px 20px;
   border-radius: 500px;
   font-weight: 800;
   font-size: 14px;
+  line-height: 1.3;
+  text-align: center;
+  text-wrap: balance;
   text-transform: uppercase;
   border: 0;
   cursor: pointer;
   font-family: inherit;
 }
+/* Para que un teléfono o un usuario no se parta en dos líneas */
+.nb { white-space: nowrap; }
+
 .boton-amarillo {
   background: var(--amarillo);
   color: #000;
