@@ -120,6 +120,9 @@ $whats   = trim((string)($_POST['whatsapp'] ?? ''));
 $negocio = trim((string)($_POST['negocio'] ?? ''));
 $via     = (string)($_POST['via'] ?? 'whatsapp');
 $trampa  = trim((string)($_POST['sitio_web'] ?? ''));   // campo oculto
+// De dónde vino, para devolverlo a la misma página. Solo rutas del sitio.
+$origen  = (string)($_POST['origen'] ?? '/contacto/');
+if (!preg_match('#^/[a-z0-9/\-]{0,80}$#i', $origen)) $origen = '/contacto/';
 $desde   = (int)($_POST['abierto'] ?? 0);
 
 if ($nombre === '')                       $errores['nombre']  = 'Escribí tu nombre.';
@@ -178,7 +181,7 @@ if ($ajax) {
     exit;
 }
 
-// Sin JavaScript: página de respuesta
+// Sin JavaScript: página de respuesta con la cara del sitio
 $titulo = $ok ? 'Mensaje enviado' : 'Revisá el formulario';
 $texto  = $ok
     ? 'Gracias por escribirnos. Te vamos a responder por donde nos pediste.'
@@ -187,7 +190,31 @@ header('Content-Type: text/html; charset=utf-8');
 ?><!doctype html>
 <html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex"><title><?= htmlspecialchars($titulo) ?> · <?= CT_SITIO ?></title>
-<style>body{font-family:system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1.25rem;color:#16131c;line-height:1.6}
-h1{color:#2d005d;font-size:1.6rem}a{color:#b000b0}</style></head>
-<body><h1><?= htmlspecialchars($titulo) ?></h1><p><?= htmlspecialchars($texto) ?></p>
-<p><a href="/contacto/">Volver a Contacto</a> · <a href="/">Ir a la portada</a></p></body></html>
+<style>
+  :root { --violeta:#2d005d; --fucsia:#b000b0; --lila:#e9ddf5; --lila-claro:#f7f2fc; }
+  * { box-sizing: border-box }
+  body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; margin:0; color:#16131c;
+         line-height:1.6; background:var(--lila-claro) }
+  .cab { background:var(--violeta); color:#fff; padding:14px 20px; font-weight:800; font-size:15px }
+  .cab a { color:#ffcc33; text-decoration:none }
+  main { max-width:34rem; margin:36px auto; padding:0 20px }
+  .caja { background:#fff; border:1px solid var(--lila); border-radius:16px; padding:28px 26px;
+          box-shadow:0 14px 34px rgba(45,0,93,.1) }
+  h1 { color:var(--violeta); font-size:1.5rem; margin:0 0 10px }
+  p { margin:0 0 18px }
+  .acc { display:flex; flex-wrap:wrap; gap:10px; margin:0 }
+  .btn { display:inline-block; background:var(--violeta); color:#fff; text-decoration:none;
+         font-weight:700; padding:11px 18px; border-radius:999px; font-size:15px }
+  .btn.sec { background:#fff; color:var(--violeta); border:1px solid var(--lila) }
+</style></head>
+<body>
+<div class="cab"><a href="/"><?= CT_SITIO ?></a></div>
+<main><div class="caja">
+  <h1><?= htmlspecialchars($titulo) ?></h1>
+  <p><?= htmlspecialchars($texto) ?></p>
+  <p class="acc">
+    <a class="btn" href="<?= htmlspecialchars($origen) ?>">Volver al formulario</a>
+    <a class="btn sec" href="/">Ir a la portada</a>
+  </p>
+</div></main>
+</body></html>

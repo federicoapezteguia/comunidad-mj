@@ -14,7 +14,7 @@ const opciones = [
   {
     id: 'publicidad',
     titulo: 'Publicitar mi negocio',
-    texto: 'Spots en la FM, banners en el sitio y notas de contenido de marca.',
+    texto: 'Spots en la FM, banners y notas de marca en el sitio.',
     icono: 'M3 10v4h4l5 4V6l-5 4H3zM16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12',
   },
   {
@@ -145,6 +145,8 @@ const opciones = [
       <input id="c-sitio" name="sitio_web" type="text" tabindex="-1" autocomplete="off" />
     </p>
     <input type="hidden" name="abierto" value="" />
+    <!-- Para volver a esta misma página si el envío sale sin JavaScript -->
+    <input type="hidden" name="origen" value={Astro.url.pathname} />
   </form>
 
   <div class="listo" data-listo hidden>
