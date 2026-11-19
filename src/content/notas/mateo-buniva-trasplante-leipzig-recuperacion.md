@@ -2,7 +2,7 @@
 titulo: "Mateo Buniva ya tiene su trasplante hecho: cómo sigue la recuperación en Leipzig"
 bajada: "El joven de Marcos Juárez recibió el trasplante de células madre el 17 de noviembre en Alemania. Ahora empieza la etapa en la que las células del donante tienen que arraigar."
 seccion: marcos-juarez
-etiquetas: [salud, solidaridad]
+etiquetas: [salud, sociedad]
 localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-19T16:50:00-03:00
