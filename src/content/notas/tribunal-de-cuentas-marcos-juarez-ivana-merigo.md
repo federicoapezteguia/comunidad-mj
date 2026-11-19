@@ -7,7 +7,7 @@ localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-18T22:10:00-03:00
 foto: ./img/ivana-merigo-tribunal-de-cuentas-marcos-juarez.jpg
-fotoAlt: "Ivana Merigo, próxima integrante del Tribunal de Cuentas de Marcos Juárez"
+fotoAlt: "Frente del edificio de la Municipalidad de Marcos Juárez"
 destacada: true
 seoTitulo: "Ivana Merigo encabezará el Tribunal de Cuentas de Marcos Juárez"
 seoDescripcion: "Merigo asume en diciembre al frente del Tribunal de Cuentas municipal, que quedará integrado con Mariel Bracamonte y Próspero Rearte por la oposición."
