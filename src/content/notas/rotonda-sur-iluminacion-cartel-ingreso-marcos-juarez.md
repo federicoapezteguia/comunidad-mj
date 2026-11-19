@@ -23,6 +23,8 @@ Los accesos funcionan como primera impresión de una ciudad. Quien llega de noch
 
 Desde el municipio ubicaron el trabajo dentro de una serie de acciones destinadas a mejorar la imagen de los espacios públicos. La lógica es la misma que viene guiando otras intervenciones urbanas: poner en valor los puntos que la gente usa y mira todos los días, empezando por los que marcan el límite entre la ruta y la ciudad.
 
+![Las letras MJ del cartel de ingreso, iluminadas de noche en la rotonda sur de Marcos Juárez](./img/rotonda-sur-letras-mj-marcos-juarez.jpg)
+
 ## Qué cambia en el día a día
 
 El efecto más inmediato es de visibilidad. Un cartel iluminado se lee desde más lejos y ordena la llegada: indica dónde termina el camino y dónde empieza Marcos Juárez. En una rotonda, donde el conductor tiene que decidir rápido por dónde salir, cualquier referencia que se vea bien suma.

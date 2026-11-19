@@ -254,7 +254,16 @@ if (d.youtube) {
   .texto :global(a) { color: var(--fucsia-oscuro); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
   .texto :global(ul), .texto :global(ol) { margin: 0 0 22px; padding-left: 22px; }
   .texto :global(blockquote) { margin: 28px 0; padding: 4px 0 4px 20px; border-left: 4px solid var(--fucsia); font-size: 21px; font-weight: 600; color: var(--violeta); }
-  .texto :global(img) { margin: 8px 0 24px; }
+  /* Las fotos del cuerpo: las verticales no tienen que comerse la pantalla
+     entera. Solo las del texto, no las piezas de publicidad intercaladas. */
+  .texto :global(> p > img) {
+    margin: 8px auto 24px;
+    display: block;
+    max-height: 70vh;
+    width: auto;
+    max-width: 100%;
+    border-radius: 10px;
+  }
   .texto :global(strong) { font-weight: 700; }
 
   .etiquetas { list-style: none; padding: 0; margin: 28px 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
