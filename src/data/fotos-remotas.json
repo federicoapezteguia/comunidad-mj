@@ -351,8 +351,14 @@
     "buscar:tractor agricola Argentina campo"
   ],
   "verano-2027-destinos-turismo-argentina.jpg": [
-    "https://assets.turismocity.com/cdn-cgi/image/format=auto,width=1600/sierras%20cordoba.jpg",
-    "https://assets.turismocity.com/cdn-cgi/image/format=auto,width=1200,scale-down=1200/sierras%20cordoba.jpg",
-    "https://assets.turismocity.com/cdn-cgi/image/format=auto,width=cover,height=853,scale-down=300/sierras%20cordoba.jpg"
+    "buscar:Sierras Grandes Cordoba Argentina paisaje",
+    "buscar:Valle de Punilla Cordoba sierras",
+    "buscar:Mina Clavero rio Cordoba",
+    "buscar:Sierras de Cordoba"
+  ],
+  "cine-sala-butacas-estrenos.jpg": [
+    "buscar:cine sala butacas pantalla",
+    "buscar:movie theater auditorium seats screen",
+    "buscar:cinema interior seats"
   ]
 }
