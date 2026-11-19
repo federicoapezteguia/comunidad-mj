@@ -6,8 +6,8 @@ etiquetas: [clima]
 localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-16T13:40:00-03:00
-foto: ./img/alerta-tormentas-cordoba-octubre-2026.jpg
-fotoAlt: "Cielo cargado de nubes de tormenta sobre el sudeste cordobés"
+foto: ./img/tormenta-nubes-campo-cordoba-archivo.jpg
+fotoAlt: "Nubes de tormenta sobre un campo del sudeste de Córdoba"
 destacada: true
 seoTitulo: "Alerta naranja por tormentas en Marcos Juárez: qué se espera"
 seoDescripcion: "Rige alerta naranja en toda Córdoba. En el sudeste se esperan tormentas fuertes, algunas severas, con 80 a 120 milímetros acumulados."

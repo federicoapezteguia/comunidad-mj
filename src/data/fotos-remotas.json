@@ -360,5 +360,18 @@
     "buscar:cine sala butacas pantalla",
     "buscar:movie theater auditorium seats screen",
     "buscar:cinema interior seats"
+  ],
+  "congreso-nacion-fachada-archivo.jpg": [
+    "buscar:Palacio del Congreso de la Nacion Argentina fachada",
+    "buscar:Congreso Nacional Argentino edificio"
+  ],
+  "diputados-recinto-votacion-archivo.jpg": [
+    "buscar:Camara de Diputados de la Nacion Argentina recinto sesion",
+    "buscar:Honorable Camara de Diputados Argentina interior"
+  ],
+  "tormenta-nubes-campo-cordoba-archivo.jpg": [
+    "buscar:storm clouds over field Argentina",
+    "buscar:nubes de tormenta campo pampa",
+    "buscar:thunderstorm cumulonimbus countryside"
   ]
 }

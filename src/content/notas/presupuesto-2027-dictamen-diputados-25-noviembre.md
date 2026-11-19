@@ -5,8 +5,8 @@ seccion: nacionales
 etiquetas: [economia, gobierno]
 autor: redaccion
 fecha: 2026-11-18T21:20:00-03:00
-foto: ./img/presupuesto-2027-camara-diputados.jpg
-fotoAlt: "Recinto de la Cámara de Diputados de la Nación"
+foto: ./img/diputados-recinto-votacion-archivo.jpg
+fotoAlt: "Recinto de la Cámara de Diputados durante una sesión"
 destacada: false
 seoTitulo: "Presupuesto 2027: dictamen firmado y sesión el 25 de noviembre"
 seoDescripcion: "El Presupuesto 2027 obtuvo dictamen con 27 firmas en Diputados. Proyecta 4% de crecimiento, 18% de inflación y un dólar de $1.847,60 a diciembre."

@@ -6,8 +6,8 @@ etiquetas: [municipio, politica]
 localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-19T17:08:00-03:00
-foto: ./img/marcos-juarez-vista-aerea-atardecer.jpg
-fotoAlt: "Vista aérea del centro de Marcos Juárez al atardecer"
+foto: ./img/municipalidad-marcos-juarez-frente.jpg
+fotoAlt: "Frente del Palacio Municipal de Marcos Juárez"
 destacada: true
 seoTitulo: "Transición en Marcos Juárez: pedidos de informes al municipio"
 seoDescripcion: "Concejales y el equipo entrante piden precisiones sobre entregas de vales y sobre los fondos del Polo Educativo. El municipio respondió con 63 fojas."
