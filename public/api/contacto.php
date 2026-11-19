@@ -136,7 +136,7 @@ if ($via === 'email') {
 }
 if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) $errores['email'] = 'Ese correo no parece válido.';
 if ($mensaje === '')                      $errores['mensaje'] = 'Contanos de qué se trata.';
-elseif (mb_strlen($mensaje) < 10)         $errores['mensaje'] = 'El mensaje es muy corto.';
+elseif (mb_strlen($mensaje) < 10)         $errores['mensaje'] = 'Contanos un poco más, con menos de diez caracteres no alcanza.';
 elseif (mb_strlen($mensaje) > 4000)       $errores['mensaje'] = 'El mensaje es demasiado largo.';
 if (!isset($MOTIVOS[$motivo]))            $motivo = 'otro';
 if ($motivo === 'publicidad') {

@@ -75,7 +75,7 @@ const opciones = [
     <!-- Paso 2 -->
     <fieldset class="paso" data-paso="2">
       <legend class="preg" data-preg2>Contanos de qué se trata</legend>
-      <p class="sub" data-sub2>Escribilo con tus palabras, no hace falta que sea formal.</p>
+      <p class="sub" data-sub2>¿Algo que quieras decirnos?</p>
 
       <p class="campo" data-solo="publicidad">
         <label for="c-negocio">Nombre de tu emprendimiento, servicio o empresa</label>
@@ -370,8 +370,8 @@ const opciones = [
 
     // Textos del paso 2 según lo que eligieron en el paso 1
     const guion = {
-      publicidad: ['Contanos de tu negocio', 'Qué vendés y a quién le hablás. Con eso armamos la propuesta.', 'Tu consulta'],
-      otro: ['Contanos de qué se trata', 'Escribilo con tus palabras, no hace falta que sea formal.', 'Mensaje'],
+      publicidad: ['Contanos de tu marca', '¿Qué vendés o qué servicio ofrecés?', 'Tu consulta'],
+      otro: ['Contanos de qué se trata', '¿Algo que quieras decirnos?', 'Mensaje'],
     };
 
     let actual = primero;
@@ -435,7 +435,7 @@ const opciones = [
       const t = f.querySelector('[name="mensaje"]');
       const e = caja.querySelector('#e-mensaje');
       if (t.value.trim().length < 10) {
-        e.textContent = 'Contanos un poco más, con diez caracteres no alcanza.';
+        e.textContent = 'Contanos un poco más, con menos de diez caracteres no alcanza.';
         t.setAttribute('aria-invalid', 'true');
         t.focus();
         return;
