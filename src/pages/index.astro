@@ -215,6 +215,11 @@ const jsonLd = [
   /* Marcos Juárez: dos filas alineadas entre columnas (la segunda fila arranca a la misma altura en todas) */
   .bloque-mj :global([aria-label='Notas de Marcos Juárez'] .car-lista) { grid-template-rows: auto auto; row-gap: 28px; }
   .col-mj { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 28px; }
+  @media (max-width: 640px) {
+    /* Apiladas: la columna deja de ser columna y van dos nada más */
+    .col-mj { grid-row: auto; grid-template-rows: none; row-gap: 22px; }
+    .col-mj:nth-child(n + 3) { display: none; }
+  }
   .bloque-region { margin-top: 44px; }
   .pub-sup { padding-block: 20px; }
   /* Franja de destacadas con antena de radio animada de fondo */

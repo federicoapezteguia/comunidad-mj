@@ -72,8 +72,20 @@ const { visibles = 4, oscuro = false, etiqueta = 'Notas' } = Astro.props;
   .oscuro .car-flecha { box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); }
   @media (max-width: 1000px) { .carrusel:not([style*='--visibles:1']) .car-lista { grid-auto-columns: calc((100% - 24px) / 2.3); } }
   @media (max-width: 640px) {
-    .carrusel:not([style*='--visibles:1']) .car-lista { grid-auto-columns: 78%; gap: 16px; }
-    .carrusel[style*='--visibles:1'] .car-lista { grid-auto-columns: 92%; gap: 16px; }
+    /* En celular no se desliza de costado: las notas van una abajo de la otra */
+    .car-lista {
+      grid-auto-flow: row;
+      grid-auto-columns: auto;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      overflow: visible;
+      scroll-snap-type: none;
+      touch-action: auto;
+      padding-bottom: 0;
+    }
+    /* Con todas las notas de cada sección la portada no termina más:
+       se ven las primeras y el resto está en “Ver todas”. */
+    .car-lista > :global(*:nth-child(n + 5)) { display: none; }
     .car-flecha { display: none; }
   }
 </style>
