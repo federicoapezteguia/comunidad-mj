@@ -27,10 +27,17 @@ const opciones = [
 ---
 
 <div class="asistente" data-asistente data-fijo={fijo}>
-  <div class="barra" aria-hidden="true">
-    {!fijo && <span data-tramo="1"></span>}
-    <span data-tramo="2"></span><span data-tramo="3"></span>
+  <div class="cabecera" data-cabecera>
+    <span class="paso-n" data-contador>Paso 1</span>
+    <span class="barra" aria-hidden="true">
+      {!fijo && <span data-tramo="1"></span>}
+      <span data-tramo="2"></span><span data-tramo="3"></span>
+    </span>
   </div>
+  <noscript>
+    <!-- Sin JavaScript no hay pasos, así que el contador sobra -->
+    <style>.cabecera, .volver, .avanza { display: none !important; }</style>
+  </noscript>
 
   <form method="post" action="/api/contacto.php" novalidate>
     <button type="button" class="volver" data-volver hidden>
@@ -122,7 +129,10 @@ const opciones = [
         <span class="error" id="e-email" aria-live="polite"></span>
       </p>
 
-      <p class="nota-datos">Usamos tus datos solo para responderte. No se los damos a nadie ni te sumamos a ninguna lista.</p>
+      <p class="nota-datos">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+        <span>Usamos tus datos solo para responderte. No se los damos a nadie ni te sumamos a ninguna lista.</span>
+      </p>
 
       <p class="envio">
         <button type="submit" class="boton boton-violeta">Enviar mensaje</button>
@@ -153,102 +163,145 @@ const opciones = [
   /* Un display propio pisa el atributo hidden, así que se fuerza acá */
   [hidden] { display: none !important; }
 
+  /* Escala de espacios del formulario: 8 / 12 / 18 / 26 / 34 */
   .asistente {
-    border: 1px solid var(--borde);
+    --pad: 26px;
+    /* Un campo de 900px de ancho se lee mal: la tarjeta no pasa de acá. */
+    max-width: 760px;
+    border: 1px solid var(--lila);
     border-radius: 18px;
-    background: var(--blanco);
-    padding: 0 0 26px;
-    margin: 20px 0 8px;
-    box-shadow: 0 10px 30px rgba(45, 0, 93, 0.06);
+    background: var(--lila-claro);
+    overflow: hidden;
+    margin: 22px 0 8px;
+    box-shadow: 0 14px 34px rgba(45, 0, 93, 0.1);
   }
 
-  /* Barra de progreso */
-  .barra { display: flex; gap: 6px; padding: 18px 26px 0; }
+  /* Cabecera: el paso en el que va y cuánto falta */
+  .cabecera {
+    display: flex; align-items: center; gap: 18px;
+    padding: 13px var(--pad);
+    background: var(--violeta);
+  }
+  .paso-n {
+    font-size: 13px; font-weight: 800; color: var(--amarillo);
+    white-space: nowrap; letter-spacing: 0.01em;
+  }
+  .barra { display: flex; gap: 6px; flex: 1; }
   .barra span {
-    flex: 1; height: 4px; border-radius: 500px; background: var(--lila);
+    flex: 1; height: 5px; border-radius: 500px;
+    background: rgba(255, 255, 255, 0.22);
     transition: background 0.25s ease;
   }
   .barra span[data-activo] { background: var(--fucsia); }
 
-  form { padding: 0 26px; margin: 0; }
+  form { padding: 22px var(--pad) 26px; margin: 0; }
 
   .volver {
     display: inline-flex; align-items: center; gap: 5px;
-    margin: 16px 0 0; padding: 4px 0;
-    background: none; border: 0; cursor: pointer;
-    font: inherit; font-size: 14px; font-weight: 700; color: var(--violeta-medio);
+    margin: 0 0 14px; padding: 5px 11px 5px 8px;
+    background: var(--blanco); border: 1px solid var(--lila); border-radius: 500px;
+    cursor: pointer;
+    font: inherit; font-size: 13.5px; font-weight: 700; color: var(--violeta-medio);
+    transition: border-color 0.15s ease, color 0.15s ease;
   }
-  .volver:hover { color: var(--fucsia-oscuro); }
+  .volver:hover { color: var(--fucsia-oscuro); border-color: var(--violeta-medio); }
+  .volver:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; }
 
-  .paso { border: 0; margin: 0; padding: 18px 0 0; min-inline-size: 0; }
+  .paso { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  /* Sin JavaScript se ven los tres seguidos y necesitan aire entre sí */
+  .paso + .paso { margin-top: 28px; }
   .preg {
     padding: 0; margin: 0;
     font-family: var(--fuente-titulo);
     font-size: clamp(21px, 3.2vw, 27px); font-weight: 700; line-height: 1.2;
     letter-spacing: -0.015em; color: var(--violeta);
   }
-  .sub { margin: 6px 0 18px; font-size: 15px; color: var(--gris); }
+  .sub { margin: 7px 0 18px; font-size: 15px; line-height: 1.5; color: var(--gris); }
 
   /* Tarjetas de opción */
-  .opciones { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .opciones { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
   .opcion {
     display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
-    padding: 14px 16px; border: 1px solid var(--borde); border-radius: 13px;
+    padding: 15px 16px; border: 1px solid var(--lila); border-radius: 14px;
     cursor: pointer; background: var(--blanco);
-    transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
   }
-  .opcion:hover { border-color: var(--lila); background: var(--lila-claro); transform: translateY(-1px); }
+  .opcion:hover {
+    border-color: var(--violeta-medio); transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(45, 0, 93, 0.1);
+  }
   .opcion input { position: absolute; opacity: 0; width: 1px; height: 1px; }
   .opcion:has(input:focus-visible) { outline: 3px solid var(--amarillo); outline-offset: 2px; }
-  .opcion:has(input:checked) { border-color: var(--violeta); background: var(--lila-claro); }
-  .ico {
-    display: grid; place-items: center; width: 38px; height: 38px;
-    border-radius: 10px; background: var(--lila-claro); color: var(--violeta);
+  .opcion:has(input:checked) {
+    border-color: var(--violeta); box-shadow: inset 0 0 0 1px var(--violeta);
   }
-  .opcion:has(input:checked) .ico { background: var(--violeta); color: #fff; }
-  .txt { display: grid; gap: 2px; }
-  .txt strong { font-size: 15.5px; color: var(--violeta); line-height: 1.3; }
+  .ico {
+    display: grid; place-items: center; width: 40px; height: 40px;
+    border-radius: 11px; background: var(--lila-claro); color: var(--violeta);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .opcion:hover .ico { background: var(--lila); }
+  .opcion:has(input:checked) .ico { background: var(--violeta); color: var(--amarillo); }
+  .txt { display: grid; gap: 3px; }
+  .txt strong { font-size: 16px; color: var(--violeta); line-height: 1.3; }
   .txt small { font-size: 13.5px; color: var(--gris); line-height: 1.45; }
-  .chev { color: var(--lila); flex: none; }
-  .opcion:hover .chev { color: var(--violeta-medio); }
+  .chev { color: var(--lila); flex: none; transition: color 0.15s ease, transform 0.15s ease; }
+  .opcion:hover .chev { color: var(--fucsia); transform: translateX(2px); }
 
   /* Campos */
-  .campo { display: grid; gap: 6px; margin: 0 0 16px; }
+  .campo { display: grid; gap: 7px; margin: 0 0 18px; }
   label { font-weight: 700; font-size: 14.5px; color: var(--violeta); }
 
+  input[type='text'], input[type='email'], input[type='tel'], input[type='url'], textarea {
+    font: inherit; font-size: 16px; color: var(--texto);
+    padding: 12px 14px; border: 1px solid var(--lila); border-radius: 11px;
+    background: var(--blanco); width: 100%;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  input::placeholder, textarea::placeholder { color: #9a92a6; }
+  textarea { resize: vertical; min-height: 132px; line-height: 1.55; }
+  input:hover, textarea:hover { border-color: var(--violeta-medio); }
+  input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--amarillo); outline-offset: 1px;
+    border-color: var(--violeta); box-shadow: 0 0 0 3px rgba(45, 0, 93, 0.06);
+  }
+  .ayuda { font-size: 13px; color: var(--gris); }
+  .error { font-size: 13.5px; font-weight: 600; color: #b00020; }
+  .error:empty { display: none; }
+  [aria-invalid='true'] { border-color: #b00020; }
+
   /* Elegir WhatsApp o correo */
-  .via { border: 0; padding: 0; margin: 0 0 16px; }
-  .via legend { font-weight: 700; font-size: 14.5px; color: var(--violeta); padding: 0; margin-bottom: 8px; }
+  .via { border: 0; padding: 0; margin: 0 0 18px; }
+  .via legend { font-weight: 700; font-size: 14.5px; color: var(--violeta); padding: 0; margin-bottom: 9px; }
   .via-ops { display: flex; gap: 10px; flex-wrap: wrap; }
   .via-op {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 9px 15px; border: 1px solid var(--borde); border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 10px 17px; border: 1px solid var(--lila); border-radius: 999px;
     background: var(--blanco); cursor: pointer; font-weight: 700;
     font-size: 14.5px; color: var(--texto);
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   }
   .via-op input { accent-color: var(--fucsia); margin: 0; }
   .via-op:hover { border-color: var(--violeta-medio); }
   .via-op:has(input:checked) {
-    border-color: var(--violeta); background: var(--lila-claro); color: var(--violeta);
+    border-color: var(--violeta); background: var(--violeta); color: var(--blanco);
   }
-  .via-op:has(input:focus-visible) { outline: 3px solid var(--amarillo); outline-offset: 1px; }
-  input[type='text'], input[type='email'], input[type='tel'], input[type='url'], textarea {
-    font: inherit; font-size: 16px; color: var(--texto);
-    padding: 11px 13px; border: 1px solid var(--borde); border-radius: 10px;
-    background: var(--blanco); width: 100%;
-  }
-  textarea { resize: vertical; min-height: 130px; }
-  input:focus-visible, textarea:focus-visible {
-    outline: 3px solid var(--amarillo); outline-offset: 1px; border-color: var(--violeta);
-  }
-  .ayuda { font-size: 13px; color: var(--gris); }
-  .error { font-size: 13.5px; color: #b00020; }
-  .error:empty { display: none; }
-  [aria-invalid='true'] { border-color: #b00020; }
+  .via-op:has(input:checked) input { accent-color: var(--amarillo); }
+  .via-op:has(input:focus-visible) { outline: 3px solid var(--amarillo); outline-offset: 2px; }
 
-  .nota-datos { margin: 2px 0 18px; font-size: 13.5px; color: var(--gris); line-height: 1.5; }
-  .avanza, .envio { margin: 4px 0 0; }
-  .envio { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+  .nota-datos {
+    display: flex; gap: 9px; align-items: flex-start;
+    margin: 0 0 18px; padding: 11px 13px;
+    background: var(--blanco); border: 1px solid var(--lila); border-radius: 11px;
+    font-size: 13.5px; color: var(--gris); line-height: 1.5;
+  }
+  .nota-datos svg { flex: none; margin-top: 1px; color: var(--violeta-medio); }
+
+  .avanza { margin: 2px 0 0; }
+  .envio {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px;
+    margin: 0; padding: 18px 0 0; border-top: 1px solid var(--lila);
+  }
   .aviso { font-size: 14.5px; font-weight: 700; color: var(--violeta); }
   .aviso.mal { color: #b00020; }
   button[disabled] { opacity: 0.6; cursor: progress; }
@@ -257,15 +310,19 @@ const opciones = [
   .trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
   /* Final */
-  .listo { padding: 30px 26px 10px; text-align: center; }
+  .listo { padding: 34px var(--pad) 32px; text-align: center; }
   .tilde {
-    width: 58px; height: 58px; margin: 0 auto 14px;
+    width: 62px; height: 62px; margin: 0 auto 16px;
     display: grid; place-items: center; border-radius: 50%;
-    background: var(--lila-claro); color: var(--violeta);
+    background: var(--violeta); color: var(--amarillo);
+    box-shadow: 0 0 0 7px rgba(255, 0, 255, 0.1);
   }
-  .listo h3 { margin: 0 0 6px; font-size: 22px; color: var(--violeta); }
+  .listo h3 {
+    margin: 0 0 8px; font-family: var(--fuente-titulo);
+    font-size: 23px; letter-spacing: -0.015em; color: var(--violeta);
+  }
   .listo p { margin: 0 auto; max-width: 34ch; color: var(--texto); line-height: 1.6; }
-  .mientras { margin-top: 12px !important; font-size: 15px; }
+  .mientras { margin-top: 14px !important; font-size: 15px; }
   .otra {
     font: inherit; font-weight: 700; color: var(--fucsia-oscuro); background: none; border: 0;
     padding: 0; cursor: pointer; text-decoration: underline;
@@ -274,17 +331,22 @@ const opciones = [
   .otra:hover { color: var(--violeta); }
   .otra:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; border-radius: 3px; }
 
-  @media (max-width: 560px) {
-    .asistente { border-radius: 14px; }
-    .barra, form, .listo { padding-left: 16px; padding-right: 16px; }
-    .opcion { grid-template-columns: auto 1fr; padding: 13px 14px; }
+  @media (max-width: 620px) {
+    .asistente { --pad: 18px; border-radius: 15px; margin-top: 18px; }
+    form { padding-top: 20px; padding-bottom: 22px; }
+    .opcion { grid-template-columns: auto 1fr; padding: 14px; gap: 12px; }
     .chev { display: none; }
+    .via-op { flex: 1 1 auto; justify-content: center; }
     .avanza .boton, .envio .boton { width: 100%; }
+    .envio { gap: 10px; }
+    .aviso { width: 100%; text-align: center; }
+    .listo { padding-top: 30px; padding-bottom: 28px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .opcion { transition: none; }
+    .opcion, .ico, .chev, .via-op, input, textarea { transition: none; }
     .opcion:hover { transform: none; }
+    .opcion:hover .chev { transform: none; }
   }
 </style>
 
@@ -295,6 +357,8 @@ const opciones = [
     const f = caja.querySelector('form');
     const pasos = [...caja.querySelectorAll('.paso')];
     const tramos = [...caja.querySelectorAll('.barra span')];
+    const cabecera = caja.querySelector('[data-cabecera]');
+    const contador = caja.querySelector('[data-contador]');
     const volver = caja.querySelector('[data-volver]');
     const listo = caja.querySelector('[data-listo]');
     const aviso = caja.querySelector('.aviso');
@@ -319,6 +383,7 @@ const opciones = [
       pasos.forEach((p) => (p.hidden = Number(p.dataset.paso) !== actual));
       tramos.forEach((t) => t.toggleAttribute('data-activo', Number(t.dataset.tramo) <= actual));
       volver.hidden = actual === primero;
+      contador.textContent = 'Paso ' + (actual - primero + 1) + ' de ' + pasos.length;
       const vivo = caja.querySelector('.paso[data-paso="' + actual + '"]');
       const foco = vivo && vivo.querySelector('input:not([type="radio"]), textarea');
       if (foco && actual > 1 && !arranque) foco.focus({ preventScroll: true });
@@ -399,7 +464,7 @@ const opciones = [
       f.querySelectorAll('input[type="radio"][name="motivo"]').forEach((r) => (r.checked = false));
       f.querySelector('[name="abierto"]').value = String(Math.floor(Date.now() / 1000));
       listo.hidden = true;
-      caja.querySelector('.barra').hidden = false;
+      cabecera.hidden = false;
       f.hidden = false;
       actual = primero;
       aplicarGuion();
@@ -422,7 +487,7 @@ const opciones = [
         const d = await r.json();
         if (d.ok) {
           f.hidden = true;
-          caja.querySelector('.barra').hidden = true;
+          cabecera.hidden = true;
           listo.hidden = false;
           listo.querySelector('h3').focus?.();
         } else {
