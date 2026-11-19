@@ -88,6 +88,26 @@ body::after {
   }
 }
 
+/* En pantallas chicas el fondo deja de ser una capa fija. En iOS, una capa
+   fija del tamaño de la ventana y con máscara deja restos pintados arriba
+   al scrollear (se ve como si se rompiera el encabezado). Pegado al
+   documento, el patrón sube y baja con la página y el problema desaparece. */
+@media (max-width: 900px) {
+  body { position: relative; }
+  body::before,
+  body::after {
+    position: absolute;
+    height: 100%;
+    min-height: 100%;
+  }
+  body::before {
+    /* El degradado se repite cada pantalla y media, así no se estira
+       a lo largo de toda la nota. */
+    background-size: 100% 1200px;
+    background-repeat: repeat;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
