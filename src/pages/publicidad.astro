@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import FormContacto from '../components/FormContacto.astro';
 import { SITE } from '../config';
 
 const wa = `https://wa.me/${SITE.whatsappComercial}?text=${encodeURIComponent(
@@ -123,11 +124,18 @@ const pasos = [
       </ol>
     </section>
 
+    <section class="formulario" aria-labelledby="h-form">
+      <h2 id="h-form">Pedí la propuesta</h2>
+      <p class="intro-form">
+        Contanos de tu negocio y te pasamos el paquete con el precio cerrado.
+      </p>
+      <FormContacto motivo="publicidad" />
+    </section>
+
     <section class="cierre" aria-labelledby="h-cierre">
-      <h2 id="h-cierre">Hablemos de tu negocio</h2>
+      <h2 id="h-cierre">¿Preferís hablar?</h2>
       <p>
-        Escribinos y te pasamos la propuesta con las tres piezas y el precio cerrado. Atiende
-        nuestro representante comercial, acá en Marcos Juárez.
+        Escribinos y te atiende nuestro representante comercial, acá en Marcos Juárez.
       </p>
       <a href={wa} class="boton boton-amarillo" target="_blank" rel="noopener">
         Escribir por WhatsApp · {SITE.whatsappComercialVisible}
@@ -321,6 +329,23 @@ const pasos = [
   }
 
   /* Cierre */
+  .formulario {
+    margin: 48px 0 0;
+  }
+  .formulario h2 {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(24px, 3.4vw, 30px);
+    color: var(--violeta);
+    margin: 0 0 6px;
+    letter-spacing: -0.015em;
+  }
+  .intro-form {
+    margin: 0 0 20px;
+    color: var(--texto);
+    font-size: 16.5px;
+    line-height: 1.6;
+  }
+
   .cierre {
     margin-top: 40px;
     padding: 34px 28px 36px;
@@ -375,7 +400,24 @@ const pasos = [
       padding-top: 18px;
     }
     .juntos,
-    .cierre {
+    .formulario {
+    margin: 48px 0 0;
+  }
+  .formulario h2 {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(24px, 3.4vw, 30px);
+    color: var(--violeta);
+    margin: 0 0 6px;
+    letter-spacing: -0.015em;
+  }
+  .intro-form {
+    margin: 0 0 20px;
+    color: var(--texto);
+    font-size: 16.5px;
+    line-height: 1.6;
+  }
+
+  .cierre {
       padding-left: 20px;
       padding-right: 20px;
     }

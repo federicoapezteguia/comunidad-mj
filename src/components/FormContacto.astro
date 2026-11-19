@@ -1,7 +1,14 @@
 ---
 // Formulario de contacto por pasos. Sin JavaScript se ve como un
 // formulario normal, con todos los campos a la vista y un solo botón.
-import { SITE } from '../config';
+//
+// motivo="publicidad" saltea el primer paso: se usa en la página de
+// publicidad, donde el visitante ya eligió de qué quiere hablar.
+interface Props {
+  motivo?: 'publicidad' | '';
+}
+const { motivo = '' } = Astro.props;
+const fijo = motivo === 'publicidad' ? 'publicidad' : '';
 
 const opciones = [
   {
@@ -19,9 +26,10 @@ const opciones = [
 ];
 ---
 
-<div class="asistente" data-asistente>
+<div class="asistente" data-asistente data-fijo={fijo}>
   <div class="barra" aria-hidden="true">
-    <span data-tramo="1"></span><span data-tramo="2"></span><span data-tramo="3"></span>
+    {!fijo && <span data-tramo="1"></span>}
+    <span data-tramo="2"></span><span data-tramo="3"></span>
   </div>
 
   <form method="post" action="/api/contacto.php" novalidate>
@@ -30,28 +38,32 @@ const opciones = [
       Volver
     </button>
 
-    <!-- Paso 1 -->
-    <fieldset class="paso" data-paso="1">
-      <legend class="preg">¿Qué necesitás?</legend>
-      <p class="sub">Elegí lo que más se parezca a tu caso.</p>
-      <ul class="opciones">
-        {opciones.map((o, i) => (
-          <li>
-            <label class="opcion">
-              <input type="radio" name="motivo" value={o.id} required checked={i === 0} />
-              <span class="ico" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={o.icono} /></svg>
-              </span>
-              <span class="txt">
-                <strong>{o.titulo}</strong>
-                <small>{o.texto}</small>
-              </span>
-              <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
-            </label>
-          </li>
-        ))}
-      </ul>
-    </fieldset>
+    <!-- Paso 1: no se muestra cuando el motivo ya viene fijado -->
+    {fijo ? (
+      <input type="hidden" name="motivo" value={fijo} />
+    ) : (
+      <fieldset class="paso" data-paso="1">
+        <legend class="preg">¿Qué necesitás?</legend>
+        <p class="sub">Elegí lo que más se parezca a tu caso.</p>
+        <ul class="opciones">
+          {opciones.map((o, i) => (
+            <li>
+              <label class="opcion">
+                <input type="radio" name="motivo" value={o.id} required checked={i === 0} />
+                <span class="ico" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={o.icono} /></svg>
+                </span>
+                <span class="txt">
+                  <strong>{o.titulo}</strong>
+                  <small>{o.texto}</small>
+                </span>
+                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </fieldset>
+    )}
 
     <!-- Paso 2 -->
     <fieldset class="paso" data-paso="2">
@@ -131,7 +143,9 @@ const opciones = [
     </div>
     <h3>Mensaje enviado</h3>
     <p>Gracias por escribirnos. Te respondemos por donde nos pediste.</p>
-    <p class="mientras">Mientras tanto, <a href={SITE.redes.instagram} target="_blank" rel="noopener">seguinos en Instagram</a> o <a href="/en-vivo/">escuchá la radio en vivo</a>.</p>
+    <p class="mientras">
+      <a href="/en-vivo/">Escuchá la radio en vivo</a> o <button type="button" class="otra" data-otra>dejá otro mensaje</button>.
+    </p>
   </div>
 </div>
 
@@ -252,6 +266,13 @@ const opciones = [
   .listo h3 { margin: 0 0 6px; font-size: 22px; color: var(--violeta); }
   .listo p { margin: 0 auto; max-width: 34ch; color: var(--texto); line-height: 1.6; }
   .mientras { margin-top: 12px !important; font-size: 15px; }
+  .otra {
+    font: inherit; font-weight: 700; color: var(--fucsia-oscuro); background: none; border: 0;
+    padding: 0; cursor: pointer; text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .otra:hover { color: var(--violeta); }
+  .otra:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; border-radius: 3px; }
 
   @media (max-width: 560px) {
     .asistente { border-radius: 14px; }
@@ -278,6 +299,10 @@ const opciones = [
     const listo = caja.querySelector('[data-listo]');
     const aviso = caja.querySelector('.aviso');
     const enviar = f.querySelector('button[type="submit"]');
+    // En la página de publicidad el motivo ya viene dado y el asistente
+    // arranca directamente en el segundo paso.
+    const fijo = caja.dataset.fijo || '';
+    const primero = fijo ? 2 : 1;
 
     // Textos del paso 2 según lo que eligieron en el paso 1
     const guion = {
@@ -285,19 +310,24 @@ const opciones = [
       otro: ['Contanos de qué se trata', 'Escribilo con tus palabras, no hace falta que sea formal.', 'Mensaje'],
     };
 
-    let actual = 1;
+    let actual = primero;
+
+    // En la primera pintada no se roba el foco: la página recién se abre.
+    let arranque = true;
 
     const pintar = () => {
       pasos.forEach((p) => (p.hidden = Number(p.dataset.paso) !== actual));
       tramos.forEach((t) => t.toggleAttribute('data-activo', Number(t.dataset.tramo) <= actual));
-      volver.hidden = actual === 1;
-      const foco = pasos[actual - 1].querySelector('input:not([type="radio"]), textarea');
-      if (foco && actual > 1) foco.focus({ preventScroll: true });
+      volver.hidden = actual === primero;
+      const vivo = caja.querySelector('.paso[data-paso="' + actual + '"]');
+      const foco = vivo && vivo.querySelector('input:not([type="radio"]), textarea');
+      if (foco && actual > 1 && !arranque) foco.focus({ preventScroll: true });
+      arranque = false;
       const y = caja.getBoundingClientRect().top + scrollY - 90;
       if (scrollY > y) scrollTo({ top: y, behavior: 'smooth' });
     };
 
-    const elegido = () => (f.querySelector('[name="motivo"]:checked') || {}).value || 'otro';
+    const elegido = () => fijo || (f.querySelector('[name="motivo"]:checked') || {}).value || 'otro';
 
     const aplicarGuion = () => {
       const [preg, sub, lab] = guion[elegido()] || guion.otro;
@@ -352,7 +382,7 @@ const opciones = [
     });
 
     volver.addEventListener('click', () => {
-      actual = Math.max(1, actual - 1);
+      actual = Math.max(primero, actual - 1);
       pintar();
     });
 
@@ -360,6 +390,22 @@ const opciones = [
       caja.querySelectorAll('.error').forEach((e) => (e.textContent = ''));
       caja.querySelectorAll('[aria-invalid]').forEach((c) => c.removeAttribute('aria-invalid'));
     };
+
+    caja.querySelector('[data-otra]')?.addEventListener('click', () => {
+      f.reset();
+      limpiar();
+      aviso.textContent = '';
+      aviso.classList.remove('mal');
+      f.querySelectorAll('input[type="radio"][name="motivo"]').forEach((r) => (r.checked = false));
+      f.querySelector('[name="abierto"]').value = String(Math.floor(Date.now() / 1000));
+      listo.hidden = true;
+      caja.querySelector('.barra').hidden = false;
+      f.hidden = false;
+      actual = primero;
+      aplicarGuion();
+      aplicarVia();
+      pintar();
+    });
 
     f.addEventListener('submit', async (ev) => {
       ev.preventDefault();
@@ -389,8 +435,8 @@ const opciones = [
             if ((campo === 'mensaje' || campo === 'negocio') && !volvio) { actual = 2; pintar(); volvio = true; }
             if (campo === 'general') { aviso.textContent = texto; aviso.classList.add('mal'); }
           }
-          const primero = f.querySelector('[aria-invalid="true"]');
-          if (primero) primero.focus();
+          const fallo = f.querySelector('[aria-invalid="true"]');
+          if (fallo) fallo.focus();
         }
       } catch {
         aviso.textContent = 'No se pudo enviar. Probá de nuevo en un rato.';
@@ -401,7 +447,7 @@ const opciones = [
     });
 
     // Arranque: sin elegir nada todavía
-    f.querySelectorAll('[name="motivo"]').forEach((r) => (r.checked = false));
+    f.querySelectorAll('input[type="radio"][name="motivo"]').forEach((r) => (r.checked = false));
     f.querySelector('[name="abierto"]').value = String(Math.floor(Date.now() / 1000));
     aplicarGuion();
     aplicarVia();
