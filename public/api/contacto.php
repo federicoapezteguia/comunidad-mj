@@ -87,6 +87,8 @@ function ct_enviar(array $m): bool {
         . "Nombre:  {$m['nombre']}\n"
         . "Correo:  {$m['email']}\n"
         . "Motivo:  {$m['motivo']}\n"
+        . ($m['whatsapp'] !== '' ? "WhatsApp: {$m['whatsapp']}\n" : '')
+        . ($m['enlace'] !== ''   ? "Nota:    {$m['enlace']}\n"   : '')
         . "Fecha:   {$m['fecha']}\n\n"
         . "Mensaje:\n{$m['mensaje']}\n";
     $cabeceras = [
@@ -112,6 +114,8 @@ $nombre  = trim((string)($_POST['nombre'] ?? ''));
 $email   = trim((string)($_POST['email'] ?? ''));
 $motivo  = (string)($_POST['motivo'] ?? 'otro');
 $mensaje = trim((string)($_POST['mensaje'] ?? ''));
+$whats   = trim((string)($_POST['whatsapp'] ?? ''));
+$enlace  = trim((string)($_POST['enlace'] ?? ''));
 $trampa  = trim((string)($_POST['sitio_web'] ?? ''));   // campo oculto
 $desde   = (int)($_POST['abierto'] ?? 0);
 
@@ -139,6 +143,8 @@ if (!$errores && !$robot) {
         'nombre'  => $nombre,
         'email'   => $email,
         'motivo'  => $MOTIVOS[$motivo],
+        'whatsapp'=> mb_substr($whats, 0, 30),
+        'enlace'  => filter_var($enlace, FILTER_VALIDATE_URL) ? $enlace : '',
         'mensaje' => $mensaje,
         'ip'      => hash('sha256', ct_ip()),
     ];

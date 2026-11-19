@@ -1,6 +1,7 @@
 ---
 import PaginaSimple from '../components/PaginaSimple.astro';
 import { SITE } from '../config';
+import FormContacto from '../components/FormContacto.astro';
 const waRadio = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMensaje)}`;
 const waComercial = `https://wa.me/${SITE.whatsappComercial}?text=${encodeURIComponent('Hola, quiero información para publicitar en Comunidad FAN Marcos Juárez')}`;
 ---
@@ -19,41 +20,7 @@ const waComercial = `https://wa.me/${SITE.whatsappComercial}?text=${encodeURICom
   <h2>Escribinos un mensaje</h2>
   <p>Si preferís no usar WhatsApp, dejanos tu consulta acá y te respondemos al correo.</p>
 
-  <form class="form-contacto" method="post" action="/api/contacto.php" novalidate>
-    <p class="campo">
-      <label for="f-nombre">Nombre</label>
-      <input id="f-nombre" name="nombre" type="text" maxlength="80" required autocomplete="name" />
-      <span class="error" id="e-nombre" aria-live="polite"></span>
-    </p>
-    <p class="campo">
-      <label for="f-email">Correo</label>
-      <input id="f-email" name="email" type="email" maxlength="120" required autocomplete="email" />
-      <span class="error" id="e-email" aria-live="polite"></span>
-    </p>
-    <p class="campo">
-      <label for="f-motivo">Motivo</label>
-      <select id="f-motivo" name="motivo">
-        <option value="radio">Mensaje para la radio</option>
-        <option value="publicidad">Publicidad</option>
-        <option value="correccion">Corrección sobre una nota</option>
-        <option value="otro">Otro</option>
-      </select>
-    </p>
-    <p class="campo">
-      <label for="f-mensaje">Mensaje</label>
-      <textarea id="f-mensaje" name="mensaje" rows="6" maxlength="4000" required></textarea>
-      <span class="error" id="e-mensaje" aria-live="polite"></span>
-    </p>
-    <p class="trampa" aria-hidden="true">
-      <label for="f-sitio">No completar</label>
-      <input id="f-sitio" name="sitio_web" type="text" tabindex="-1" autocomplete="off" />
-    </p>
-    <input type="hidden" name="abierto" value="" />
-    <p class="envio">
-      <button type="submit" class="boton boton-violeta">Enviar mensaje</button>
-      <span class="aviso" role="status"></span>
-    </p>
-  </form>
+  <FormContacto />
 
   <h2>Seguinos en Instagram</h2>
   <p>Ahí van los videos, los detrás de escena y lo que pasa en el estudio todos los días.</p>
@@ -68,77 +35,3 @@ const waComercial = `https://wa.me/${SITE.whatsappComercial}?text=${encodeURICom
     Transmisión: 24 horas
   </p>
 </PaginaSimple>
-
-<style is:global>
-  .form-contacto { margin: 18px 0 8px; max-width: 34rem; }
-  .form-contacto .campo { display: grid; gap: 6px; margin: 0 0 16px; }
-  .form-contacto label { font-weight: 700; font-size: 15px; color: var(--violeta); }
-  .form-contacto input,
-  .form-contacto select,
-  .form-contacto textarea {
-    font: inherit; font-size: 16px; color: var(--texto);
-    padding: 11px 13px; border: 1px solid var(--borde); border-radius: 10px;
-    background: var(--blanco); width: 100%;
-  }
-  .form-contacto textarea { resize: vertical; min-height: 140px; }
-  .form-contacto input:focus-visible,
-  .form-contacto select:focus-visible,
-  .form-contacto textarea:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 1px; border-color: var(--violeta); }
-  .form-contacto .error { font-size: 14px; color: #b00020; min-height: 1px; }
-  .form-contacto .error:empty { display: none; }
-  .form-contacto [aria-invalid='true'] { border-color: #b00020; }
-  .form-contacto .trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .form-contacto .envio { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 4px 0 0; }
-  .form-contacto .aviso { font-size: 15px; font-weight: 700; color: var(--violeta); }
-  .form-contacto .aviso.mal { color: #b00020; }
-  .form-contacto button[disabled] { opacity: 0.6; cursor: progress; }
-  @media (max-width: 560px) { .form-contacto button { width: 100%; } }
-</style>
-
-<script is:inline>
-  (() => {
-    const f = document.querySelector('.form-contacto');
-    if (!f) return;
-    f.querySelector('[name="abierto"]').value = String(Math.floor(Date.now() / 1000));
-    const aviso = f.querySelector('.aviso');
-    const boton = f.querySelector('button[type="submit"]');
-    const limpiar = () => {
-      f.querySelectorAll('.error').forEach((e) => (e.textContent = ''));
-      f.querySelectorAll('[aria-invalid]').forEach((c) => c.removeAttribute('aria-invalid'));
-    };
-    f.addEventListener('submit', async (ev) => {
-      ev.preventDefault();
-      limpiar();
-      aviso.textContent = '';
-      aviso.classList.remove('mal');
-      boton.disabled = true;
-      try {
-        const r = await fetch(f.action, {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: new FormData(f),
-        });
-        const d = await r.json();
-        if (d.ok) {
-          f.reset();
-          aviso.textContent = 'Mensaje enviado. Te respondemos al correo que dejaste.';
-        } else {
-          for (const [campo, texto] of Object.entries(d.errores || {})) {
-            const e = f.querySelector('#e-' + campo);
-            const c = f.querySelector('[name="' + campo + '"]');
-            if (e) e.textContent = texto;
-            if (c) c.setAttribute('aria-invalid', 'true');
-            if (campo === 'general') { aviso.textContent = texto; aviso.classList.add('mal'); }
-          }
-          const primero = f.querySelector('[aria-invalid="true"]');
-          if (primero) primero.focus();
-        }
-      } catch {
-        aviso.textContent = 'No se pudo enviar. Probá de nuevo o escribinos por WhatsApp.';
-        aviso.classList.add('mal');
-      } finally {
-        boton.disabled = false;
-      }
-    });
-  })();
-</script>
