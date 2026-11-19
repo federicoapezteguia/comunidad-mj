@@ -108,7 +108,7 @@ if (d.youtube) {
 
       {!d.youtube && (
         <figure class="foto-principal">
-          <Image src={d.foto} alt={d.fotoAlt} widths={[480, 800, 1100, 1500]} sizes="(min-width: 1000px) 780px, 100vw" loading="eager" fetchpriority="high" data-pagefind-meta="image[src], image_alt[alt]" />
+          <Image src={d.foto} alt={d.fotoAlt} widths={[480, 800, 1100, 1500]} width={1500} quality={72} sizes="(min-width: 1000px) 780px, 100vw" loading="eager" fetchpriority="high" data-pagefind-meta="image[src], image_alt[alt]" />
         </figure>
       )}
 

@@ -14,12 +14,13 @@ const d = nota.data;
 const url = urlNota(nota);
 const Tit = titular;
 const anchos = variante === 'superpuesta' && tamanio === 'grande' ? [480, 800, 1100, 1400] : variante === 'compacta' ? [160, 320] : [320, 480, 640, 800];
+const ancho = anchos[anchos.length - 1];
 const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 1000px) 780px, 100vw' : variante === 'compacta' ? '140px' : '(min-width: 1000px) 380px, (min-width: 600px) 50vw, 100vw';
 ---
 {variante === 'superpuesta' ? (
   <article class:list={['sup', tamanio]}>
     <a href={url} class="link">
-      <Image src={d.foto} alt={d.fotoAlt} widths={anchos} sizes={sizes} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : 'auto'} class="foto" />
+      <Image src={d.foto} alt={d.fotoAlt} widths={anchos} width={ancho} quality={72} sizes={sizes} loading={prioridad ? 'eager' : 'lazy'} fetchpriority={prioridad ? 'high' : 'auto'} class="foto" />
       <span class="tag">{volanta(nota)}</span>
       <div class="capa">
         <Tit class="titulo">{d.titulo}</Tit>
@@ -30,7 +31,7 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
 ) : variante === 'compacta' ? (
   <article class="comp">
     <a href={url} class="link">
-      <Image src={d.foto} alt={d.fotoAlt} widths={anchos} sizes={sizes} class="foto" />
+      <Image src={d.foto} alt={d.fotoAlt} widths={anchos} width={ancho} quality={72} sizes={sizes} class="foto" />
       <div>
         <span class="vol">{volanta(nota)}</span>
         <Tit class="titulo">{d.titulo}</Tit>
@@ -42,7 +43,7 @@ const sizes = variante === 'superpuesta' && tamanio === 'grande' ? '(min-width: 
   <article class:list={['grilla', { video: variante === 'video' }]}>
     <a href={url} class="link">
       <div class="marco">
-        <Image src={d.foto} alt={d.fotoAlt} widths={anchos} sizes={sizes} loading={prioridad ? 'eager' : 'lazy'} class="foto" />
+        <Image src={d.foto} alt={d.fotoAlt} widths={anchos} width={ancho} quality={72} sizes={sizes} loading={prioridad ? 'eager' : 'lazy'} class="foto" />
         <span class="tag">{volanta(nota)}</span>
         {(variante === 'video' || d.youtube) && (
           <span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 12 12"><path d="M3 1l8 5-8 5z" fill="currentColor"></path></svg></span>

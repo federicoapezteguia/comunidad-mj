@@ -5,6 +5,11 @@ import { SECCIONES, SITE } from '../config';
 
 const actual = Astro.url.pathname.split('/')[1] ?? '';
 const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
+// Además de las secciones, el menú lleva estas dos páginas
+const paginas = [
+  { ruta: 'contacto', nombre: 'Contacto' },
+  { ruta: 'publicidad', nombre: 'Publicidad' },
+];
 ---
 <header class="header">
   <div class="leyenda">
@@ -22,10 +27,13 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
       </div>
     </div>
 
-    <nav aria-label="Secciones" class="nav">
+    <nav aria-label="Secciones" class="nav" id="menu-principal">
       <ul>
         {menu.map(([id, s]) => (
           <li><a href={`/${id}/`} aria-current={actual === id ? 'page' : undefined}>{s.nombre}</a></li>
+        ))}
+        {paginas.map((p) => (
+          <li class="pag"><a href={`/${p.ruta}/`} aria-current={actual === p.ruta ? 'page' : undefined}>{p.nombre}</a></li>
         ))}
       </ul>
     </nav>
@@ -39,6 +47,17 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
         <svg class="ic-pausa" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1h2.5v10H2.5zM7 1h2.5v10H7z" fill="currentColor"></path></svg>
         <span class="ic-carga" aria-hidden="true"></span>
         <span class="txt-play">En vivo</span><span class="txt-carga">Conectando</span><span class="txt-pausa">Pausar</span>
+      </button>
+      <button
+        type="button"
+        class="icono-btn menu-btn"
+        data-menu
+        aria-expanded="false"
+        aria-controls="menu-principal"
+        aria-label="Abrir el menú de secciones"
+      >
+        <svg class="ic-abrir" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        <svg class="ic-cerrar" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
       </button>
       <div class="redes-header"><Redes /></div>
     </div>
@@ -129,12 +148,38 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
   .nav a:hover { border-bottom-color: var(--fucsia); color: #fff; }
   .nav a[aria-current='page'] { border-bottom-color: var(--fucsia); }
   .acciones { display: flex; align-items: center; gap: 8px; }
+  .acciones .menu-btn { display: none; border: 0; background: none; cursor: pointer; padding: 0; }
+  .menu-btn .ic-cerrar { display: none; }
   .icono-btn {
     display: inline-flex; align-items: center; justify-content: center;
     width: 44px; height: 44px; border-radius: 50%; color: #fff;
   }
   .icono-btn:hover { background: rgba(255, 255, 255, 0.16); color: #fff; }
   .redes-header { display: none; }
+  /* Celular: el menú deja de deslizarse de costado y se abre con el botón */
+  @media (max-width: 640px) {
+    .acciones .menu-btn { display: inline-flex; }
+    .nav { display: none; }
+    .header[data-menu-abierto] .nav {
+      display: block; order: 3; width: 100%;
+      overflow: visible; -webkit-mask-image: none; mask-image: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      margin-top: 6px;
+    }
+    .header[data-menu-abierto] .nav ul {
+      display: grid; gap: 0; padding: 4px 0 10px; white-space: normal;
+    }
+    .header[data-menu-abierto] .nav li + li a { border-top: 1px solid rgba(255, 255, 255, 0.12); }
+    .header[data-menu-abierto] .nav a {
+      display: block; padding: 13px 2px; font-size: 15px; border-bottom: 0;
+    }
+    .header[data-menu-abierto] .nav a[aria-current='page'] { color: var(--amarillo); }
+    .header[data-menu-abierto] .nav .pag a { color: var(--amarillo); }
+    .header[data-menu-abierto] .nav .pag a[aria-current='page'] { color: #fff; }
+    .menu-btn[aria-expanded='true'] .ic-abrir { display: none; }
+    .menu-btn[aria-expanded='true'] .ic-cerrar { display: block; }
+  }
+
   /* Escritorio: logo, sello, menú y En vivo en una sola fila */
   @media (min-width: 1280px) {
     .header .fila { flex-wrap: nowrap; gap: 10px 16px; }
@@ -145,3 +190,21 @@ const menu = Object.entries(SECCIONES).filter(([, s]) => s.enMenu);
     .en-vivo { white-space: nowrap; }
   }
 </style>
+
+<script>
+  function menuHamburguesa() {
+    const h = document.querySelector<HTMLElement>('.header');
+    const b = h?.querySelector<HTMLButtonElement>('[data-menu]');
+    if (!h || !b || b.dataset.listo) return;
+    b.dataset.listo = '1';
+    const poner = (abierto: boolean) => {
+      h.toggleAttribute('data-menu-abierto', abierto);
+      b.setAttribute('aria-expanded', String(abierto));
+      b.setAttribute('aria-label', abierto ? 'Cerrar el menú de secciones' : 'Abrir el menú de secciones');
+    };
+    b.addEventListener('click', () => poner(!h.hasAttribute('data-menu-abierto')));
+    h.querySelectorAll('.nav a').forEach((a) => a.addEventListener('click', () => poner(false)));
+    addEventListener('keydown', (e) => { if (e.key === 'Escape') poner(false); });
+  }
+  document.addEventListener('astro:page-load', menuHamburguesa);
+</script>

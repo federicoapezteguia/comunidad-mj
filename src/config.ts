@@ -122,13 +122,13 @@ export const SECCIONES: Record<
     titulo: 'Espectáculos: series, novelas, famosos y virales',
     descripcion:
       'Novedades de series, novelas, plataformas, televisión, famosos y los virales del momento, con todo lo que se comenta en Córdoba y el país.',
-    enMenu: true,
+    enMenu: false,
   },
   'on-demand': {
     nombre: 'On Demand',
     titulo: 'On Demand: entrevistas y videos',
     descripcion: 'Entrevistas, coberturas y momentos del aire de Comunidad FAN Marcos Juárez.',
-    enMenu: true,
+    enMenu: false,
   },
   'contenido-de-marca': {
     nombre: 'Contenido de marca',
