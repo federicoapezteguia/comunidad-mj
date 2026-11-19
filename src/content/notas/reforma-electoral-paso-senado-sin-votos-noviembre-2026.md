@@ -4,8 +4,8 @@ bajada: "El oficialismo ya habla de suspenderlas en lugar de eliminarlas, pero v
 seccion: nacionales
 etiquetas: [politica, gobierno]
 fecha: 2026-11-03T19:31:00-03:00
-foto: ./img/senado-nacion-recinto-archivo.jpg
-fotoAlt: "Palacio del Congreso de la Nación Argentina"
+foto: ./img/congreso-nacion-fachada-archivo.jpg
+fotoAlt: "Fachada del Palacio del Congreso de la Nación"
 seoTitulo: "PASO: el Gobierno no tiene los votos en el Senado"
 seoDescripcion: "El Gobierno no consigue los votos en el Senado para eliminar o suspender las PASO de 2027. Qué dicen los aliados, los gobernadores y cuáles son los plazos."
 ---

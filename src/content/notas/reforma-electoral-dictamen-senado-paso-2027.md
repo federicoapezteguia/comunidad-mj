@@ -5,8 +5,8 @@ seccion: nacionales
 etiquetas: [politica, gobierno]
 autor: redaccion
 fecha: 2026-11-18T21:30:00-03:00
-foto: ./img/congreso-nacion-fachada-archivo.jpg
-fotoAlt: "Palacio del Congreso de la Nación, en Buenos Aires"
+foto: ./img/senado-nacion-recinto-archivo.jpg
+fotoAlt: "Recinto de la Cámara de Senadores de la Nación"
 destacada: false
 seoTitulo: "Dictamen para suspender las PASO: el Senado vota el 26"
 seoDescripcion: "La reforma electoral consiguió dictamen en el Senado. La suspensión de las PASO regiría solo en 2027 y el proyecto se tratará en el recinto el jueves 26."
