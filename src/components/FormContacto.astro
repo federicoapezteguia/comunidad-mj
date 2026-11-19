@@ -5,27 +5,15 @@ import { SITE } from '../config';
 
 const opciones = [
   {
-    id: 'radio',
-    titulo: 'Mandar un mensaje a la radio',
-    texto: 'Un saludo, un pedido de tema o participar de la programación.',
-    icono: 'M12 3a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4zM5 11a7 7 0 0 0 14 0M12 18v3',
-  },
-  {
     id: 'publicidad',
     titulo: 'Publicitar mi negocio',
     texto: 'Spots en la FM, banners en el sitio y notas de contenido de marca.',
     icono: 'M3 10v4h4l5 4V6l-5 4H3zM16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12',
   },
   {
-    id: 'correccion',
-    titulo: 'Corregir algo de una nota',
-    texto: 'Un dato equivocado, un nombre mal escrito o una aclaración.',
-    icono: 'M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4zM14 6l4 4',
-  },
-  {
     id: 'otro',
     titulo: 'Otra consulta',
-    texto: 'Cualquier otra cosa que nos quieras escribir.',
+    texto: 'Un mensaje para la radio, una corrección o cualquier otra cosa.',
     icono: 'M21 12a9 9 0 0 1-13 8l-5 1 1-5a9 9 0 1 1 17-4z',
   },
 ];
@@ -70,10 +58,10 @@ const opciones = [
       <legend class="preg" data-preg2>Contanos de qué se trata</legend>
       <p class="sub" data-sub2>Escribilo con tus palabras, no hace falta que sea formal.</p>
 
-      <p class="campo" data-solo="correccion" hidden>
-        <label for="c-enlace">Enlace de la nota</label>
-        <input id="c-enlace" name="enlace" type="url" maxlength="300" placeholder="https://www.comunidadfanmj.com.ar/..." />
-        <small class="ayuda">Copiá la dirección desde la barra del navegador.</small>
+      <p class="campo" data-solo="publicidad">
+        <label for="c-negocio">Nombre de tu emprendimiento, servicio o empresa</label>
+        <input id="c-negocio" name="negocio" type="text" maxlength="120" placeholder="Por ejemplo: Panadería La Esquina" />
+        <span class="error" id="e-negocio" aria-live="polite"></span>
       </p>
 
       <p class="campo">
@@ -88,24 +76,38 @@ const opciones = [
     <!-- Paso 3 -->
     <fieldset class="paso" data-paso="3">
       <legend class="preg">¿A dónde te respondemos?</legend>
-      <p class="sub">Te contestamos al correo. Si dejás tu WhatsApp, puede que te escribamos por ahí.</p>
-
-      <div class="dos-campos">
-        <p class="campo">
-          <label for="c-nombre">Tu nombre</label>
-          <input id="c-nombre" name="nombre" type="text" maxlength="80" required autocomplete="name" placeholder="Nombre y apellido" />
-          <span class="error" id="e-nombre" aria-live="polite"></span>
-        </p>
-        <p class="campo">
-          <label for="c-email">Correo</label>
-          <input id="c-email" name="email" type="email" maxlength="120" required autocomplete="email" placeholder="tucorreo@ejemplo.com" />
-          <span class="error" id="e-email" aria-live="polite"></span>
-        </p>
-      </div>
+      <p class="sub">Elegí por dónde te queda más cómodo y dejanos ese dato.</p>
 
       <p class="campo">
-        <label for="c-wa">WhatsApp <span class="opt">(opcional)</span></label>
+        <label for="c-nombre">Tu nombre</label>
+        <input id="c-nombre" name="nombre" type="text" maxlength="80" required autocomplete="name" placeholder="Nombre y apellido" />
+        <span class="error" id="e-nombre" aria-live="polite"></span>
+      </p>
+
+      <fieldset class="via">
+        <legend>¿Por dónde preferís?</legend>
+        <div class="via-ops">
+          <label class="via-op">
+            <input type="radio" name="via" value="whatsapp" checked />
+            <span>WhatsApp</span>
+          </label>
+          <label class="via-op">
+            <input type="radio" name="via" value="email" />
+            <span>Correo</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <p class="campo" data-via="whatsapp">
+        <label for="c-wa">Tu WhatsApp</label>
         <input id="c-wa" name="whatsapp" type="tel" maxlength="30" autocomplete="tel" placeholder="3472 123456" />
+        <span class="error" id="e-whatsapp" aria-live="polite"></span>
+      </p>
+
+      <p class="campo" data-via="email">
+        <label for="c-email">Tu correo</label>
+        <input id="c-email" name="email" type="email" maxlength="120" autocomplete="email" placeholder="tucorreo@ejemplo.com" />
+        <span class="error" id="e-email" aria-live="polite"></span>
       </p>
 
       <p class="nota-datos">Usamos tus datos solo para responderte. No se los damos a nadie ni te sumamos a ninguna lista.</p>
@@ -128,7 +130,7 @@ const opciones = [
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5.5 5.5L20 7" /></svg>
     </div>
     <h3>Mensaje enviado</h3>
-    <p>Gracias por escribirnos. Te respondemos al correo que dejaste.</p>
+    <p>Gracias por escribirnos. Te respondemos por donde nos pediste.</p>
     <p class="mientras">Mientras tanto, <a href={SITE.redes.instagram} target="_blank" rel="noopener">seguinos en Instagram</a> o <a href="/en-vivo/">escuchá la radio en vivo</a>.</p>
   </div>
 </div>
@@ -198,9 +200,24 @@ const opciones = [
 
   /* Campos */
   .campo { display: grid; gap: 6px; margin: 0 0 16px; }
-  .dos-campos { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
   label { font-weight: 700; font-size: 14.5px; color: var(--violeta); }
-  .opt { font-weight: 600; color: var(--gris); }
+
+  /* Elegir WhatsApp o correo */
+  .via { border: 0; padding: 0; margin: 0 0 16px; }
+  .via legend { font-weight: 700; font-size: 14.5px; color: var(--violeta); padding: 0; margin-bottom: 8px; }
+  .via-ops { display: flex; gap: 10px; flex-wrap: wrap; }
+  .via-op {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 15px; border: 1px solid var(--borde); border-radius: 999px;
+    background: var(--blanco); cursor: pointer; font-weight: 700;
+    font-size: 14.5px; color: var(--texto);
+  }
+  .via-op input { accent-color: var(--fucsia); margin: 0; }
+  .via-op:hover { border-color: var(--violeta-medio); }
+  .via-op:has(input:checked) {
+    border-color: var(--violeta); background: var(--lila-claro); color: var(--violeta);
+  }
+  .via-op:has(input:focus-visible) { outline: 3px solid var(--amarillo); outline-offset: 1px; }
   input[type='text'], input[type='email'], input[type='tel'], input[type='url'], textarea {
     font: inherit; font-size: 16px; color: var(--texto);
     padding: 11px 13px; border: 1px solid var(--borde); border-radius: 10px;
@@ -239,7 +256,6 @@ const opciones = [
   @media (max-width: 560px) {
     .asistente { border-radius: 14px; }
     .barra, form, .listo { padding-left: 16px; padding-right: 16px; }
-    .dos-campos { grid-template-columns: 1fr; }
     .opcion { grid-template-columns: auto 1fr; padding: 13px 14px; }
     .chev { display: none; }
     .avanza .boton, .envio .boton { width: 100%; }
@@ -265,9 +281,7 @@ const opciones = [
 
     // Textos del paso 2 según lo que eligieron en el paso 1
     const guion = {
-      radio: ['Contanos qué querés mandar', 'Un saludo, un pedido de tema o lo que quieras que salga al aire.', 'Tu mensaje'],
       publicidad: ['Contanos de tu negocio', 'Qué vendés y a quién le hablás. Con eso armamos la propuesta.', 'Tu consulta'],
-      correccion: ['¿Qué hay que corregir?', 'Indicanos la nota y qué dato está mal.', 'El error que encontraste'],
       otro: ['Contanos de qué se trata', 'Escribilo con tus palabras, no hace falta que sea formal.', 'Mensaje'],
     };
 
@@ -293,6 +307,14 @@ const opciones = [
       caja.querySelectorAll('[data-solo]').forEach((c) => (c.hidden = c.dataset.solo !== elegido()));
     };
 
+    const via = () => (f.querySelector('[name="via"]:checked') || {}).value || 'whatsapp';
+
+    const aplicarVia = () => {
+      caja.querySelectorAll('[data-via]').forEach((c) => (c.hidden = c.dataset.via !== via()));
+    };
+
+    f.querySelectorAll('[name="via"]').forEach((r) => r.addEventListener('change', aplicarVia));
+
     // Elegir una opción avanza sola, como en un asistente
     f.querySelectorAll('[name="motivo"]').forEach((r) =>
       r.addEventListener('change', () => {
@@ -303,6 +325,18 @@ const opciones = [
     );
 
     caja.querySelector('[data-sigue]').addEventListener('click', () => {
+      if (elegido() === 'publicidad') {
+        const n = f.querySelector('[name="negocio"]');
+        const en = caja.querySelector('#e-negocio');
+        if (n.value.trim().length < 2) {
+          en.textContent = 'Poné el nombre de tu negocio, aunque sea cómo lo conocen.';
+          n.setAttribute('aria-invalid', 'true');
+          n.focus();
+          return;
+        }
+        en.textContent = '';
+        n.removeAttribute('aria-invalid');
+      }
       const t = f.querySelector('[name="mensaje"]');
       const e = caja.querySelector('#e-mensaje');
       if (t.value.trim().length < 10) {
@@ -352,14 +386,14 @@ const opciones = [
             const c = f.querySelector('[name="' + campo + '"]');
             if (e) e.textContent = texto;
             if (c) c.setAttribute('aria-invalid', 'true');
-            if (campo === 'mensaje' && !volvio) { actual = 2; pintar(); volvio = true; }
+            if ((campo === 'mensaje' || campo === 'negocio') && !volvio) { actual = 2; pintar(); volvio = true; }
             if (campo === 'general') { aviso.textContent = texto; aviso.classList.add('mal'); }
           }
           const primero = f.querySelector('[aria-invalid="true"]');
           if (primero) primero.focus();
         }
       } catch {
-        aviso.textContent = 'No se pudo enviar. Probá de nuevo o escribinos por WhatsApp.';
+        aviso.textContent = 'No se pudo enviar. Probá de nuevo en un rato.';
         aviso.classList.add('mal');
       } finally {
         enviar.disabled = false;
@@ -370,6 +404,7 @@ const opciones = [
     f.querySelectorAll('[name="motivo"]').forEach((r) => (r.checked = false));
     f.querySelector('[name="abierto"]').value = String(Math.floor(Date.now() / 1000));
     aplicarGuion();
+    aplicarVia();
     pintar();
   })();
 </script>

@@ -15,10 +15,8 @@ const CT_MAX_POR_HORA = 5;      // mensajes por IP
 const CT_MIN_SEGUNDOS = 3;      // menos que esto es un robot
 
 $MOTIVOS = [
-    'radio'      => 'Mensaje para la radio',
     'publicidad' => 'Publicidad',
-    'correccion' => 'Corrección sobre una nota',
-    'otro'       => 'Otro',
+    'otro'       => 'Otra consulta',
 ];
 
 /** Carpeta privada para los mensajes, fuera de la web si el hosting lo permite. */
@@ -85,19 +83,23 @@ function ct_enviar(array $m): bool {
     $asunto = sprintf('[%s] %s de %s', CT_SITIO, $m['motivo'], $m['nombre']);
     $cuerpo = "Nuevo mensaje desde el formulario del sitio.\n\n"
         . "Nombre:  {$m['nombre']}\n"
-        . "Correo:  {$m['email']}\n"
         . "Motivo:  {$m['motivo']}\n"
+        . ($m['negocio'] !== ''  ? "Negocio: {$m['negocio']}\n"  : '')
+        . "Responder por: {$m['via']}\n"
         . ($m['whatsapp'] !== '' ? "WhatsApp: {$m['whatsapp']}\n" : '')
-        . ($m['enlace'] !== ''   ? "Nota:    {$m['enlace']}\n"   : '')
+        . ($m['email'] !== ''    ? "Correo:  {$m['email']}\n"    : '')
         . "Fecha:   {$m['fecha']}\n\n"
         . "Mensaje:\n{$m['mensaje']}\n";
     $cabeceras = [
         'From: ' . CT_SITIO . ' <' . CT_REMITENTE . '>',
-        'Reply-To: ' . $m['nombre'] . ' <' . $m['email'] . '>',
         'Content-Type: text/plain; charset=UTF-8',
         'MIME-Version: 1.0',
         'X-Mailer: PHP/' . phpversion(),
     ];
+    if ($m['email'] !== '') {
+        // Así se puede contestar desde el propio correo.
+        array_splice($cabeceras, 1, 0, 'Reply-To: ' . $m['nombre'] . ' <' . $m['email'] . '>');
+    }
     return @mail(CT_DESTINO, '=?UTF-8?B?' . base64_encode($asunto) . '?=', $cuerpo, implode("\r\n", $cabeceras));
 }
 
@@ -115,18 +117,32 @@ $email   = trim((string)($_POST['email'] ?? ''));
 $motivo  = (string)($_POST['motivo'] ?? 'otro');
 $mensaje = trim((string)($_POST['mensaje'] ?? ''));
 $whats   = trim((string)($_POST['whatsapp'] ?? ''));
-$enlace  = trim((string)($_POST['enlace'] ?? ''));
+$negocio = trim((string)($_POST['negocio'] ?? ''));
+$via     = (string)($_POST['via'] ?? 'whatsapp');
 $trampa  = trim((string)($_POST['sitio_web'] ?? ''));   // campo oculto
 $desde   = (int)($_POST['abierto'] ?? 0);
 
 if ($nombre === '')                       $errores['nombre']  = 'Escribí tu nombre.';
 elseif (mb_strlen($nombre) > 80)          $errores['nombre']  = 'El nombre es demasiado largo.';
-if ($email === '')                        $errores['email']   = 'Escribí tu correo para que podamos responderte.';
-elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errores['email'] = 'Ese correo no parece válido.';
+if (!in_array($via, ['whatsapp', 'email'], true)) $via = 'whatsapp';
+if ($via === 'email') {
+    if ($email === '')                                  $errores['email'] = 'Escribí tu correo para que podamos responderte.';
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errores['email'] = 'Ese correo no parece válido.';
+} else {
+    // Un número argentino tiene entre 8 y 13 dígitos, con o sin característica.
+    $soloNumeros = preg_replace('/\D+/', '', $whats);
+    if ($whats === '')                $errores['whatsapp'] = 'Dejanos tu WhatsApp para poder responderte.';
+    elseif (strlen($soloNumeros) < 8) $errores['whatsapp'] = 'Ese número parece incompleto.';
+}
+if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) $errores['email'] = 'Ese correo no parece válido.';
 if ($mensaje === '')                      $errores['mensaje'] = 'Contanos de qué se trata.';
 elseif (mb_strlen($mensaje) < 10)         $errores['mensaje'] = 'El mensaje es muy corto.';
 elseif (mb_strlen($mensaje) > 4000)       $errores['mensaje'] = 'El mensaje es demasiado largo.';
 if (!isset($MOTIVOS[$motivo]))            $motivo = 'otro';
+if ($motivo === 'publicidad') {
+    if ($negocio === '')              $errores['negocio'] = 'Poné el nombre de tu negocio.';
+    elseif (mb_strlen($negocio) > 120) $errores['negocio'] = 'Ese nombre es demasiado largo.';
+}
 
 // Un robot completa todos los campos, incluso el que está escondido,
 // y manda el formulario apenas carga la página.
@@ -143,8 +159,9 @@ if (!$errores && !$robot) {
         'nombre'  => $nombre,
         'email'   => $email,
         'motivo'  => $MOTIVOS[$motivo],
+        'negocio' => mb_substr($negocio, 0, 120),
+        'via'     => $via === 'email' ? 'Correo' : 'WhatsApp',
         'whatsapp'=> mb_substr($whats, 0, 30),
-        'enlace'  => filter_var($enlace, FILTER_VALIDATE_URL) ? $enlace : '',
         'mensaje' => $mensaje,
         'ip'      => hash('sha256', ct_ip()),
     ];
@@ -164,7 +181,7 @@ if ($ajax) {
 // Sin JavaScript: página de respuesta
 $titulo = $ok ? 'Mensaje enviado' : 'Revisá el formulario';
 $texto  = $ok
-    ? 'Gracias por escribirnos. Te vamos a responder al correo que dejaste.'
+    ? 'Gracias por escribirnos. Te vamos a responder por donde nos pediste.'
     : implode(' ', $errores);
 header('Content-Type: text/html; charset=utf-8');
 ?><!doctype html>
