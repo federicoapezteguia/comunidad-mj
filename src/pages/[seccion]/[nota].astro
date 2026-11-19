@@ -25,9 +25,15 @@ const d = nota.data;
 const { Content } = await render(nota);
 const autor = await getEntry('autores', d.autor);
 const seccion = SECCIONES[d.seccion as SeccionId];
-const recomendadas = relacionadas(nota, todas, 6);
-const enMedio = recomendadas.slice(0, 2);
-const rel = recomendadas.slice(2, 6);
+// Dos recomendaciones en el medio del texto, de donde sea.
+const enMedio = relacionadas(nota, todas, 2);
+// Abajo, solo notas de la misma sección: el título del bloque lo promete.
+const rel = relacionadas(
+  nota,
+  todas.filter((n) => n.data.seccion === d.seccion),
+  4,
+  enMedio,
+);
 const ultimas = todas.filter((n) => n.id !== nota.id && !n.data.patrocinado).slice(0, 5);
 const url = new URL(urlNota(nota), Astro.site).href;
 
