@@ -26,5 +26,3 @@ Desde el municipio ubicaron el trabajo dentro de una serie de acciones destinada
 ## Qué cambia en el día a día
 
 El efecto más inmediato es de visibilidad. Un cartel iluminado se lee desde más lejos y ordena la llegada: indica dónde termina el camino y dónde empieza Marcos Juárez. En una rotonda, donde el conductor tiene que decidir rápido por dónde salir, cualquier referencia que se vea bien suma.
-
-El sistema ya quedó operativo, así que el cambio se puede ver desde la primera noche.
