@@ -7,7 +7,7 @@ localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-18T22:20:00-03:00
 foto: ./img/taekwondo-club-san-martin-juegos-binacionales.jpg
-fotoAlt: "Competidores de taekwondo del Club San Martín de Marcos Juárez"
+fotoAlt: "Benjamín Tapia y Catalina Vergani con el buzo de la delegación de Córdoba"
 destacada: true
 seoTitulo: "Taekwondo: dos de Marcos Juárez en los Juegos Binacionales"
 seoDescripcion: "Benjamín Tapia y Catalina Vergani, del Club San Martín de Marcos Juárez, compitieron por Córdoba en los Juegos Binacionales de Mendoza y llegaron a cuartos de final."
