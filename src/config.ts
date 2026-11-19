@@ -28,6 +28,7 @@ export const SITE = {
   whatsappComercial: '5493517604328', // contacto comercial / publicidad
   whatsappComercialVisible: '351 760-4328',
   email: 'fede@comunidad.fan',
+  instagramUsuario: '@comunidadfan.mj',
 
   // Reproductor en vivo de la señal
   reproductor: 'https://comunidadmj.miradio.ar/',
