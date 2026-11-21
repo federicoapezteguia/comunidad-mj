@@ -1,5 +1,5 @@
 ---
-titulo: "Ivana Merigo encabezará el Tribunal de Cuentas de Marcos Juárez"
+titulo: "Ivanna Merigo encabezará el Tribunal de Cuentas de Marcos Juárez"
 bajada: "Asume en diciembre, junto con el cambio de gobierno. El organismo quedará integrado por tres miembros: dos por el oficialismo y uno por la oposición."
 seccion: marcos-juarez
 etiquetas: [municipio, politica]
@@ -9,13 +9,13 @@ fecha: 2026-11-18T22:10:00-03:00
 foto: ./img/ivana-merigo-tribunal-de-cuentas-marcos-juarez.jpg
 fotoAlt: "Frente del edificio de la Municipalidad de Marcos Juárez"
 destacada: true
-seoTitulo: "Ivana Merigo encabezará el Tribunal de Cuentas de Marcos Juárez"
-seoDescripcion: "Merigo asume en diciembre al frente del Tribunal de Cuentas municipal, que quedará integrado con Mariel Bracamonte y Próspero Rearte por la oposición."
+seoTitulo: "Ivanna Merigo encabezará el Tribunal de Cuentas de Marcos Juárez"
+seoDescripcion: "Merigo asume en diciembre al frente del Tribunal de Cuentas municipal, que quedará integrado con Mariela Bracamonte y Próspero Reartes por la oposición."
 ---
 
-Ivana Merigo asumirá en diciembre como integrante del Tribunal de Cuentas de Marcos Juárez y encabezará el organismo que controla las cuentas del municipio. El cambio llega junto con el recambio de autoridades: el 10 de diciembre se inicia la gestión de Germán Font, que ganó las elecciones municipales de septiembre.
+Ivanna Merigo asumirá en diciembre como integrante del Tribunal de Cuentas de Marcos Juárez y encabezará el organismo que controla las cuentas del municipio. El cambio llega junto con el recambio de autoridades: el 10 de diciembre se inicia la gestión de Germán Font, que ganó las elecciones municipales de septiembre.
 
-El Tribunal quedará conformado por tres integrantes. Merigo y Mariel Bracamonte ocuparán los lugares correspondientes al oficialismo, mientras que Próspero Rearte ingresará en representación de la oposición.
+El Tribunal quedará conformado por tres integrantes. Merigo y Mariela Bracamonte ocuparán los lugares correspondientes al oficialismo, mientras que Próspero Reartes ingresará en representación de la oposición.
 
 ## Qué hace el Tribunal de Cuentas
 
