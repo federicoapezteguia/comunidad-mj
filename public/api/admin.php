@@ -80,6 +80,48 @@ if ($logueado && isset($_GET['csv']) && preg_match('/^[a-z0-9]{6,20}$/', (string
     exit;
 }
 
+// ---------- Registro de lecturas ----------
+function lecturas(): array {
+    $d = is_file(enc_dir() . '/visitas.json') ? (json_decode((string) file_get_contents(enc_dir() . '/visitas.json'), true) ?: []) : [];
+    $indice = is_file(__DIR__ . '/notas.json') ? (json_decode((string) file_get_contents(__DIR__ . '/notas.json'), true) ?: []) : [];
+    $desde = date('Y-m-d', strtotime('-6 days'));
+    $hoy = date('Y-m-d');
+    $filas = [];
+    $dias = [];
+    foreach ($d as $dia => $notas) {
+        if ($dia < $desde) continue;
+        $dias[$dia] = 0;
+        foreach ($notas as $id => $n) {
+            $filas[$id]['total'] = ($filas[$id]['total'] ?? 0) + $n;
+            $filas[$id]['hoy'] = ($filas[$id]['hoy'] ?? 0) + ($dia === $hoy ? $n : 0);
+            $dias[$dia] += $n;
+        }
+    }
+    foreach ($filas as $id => $f) {
+        $filas[$id]['titulo'] = $indice[$id]['titulo'] ?? $id;
+        $filas[$id]['url'] = $indice[$id]['url'] ?? '';
+        $filas[$id]['volanta'] = $indice[$id]['volanta'] ?? '';
+    }
+    uasort($filas, fn($a, $b) => $b['total'] <=> $a['total']);
+    krsort($dias);
+    return [$filas, $dias];
+}
+
+if ($logueado && isset($_GET['lecturas']) && $_GET['lecturas'] === 'csv') {
+    [$filas] = lecturas();
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename="lecturas-' . date('Y-m-d') . '.csv"');
+    $out = fopen('php://output', 'w');
+    fwrite($out, "\xEF\xBB\xBF");
+    fputcsv($out, ['Puesto', 'Título', 'Sección', 'Lecturas (7 días)', 'Lecturas de hoy', 'Dirección'], ';');
+    $i = 0;
+    foreach ($filas as $f) {
+        $i++;
+        fputcsv($out, [$i, $f['titulo'], $f['volanta'], $f['total'], $f['hoy'], $f['url']], ';');
+    }
+    exit;
+}
+
 // ---------- Acciones del panel ----------
 if ($logueado && $accion !== '' && $accion !== 'entrar') {
     if (!hash_equals($csrf, (string) ($_POST['csrf'] ?? ''))) { http_response_code(403); exit('Sesión vencida, recargá la página.'); }
@@ -128,7 +170,7 @@ $datos = $logueado ? enc_leer() : ['encuestas' => []];
 <html lang="es-AR">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
-<title>Encuestas · Comunidad FAN Marcos Juárez</title>
+<title>Panel · Comunidad FAN Marcos Juárez</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
   :root { --f: #ff00ff; --v: #2d005d; --a: #ffcc33; }
@@ -154,10 +196,20 @@ $datos = $logueado ? enc_leer() : ['encuestas' => []];
   .preg { font-weight: 800; font-size: 17px; margin: 8px 0; color: var(--v); }
   .chico { font-size: 12px; color: #666; }
   form.inline { display: inline; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .tabla th { text-align: left; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #777; border-bottom: 2px solid #e6dcf3; padding: 0 8px 8px; }
+  .tabla td { border-bottom: 1px solid #f0ebf8; padding: 10px 8px; vertical-align: top; }
+  .tabla .num { text-align: right; white-space: nowrap; }
+  .tabla .pos { color: #999; font-weight: 800; width: 28px; }
+  .tabla tr:first-child .pos { color: var(--f); }
+  .tabla a { color: var(--v); font-weight: 700; text-decoration: none; }
+  .tabla a:hover { color: #b000b0; text-decoration: underline; }
+  .vol { display: block; font-size: 10px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; color: #b000b0; }
+  .dia { display: inline-block; margin-right: 12px; }
 </style>
 </head>
 <body>
-<header><h1><b>Encuestas</b> · Comunidad FAN Marcos Juárez</h1>
+<header><h1><b>Panel</b> · Comunidad FAN Marcos Juárez</h1>
 <?php if ($logueado): ?><form method="post" class="inline"><input type="hidden" name="accion" value="salir"><button class="sec">Salir</button></form><?php endif; ?>
 </header>
 <main>
@@ -173,6 +225,36 @@ $datos = $logueado ? enc_leer() : ['encuestas' => []];
     </form>
   </div>
 <?php else: ?>
+  <?php [$filas, $dias] = lecturas(); $totalSemana = array_sum($dias); ?>
+  <h2>Lecturas de los últimos 7 días</h2>
+  <div class="caja">
+    <?php if (!$filas): ?>
+      <p class="chico">Todavía no hay lecturas registradas. El contador empieza a sumar cuando alguien abre una nota.</p>
+    <?php else: ?>
+      <p class="chico">Se cuenta una lectura por nota, por navegador y por día. Total de la semana: <b><?= $totalSemana ?></b> lecturas.</p>
+      <table class="tabla">
+        <thead><tr><th>#</th><th>Nota</th><th class="num">7 días</th><th class="num">Hoy</th></tr></thead>
+        <tbody>
+          <?php $i = 0; foreach ($filas as $f): $i++; ?>
+            <tr>
+              <td class="pos"><?= $i ?></td>
+              <td>
+                <?php if ($f['volanta']): ?><span class="vol"><?= h($f['volanta']) ?></span><?php endif; ?>
+                <?php if ($f['url']): ?><a href="<?= h($f['url']) ?>" target="_blank" rel="noopener"><?= h($f['titulo']) ?></a><?php else: ?><?= h($f['titulo']) ?><?php endif; ?>
+              </td>
+              <td class="num"><b><?= (int) $f['total'] ?></b></td>
+              <td class="num"><?= (int) $f['hoy'] ?></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+      <div class="fila">
+        <a class="btn sec" href="admin.php?lecturas=csv">Descargar registro (Excel/CSV)</a>
+      </div>
+      <p class="chico" style="margin-top:14px">Por día: <?php foreach ($dias as $dia => $n): ?><span class="dia"><?= h(date('d/m', strtotime($dia))) ?>: <b><?= $n ?></b></span><?php endforeach; ?></p>
+    <?php endif; ?>
+  </div>
+
   <h2>Nueva encuesta</h2>
   <div class="caja">
     <form method="post">
