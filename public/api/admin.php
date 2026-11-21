@@ -36,6 +36,8 @@ if ($accion === 'salir') { session_destroy(); header('Location: admin.php'); exi
 if ($accion === 'entrar') {
     if ($hashOk === '') {
         $mensaje = 'El panel todavía no tiene contraseña configurada.';
+    } elseif ((string) ($_POST['clave'] ?? '') === '') {
+        $mensaje = 'Escribí la contraseña.';
     } elseif (intentos() >= 5) {
         $mensaje = 'Demasiados intentos. Probá de nuevo en 15 minutos.';
     } elseif (hash_equals($usuarioOk, (string) ($_POST['usuario'] ?? '')) && password_verify((string) ($_POST['clave'] ?? ''), $hashOk)) {

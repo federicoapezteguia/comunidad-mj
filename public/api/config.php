@@ -5,5 +5,5 @@ if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === 'config.php') { http_respons
 // Clave actualizada: 2026-11-19
 return [
     'usuario' => 'fede',
-    'hash' => '$2y$12$mCuIQ9kYnXTtOLS8Vzx79O/76MWWRYzWhnwgYCrBP38b7s4B5aJue',
+    'hash' => '$2y$12$u2ZimWWmXOzLXNjxXMq02OTH/HXApV7mZi2hc90D6XF.4/jhE1qTa',
 ];
