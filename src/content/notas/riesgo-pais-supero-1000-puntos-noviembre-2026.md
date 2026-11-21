@@ -5,8 +5,8 @@ seccion: nacionales
 etiquetas: [economia]
 autor: redaccion
 fecha: 2026-11-21T11:12:00-03:00
-foto: ./img/dolar-pizarra-casa-de-cambio.jpg
-fotoAlt: "Pizarra con cotizaciones del dólar en una casa de cambio"
+foto: ./img/riesgo-pais-bonos-pantalla-mercado.jpg
+fotoAlt: "Pantalla con gráficos de cotizaciones en una mesa de operaciones"
 destacada: false
 seoTitulo: "El riesgo país superó los 1.000 puntos: qué lo explica"
 seoDescripcion: "El riesgo país pasó los 1.000 puntos, el nivel más alto en trece meses. Qué explica la escalada desde los 402 puntos de julio y qué significa para el crédito."

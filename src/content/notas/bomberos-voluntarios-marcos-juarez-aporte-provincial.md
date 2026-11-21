@@ -6,8 +6,8 @@ etiquetas: [gobierno, instituciones]
 localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-21T11:05:00-03:00
-foto: ./img/bomberos-voluntarios-autobomba-archivo.jpg
-fotoAlt: "Autobomba de un cuartel de bomberos voluntarios"
+foto: ./img/bomberos-aporte-provincial-entrega.jpg
+fotoAlt: "Entrega de aportes provinciales a cuarteles de bomberos voluntarios de Córdoba"
 destacada: false
 seoTitulo: "Bomberos de Marcos Juárez, entre los 28 cuarteles con aportes"
 seoDescripcion: "La Provincia repartió 800 millones de pesos entre 28 cuarteles de bomberos voluntarios de 16 departamentos. El de Marcos Juárez está en la lista."
