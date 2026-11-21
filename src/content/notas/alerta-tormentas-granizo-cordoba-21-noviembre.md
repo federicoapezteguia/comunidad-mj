@@ -6,7 +6,7 @@ etiquetas: [clima]
 autor: redaccion
 fecha: 2026-11-21T11:30:00-03:00
 foto: ./img/tormenta-electrica-rayos-noche-campo.jpg
-fotoAlt: "Tormenta eléctrica sobre el campo durante la noche"
+fotoAlt: "Rayos iluminan el cielo durante una tormenta eléctrica nocturna"
 destacada: false
 seoTitulo: "Alerta por tormentas fuertes y granizo en Córdoba"
 seoDescripcion: "Rige una alerta amarilla por tormentas en buena parte de Córdoba. Se esperan entre 30 y 70 milímetros, ráfagas intensas y ocasional caída de granizo."
