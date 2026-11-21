@@ -5,8 +5,8 @@ seccion: espectaculos
 etiquetas: [famosos]
 autor: redaccion
 fecha: 2026-11-21T10:40:00-03:00
-foto: ./img/palacio-de-justicia-tribunales-buenos-aires.jpg
-fotoAlt: "Fachada del Palacio de Justicia de la Nación, en la Ciudad de Buenos Aires"
+foto: ./img/pity-alvarez-traslado-policia.jpg
+fotoAlt: "Cristian \"Pity\" Álvarez custodiado por personal policial durante un traslado"
 destacada: false
 seoTitulo: "Condenaron a Pity Álvarez a 12 años de prisión"
 seoDescripcion: "El Tribunal Oral N° 29 condenó al exlíder de Viejas Locas e Intoxicados por el crimen de Cristian Díaz. Cumplirá la pena con arresto domiciliario."
