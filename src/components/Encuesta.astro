@@ -35,7 +35,8 @@ const idH = alta ? 'h-encuesta-alta' : 'h-encuesta';
         ops.append(fila);
         requestAnimationFrame(() => requestAnimationFrame(() => { barra.style.width = pct + '%'; }));
       });
-      pie.textContent = total === 1 ? '1 voto · ¡Gracias por participar!' : `${total} votos · ¡Gracias por participar!`;
+      // Sin el recuento: con pocos votos, el número le resta peso al resultado.
+      pie.textContent = '¡Gracias por participar!';
     } else {
       e.opciones.forEach((t, i) => {
         const b = document.createElement('button');
