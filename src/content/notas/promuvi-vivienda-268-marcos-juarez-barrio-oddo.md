@@ -7,7 +7,7 @@ localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-21T11:08:00-03:00
 foto: ./img/promuvi-vivienda-268-marcos-juarez.jpg
-fotoAlt: "Vivienda del Programa Municipal de Vivienda de Marcos Juárez"
+fotoAlt: "Frente de la vivienda 268 del PRO.MU.VI., en barrio Oddo"
 destacada: false
 seoTitulo: "Entregan la vivienda 268 del PRO.MU.VI. en barrio Oddo"
 seoDescripcion: "La intendenta Sara Majorel entrega el martes 24 a las 12 la vivienda 268 del PRO.MU.VI., en 9 de Julio 1531, barrio Oddo. El adjudicatario es Francisco De Rico."
