@@ -373,5 +373,10 @@
     "buscar:Cumulonimbus cloud photograph sky",
     "buscar:tormenta nubes cielo Argentina fotografia",
     "buscar:storm cloud photo landscape"
+  ],
+  "tormenta-electrica-rayos-noche-campo.jpg": [
+    "buscar:lightning storm night photograph landscape",
+    "buscar:thunderstorm lightning photograph field",
+    "buscar:rayo tormenta electrica fotografia"
   ]
 }
