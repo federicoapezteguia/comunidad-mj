@@ -24,11 +24,15 @@ Boca salió a presionar desde el arranque y a los tres minutos estuvo cerca de a
 
 Poco después le anularon un gol a Ascacíbar por posición adelantada, en una jugada que revisó el sistema de fuera de juego semiautomático. El mediocampista se tomó revancha enseguida: cerca del cuarto de hora capturó un rebote dentro del área y definió abajo para el 1-0.
 
+![Los jugadores de Boca festejan el primer gol en la final de la Copa Sudamericana](./img/boca-sudamericana-festejo-primer-gol.jpg)
+
 Con la ventaja, el equipo argentino controló el partido. El conjunto brasileño llegó al entretiempo sin haber inquietado al arco de Álvaro Montero.
 
 ## El segundo llegó apenas arrancó el complemento
 
 Eduardo Domínguez, entrenador de Mineiro, movió tres piezas para el inicio del segundo tiempo, pero el efecto duró poco. A los dos minutos, Sebastián Villa recibió por la izquierda, dejó atrás a su marcador y encaró hasta el fondo para tirar el centro atrás. Ahí apareció Merentiel, que empujó la pelota al gol y se desahogó por la que había errado en el primer tiempo.
+
+![Miguel Merentiel festeja el segundo gol de Boca frente a la tribuna](./img/boca-sudamericana-festejo-merentiel.jpg)
 
 Mineiro reaccionó recién después del segundo golpe y tuvo algunos avances, pero no logró incomodar en serio. Boca dejó pasar el reloj con tranquilidad y se quedó con la copa.
 
