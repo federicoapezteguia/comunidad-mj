@@ -1,5 +1,5 @@
 ---
-titulo: "Una multitud cantó los clásicos del cuarteto en las escalinatas del Centro Cívico"
+titulo: "Los clásicos del cuarteto sonaron en las escalinatas del Centro Cívico"
 bajada: "La Banda Municipal José Cesanelli, el Coro Polifónico y artistas invitados presentaron \"Piensa en mí\", con quince canciones del cuarteto del recuerdo."
 seccion: marcos-juarez
 etiquetas: [cultura, eventos]
@@ -9,13 +9,13 @@ fecha: 2026-11-24T19:15:00-03:00
 foto: ./img/piensa-en-mi-centro-civico-marcos-juarez.jpg
 fotoAlt: "La Banda Municipal y el Coro Polifónico sobre las escalinatas del Centro Cívico de Marcos Juárez"
 destacada: true
-seoTitulo: "Multitudinaria noche de cuarteto en el Centro Cívico"
-seoDescripcion: "La Banda Municipal José Cesanelli y el Coro Polifónico presentaron \"Piensa en mí\", un repertorio de cuartetos del recuerdo, ante una multitud."
+seoTitulo: "Noche de cuarteto del recuerdo en el Centro Cívico"
+seoDescripcion: "La Banda Municipal José Cesanelli y el Coro Polifónico presentaron \"Piensa en mí\", un repertorio de cuartetos del recuerdo al aire libre."
 ---
 
-Las escalinatas del Centro Cívico se llenaron el domingo a la noche. La Banda Municipal José Cesanelli, el Coro Polifónico Municipal y un grupo de artistas invitados presentaron **"Piensa en mí"**, un espectáculo armado íntegramente con cuartetos del recuerdo.
+El domingo a la noche hubo cuarteto al aire libre en las escalinatas del Centro Cívico. La Banda Municipal José Cesanelli, el Coro Polifónico Municipal y un grupo de artistas invitados presentaron **"Piensa en mí"**, un espectáculo armado íntegramente con cuartetos del recuerdo.
 
-Fueron quince canciones, y alcanzaron para que la gente cantara, bailara y se emocionara al aire libre. El repertorio cruzó generaciones: los clásicos que sonaban hace treinta o cuarenta años volvieron a escucharse frente al edificio, con público de todas las edades sentado en las escalinatas y en el pasto.
+Fueron quince canciones, y alcanzaron para que la gente cantara, bailara y se emocionara. El repertorio cruzó generaciones: los clásicos que sonaban hace treinta o cuarenta años volvieron a escucharse frente al edificio, con público de todas las edades sentado en las escalinatas y en el pasto.
 
 ![El público siguió el espectáculo sentado frente a las escalinatas](./img/piensa-en-mi-publico-escalinatas.jpg)
 

@@ -6,8 +6,8 @@ etiquetas: [eventos, sociedad]
 localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-24T19:35:00-03:00
-foto: ./img/pena-folklore-mate-reunion-aire-libre.jpg
-fotoAlt: "Baile folklórico en una peña"
+foto: ./img/pena-fin-de-ano-centro-apoyo-aviso.jpg
+fotoAlt: "Aviso de la peña de fin de año del Centro de Apoyo al Niño y la Familia"
 destacada: false
 seoTitulo: "Peña de fin de año del Centro de Apoyo al Niño y la Familia"
 seoDescripcion: "El sábado 28 a las 18.45, en Vélez Sarsfield 1474. Hay que llevar reposera y merienda, porque no habrá servicio de buffet."
