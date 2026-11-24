@@ -8,6 +8,7 @@ import Carrusel from '../components/Carrusel.astro';
 import IngresoMJ from '../components/IngresoMJ.astro';
 import MasLeido from '../components/MasLeido.astro';
 import Clima from '../components/Clima.astro';
+import Bienvenida from '../components/Bienvenida.astro';
 import { getNotas, esRegion, type Nota } from '../lib/notas';
 import { SITE, SECCIONES, type SeccionId } from '../config';
 
@@ -68,6 +69,8 @@ const jsonLd = [
   <h1 class="sr-only">{SITE.nombre}: noticias de Marcos Juárez, Córdoba y el país</h1>
 
   <div class="wrap pub-sup"><Publicidad espacio="superior" /></div>
+
+  <Bienvenida />
 
   {destacadas.length > 0 && (
     <div class="franja-dest">
