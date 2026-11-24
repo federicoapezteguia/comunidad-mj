@@ -383,15 +383,5 @@
     "buscar:Legislatura de Cordoba edificio",
     "buscar:Legislatura Provincia de Cordoba",
     "buscar:Centro Civico Cordoba edificio"
-  ],
-  "industria-fabrica-produccion-archivo.jpg": [
-    "buscar:factory production line workers",
-    "buscar:industrial factory interior machinery",
-    "buscar:Fabrik Produktion Halle"
-  ],
-  "congreso-nacion-exterior-noche.jpg": [
-    "buscar:Palacio del Congreso de la Nacion Argentina",
-    "buscar:Congreso de la Nacion Argentina fachada",
-    "buscar:Argentine National Congress building"
   ]
 }

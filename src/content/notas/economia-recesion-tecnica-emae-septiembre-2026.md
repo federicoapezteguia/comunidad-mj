@@ -5,8 +5,8 @@ seccion: nacionales
 etiquetas: [economia]
 autor: redaccion
 fecha: 2026-11-24T19:58:00-03:00
-foto: ./img/industria-fabrica-produccion-archivo.jpg
-fotoAlt: "Interior de una planta industrial con maquinaria de producción"
+foto: ./img/local-cerrado-persiana-baja-comercio.jpg
+fotoAlt: "Comercio con la persiana baja en una calle céntrica"
 destacada: false
 seoTitulo: "La economía argentina entró en recesión técnica"
 seoDescripcion: "El INDEC informó que la actividad cayó 1,2% interanual en septiembre. Con dos trimestres seguidos en baja, la economía entró en recesión técnica."

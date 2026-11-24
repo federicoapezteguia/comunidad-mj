@@ -5,8 +5,8 @@ seccion: nacionales
 etiquetas: [gobierno, politica]
 autor: redaccion
 fecha: 2026-11-24T20:02:00-03:00
-foto: ./img/congreso-nacion-exterior-noche.jpg
-fotoAlt: "Fachada del Palacio del Congreso de la Nación"
+foto: ./img/diputados-recinto-sesion-congreso.jpg
+fotoAlt: "Recinto de la Cámara de Diputados durante una sesión"
 destacada: false
 seoTitulo: "Congreso: Presupuesto 2027 y suspensión de las PASO el jueves"
 seoDescripcion: "Diputados trata el Presupuesto 2027 y el Senado la reforma electoral con la suspensión de las PASO, este jueves 26 de noviembre."
