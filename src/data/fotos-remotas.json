@@ -375,8 +375,33 @@
     "buscar:storm cloud photo landscape"
   ],
   "obra-cloacal-zanja-canerias-calle.jpg": [
-    "buscar:sewer pipe replacement trench street works photograph",
-    "buscar:excavation sewer pipe laying street photograph",
-    "buscar:obras cloacales zanja calle"
+    "buscar:Kanalbau Baustelle Rohr",
+    "buscar:sewer pipe trench construction",
+    "buscar:Sewerage construction works street"
+  ],
+  "aedes-aegypti-mosquito-dengue.jpg": [
+    "buscar:Aedes aegypti",
+    "buscar:Aedes aegypti mosquito feeding",
+    "buscar:Mosquito Aedes"
+  ],
+  "urna-votacion-elecciones-argentina.jpg": [
+    "buscar:urna electoral Argentina votacion",
+    "buscar:ballot box election",
+    "buscar:Ballot box voting"
+  ],
+  "industria-fabrica-produccion-archivo.jpg": [
+    "buscar:factory production line workers",
+    "buscar:industrial factory interior machinery",
+    "buscar:Fabrik Produktion Halle"
+  ],
+  "congreso-nacion-exterior-noche.jpg": [
+    "buscar:Palacio del Congreso de la Nacion Argentina",
+    "buscar:Congreso de la Nacion Argentina fachada",
+    "buscar:Argentine National Congress building"
+  ],
+  "pena-folklore-mate-reunion-aire-libre.jpg": [
+    "buscar:mate infusion calabaza bombilla",
+    "buscar:Mate drink gourd",
+    "buscar:Yerba mate drinking"
   ]
 }
