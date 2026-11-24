@@ -1,5 +1,5 @@
 ---
-titulo: "Por qué hay agua en calle Pellegrini: COYSPU reemplaza las cañerías cloacales"
+titulo: "COYSPU reemplazará las cañerías cloacales de calle Pellegrini"
 bajada: "La cooperativa instaló tres bombas sumergibles para bajar el nivel de la napa y poder excavar. El agua corre por la cuneta hasta la boca de tormenta de Laprida."
 seccion: marcos-juarez
 etiquetas: [obras]
@@ -13,7 +13,11 @@ seoTitulo: "COYSPU reemplaza cañerías cloacales en calle Pellegrini"
 seoDescripcion: "La cooperativa instaló tres bombas para bajar la napa en calle Pellegrini. Eso explica el agua que corre por la cuneta hasta Laprida."
 ---
 
-Los vecinos que pasan por calle Pellegrini se encuentran estos días con agua corriendo por la cuneta. No es una pérdida: forma parte de los trabajos de reemplazo de cañerías cloacales que está ejecutando COYSPU en ese sector de la ciudad.
+COYSPU va a reemplazar las cañerías cloacales de calle Pellegrini, en el tramo entre Perú y Uruguay. La obra ya empezó, aunque todavía está en la etapa previa a la excavación.
+
+Eso explica algo que los vecinos vienen notando: el agua que corre por la cuneta en ese sector no es una pérdida, es parte del procedimiento.
+
+![Aviso de COYSPU sobre el reemplazo de cañerías en calle Pellegrini](./img/coyspu-aviso-obra-pellegrini.jpg)
 
 ## Por qué hay que bombear
 
@@ -29,6 +33,6 @@ Ese recorrido es el que explica la presencia de agua en las cuadras intermedias 
 
 ## Parte de la renovación de la red
 
-La obra se enmarca en el proceso de renovación de la infraestructura cloacal que viene llevando adelante la cooperativa. El tramo que se interviene es el de calle Pellegrini entre Perú y Uruguay.
+La obra se enmarca en el proceso de renovación de la infraestructura cloacal que viene llevando adelante la cooperativa.
 
 Desde el municipio pidieron a los vecinos tener en cuenta la situación al circular por el sector.
