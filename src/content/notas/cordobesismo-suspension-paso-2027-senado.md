@@ -6,7 +6,7 @@ etiquetas: [politica]
 autor: redaccion
 fecha: 2026-11-24T19:55:00-03:00
 foto: ./img/urna-votacion-elecciones-argentina.jpg
-fotoAlt: "Urna de votación en una mesa electoral"
+fotoAlt: "Edificio de la Legislatura de Córdoba"
 destacada: false
 seoTitulo: "El cordobesismo acompañará la suspensión de las PASO"
 seoDescripcion: "La senadora Alejandra Vigo fijó la posición del espacio de Llaryora sobre la suspensión de las PASO, que el Senado trata este jueves."

@@ -6,7 +6,7 @@ etiquetas: [salud]
 autor: redaccion
 fecha: 2026-11-24T19:50:00-03:00
 foto: ./img/aedes-aegypti-mosquito-dengue.jpg
-fotoAlt: "Ejemplar de mosquito Aedes aegypti, transmisor del dengue"
+fotoAlt: "Mosquito del género Aedes, transmisor del dengue"
 destacada: false
 seoTitulo: "Dengue: Córdoba confirmó los dos primeros casos de la temporada"
 seoDescripcion: "Un hombre de 48 años y una mujer de 29 que viajaron al exterior son los primeros casos de dengue de la temporada 2026-2027 en Córdoba."
