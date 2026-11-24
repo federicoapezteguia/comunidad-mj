@@ -6,8 +6,8 @@ etiquetas: [obras]
 localidad: marcos-juarez
 autor: redaccion
 fecha: 2026-11-24T19:05:00-03:00
-foto: ./img/obra-cloacal-zanja-canerias-calle.jpg
-fotoAlt: "Zanja abierta en una calle durante trabajos de reemplazo de cañerías cloacales"
+foto: ./img/coyspu-operario-camion-desobstruccion.jpg
+fotoAlt: "Operario de COYSPU junto a un camión de trabajo sobre la red cloacal"
 destacada: false
 seoTitulo: "COYSPU reemplaza cañerías cloacales en calle Pellegrini"
 seoDescripcion: "La cooperativa instaló tres bombas para bajar la napa en calle Pellegrini. Eso explica el agua que corre por la cuneta hasta Laprida."
