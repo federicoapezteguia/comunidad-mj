@@ -2,11 +2,13 @@
 // Bloque y ventana de bienvenida por el lanzamiento del sitio.
 // Se muestran solo en la portada y desaparecen solos en la fecha de HASTA,
 // sin necesidad de tocar nada. La ventana aparece una vez por navegador.
+//
+// La pieza se apoya en lo más propio de la radio: su lugar en el dial.
+// El 99.9 es el elemento grande; todo lo demás queda quieto alrededor.
 import { SITE } from '../config';
 
 const HASTA = '2026-12-15T23:59:59-03:00';
 const vigente = Date.now() < new Date(HASTA).getTime();
-const l = SITE.logoSenal;
 ---
 
 {
@@ -25,28 +27,37 @@ const l = SITE.logoSenal;
           </svg>
         </button>
 
-        <img src={l.src} alt="" width={l.w} height={l.h} class="marca" />
+        <div class="sintonia" aria-hidden="true">
+          <p class="fm">FM</p>
+          <p class="num">99.9</p>
+          <p class="lugar">Marcos Juárez</p>
+          <div class="escala">
+            <span class="aguja" />
+          </div>
+        </div>
 
         <div class="texto">
-          <p class="volanta">Nuevo sitio</p>
-          <h2 id="bienv-t">Ya estamos online</h2>
+          <h2 id="bienv-t">
+            Nos escuchabas.<br />
+            Ahora también podés leernos.
+          </h2>
           <p class="bajada">
-            Las noticias de Marcos Juárez, la región, Córdoba y el país, todos los días. Y la FM 99.9
-            en vivo, desde donde estés.
+            Las noticias de Marcos Juárez, la región, Córdoba y el país, todos los días. Y la FM
+            99.9 en vivo, desde donde estés.
           </p>
 
-          <ul class="puntos">
-            <li>Lo que pasa en la ciudad y en la zona, actualizado todos los días</li>
-            <li>La radio en vivo, desde el celular o la computadora</li>
-            <li>El clima, las encuestas y lo más leído de la semana</li>
+          <ul class="tira">
+            <li>Lo que pasa en la ciudad</li>
+            <li>La radio en vivo</li>
+            <li>El clima y lo más leído</li>
           </ul>
 
           <div class="acciones">
             <button type="button" class="boton boton-amarillo" data-radio-toggle>
               <span>Escuchar la radio en vivo</span>
             </button>
-            <a class="boton boton-linea" href={SITE.redes.instagram} target="_blank" rel="noopener">
-              <span>Seguinos en Instagram</span>
+            <a class="enlace" href={SITE.redes.instagram} target="_blank" rel="noopener">
+              Seguinos en Instagram
             </a>
           </div>
         </div>
@@ -70,18 +81,26 @@ const l = SITE.logoSenal;
             />
           </svg>
         </button>
-        <img src={l.src} alt="" width={l.w} height={l.h} class="marca" />
-        <h2 id="pop-t">Bienvenido al nuevo sitio</h2>
-        <p>
-          Comunidad FAN Marcos Juárez ya está online: las noticias de la ciudad y la región todos los
-          días, y la FM 99.9 en vivo desde donde estés.
+
+        <p class="dial-chico">
+          <span>FM</span> 99.9 <span>Marcos Juárez</span>
         </p>
+
+        <h2 id="pop-t">
+          Nos escuchabas.<br />
+          Ahora también podés leernos.
+        </h2>
+        <p>
+          Las noticias de la ciudad y la región, todos los días, y la radio en vivo desde donde
+          estés.
+        </p>
+
         <div class="acciones">
           <button type="button" class="boton boton-amarillo" data-pop-cerrar>
-            <span>Empezar a leer</span>
+            <span>Entrar al sitio</span>
           </button>
-          <button type="button" class="boton boton-linea" data-radio-toggle data-pop-cerrar>
-            <span>Escuchar la radio</span>
+          <button type="button" class="enlace" data-radio-toggle data-pop-cerrar>
+            Escuchar la radio
           </button>
         </div>
       </div>
@@ -98,139 +117,202 @@ const l = SITE.logoSenal;
   .caja {
     position: relative;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 30px;
+    grid-template-columns: minmax(230px, 300px) 1fr;
+    gap: 44px;
     align-items: center;
-    padding: 30px 34px;
-    border-radius: 16px;
+    padding: 38px 42px 40px;
+    border-radius: 14px;
     color: var(--blanco);
     background:
-      radial-gradient(110% 120% at 100% 0%, rgba(255, 0, 255, 0.45) 0%, rgba(255, 0, 255, 0) 60%),
-      linear-gradient(135deg, var(--violeta) 0%, var(--violeta-noche) 100%);
-    box-shadow: 0 16px 36px rgba(45, 0, 93, 0.18);
+      radial-gradient(90% 130% at 16% 110%, rgba(255, 0, 255, 0.34) 0%, rgba(255, 0, 255, 0) 58%),
+      linear-gradient(104deg, #2d005d 0%, #1b0038 62%, #14002b 100%);
     overflow: hidden;
   }
 
   .caja::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background: url('/img/mosaico-manito.svg') 0 0 / 230px;
-    opacity: 0.06;
+    inset: -20% -10% auto auto;
+    width: 60%;
+    height: 180%;
+    background: url('/img/mosaico-manito.svg') 0 0 / 190px;
+    opacity: 0.05;
+    transform: rotate(-8deg);
     pointer-events: none;
   }
 
-  .marca {
+  /* El dial: lo único grande de la pieza */
+  .sintonia {
     position: relative;
-    height: 104px;
-    width: auto;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    text-align: left;
+  }
+
+  .fm,
+  .lugar {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: rgba(233, 221, 245, 0.75);
+  }
+
+  .num {
+    margin: -2px 0 2px -0.055em;
+    font-family: var(--fuente-titulo);
+    font-size: clamp(76px, 9.5vw, 128px);
+    line-height: 0.82;
+    letter-spacing: -0.045em;
+    color: var(--fucsia);
+    text-shadow: 0 0 46px rgba(255, 0, 255, 0.5);
+  }
+
+  .escala {
+    position: relative;
+    margin-top: 20px;
+    height: 22px;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(233, 221, 245, 0.5) 0 2px,
+      transparent 2px 13px
+    );
+    -webkit-mask-image: linear-gradient(90deg, #000 0 58%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0 58%, transparent 100%);
+  }
+
+  .aguja {
+    position: absolute;
+    top: -7px;
+    left: 34%;
+    width: 3px;
+    height: 36px;
+    border-radius: 2px;
+    background: var(--amarillo);
+    box-shadow: 0 0 14px rgba(255, 204, 51, 0.8);
   }
 
   .texto {
-    position: relative;
     min-width: 0;
-  }
-
-  .volanta {
-    margin: 0 0 6px;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--amarillo);
   }
 
   .bienv h2 {
     margin: 0;
     font-family: var(--fuente-titulo);
-    font-size: clamp(26px, 3.6vw, 38px);
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    text-transform: uppercase;
+    font-size: clamp(25px, 3vw, 39px);
+    line-height: 1.08;
+    letter-spacing: -0.022em;
   }
 
   .bajada {
-    margin: 12px 0 0;
-    max-width: 62ch;
-    font-size: 16px;
-    line-height: 1.5;
+    margin: 16px 0 0;
+    max-width: 56ch;
+    font-size: 16.5px;
+    line-height: 1.55;
     color: var(--lila);
   }
 
-  .puntos {
-    margin: 16px 0 0;
+  /* Tres pares: la línea divisoria dice que son pares, el bolito no decía nada */
+  .tira {
+    margin: 22px 0 0;
     padding: 0;
     list-style: none;
-    display: grid;
-    gap: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 18px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.86);
   }
 
-  .puntos li {
-    position: relative;
-    padding-left: 22px;
-    font-size: 14.5px;
-    line-height: 1.45;
-    color: var(--blanco);
-  }
-
-  .puntos li::before {
-    content: '';
-    position: absolute;
-    left: 2px;
-    top: 0.58em;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--fucsia);
+  .tira li + li {
+    padding-left: 18px;
+    border-left: 1px solid rgba(233, 221, 245, 0.28);
   }
 
   .acciones {
-    margin-top: 20px;
+    margin-top: 26px;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    align-items: center;
+    gap: 14px 24px;
   }
 
-  .boton-linea {
-    background: transparent;
+  /* Una sola acción sólida: el segundo camino es un enlace, no compite */
+  .enlace {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 14.5px;
+    font-weight: 700;
     color: var(--blanco);
-    border: 2px solid rgba(233, 221, 245, 0.55);
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 0, 255, 0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    transition: text-decoration-color 0.15s ease;
   }
 
-  .boton-linea:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: var(--blanco);
-    color: var(--blanco);
+  .enlace:hover {
+    text-decoration-color: var(--amarillo);
   }
 
   .cerrar {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 14px;
+    right: 14px;
     z-index: 2;
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     padding: 0;
     border: 0;
     border-radius: 50%;
     cursor: pointer;
-    color: var(--blanco);
-    background: rgba(255, 255, 255, 0.14);
-    transition: background 0.15s ease;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
   }
 
   .cerrar:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.24);
+    color: var(--blanco);
+  }
+
+  /* El único momento con movimiento: la aguja entra una vez y se queda */
+  @media (prefers-reduced-motion: no-preference) {
+    .aguja {
+      animation: sintonizar 0.9s cubic-bezier(0.22, 0.9, 0.24, 1) 0.15s both;
+    }
+
+    .num {
+      animation: encender 0.7s ease 0.1s both;
+    }
+  }
+
+  @keyframes sintonizar {
+    from {
+      left: 2%;
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes encender {
+    from {
+      opacity: 0;
+      text-shadow: 0 0 0 rgba(255, 0, 255, 0);
+    }
   }
 
   /* ---------- Ventana ---------- */
-  /* Va en un <dialog> para que el navegador la ponga en la capa superior:
-     así no la afecta ningún recorte ni z-index de la página. */
   .pop {
-    width: min(460px, calc(100% - 32px));
+    width: min(440px, calc(100% - 32px));
     max-width: none;
     max-height: calc(100dvh - 40px);
     margin: auto;
@@ -241,27 +323,37 @@ const l = SITE.logoSenal;
   }
 
   .pop::backdrop {
-    background: rgba(20, 0, 40, 0.68);
-    backdrop-filter: blur(2px);
+    background: rgba(14, 0, 30, 0.72);
+    backdrop-filter: blur(3px);
   }
 
   .tarjeta {
     position: relative;
     max-height: calc(100dvh - 40px);
     overflow: auto;
-    padding: 34px 30px 30px;
-    border-radius: 18px;
-    text-align: center;
+    padding: 34px 32px 30px;
+    border-radius: 14px;
     color: var(--blanco);
     background:
-      radial-gradient(120% 80% at 50% 0%, rgba(255, 0, 255, 0.45) 0%, rgba(255, 0, 255, 0) 62%),
-      linear-gradient(180deg, var(--violeta) 0%, var(--violeta-noche) 100%);
-    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+      radial-gradient(80% 110% at 0% 100%, rgba(255, 0, 255, 0.3) 0%, rgba(255, 0, 255, 0) 60%),
+      linear-gradient(150deg, #2d005d 0%, #1b0038 70%, #14002b 100%);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5);
   }
 
-  .tarjeta .marca {
-    height: 86px;
-    margin: 0 auto 16px;
+  .dial-chico {
+    margin: 0 0 14px;
+    font-family: var(--fuente-titulo);
+    font-size: 26px;
+    letter-spacing: -0.03em;
+    color: var(--fucsia);
+  }
+
+  .dial-chico span {
+    font-family: var(--fuente);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: rgba(233, 221, 245, 0.7);
   }
 
   .tarjeta h2 {
@@ -269,19 +361,18 @@ const l = SITE.logoSenal;
     font-family: var(--fuente-titulo);
     font-size: 27px;
     line-height: 1.1;
-    text-transform: uppercase;
+    letter-spacing: -0.02em;
   }
 
-  .tarjeta p {
-    margin: 12px auto 0;
-    max-width: 38ch;
+  .tarjeta p:not(.dial-chico) {
+    margin: 12px 0 0;
     font-size: 15.5px;
-    line-height: 1.5;
+    line-height: 1.55;
     color: var(--lila);
   }
 
   .tarjeta .acciones {
-    justify-content: center;
+    margin-top: 24px;
   }
 
   .pop[open]::backdrop {
@@ -301,7 +392,7 @@ const l = SITE.logoSenal;
   @keyframes subir {
     from {
       opacity: 0;
-      transform: translateY(18px) scale(0.97);
+      transform: translateY(18px) scale(0.98);
     }
   }
 
@@ -313,32 +404,50 @@ const l = SITE.logoSenal;
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 760px) {
+  @media (max-width: 860px) {
     .caja {
       grid-template-columns: 1fr;
-      gap: 16px;
-      padding: 24px 20px;
-      text-align: center;
-      justify-items: center;
+      gap: 24px;
+      padding: 30px 24px 32px;
     }
 
-    .marca {
-      height: 64px;
+    .sintonia {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: baseline;
+      column-gap: 14px;
+    }
+
+    .fm {
+      grid-row: 1;
+    }
+
+    .num {
+      grid-row: 2;
+      grid-column: 1;
+      font-size: clamp(60px, 17vw, 86px);
+      margin-bottom: 0;
+    }
+
+    .lugar {
+      grid-row: 2;
+      grid-column: 2;
+      align-self: end;
+      padding-bottom: 0.45em;
+    }
+
+    .escala {
+      grid-row: 3;
+      grid-column: 1 / -1;
+      margin-top: 14px;
     }
 
     .bajada {
-      margin-top: 10px;
-      font-size: 15px;
+      font-size: 15.5px;
     }
 
-    /* En el celular el bloque no puede comerse la pantalla entera:
-       el detalle queda en la ventana de bienvenida. */
-    .puntos {
+    .tira {
       display: none;
-    }
-
-    .acciones {
-      justify-content: center;
     }
 
     .acciones .boton {
@@ -346,17 +455,43 @@ const l = SITE.logoSenal;
     }
   }
 
-  @media (max-width: 420px) {
-    .tarjeta {
-      padding: 30px 20px 24px;
+  /* En el celular la ventana entra desde abajo, como una hoja */
+  @media (max-width: 560px) {
+    .pop {
+      width: 100%;
+      max-width: 100%;
+      margin: auto auto 0;
+      max-height: 88dvh;
     }
 
-    .tarjeta .marca {
-      height: 70px;
+    .tarjeta {
+      padding: 28px 22px 26px;
+      border-radius: 18px 18px 0 0;
+      max-height: 88dvh;
     }
 
     .tarjeta h2 {
-      font-size: 23px;
+      font-size: 24px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .pop[open] .tarjeta {
+        animation: hoja 0.34s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+      }
+    }
+
+    .tarjeta .acciones .boton {
+      flex: 1 1 100%;
+    }
+
+    .tarjeta .acciones {
+      justify-content: center;
+    }
+  }
+
+  @keyframes hoja {
+    from {
+      transform: translateY(100%);
     }
   }
 </style>
