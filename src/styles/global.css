@@ -1,5 +1,4 @@
 @import '@fontsource-variable/montserrat';
-@import '@fontsource-variable/archivo';
 
 :root {
   --fucsia: #ff00ff;
@@ -15,22 +14,22 @@
   --texto: #16131c;
   --blanco: #ffffff;
   --fuente: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
-  /* Titulares: grotesca editorial, más angosta, para que entren en menos líneas */
-  --fuente-titulo: 'Archivo Variable', 'Archivo', var(--fuente);
+  /* Titulares: la misma Montserrat de la marca, en un peso más alto */
+  --fuente-titulo: var(--fuente);
   --ancho: 1200px;
   --radio: 8px;
 }
 
-/* Los titulares llevan la tipografía editorial; el menú, los botones
-   y las etiquetas siguen en Montserrat, que es la voz de la marca. */
+/* Todo el sitio en Montserrat: los titulares se distinguen por el peso,
+   no por otra familia. */
 h1,
 h2,
 h3,
 .titulo,
 .sec-h {
   font-family: var(--fuente-titulo);
-  font-stretch: 92%;
-  letter-spacing: -0.015em;
+  font-weight: 800;
+  letter-spacing: -0.018em;
 }
 
 *,
