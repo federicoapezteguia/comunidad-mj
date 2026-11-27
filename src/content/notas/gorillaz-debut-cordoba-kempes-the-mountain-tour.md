@@ -1,5 +1,5 @@
 ---
-titulo: "Gorillaz debutó en Córdoba ante unas 30 mil personas en el Kempes"
+titulo: "Gorillaz debutó en Córdoba ante 25 mil personas en el Kempes"
 bajada: "La banda de Damon Albarn tocó por primera vez en la provincia con The Mountain Tour. Abrieron el cordobés Dúo Mixo y la mexicana Luisa Almaguer, y el show cerró con Clint Eastwood."
 seccion: espectaculos
 etiquetas: [shows, cultura]
@@ -9,10 +9,10 @@ foto: ./img/gorillaz-kempes-damon-albarn-escenario.jpg
 fotoAlt: "Damon Albarn con boina roja y campera de camuflaje durante el show en Córdoba"
 destacada: false
 seoTitulo: "Gorillaz debutó en Córdoba con su show en el Kempes"
-seoDescripcion: "La banda de Damon Albarn tocó por primera vez en Córdoba, en el playón del Kempes, ante unas 30 mil personas y con teloneros cordobeses."
+seoDescripcion: "La banda de Damon Albarn tocó por primera vez en Córdoba, en el playón del Kempes, ante 25 mil personas y con teloneros cordobeses."
 ---
 
-Gorillaz tocó por primera vez en Córdoba. Fue la noche del jueves en el playón norte del estadio Mario Alberto Kempes, donde las estimaciones hablaron de entre 28 y 30 mil personas. El show formó parte de The Mountain Tour, la gira con la que la banda presenta su noveno disco, y lo trajo a la provincia la productora En Vivo Producciones.
+Gorillaz tocó por primera vez en Córdoba. Fue la noche del jueves en el playón norte del estadio Mario Alberto Kempes, ante 25 mil personas. El show formó parte de The Mountain Tour, la gira con la que la banda presenta su noveno disco, y lo trajo a la provincia la productora En Vivo Producciones.
 
 Las puertas se abrieron a las 18 y la explanada se fue llenando temprano. Una parte del público llegó disfrazada de los personajes animados del proyecto, una costumbre que acompaña a la banda desde sus primeros años y que anoche se vio en gente de todas las edades.
 
